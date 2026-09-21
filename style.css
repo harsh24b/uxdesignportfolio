@@ -1262,15 +1262,16 @@ body {
 
 /* Stacking Tracks */
 .work-stack-track,
-.experience-stack-track {
+.experience-stack-track,
+.testimonials-stack-track {
   position: relative;
   width: 100%;
 }
 
-/* Testimonials Section (Hear it from them - Layered Card Stacking Layer 4) */
+/* Testimonials Section (Hear it from them - Layered Card Stacking Layer 4 with Horizontal Scroll) */
 .testimonials-section {
   position: relative;
-  z-index: 5;
+  z-index: 4;
   width: 100%;
   min-height: 100vh;
   background-color: #700145; /* Solid dark berry canvas */
@@ -1280,6 +1281,7 @@ body {
   justify-content: center;
   align-items: flex-start;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 .testimonials-content-wrapper {
@@ -1328,23 +1330,37 @@ body {
   margin: 0;
 }
 
+/* Horizontal Scroll Carousel Wrapper with Right Fade Gradient Mask */
+.testimonials-grid-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: visible;
+  padding: 4px 0 16px 0;
+  mask-image: linear-gradient(to right, #000 0%, #000 calc(100% - 180px), rgba(0, 0, 0, 0) 100%);
+  -webkit-mask-image: linear-gradient(to right, #000 0%, #000 calc(100% - 180px), rgba(0, 0, 0, 0) 100%);
+  transition: mask-image 0.25s cubic-bezier(0.16, 1, 0.3, 1), -webkit-mask-image 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.testimonials-grid-wrapper.is-scrolled-left {
+  mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, #000 100px, #000 calc(100% - 180px), rgba(0, 0, 0, 0) 100%);
+  -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, #000 100px, #000 calc(100% - 180px), rgba(0, 0, 0, 0) 100%);
+}
+
+.testimonials-grid-wrapper.is-scrolled-end {
+  mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, #000 100px, #000 100%);
+  -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, #000 100px, #000 100%);
+}
+
 .testimonials-grid {
   display: flex;
   flex-direction: row;
   align-items: stretch;
   gap: 32px;
-  width: 100%;
-  overflow-x: auto;
-  overflow-y: hidden;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
+  width: max-content;
   padding-bottom: 12px;
-  padding-right: 40px;
-  scrollbar-width: none; /* Clean hidden scrollbar */
-}
-
-.testimonials-grid::-webkit-scrollbar {
-  display: none;
+  padding-right: 80px;
+  will-change: transform;
+  transition: transform 0.08s cubic-bezier(0.1, 0.9, 0.2, 1);
 }
 
 .testimonial-card {
@@ -1356,7 +1372,6 @@ body {
   border-radius: 0;
   position: relative;
   box-sizing: border-box;
-  scroll-snap-align: start;
 }
 
 .testimonial-body {
@@ -1461,13 +1476,25 @@ body {
   .testimonials-section {
     padding: 70px 24px 90px 24px;
   }
+  .testimonials-grid-wrapper {
+    mask-image: linear-gradient(to right, #000 0%, #000 calc(100% - 80px), rgba(0, 0, 0, 0) 100%);
+    -webkit-mask-image: linear-gradient(to right, #000 0%, #000 calc(100% - 80px), rgba(0, 0, 0, 0) 100%);
+  }
+  .testimonials-grid-wrapper.is-scrolled-left {
+    mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, #000 50px, #000 calc(100% - 80px), rgba(0, 0, 0, 0) 100%);
+    -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, #000 50px, #000 calc(100% - 80px), rgba(0, 0, 0, 0) 100%);
+  }
+  .testimonials-grid-wrapper.is-scrolled-end {
+    mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, #000 50px, #000 100%);
+    -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, #000 50px, #000 100%);
+  }
   .testimonials-grid {
     gap: 20px;
-    padding-right: 24px;
+    padding-right: 40px;
   }
   .testimonial-card {
-    flex: 0 0 calc(100vw - 48px);
-    min-width: 0;
+    flex: 0 0 clamp(320px, 82vw, 540px);
+    min-width: 300px;
   }
   .testimonial-body {
     padding: 28px 24px 24px 24px;
