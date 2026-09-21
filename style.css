@@ -1081,182 +1081,441 @@ body {
   margin: 0;
 }
 
-.experience-list {
+/* Experience Header with Filter Tabs */
+.experience-header {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 28px;
+  width: 100%;
+  flex-shrink: 0;
+  gap: 16px;
+}
+
+.experience-header-top {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.experience-filter-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.experience-tab-btn {
+  background: transparent;
+  border: 1px solid #700145;
+  color: #700145;
+  padding: 7px 16px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.experience-tab-btn .tab-count {
+  font-size: 11px;
+  padding: 1px 6px;
+  background: rgba(112, 1, 69, 0.08);
+  border-radius: 9999px;
+  font-weight: 700;
+  color: inherit;
+}
+
+.experience-tab-btn:hover {
+  background: rgba(112, 1, 69, 0.1);
+  transform: translateY(-2px);
+}
+
+.experience-tab-btn.active {
+  background: #700145;
+  color: #FFFCDE;
+  transform: translateY(-2px);
+}
+
+.experience-tab-btn.active .tab-count {
+  background: rgba(255, 252, 222, 0.22);
+}
+
+/* Milestones List & Interactive Accordion Cards */
+.experience-milestones-list {
   display: flex;
   flex-direction: column;
   width: 100%;
-  gap: 16px; /* 16px spacing between cards */
+  gap: 14px;
 }
 
-/* Individual Experience Boxed Card with Burgundy Ribbon */
-.experience-card {
-  display: flex;
-  align-items: stretch;
-  border: 1px solid #700145; /* Dark berry outline */
-  background-color: #FFFCDE; /* Canvas match */
+.milestone-card {
+  background: #FFFCDE;
+  border: 1px solid #700145;
+  border-radius: 0;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, background-color 0.3s ease, opacity 0.25s ease;
+  will-change: transform, opacity;
+}
+
+.milestone-card:hover {
+  border-color: #830051;
+  background-color: #FFFDF0;
+}
+
+.milestone-card.is-expanded {
+  background-color: #FFFCDE;
+  border-color: #700145;
+  box-shadow: 0 8px 30px rgba(112, 1, 69, 0.06);
+}
+
+/* Summary Trigger Button */
+.milestone-summary-btn {
   width: 100%;
+  background: transparent;
+  border: none;
+  padding: clamp(18px, 1.8vw, 24px) clamp(20px, 2.2vw, 32px);
+  display: grid;
+  grid-template-columns: 140px 1fr auto 38px;
+  align-items: center;
+  gap: clamp(16px, 2vw, 28px);
+  cursor: pointer;
+  text-align: left;
   box-sizing: border-box;
+  user-select: none;
+  font-family: inherit;
 }
 
-.experience-ribbon {
-  flex: 0 0 30px;
-  width: 30px;
-  background-color: #700145; /* Solid dark berry vertical stripe */
+.milestone-num-col {
   display: flex;
   align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
-  flex-shrink: 0;
+  gap: 12px;
 }
 
-.experience-ribbon-text {
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-  font-family: 'MozaicGEO', 'Plus Jakarta Sans', sans-serif;
-  font-size: 13.5px;
-  font-weight: 500;
-  color: #FFFCDE;
-  letter-spacing: 0.03em;
+.milestone-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(26px, 2.2vw, 32px);
+  font-weight: 700;
+  font-style: italic;
+  color: #700145;
+  line-height: 1;
+}
+
+.milestone-type-badge {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 3px 8px;
+  border-radius: 9999px;
   white-space: nowrap;
-  user-select: none;
 }
 
-.experience-card-body {
-  flex: 1;
-  display: flex;
-  align-items: flex-start;
-  padding: 24px 32px 28px 32px;
-  gap: 36px;
-  box-sizing: border-box;
+.badge-industry {
+  background: rgba(24, 114, 140, 0.1);
+  color: #18728C;
+  border: 1px solid rgba(24, 114, 140, 0.25);
 }
 
-.experience-logo-col {
-  flex: 0 0 300px;
-  width: 300px;
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  padding-top: 4px;
+.badge-honors {
+  background: rgba(254, 130, 10, 0.12);
+  color: #c96000;
+  border: 1px solid rgba(254, 130, 10, 0.35);
 }
 
-.experience-logo-img {
-  max-height: 42px;
-  max-width: 250px;
-  width: auto;
-  height: auto;
-  object-fit: contain;
-  object-position: left center;
-  user-select: none;
-  -webkit-user-drag: none;
+.badge-community {
+  background: rgba(183, 87, 230, 0.1);
+  color: #872fb5;
+  border: 1px solid rgba(183, 87, 230, 0.25);
 }
 
-.experience-logo-img.experience-logo-sigchi {
-  max-height: 47px;
-  max-width: 290px;
+.badge-volunteering {
+  background: rgba(46, 154, 104, 0.1);
+  color: #1e734c;
+  border: 1px solid rgba(46, 154, 104, 0.25);
 }
 
-.experience-content-col {
-  flex: 1;
-  max-width: 740px;
+.milestone-main-col {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  gap: 3px;
+  min-width: 0;
 }
 
-.experience-role {
+.milestone-role-title {
   font-family: 'Cormorant Garamond', 'Cormorant', Georgia, serif;
-  font-size: 26px;
-  font-weight: 600;
-  font-style: italic; /* Bold Italic */
+  font-size: clamp(20px, 1.7vw, 25px);
+  font-weight: 700;
+  font-style: italic;
   color: #1a140e;
   line-height: 1.2;
   letter-spacing: -0.01em;
-  margin: 0 0 4px 0;
 }
 
-.experience-num-large {
-  font-size: 45px; /* 3px smaller than 48px */
-  line-height: 0.85;
-  display: inline-block;
-  vertical-align: -2px;
+.title-highlight-accent {
   font-family: inherit;
+  font-size: 1.25em;
+  color: #FE820A;
   font-style: italic;
-  font-weight: 400; /* Regular weight, not bold */
+  font-weight: 700;
+  margin-right: 2px;
 }
 
-.experience-date {
+.milestone-company-name {
   font-family: 'MozaicGEO', 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(13px, 1.05vw, 14.5px);
+  font-weight: 500;
+  color: #5C3D2E;
+  letter-spacing: 0.005em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.milestone-meta-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+  flex-shrink: 0;
+}
+
+.milestone-date-tag {
+  font-family: 'MozaicGEO', sans-serif;
   font-size: 13.5px;
-  font-weight: 400; /* Regular */
+  font-weight: 600;
   color: #4A2C11;
   letter-spacing: 0.01em;
-  margin-bottom: 10px;
+  white-space: nowrap;
+}
+
+.milestone-location-tag {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: #7A5C3E;
+  white-space: nowrap;
+}
+
+.milestone-expand-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(112, 1, 69, 0.06);
+  color: #700145;
+  border: 1px solid rgba(112, 1, 69, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  flex-shrink: 0;
+}
+
+.milestone-summary-btn:hover .milestone-expand-icon {
+  background: rgba(112, 1, 69, 0.12);
+  transform: scale(1.05);
+}
+
+.milestone-card.is-expanded .milestone-expand-icon {
+  transform: rotate(180deg);
+  background: #700145;
+  color: #FFFCDE;
+  border-color: #700145;
+}
+
+/* Expandable Drawer */
+.milestone-drawer {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.milestone-card.is-expanded .milestone-drawer {
+  grid-template-rows: 1fr;
+}
+
+.milestone-drawer-content {
+  overflow: hidden;
+}
+
+.milestone-drawer-grid {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: clamp(24px, 2.5vw, 36px);
+  padding: 0 clamp(20px, 2.2vw, 32px) clamp(22px, 2.2vw, 30px) clamp(20px, 2.2vw, 32px);
+  border-top: 1px solid rgba(112, 1, 69, 0.15);
+  margin-top: 4px;
+  padding-top: 20px;
+  box-sizing: border-box;
+}
+
+/* Left Brand Pane */
+.milestone-brand-pane {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.milestone-logo-frame {
+  background: #FFFFFF;
+  border: 1px solid rgba(112, 1, 69, 0.15);
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 64px;
+  box-sizing: border-box;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.milestone-card:hover .milestone-logo-frame {
+  box-shadow: 0 4px 14px rgba(112, 1, 69, 0.05);
+}
+
+.milestone-brand-logo {
+  max-height: 38px;
+  max-width: 240px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
   display: block;
 }
 
-.experience-desc {
-  font-family: 'MozaicGEO', 'Plus Jakarta Sans', sans-serif;
+.milestone-brand-logo.milestone-logo-sigchi {
+  max-height: 44px;
+  max-width: 270px;
+}
+
+.milestone-impact-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.milestone-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #4A2C11;
+  background: rgba(112, 1, 69, 0.04);
+  border: 1px solid rgba(112, 1, 69, 0.14);
+  padding: 4px 10px;
+  border-radius: 0;
+  line-height: 1.3;
+}
+
+.chip-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* Right Narrative Pane */
+.milestone-narrative-pane {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.milestone-narrative-text {
+  font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 14.5px;
-  font-weight: 400; /* Regular */
-  color: #1a140e;
-  line-height: 1.5;
-  letter-spacing: 0.01em;
+  line-height: 1.65;
+  color: #3a2719;
   margin: 0;
 }
 
-/* Responsive breakpoint for mobile/tablet */
-@media (max-width: 860px) {
-  .projects-section {
-    padding: 70px 20px 90px 20px;
-  }
-  .projects-container,
-  .projects-row {
-    flex-direction: column;
-    gap: 32px;
-    margin-bottom: 32px;
-  }
-  .project-card.project-wide,
-  .project-card.project-compact,
-  .project-card {
-    width: 100% !important;
-    flex: none !important;
-  }
-  .project-card {
-    padding: 18px 16px;
-    border-radius: 0;
-  }
-  .project-card-header {
-    flex-wrap: wrap;
-    gap: 8px;
-    align-items: center;
-  }
-  .project-pills {
-    gap: 6px;
-  }
-  .project-meta-tag {
-    margin-left: auto;
-  }
+.milestone-footer-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-top: 14px;
+  border-top: 1px dashed rgba(112, 1, 69, 0.2);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
 
+.milestone-scope-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #700145;
+}
+
+.milestone-scope-value {
+  font-size: 12.5px;
+  font-weight: 500;
+  color: #5C3D2E;
+}
+
+/* Responsive breakpoint for mobile/tablet */
+@media (max-width: 960px) {
   .experience-section {
     padding: 70px 24px 90px 24px;
   }
-
-  .experience-card-body {
-    flex-direction: column;
-    gap: 16px;
-    padding: 20px 20px 24px 20px;
+  .milestone-summary-btn {
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
+    gap: 12px;
+    padding: 18px 20px;
   }
-
-  .experience-logo-col {
-    width: 100%;
-    flex: none;
+  .milestone-num-col {
+    grid-column: 1;
+    grid-row: 1;
   }
+  .milestone-expand-icon {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: end;
+  }
+  .milestone-main-col {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+  .milestone-meta-col {
+    display: none;
+  }
+  .milestone-drawer-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 0 20px 22px 20px;
+  }
+  .milestone-logo-frame {
+    max-width: 280px;
+  }
+}
 
-  .header-lotus-img {
-    position: static;
-    transform: none;
-    margin-bottom: 14px;
-    width: 52px;
+@media (max-width: 600px) {
+  .experience-filter-tabs {
+    gap: 6px;
+  }
+  .experience-tab-btn {
+    font-size: 11.5px;
+    padding: 5px 12px;
+  }
+  .milestone-role-title {
+    font-size: 20px;
+  }
+  .milestone-company-name {
+    font-size: 13px;
+    white-space: normal;
+  }
+  .milestone-narrative-text {
+    font-size: 13.5px;
   }
 }
 
