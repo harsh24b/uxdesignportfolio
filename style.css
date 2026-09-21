@@ -2256,7 +2256,7 @@ body {
   flex-direction: column;
   align-items: flex-start;
   width: 100%;
-  max-width: 1400px;
+  max-width: 1080px;
   opacity: 0;
   transform: translateY(45px);
   transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
@@ -2273,23 +2273,23 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-bottom: 36px;
+  margin-bottom: 24px;
   width: 100%;
   flex-shrink: 0;
 }
 
 .about-subtitle {
   font-family: 'MozaicGEO', 'Plus Jakarta Sans', sans-serif;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 500;
   color: #7A5C3E;
   letter-spacing: 0.01em;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 }
 
 .about-title {
   font-family: 'MozaicGEO', 'Plus Jakarta Sans', sans-serif;
-  font-size: 38px;
+  font-size: 34px;
   font-weight: 700;
   color: #4A2C11;
   letter-spacing: -0.02em;
@@ -2300,13 +2300,13 @@ body {
 /* Modern Editorial About Showcase */
 .about-showcase-container {
   display: grid;
-  grid-template-columns: minmax(340px, 440px) 1fr;
-  gap: clamp(36px, 5.5vw, 80px);
+  grid-template-columns: minmax(240px, 300px) 1fr;
+  gap: clamp(24px, 3.5vw, 48px);
   align-items: center;
   width: 100%;
   background: #FFFCDE;
   border: 1px solid #700145;
-  padding: clamp(32px, 4vw, 54px);
+  padding: clamp(20px, 2.8vw, 32px);
   box-sizing: border-box;
   position: relative;
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -2344,31 +2344,32 @@ body {
 
 .about-portrait-status-badge {
   position: absolute;
-  bottom: 14px;
-  left: 14px;
-  right: 14px;
+  bottom: 10px;
+  left: 10px;
+  right: auto;
   background: rgba(255, 252, 222, 0.94);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(112, 1, 69, 0.25);
-  padding: 9px 14px;
-  display: flex;
+  border-radius: 9999px;
+  padding: 6px 12px;
+  display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 7px;
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 12.5px;
+  font-size: 11.5px;
   font-weight: 600;
   color: #4A2C11;
   letter-spacing: -0.01em;
 }
 
 .status-live-dot {
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
   background-color: #22c55e;
   flex-shrink: 0;
-  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.25);
+  box-shadow: 0 0 0 2.5px rgba(34, 197, 94, 0.25);
   animation: pulseLive 2s infinite ease-in-out;
 }
 
@@ -2379,7 +2380,7 @@ body {
   }
   70% {
     transform: scale(1);
-    box-shadow: 0 0 0 6px rgba(34, 197, 94, 0);
+    box-shadow: 0 0 0 5px rgba(34, 197, 94, 0);
   }
   100% {
     transform: scale(0.95);
@@ -2395,34 +2396,34 @@ body {
 
 .about-bio-paragraph {
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: clamp(15px, 1.12vw, 16.5px);
-  line-height: 1.75;
+  font-size: clamp(13px, 0.95vw, 14.5px);
+  line-height: 1.65;
   color: #4A2C11;
-  margin: 0 0 18px 0;
+  margin: 0 0 12px 0;
 }
 
 .about-bio-paragraph:last-of-type {
-  margin-bottom: 24px;
+  margin-bottom: 18px;
 }
 
 .about-action-row {
   display: flex;
   align-items: center;
-  margin-top: 6px;
+  margin-top: 2px;
 }
 
 .about-cta-btn {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   background: #700145;
   color: #FFFCDE;
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 15px;
+  font-size: 13.5px;
   font-weight: 600;
-  padding: 13px 26px;
+  padding: 10px 20px;
   border: 1px solid #700145;
-  border-radius: 9999px;
+  border-radius: 0;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   text-decoration: none;
@@ -2432,7 +2433,7 @@ body {
   background: #FFFCDE;
   color: #700145;
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(112, 1, 69, 0.16);
+  box-shadow: 0 6px 18px rgba(112, 1, 69, 0.16);
 }
 
 .about-cta-arrow {
@@ -2690,10 +2691,11 @@ body {
 @media (max-width: 1024px) {
   .about-showcase-container {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 24px;
+    padding: 24px;
   }
   .about-portrait-img-box {
-    max-height: 380px;
+    max-height: 300px;
     aspect-ratio: 16/10;
   }
   .about-life-grid {
@@ -2704,10 +2706,10 @@ body {
 
 @media (max-width: 768px) {
   .about-section {
-    padding: calc(2.2vw + 60px) 24px 80px 24px;
+    padding: calc(2.2vw + 40px) 20px 60px 20px;
   }
   .about-showcase-container {
-    padding: 24px 20px;
+    padding: 18px 16px;
   }
   .about-life-grid {
     grid-template-columns: 1fr;
