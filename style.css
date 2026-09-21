@@ -1262,8 +1262,7 @@ body {
 
 /* Stacking Tracks */
 .work-stack-track,
-.experience-stack-track,
-.about-stack-track {
+.experience-stack-track {
   position: relative;
   width: 100%;
 }
@@ -2065,14 +2064,9 @@ body {
    About Section & Interactive Photo Bento Architecture
    ========================================================================== */
 
-.about-stack-track {
-  position: relative;
-  width: 100%;
-}
-
 .about-section {
   position: relative;
-  z-index: 4;
+  z-index: 5;
   width: 100%;
   min-height: 100vh;
   background-color: #FFFCDE; /* Off-white sheet canvas */
@@ -2138,7 +2132,7 @@ body {
   grid-template-columns: 1.05fr 1.35fr;
   gap: 24px;
   width: 100%;
-  margin-bottom: 28px;
+  margin-bottom: 0;
 }
 
 .about-bento-card {
@@ -2391,11 +2385,13 @@ body {
 .photo-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(43, 24, 36, 0.05) 0%, rgba(43, 24, 36, 0.88) 100%);
+  background: rgba(43, 24, 36, 0.45);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   opacity: 0;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  align-items: center;
+  justify-content: center;
   padding: 10px;
   transition: opacity 0.3s ease;
   box-sizing: border-box;
@@ -2406,78 +2402,22 @@ body {
 }
 
 .photo-pill-badge {
-  align-self: flex-start;
   background: rgba(255, 252, 222, 0.95);
   color: #700145;
-  font-size: 10.5px;
+  font-size: 11.5px;
   font-weight: 700;
-  padding: 3px 7px;
-  margin-bottom: 4px;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  border: 1px solid rgba(112, 1, 69, 0.2);
   font-family: 'Plus Jakarta Sans', sans-serif;
   letter-spacing: -0.01em;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(4px);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.photo-caption-text {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 11px;
-  font-weight: 500;
-  color: #FFFCDE;
-  line-height: 1.3;
-  margin: 0;
-}
-
-/* Bottom Insights Row */
-.about-insights-row {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  width: 100%;
-}
-
-.about-insight-card {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  background: #FFFCDE;
-  border: 1px solid #700145;
-  border-radius: 0;
-  padding: 24px 26px;
-  box-sizing: border-box;
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.25s ease;
-  will-change: transform;
-}
-
-.about-insight-card:hover {
-  transform: translateY(-4px);
-  background-color: #FFF9D1;
-}
-
-.insight-icon-box {
-  width: 42px;
-  height: 42px;
-  background-color: #700145;
-  color: #FFFCDE;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.insight-title {
-  font-family: 'MozaicGEO', 'Plus Jakarta Sans', sans-serif;
-  font-size: 16.5px;
-  font-weight: 700;
-  color: #4A2C11;
-  margin: 0 0 6px 0;
-  letter-spacing: -0.01em;
-}
-
-.insight-text {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 13.5px;
-  line-height: 1.55;
-  color: #5C3D2E;
-  margin: 0;
+.about-photo-card:hover .photo-pill-badge {
+  transform: translateY(0);
 }
 
 /* Interactive Lightbox Modal */
@@ -2585,10 +2525,6 @@ body {
   .about-bento-grid {
     grid-template-columns: 1fr;
     gap: 20px;
-  }
-  .about-insights-row {
-    grid-template-columns: 1fr;
-    gap: 16px;
   }
 }
 
