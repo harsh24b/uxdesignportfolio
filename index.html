@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Harsh - Portfolio</title>
+  <link rel="stylesheet" href="style.css?v=78">
+  <!-- Google Fonts for Plus Jakarta Sans & Cormorant Garamond -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navbar Container (Fixed on top of screen) -->
+  <header class="navbar-container">
+    <nav class="navbar">
+      <a href="#work" class="nav-link">Work</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#resume" class="nav-link">Resume</a>
+      <a href="#contact" class="btn-contact">
+        <img src="Mail.svg" class="mail-icon" alt="Mail Icon">
+        Work with me
+      </a>
+    </nav>
+  </header>
+
+  <div class="hero-section">
+    <!-- Layered Backgrounds (For mouse move parallax) -->
+    <div class="hero-bg-blue"></div>
+    <div class="hero-bg-silver"></div>
+    <!-- Intro Text -->
+    <div class="intro-container">
+      <div class="name-wrapper">
+        <div class="intro-top">
+          <span class="namaste">hello</span>
+          <span class="i-am">i am</span>
+        </div>
+        <h1 class="name">harsh</h1>
+      </div>
+    </div>
+
+    <!-- Description Text (Right Side) -->
+    <div class="description-container">
+      <p class="description-text">
+        Product Designer focused on making digital experiences clearer, simpler and more human.
+      </p>
+    </div>
+
+    <!-- Central Illustration Composition -->
+    <div class="illustration-box">
+      <!-- Rotating Circle Backdrop -->
+      <div class="circle-container">
+        <img src="circle.png" alt="Rotating Background Element" class="circle-img">
+      </div>
+      <!-- Floating Character -->
+      <div class="guy-container">
+        <img src="guy,png.png" alt="Floating Designer Illustration" class="guy-img">
+      </div>
+    </div>
+  </div>
+
+  <!-- Work Stack Track (Enables Full Browsing then Stacking Freeze) -->
+  <div class="work-stack-track">
+    <!-- Content Section for visual continuity -->
+    <div class="content-section">
+      <!-- Continuous Horizontal Logo Marquee with Left & Right Gradient Fade Masks -->
+      <div class="logo-marquee-container">
+        <div class="logo-marquee-track">
+          <!-- Set 1 -->
+          <div class="logo-marquee-group">
+            <div class="marquee-item">
+              <span class="marquee-label">Ex-UX Research Intern</span>
+              <img src="skodagrey.png" alt="Škoda | Volkswagen" class="marquee-logo logo-skoda">
+            </div>
+            <div class="marquee-item">
+              <span class="marquee-label">2x First Place Winnner</span>
+              <img src="samsunggrey.png" alt="Samsung | PRISM" class="marquee-logo logo-samsung">
+            </div>
+            <div class="marquee-item">
+              <span class="marquee-label">Vice Chair</span>
+              <img src="sigchigrey.png" alt="MITID SIGCHI ACM" class="marquee-logo logo-sigchi">
+            </div>
+            <div class="marquee-item">
+              <span class="marquee-label">Worked with</span>
+              <img src="indiahcigrey.png" alt="IndiaHCI" class="marquee-logo logo-indiahci">
+            </div>
+          </div>
+
+          <!-- Set 2 (Duplicate for Seamless Infinite Loop) -->
+          <div class="logo-marquee-group" aria-hidden="true">
+            <div class="marquee-item">
+              <span class="marquee-label">Ex-UX Research Intern</span>
+              <img src="skodagrey.png" alt="Škoda | Volkswagen" class="marquee-logo logo-skoda">
+            </div>
+            <div class="marquee-item">
+              <span class="marquee-label">2x First Place Winnner</span>
+              <img src="samsunggrey.png" alt="Samsung | PRISM" class="marquee-logo logo-samsung">
+            </div>
+            <div class="marquee-item">
+              <span class="marquee-label">Vice Chair</span>
+              <img src="sigchigrey.png" alt="MITID SIGCHI ACM" class="marquee-logo logo-sigchi">
+            </div>
+            <div class="marquee-item">
+              <span class="marquee-label">Worked with</span>
+              <img src="indiahcigrey.png" alt="IndiaHCI" class="marquee-logo logo-indiahci">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Interactive Projects Showcase Section -->
+      <div class="projects-section" id="work">
+        <div class="projects-content-wrapper">
+          <div class="projects-header">
+            <img src="lotus.png" alt="Lotus" class="header-lotus-img">
+            <span class="projects-subtitle">From Idea to Reality</span>
+            <h2 class="projects-title">Featured Work</h2>
+          </div>
+
+          <!-- Row 1: Bus Transportation & Kamo AI -->
+          <div class="projects-row">
+            <!-- Project 1: Bus Transportation Management -->
+            <a href="transportation.html" class="project-card" data-cursor-color="#FE820A" data-cursor-title="Bus Transportation<br>Management">
+              <div class="project-card-inner">
+                <div class="project-card-header">
+                  <div class="project-pills">
+                    <span class="project-pill"><span class="pill-dot" style="background:#FE820A;"></span>Object Oriented UX</span>
+                    <span class="project-pill">System Design</span>
+                  </div>
+                  <div class="project-meta-tag">
+                    <span class="meta-year">2026</span>
+                    <span class="meta-separator">•</span>
+                    <span class="meta-type">Case Study</span>
+                  </div>
+                </div>
+
+                <div class="project-image-box">
+                  <img src="bustransportation.png" alt="MIT-ADT University Bus Transportation Management" class="project-img">
+                  <div class="project-hover-overlay">
+                    <div class="project-hover-pill">
+                      <span>View Case Study</span>
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="7" y1="17" x2="17" y2="7"></line>
+                        <polyline points="7 7 17 7 17 17"></polyline>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="project-card-footer">
+                  <div class="project-title-group">
+                    <h3 class="project-card-title">Bus Transportation Management</h3>
+                    <p class="project-card-desc">Designed a unified MIT-ADT transportation system that streamlines bus operations and gives students real-time tracking, schedules, and delay updates.</p>
+                  </div>
+                  <div class="project-action-btn" aria-label="Explore Project">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="7" y1="17" x2="17" y2="7"></line>
+                      <polyline points="7 7 17 7 17 17"></polyline>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <!-- Project 2: Kamo AI -->
+            <a href="https://www.figma.com/proto/5o3mcDvLlrFB5Ft2tNlu6e/Kamo-AI?node-id=0-1&t=nH9mkcz9T31QtaZD-1" target="_blank" rel="noopener noreferrer" class="project-card" data-cursor-color="#B757E6" data-cursor-title="Kamo AI :<br>Empathetic AI">
+              <div class="project-card-inner">
+                <div class="project-card-header">
+                  <div class="project-pills">
+                    <span class="project-pill"><span class="pill-dot" style="background:#B757E6;"></span>AI Agent</span>
+                    <span class="project-pill">Ed-Tech</span>
+                  </div>
+                  <div class="project-meta-tag">
+                    <span class="meta-year">2026</span>
+                    <span class="meta-separator">•</span>
+                    <span class="meta-type">Interaction Design</span>
+                  </div>
+                </div>
+
+                <div class="project-image-box">
+                  <img src="kamoai.png" alt="Kamo AI - Empathetic AI Agent" class="project-img">
+                  <div class="project-hover-overlay">
+                    <div class="project-hover-pill">
+                      <span>View Case Study</span>
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="7" y1="17" x2="17" y2="7"></line>
+                        <polyline points="7 7 17 7 17 17"></polyline>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="project-card-footer">
+                  <div class="project-title-group">
+                    <h3 class="project-card-title">Kamo AI : Empathetic Companion</h3>
+                    <p class="project-card-desc">Empathetic AI productivity agent helping students overcome procrastination, manage tasks, maintain focus, and build sustainable habits.</p>
+                  </div>
+                  <div class="project-action-btn" aria-label="Explore Project">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="7" y1="17" x2="17" y2="7"></line>
+                      <polyline points="7 7 17 7 17 17"></polyline>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Row 2: Samsung & Weapon of Influence -->
+          <div class="projects-row">
+            <!-- Project 3: Samsung -->
+            <a href="https://www.behance.net/gallery/235207603/Agentic-Travel-Planning-Samsung-Prism-Hackathon" target="_blank" rel="noopener noreferrer" class="project-card" data-cursor-color="#1DA1FF" data-cursor-title="Samsung PRISM<br>Hackathon">
+              <div class="project-card-inner">
+                <div class="project-card-header">
+                  <div class="project-pills">
+                    <span class="project-pill"><span class="pill-dot" style="background:#1DA1FF;"></span>Agentic AI</span>
+                    <span class="project-pill">Travel Tech</span>
+                  </div>
+                  <div class="project-meta-tag">
+                    <span class="meta-badge-award">🏆 2x 1st Place</span>
+                  </div>
+                </div>
+
+                <div class="project-image-box">
+                  <img src="samsung.png" alt="Samsung PRISM Hackathon" class="project-img">
+                  <div class="project-hover-overlay">
+                    <div class="project-hover-pill">
+                      <span>View Case Study</span>
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="7" y1="17" x2="17" y2="7"></line>
+                        <polyline points="7 7 17 7 17 17"></polyline>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="project-card-footer">
+                  <div class="project-title-group">
+                    <h3 class="project-card-title">Samsung PRISM Hackathon</h3>
+                    <p class="project-card-desc">Won 1st place in Samsung PRISM’s 24-hour hackathon, designing an intuitive, high-fidelity UI for an intelligent AI assistant</p>
+                  </div>
+                  <div class="project-action-btn" aria-label="Explore Project">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="7" y1="17" x2="17" y2="7"></line>
+                      <polyline points="7 7 17 7 17 17"></polyline>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <!-- Project 4: Weapon of Influence -->
+            <a href="https://www.behance.net/gallery/228241265/Weapon-of-Influence-Data-Visualization" target="_blank" rel="noopener noreferrer" class="project-card" data-cursor-color="#6DB874" data-cursor-title="Defense Intelligence<br>Dashboard Design">
+              <div class="project-card-inner">
+                <div class="project-card-header">
+                  <div class="project-pills">
+                    <span class="project-pill"><span class="pill-dot" style="background:#6DB874;"></span>Information Viz</span>
+                    <span class="project-pill">Dashboard Design</span>
+                  </div>
+                  <div class="project-meta-tag">
+                    <span class="meta-year">2025</span>
+                    <span class="meta-separator">•</span>
+                    <span class="meta-type">Intelligence</span>
+                  </div>
+                </div>
+
+                <div class="project-image-box">
+                  <img src="weaponofinfluence.png" alt="Weapons of Influence" class="project-img">
+                  <div class="project-hover-overlay">
+                    <div class="project-hover-pill">
+                      <span>View Case Study</span>
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="7" y1="17" x2="17" y2="7"></line>
+                        <polyline points="7 7 17 7 17 17"></polyline>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="project-card-footer">
+                  <div class="project-title-group">
+                    <h3 class="project-card-title">Defense Intelligence Dashboard Design</h3>
+                    <p class="project-card-desc">Redesigning the complex &ldquo;Global Arms Trade&rdquo; Infographics into a clean and intuitive dashboard.</p>
+                  </div>
+                  <div class="project-action-btn" aria-label="Explore Project">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="7" y1="17" x2="17" y2="7"></line>
+                      <polyline points="7 7 17 7 17 17"></polyline>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- View More Projects Button -->
+          <div class="view-more-container">
+            <a href="https://www.behance.net/harshbhawsar" target="_blank" rel="noopener noreferrer" class="btn-view-more" aria-label="View more projects on Behance">
+              <span class="btn-view-more-text">View more projects</span>
+              <div class="btn-view-more-arrow">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div> <!-- End Content Section -->
+  </div> <!-- End Work Stack Track -->
+
+  <!-- Experience & Honors Stack Track (Layered Card Stacking Track) -->
+  <div class="experience-stack-track">
+    <!-- Experience & Honors Section (Overlapping Page Layer 3) -->
+    <div class="experience-section" id="experience">
+      <div class="experience-content-wrapper">
+        <div class="experience-header">
+          <img src="lotus.png" alt="Lotus" class="header-lotus-img">
+          <span class="experience-subtitle">Where Craft Meets Validation</span>
+          <h2 class="experience-title">Experience & Honors</h2>
+        </div>
+
+        <div class="experience-list">
+          <!-- Item 1: Škoda Auto | Volkswagen -->
+          <div class="experience-card">
+            <div class="experience-ribbon">
+              <span class="experience-ribbon-text">Internship</span>
+            </div>
+            <div class="experience-card-body">
+              <div class="experience-logo-col">
+                <img src="skodalogo.png" alt="Škoda Auto Volkswagen" class="experience-logo-img">
+              </div>
+              <div class="experience-content-col">
+                <h3 class="experience-role">UX Research Intern</h3>
+                <span class="experience-date">(Mar 2026 – Jul 2026)</span>
+                <p class="experience-desc">Helped establish the UX research foundation at Škoda Auto Volkswagen India by evaluating research infrastructure and agencies. Conducted automotive user studies and competitor benchmarking to deliver quantitative insights and strategic recommendations for digital mobility systems.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 2: Samsung PRISM -->
+          <div class="experience-card">
+            <div class="experience-ribbon">
+              <span class="experience-ribbon-text">Hackathon</span>
+            </div>
+            <div class="experience-card-body">
+              <div class="experience-logo-col">
+                <img src="samsunglogo.png" alt="Samsung PRISM" class="experience-logo-img">
+              </div>
+              <div class="experience-content-col">
+                <h3 class="experience-role"><span class="experience-num-large">2</span>x First Place Winner</h3>
+                <span class="experience-date">(2025 and 2026)</span>
+                <p class="experience-desc">Won first place in two consecutive editions of the Samsung PRISM Hackathons through rapid user discovery and prototyping. In 2026, designed Guardian Intelligence, an Agentic AI system making children’s screen time safer, developmentally positive, and transparent for parents.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 3: ACM SIGCHI -->
+          <div class="experience-card">
+            <div class="experience-ribbon">
+              <span class="experience-ribbon-text">Community</span>
+            </div>
+            <div class="experience-card-body">
+              <div class="experience-logo-col">
+                <img src="sigchilogo.png" alt="MITID ACM SIGCHI" class="experience-logo-img experience-logo-sigchi">
+              </div>
+              <div class="experience-content-col">
+                <h3 class="experience-role">Vice Chair</h3>
+                <span class="experience-date">(Oct 2024 – Present)</span>
+                <p class="experience-desc">As Vice Chair of MITID ACM SIGCHI, the premier international association for human-computer interaction, I steer operational strategy and lead student teams to organize campus design initiatives, bridging our academic community with global research.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 4: India HCI -->
+          <div class="experience-card">
+            <div class="experience-ribbon">
+              <span class="experience-ribbon-text">Volunteering</span>
+            </div>
+            <div class="experience-card-body">
+              <div class="experience-logo-col">
+                <img src="hcilogo.png" alt="IndiaHCI" class="experience-logo-img">
+              </div>
+              <div class="experience-content-col">
+                <h3 class="experience-role">Education Initiative SV</h3>
+                <span class="experience-date">(Jan 2025 – Feb 2026)</span>
+                <p class="experience-desc">Contributed to the HCIPAI Education Initiative for India HCI 2026 by leading visual communication and digital outreach. Designed key graphic assets and managed campaign strategy to connect academic HCI discourse with emerging designers nationwide</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> <!-- End Experience Stack Track -->
+
+  <!-- Testimonials Section (Hear it from them - Layered Card Stacking Layer 4) -->
+  <div class="testimonials-section" id="testimonials">
+    <div class="testimonials-content-wrapper">
+      <div class="testimonials-header">
+        <img src="lotus.png" alt="Lotus" class="header-lotus-img">
+        <span class="testimonials-subtitle">Not just my perspective</span>
+        <h2 class="testimonials-title">Hear it from them</h2>
+      </div>
+
+      <div class="testimonials-grid">
+        <!-- Card 1: Omkar Divekar -->
+        <div class="testimonial-card">
+          <div class="testimonial-body">
+            <span class="testimonial-num">01</span>
+            <div class="testimonial-quote">
+              <p>“I highly recommend Harsh based on our time working together during internship at SAVW. Harsh possesses a rare combination of empathetic curiosity and rigorous methodology. His approach to UX research is highly structured yet adaptable, combining qualitative insight with practical data to advocate effectively for the user. What stood out most was his ability to translate complex research findings into clear, actionable recommendations for our teams.</p>
+              <p>He was proactive, collaborated effortlessly within the team and across departments, and brought a fresh, constructive energy to the team. He would be a tremendous asset to any UX team lucky enough to have him even though for shorter period.”</p>
+            </div>
+          </div>
+          <div class="testimonial-author-footer">
+            <div class="testimonial-author-info">
+              <span class="testimonial-author-name">Omkar Divekar</span>
+              <span class="testimonial-author-role">Deputy General Manager</span>
+              <span class="testimonial-author-company">@ Škoda Auto Volkswagen India Pvt. Ltd.</span>
+            </div>
+            <div class="testimonial-author-avatar-wrapper">
+              <img src="omkar.png" alt="Omkar Divekar" class="testimonial-author-avatar">
+            </div>
+          </div>
+          <div class="testimonial-bottom-stripe"></div>
+        </div>
+
+        <!-- Card 2: Ashish Deshpande -->
+        <div class="testimonial-card">
+          <div class="testimonial-body">
+            <span class="testimonial-num">02</span>
+            <div class="testimonial-quote">
+              <p>“During internship, Harsh demonstrated strong UX research skills by effectively conducting user studies, analyzing insights, and translating findings into actionable recommendations for automotive user experiences.</p>
+              <p>His structured approach, curiosity, and commitment to user-centered design make him a promising UX researcher with strong potential for a successful career.”</p>
+            </div>
+          </div>
+          <div class="testimonial-author-footer">
+            <div class="testimonial-author-info">
+              <span class="testimonial-author-name">Ashish Deshpande</span>
+              <span class="testimonial-author-role">Deputy Manager</span>
+              <span class="testimonial-author-company">@ Škoda Auto Volkswagen India Pvt. Ltd.</span>
+            </div>
+            <div class="testimonial-author-avatar-wrapper">
+              <img src="ashish.png" alt="Ashish Deshpande" class="testimonial-author-avatar">
+            </div>
+          </div>
+          <div class="testimonial-bottom-stripe"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact / Footer Section (Single Continuous Scroll after Testimonials) -->
+  <footer class="footer-section" id="contact">
+    <div class="footer-headline-container">
+      <h2 class="footer-headline">LET'S BUILD EXPERIENCES THAT MATTER!</h2>
+    </div>
+    <div class="footer-card-container">
+      <img src="harshbeige.png" alt="Harsh" class="footer-card-bg-img">
+      <div class="footer-content-overlay">
+        <div class="footer-grid">
+          <!-- Column 1: Navigation -->
+          <div class="footer-col footer-col-nav">
+            <span class="footer-col-label">NAVIGATION</span>
+            <ul class="footer-links-list">
+              <li><a href="#work" class="footer-link">Work</a></li>
+              <li><a href="#about" class="footer-link">About</a></li>
+              <li><a href="#resume" class="footer-link">Resume</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 2: Contact -->
+          <div class="footer-col footer-col-contact">
+            <span class="footer-col-label">CONTACT</span>
+            <div class="footer-contact-items">
+              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=harshhbhawsar@gmail.com" target="_blank" rel="noopener noreferrer" class="footer-contact-item">harshhbhawsar@gmail.com</a>
+              <a href="tel:+917773892631" class="footer-contact-item">+91 7773892631</a>
+            </div>
+          </div>
+
+          <!-- Column 3: Social -->
+          <div class="footer-col footer-col-social">
+            <span class="footer-col-label">SOCIAL</span>
+            <ul class="footer-links-list">
+              <li><a href="https://www.linkedin.com/in/harsh-bhawsar-ba25581b9/" target="_blank" rel="noopener noreferrer" class="footer-link">LinkedIn</a></li>
+              <li><a href="https://www.behance.net/harshbhawsar" target="_blank" rel="noopener noreferrer" class="footer-link">Behance</a></li>
+              <li><a href="whatsapp.png" target="_blank" rel="noopener noreferrer" class="footer-link">WhatsApp</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Project Cursor Badge -->
+  <div class="project-cursor-badge" id="projectCursorBadge">
+    <div class="badge-content">
+      <span class="badge-title"></span>
+      <div class="badge-arrow">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FE820A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="7" y1="17" x2="17" y2="7"></line>
+          <polyline points="7 7 17 7 17 17"></polyline>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const greetings = ['hello', 'नमस्ते', 'Hola!', 'Bonjour', 'こんにちは', 'Ciao', 'Hallo'];
+      let index = 0;
+      const greetingEl = document.querySelector('.namaste');
+      
+      if (greetingEl) {
+        // Let 'hello' display for the first 1 seconds, then rotate
+        setInterval(() => {
+          greetingEl.textContent = greetings[index];
+          index = (index + 1) % greetings.length;
+        }, 1000);
+      }
+
+      // Configure Multi-Stage Card Stacking Tracks & Sticky Offsets
+      const workTrack = document.querySelector('.work-stack-track');
+      const contentSection = document.querySelector('.content-section');
+      const expTrack = document.querySelector('.experience-stack-track');
+      const experienceSection = document.getElementById('experience');
+      const testimonialsSection = document.getElementById('testimonials');
+      
+      const updateStackMetrics = () => {
+        const windowH = window.innerHeight;
+        
+        // 1. Featured Work Stacking: Experience stacks over Featured Work
+        if (workTrack && contentSection && expTrack) {
+          const r2 = document.querySelectorAll('.projects-row')[1];
+          if (r2) {
+            const csRect = contentSection.getBoundingClientRect();
+            const r2Rect = r2.getBoundingClientRect();
+            const r2TopFromCs = r2Rect.top - csRect.top;
+            
+            // Target Row 2 top at 35px below top of viewport for perfect framing
+            const targetRow2TopInViewport = 35;
+            const stickyTop1 = targetRow2TopInViewport - r2TopFromCs;
+            
+            workTrack.style.height = `${(windowH - stickyTop1) + windowH}px`;
+            contentSection.style.position = 'sticky';
+            contentSection.style.top = `${stickyTop1}px`;
+            expTrack.style.marginTop = `-${windowH}px`;
+          }
+        }
+
+        // 2. Experience Stacking: Testimonials stacks over Experience & Honors
+        if (expTrack && experienceSection && testimonialsSection) {
+          const expHeight = experienceSection.offsetHeight;
+          const stickyTop2 = windowH >= expHeight ? 0 : (windowH - expHeight);
+          
+          expTrack.style.height = `${(windowH - stickyTop2) + windowH}px`;
+          experienceSection.style.position = 'sticky';
+          experienceSection.style.top = `${stickyTop2}px`;
+          testimonialsSection.style.marginTop = `-${windowH}px`;
+        }
+      };
+      
+      updateStackMetrics();
+      window.addEventListener('resize', updateStackMetrics);
+      window.addEventListener('load', updateStackMetrics);
+
+      // Parallax scroll reveal and blur effect for the Hero section + Smart Navbar visibility
+      let lastScrollY = window.scrollY;
+      const navbarContainer = document.querySelector('.navbar-container');
+
+      window.addEventListener('scroll', () => {
+        const scrollY = window.scrollY;
+        const hero = document.querySelector('.hero-section');
+        const navbar = document.querySelector('.navbar');
+        
+        // Smart Navbar Show on scroll-up / Hide on scroll-down
+        if (navbarContainer) {
+          if (scrollY <= 20) {
+            navbarContainer.classList.remove('nav-hidden');
+          } else if (scrollY > lastScrollY && scrollY > 60) {
+            navbarContainer.classList.add('nav-hidden');
+          } else if (scrollY < lastScrollY) {
+            navbarContainer.classList.remove('nav-hidden');
+          }
+        }
+        lastScrollY = scrollY;
+        
+        if (hero) {
+          // Calculate height dynamically, fallback to aspect ratio calculation
+          const heroHeight = hero.offsetHeight || (window.innerWidth * (1624 / 3840));
+          const progress = Math.min(scrollY / heroHeight, 1);
+          
+          const blurVal = progress * 16;
+          const scaleVal = 1 + progress * 0.03;
+          const opacityVal = 1 - progress * 0.45;
+          
+          hero.style.filter = `blur(${blurVal}px)`;
+          hero.style.transform = `scale(${scaleVal})`;
+          hero.style.opacity = opacityVal;
+
+          if (navbar) {
+            const testSec = document.getElementById('testimonials');
+            const testRect = testSec ? testSec.getBoundingClientRect() : null;
+            const contactSec = document.getElementById('contact');
+            const contactRect = contactSec ? contactSec.getBoundingClientRect() : null;
+
+            // When in Testimonials section (and before contact bottom section)
+            if (testRect && testRect.top <= 120 && (!contactRect || contactRect.top > 120)) {
+              navbar.classList.add('navbar-maroon');
+              navbar.classList.remove('scrolled');
+            } else if (scrollY > (heroHeight - 100)) {
+              navbar.classList.remove('navbar-maroon');
+              navbar.classList.add('scrolled');
+            } else {
+              navbar.classList.remove('navbar-maroon');
+              navbar.classList.remove('scrolled');
+            }
+          }
+        }
+
+        // Stacking: Experience & Honors slides over frozen Featured Work without any blur
+        const experienceSection = document.getElementById('experience');
+        
+        if (experienceSection && contentSection) {
+          const expRect = experienceSection.getBoundingClientRect();
+          
+          if (expRect.top <= 0) {
+            contentSection.style.opacity = 0;
+            contentSection.style.pointerEvents = 'none';
+          } else {
+            contentSection.style.opacity = 1;
+            contentSection.style.pointerEvents = 'auto';
+          }
+          contentSection.style.filter = 'none';
+          contentSection.style.transform = 'none';
+        }
+      });
+
+      // Mouse move parallax effect for blue background only
+      const heroSection = document.querySelector('.hero-section');
+      const blueBg = document.querySelector('.hero-bg-blue');
+      if (heroSection && blueBg) {
+        heroSection.addEventListener('mousemove', (e) => {
+          const width = window.innerWidth;
+          const height = window.innerHeight;
+          // Calculate mouse offset relative to viewport center (-0.5 to 0.5)
+          const moveX = (e.clientX / width) - 0.5;
+          const moveY = (e.clientY / height) - 0.5;
+          // Translate background in opposite direction for parallax depth (up to 20px)
+          const translateX = moveX * -20;
+          const translateY = moveY * -20;
+          blueBg.style.transform = `translate(${translateX}px, ${translateY}px)`;
+        });
+        
+        // Reset translation on mouse leave for smooth return
+        heroSection.addEventListener('mouseleave', () => {
+          blueBg.style.transform = 'translate(0px, 0px)';
+        });
+      }
+
+      // Interactive 3D Perspective Tilt & Micro-Parallax for Project Cards
+      document.querySelectorAll('.project-card').forEach(card => {
+        let isHovered = false;
+        
+        card.addEventListener('mouseenter', () => {
+          isHovered = true;
+        });
+        
+        card.addEventListener('mousemove', (e) => {
+          if (!isHovered) return;
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+          
+          // Subtle smooth tilt angles (max ~4.5 degrees)
+          const rotateX = ((y - centerY) / centerY) * -4.5;
+          const rotateY = ((x - centerX) / centerX) * 4.5;
+          
+          card.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translateY(-8px)`;
+        });
+        
+        card.addEventListener('mouseleave', () => {
+          isHovered = false;
+          card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)';
+        });
+      });
+
+      // Scroll Fade-Up Animation for Featured Work Header & Project Cards
+      // Reveal on scroll animations for sections
+      const projectsWrapper = document.querySelector('.projects-content-wrapper');
+      const experienceWrapper = document.querySelector('.experience-content-wrapper');
+      const testimonialsWrapper = document.querySelector('.testimonials-content-wrapper');
+
+      const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -40px 0px'
+      });
+
+      if (projectsWrapper) sectionObserver.observe(projectsWrapper);
+      if (experienceWrapper) sectionObserver.observe(experienceWrapper);
+      if (testimonialsWrapper) sectionObserver.observe(testimonialsWrapper);
+
+      // Fallback scroll check
+      const checkSectionsInView = () => {
+        const trigger = (window.innerHeight || 800) * 0.85;
+        if (projectsWrapper) {
+          const rect = projectsWrapper.getBoundingClientRect();
+          if (rect.top < trigger) projectsWrapper.classList.add('in-view');
+        }
+        if (experienceWrapper) {
+          const rect = experienceWrapper.getBoundingClientRect();
+          if (rect.top < trigger) experienceWrapper.classList.add('in-view');
+        }
+        if (testimonialsWrapper) {
+          const rect = testimonialsWrapper.getBoundingClientRect();
+          if (rect.top < trigger) testimonialsWrapper.classList.add('in-view');
+        }
+      };
+      window.addEventListener('scroll', checkSectionsInView, { passive: true });
+      checkSectionsInView();
+
+      // Smooth scroll navigation links to sections
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          const targetId = this.getAttribute('href');
+          if (targetId && targetId !== '#') {
+            const targetEl = document.querySelector(targetId);
+            if (targetEl) {
+              e.preventDefault();
+              targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+          }
+        });
+      });
+
+      // Project Cards Custom Cursor Badge Follower
+      const cursorBadge = document.getElementById('projectCursorBadge');
+      const badgeTitle = cursorBadge ? cursorBadge.querySelector('.badge-title') : null;
+      const badgeArrowSvg = cursorBadge ? cursorBadge.querySelector('.badge-arrow svg') : null;
+
+      let mouseX = -1000, mouseY = -1000;
+      let targetX = -1000, targetY = -1000;
+      let isBadgeActive = false;
+
+      window.addEventListener('mousemove', (e) => {
+        targetX = e.clientX;
+        targetY = e.clientY;
+        if (!isBadgeActive) {
+          mouseX = targetX;
+          mouseY = targetY;
+        }
+      });
+
+      const updateCursorBadge = () => {
+        if (isBadgeActive && cursorBadge) {
+          mouseX += (targetX - mouseX) * 0.35;
+          mouseY += (targetY - mouseY) * 0.35;
+          cursorBadge.style.left = `${mouseX}px`;
+          cursorBadge.style.top = `${mouseY}px`;
+        }
+        requestAnimationFrame(updateCursorBadge);
+      };
+      requestAnimationFrame(updateCursorBadge);
+
+      document.querySelectorAll('.project-card').forEach(card => {
+        const imageBox = card.querySelector('.project-image-box');
+        if (!imageBox || !cursorBadge) return;
+
+        const badgeColor = card.getAttribute('data-cursor-color') || '#FE820A';
+        const badgeText = card.getAttribute('data-cursor-title') || '';
+
+        imageBox.addEventListener('mouseenter', (e) => {
+          isBadgeActive = true;
+          mouseX = e.clientX;
+          mouseY = e.clientY;
+          cursorBadge.style.left = `${mouseX}px`;
+          cursorBadge.style.top = `${mouseY}px`;
+          cursorBadge.style.backgroundColor = badgeColor;
+          if (badgeTitle) badgeTitle.innerHTML = badgeText;
+          if (badgeArrowSvg) badgeArrowSvg.setAttribute('stroke', badgeColor);
+          cursorBadge.classList.add('is-visible');
+        });
+
+        imageBox.addEventListener('mouseleave', () => {
+          isBadgeActive = false;
+          cursorBadge.classList.remove('is-visible');
+        });
+      });
+
+      // Horizontal Drag-to-scroll for Testimonials Grid
+      const testimonialsGrid = document.querySelector('.testimonials-grid');
+      if (testimonialsGrid) {
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        testimonialsGrid.addEventListener('mousedown', (e) => {
+          isDown = true;
+          testimonialsGrid.style.cursor = 'grabbing';
+          startX = e.pageX - testimonialsGrid.offsetLeft;
+          scrollLeft = testimonialsGrid.scrollLeft;
+        });
+
+        window.addEventListener('mouseup', () => {
+          if (isDown) {
+            isDown = false;
+            if (testimonialsGrid) testimonialsGrid.style.cursor = 'default';
+          }
+        });
+
+        testimonialsGrid.addEventListener('mousemove', (e) => {
+          if (!isDown) return;
+          e.preventDefault();
+          const x = e.pageX - testimonialsGrid.offsetLeft;
+          const walk = (x - startX) * 1.5;
+          testimonialsGrid.scrollLeft = scrollLeft - walk;
+        });
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,2065 @@
+/* Custom Fonts */
+@font-face {
+  font-family: 'Basote';
+  src: url('basote-font/Basote-BF66e77629b4955.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MozaicGEO';
+  src: url('mozaic-font-family-1718270767-0/MozaicGEO-Light-BF65792617d17f9.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MozaicGEO';
+  src: url('mozaic-font-family-1718270767-0/MozaicGEO-Regular-BF65792616e075e.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MozaicGEO';
+  src: url('mozaic-font-family-1718270767-0/MozaicGEO-Medium-BF65792617daaee.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MozaicGEO';
+  src: url('mozaic-font-family-1718270767-0/MozaicGEO-SemiBold-BF65792616e68bd.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MozaicGEO';
+  src: url('mozaic-font-family-1718270767-0/MozaicGEO-Bold-BF65792617206a6.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'RealistWide';
+  src: url('fonnts.com-RealistWide.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'RealistWide';
+  src: url('fonnts.com-RealistWide_Italic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'RealistWide';
+  src: url('fonnts.com-RealistWide_Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'RealistWide';
+  src: url('fonnts.com-RealistWide_Medium_Italic.otf') format('opentype');
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  src: url('1. OpenType Font Files/Cormorant-BoldItalic.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  src: url('1. OpenType Font Files/Cormorant-RegularItalic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  src: url('1. OpenType Font Files/Cormorant-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* CSS Reset & Variables */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: #FFFCDE; /* Off-white background below the banner */
+  overflow-x: hidden;
+  cursor: url('cursor-scaled.png'), auto; /* Custom mouse cursor */
+}
+
+/* Hero Section Banner */
+.hero-section {
+  position: sticky;
+  top: 0;
+  width: 100vw;
+  aspect-ratio: 3840 / 1624; /* Maintain the background image aspect ratio */
+  background-color: #FFFCDE; /* Off-white color fallback for seamless blending */
+  overflow: hidden;
+  z-index: 1; /* Sits below the content section */
+  will-change: transform, filter, opacity; /* GPU acceleration hint */
+  transform-origin: center center;
+}
+
+/* Layered Backgrounds for Mouse Move Parallax */
+.hero-bg-blue {
+  position: absolute;
+  top: -2%; /* Extend slightly beyond container to prevent gaps when translating */
+  left: -2%;
+  width: 104%;
+  height: 104%;
+  background-image: url('blueBG.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1;
+  transition: transform 0.1s ease-out; /* Smooth transition lag for organic movement */
+  will-change: transform;
+}
+
+.hero-bg-silver {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('Silverframe-bg.png');
+  background-size: cover;
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  z-index: 2; /* Sits above the blue background layer but below elements */
+  pointer-events: none; /* Let pointer click interactions pass through */
+}
+
+/* Navigation Bar */
+.navbar-container {
+  position: fixed; /* Sticky fixed across scroll */
+  top: 2.2vw;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: max-content;
+  z-index: 100; /* Floats above everything */
+  transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease;
+  opacity: 1;
+}
+
+.navbar-container.nav-hidden {
+  transform: translateY(-140%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 3.8vw; /* Spacing between items */
+  background: rgba(255, 255, 255, 0.08); /* Frosted translucent glass */
+  backdrop-filter: blur(12px) saturate(140%); /* Rich frosted glassmorphism over hero */
+  -webkit-backdrop-filter: blur(12px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.28); /* Crisp translucent glass border */
+  padding: 0.35vw 0.35vw 0.35vw 3.2vw; /* Left padding for balance */
+  border-radius: 9999px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08); /* Subtle glass elevation */
+  transition: background-color 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* Scrolled state over Work & Experience */
+.navbar.scrolled {
+  background: rgba(74, 44, 17, 0.45);
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  border: 1px solid rgba(255, 252, 222, 0.3);
+}
+
+/* Maroon state when in Testimonials Section */
+.navbar.navbar-maroon {
+  background: rgba(112, 1, 69, 0.88); /* Rich frosted maroon */
+  backdrop-filter: blur(16px) saturate(150%);
+  -webkit-backdrop-filter: blur(16px) saturate(150%);
+  border: 1px solid rgba(255, 252, 222, 0.35);
+  box-shadow: none; /* Removed navbar shadow on testimonial page */
+}
+
+.navbar.navbar-maroon .nav-link {
+  color: #FFFCDE;
+}
+
+.navbar.navbar-maroon .nav-link:hover {
+  color: #ffffff;
+}
+
+.navbar.navbar-maroon .btn-contact {
+  background: #FFFCDE;
+  color: #700145;
+}
+
+.navbar.navbar-maroon .mail-icon {
+  filter: brightness(0) saturate(100%) invert(8%) sepia(87%) saturate(6325%) hue-rotate(314deg) brightness(85%) contrast(105%);
+}
+
+.nav-link {
+  color: #FFFCDE; /* Off-white color */
+  text-decoration: none;
+  font-family: 'RealistWide', sans-serif;
+  font-size: 0.95vw;
+  font-weight: 400; /* Regular weight */
+  letter-spacing: 0.02em;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #ffffff;
+}
+
+.btn-contact {
+  display: flex;
+  align-items: center;
+  gap: 0.6vw;
+  background: #FFFCDE; /* Off-white background */
+  color: #18728C; /* Theme teal color */
+  font-family: 'RealistWide', sans-serif;
+  text-decoration: none;
+  padding: 0.7vw 1.6vw;
+  border-radius: 0.8vw 9999px 9999px 0.8vw;
+  font-size: 0.95vw;
+  font-weight: 500; /* Medium weight */
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.btn-contact:hover {
+  background: #ffffff; /* Change background to pure white on hover */
+  transform: none; /* Remove physical lift shift */
+  box-shadow: none; /* Remove glow shadow completely */
+}
+
+.mail-icon {
+  width: 1.2vw;
+  height: 1.2vw;
+  object-fit: contain;
+  transition: filter 0.3s ease;
+}
+
+/* Intro Text (Left Side) */
+.intro-container {
+  position: absolute;
+  left: calc(7.2vw + 20px);
+  top: 14vw;
+  z-index: 5;
+  color: #ffffff;
+  pointer-events: none;
+  user-select: none;
+}
+
+.name-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 243px; /* Fixed width matching 'harsh' at 80px font-size to prevent layout shifting when text changes */
+}
+
+.intro-top {
+  display: flex;
+  justify-content: space-between; /* Align outer edges to the left and right limits of the name below */
+  align-items: flex-end; /* Anchor baseline of text to the bottom of the container */
+  width: 100%;
+  height: 32px; /* Lock height to prevent vertical shifting when text changes */
+  font-family: 'MozaicGEO', sans-serif;
+  font-size: 24px;
+  font-weight: 500; /* Medium weight looks very elegant for Mozaic */
+  color: rgba(255, 255, 255, 0.85);
+  letter-spacing: 0.05em;
+  margin-bottom: 8px; /* Shift the name down slightly for perfect spacing */
+}
+
+.name {
+  font-family: 'Basote', sans-serif;
+  font-size: 80px;
+  font-weight: normal; /* Basote font uses normal weight */
+  margin: 0;
+  line-height: 0.85; /* Sits closer to the top line */
+  letter-spacing: -0.01em;
+}
+
+/* Central Illustration Composition */
+.illustration-box {
+  position: absolute;
+  left: 50%;
+  bottom: 2.4vw;
+  transform: translateX(-50%);
+  width: 50vw;
+  height: 38vw;
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* Rotating Circle */
+.circle-container {
+  position: absolute;
+  left: 50%;
+  top: calc(43% + 40px);
+  transform: translate(-50%, -50%);
+  width: 30.6vw;
+  height: 29.6vw;
+  z-index: 1;
+}
+
+.circle-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transform-origin: 49.83% 48.42%; /* Precise design center to prevent wobble */
+  animation: rotateCircle 35s linear infinite; /* Smooth clockwise rotation */
+}
+
+/* Floating Character */
+.guy-container {
+  position: absolute;
+  left: 50%;
+  bottom: 3.5vw;
+  transform: translateX(-50%);
+  width: 43.9vw;
+  height: 29.2vw;
+  z-index: 2;
+}
+
+.guy-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  animation: floatGuy 3s ease-in-out infinite alternate; /* Gentle, slightly faster vertical bobbing */
+}
+
+/* Animations */
+@keyframes rotateCircle {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes floatGuy {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-0.7vw); /* Subtle float movement */
+  }
+}
+
+/* Work Stacking Track (Enables full 4-project browsing, then sticky freeze) */
+.work-stack-track {
+  position: relative;
+  width: 100%;
+  z-index: 2;
+}
+
+/* Extra Content Section */
+.content-section {
+  position: sticky; /* Sticky Layer 2: Slides over Hero, freezes as Experience stacks over it */
+  top: 0;
+  width: 100%;
+  min-height: 100vh;
+  margin-top: 0; /* Aligns flush below hero with zero overlap */
+  background-color: #FFFCDE; /* Off-white canvas matching the user request */
+  box-shadow: none; /* Removed slide elevation shadow */
+  display: flex;
+  flex-direction: column;
+  transform-origin: center bottom;
+  will-change: transform, filter;
+  transition: transform 0.1s linear, filter 0.1s linear;
+}
+
+/* Description Text (Right Side) */
+.description-container {
+  position: absolute;
+  right: calc(7.2vw + 70px); /* Shifted 50px to the left total */
+  top: calc(14vw + 15px); /* Shifted 15px down from the top total */
+  z-index: 5;
+  color: #ffffff; /* Pure white text */
+  pointer-events: none;
+  user-select: none;
+}
+
+.description-text {
+  font-family: 'MozaicGEO', sans-serif;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  margin: 0;
+  width: 220px; /* Constrain width to wrap exactly into 5 lines */
+  text-align: justify; /* Justify text to align both left and right edges */
+}
+
+/* Scrolled Header Styles (Solid Warm Cream Theme - No Glassmorphism) */
+.navbar.scrolled {
+  background: #F9F5D8; /* Solid warm cream pill background matching reference */
+  border-color: #DCD4B3; /* Solid crisp border matching reference */
+  backdrop-filter: none; /* Removed glassmorphism blur */
+  -webkit-backdrop-filter: none;
+  box-shadow: none;
+}
+
+.navbar.scrolled .nav-link {
+  color: #4A2C11; /* Dark chocolate brown text */
+  font-weight: 500;
+}
+
+.navbar.scrolled .nav-link:hover {
+  color: #1a0f05;
+}
+
+.navbar.scrolled .btn-contact {
+  background: #4A2C11; /* Dark chocolate brown button */
+  color: #FFFCDE; /* Off-white text */
+}
+
+.navbar.scrolled .btn-contact:hover {
+  background: #38200b; /* Deep brown on hover */
+  color: #ffffff;
+}
+
+.navbar.scrolled .mail-icon {
+  /* Color filter to convert Mail.svg to #FFFCDE (off-white) */
+  filter: brightness(0) saturate(100%) invert(97%) sepia(12%) saturate(958%) hue-rotate(338deg) brightness(106%) contrast(101%);
+}
+
+/* Continuous Horizontal Logo Marquee with Left & Right Gradient Fade Masks */
+.logo-marquee-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: clamp(20px, 2.2vh, 32px) 0;
+  background-color: #FFFCDE;
+  mask-image: linear-gradient(to right, transparent 0%, black 16%, black 84%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 16%, black 84%, transparent 100%);
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  user-select: none;
+  z-index: 5;
+}
+
+.logo-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: logoMarqueeScroll 28s linear infinite;
+  will-change: transform;
+}
+
+.logo-marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes logoMarqueeScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.logo-marquee-group {
+  display: flex;
+  align-items: flex-end;
+  flex-shrink: 0;
+}
+
+.marquee-item {
+  display: inline-flex;
+  align-items: flex-end;
+  gap: clamp(12px, 1.1vw, 18px);
+  margin-right: clamp(80px, 7.5vw, 135px);
+  flex-shrink: 0;
+}
+
+.marquee-label {
+  font-family: 'MozaicGEO', 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(12.5px, 0.92vw, 14.5px);
+  font-weight: 500;
+  color: #666666;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  line-height: 1.1;
+  padding-bottom: 3px; /* Sits cleanly aligned at the bottom baseline */
+}
+
+.marquee-logo {
+  height: clamp(28px, 2.2vw, 36px);
+  width: auto;
+  object-fit: contain;
+  display: block;
+  opacity: 0.92;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.marquee-logo.logo-skoda {
+  height: clamp(28px, 2.1vw, 34px);
+}
+
+.marquee-logo.logo-samsung {
+  height: clamp(28px, 2.1vw, 34px);
+}
+
+.marquee-logo.logo-sigchi {
+  height: clamp(30px, 2.3vw, 37px);
+}
+
+.marquee-logo.logo-indiahci {
+  height: clamp(28px, 2.1vw, 34px);
+}
+
+.marquee-item:hover .marquee-logo {
+  opacity: 1;
+  transform: scale(1.04);
+}
+
+.marquee-item:hover .marquee-label {
+  color: #1a140e;
+}
+
+/* Interactive Projects Showcase Section */
+.projects-section {
+  width: 100%;
+  min-height: 100vh;
+  padding: calc(1.5vw + 45px) calc(7.2vw + 60px) 5vw calc(7.2vw + 60px);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Fixed top alignment to keep header permanently locked in place */
+  box-sizing: border-box;
+}
+
+.projects-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 1400px;
+  container-type: inline-size; /* Enables container query units (cqi) */
+  opacity: 0;
+  transform: translateY(45px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.projects-content-wrapper.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.projects-header {
+  position: relative; /* Context for absolute lotus illustration */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 24px;
+  width: 100%;
+  flex-shrink: 0; /* Header size and position are strictly locked */
+}
+
+.header-lotus-img {
+  position: absolute;
+  right: calc(100% + 18px); /* Sits to the left of heading text with clean spacing */
+  top: 50%;
+  transform: translateY(-50%);
+  height: 58px;
+  width: auto;
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.projects-subtitle {
+  font-family: 'MozaicGEO', sans-serif;
+  font-size: 15px;
+  font-weight: 500; /* MozaicGEO Medium */
+  color: #7A5C3E;
+  letter-spacing: 0.01em;
+  margin-bottom: 6px;
+}
+
+.projects-title {
+  font-family: 'MozaicGEO', sans-serif;
+  font-size: 38px;
+  font-weight: 700; /* MozaicGEO Bold */
+  color: #4A2C11;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin: 0;
+}
+
+/* Modern Asymmetric Editorial Project Rows */
+.projects-container,
+.projects-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: clamp(24px, 2.5vw, 36px);
+  width: 100%;
+  margin-bottom: clamp(36px, 4vw, 56px);
+}
+
+.projects-row:last-child {
+  margin-bottom: 0;
+}
+
+/* Base Project Card Architecture */
+.project-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: #700145; /* Dark berry canvas */
+  border: none;
+  border-radius: 0; /* Zero corner radius */
+  padding: clamp(18px, 2vw, 28px);
+  box-sizing: border-box;
+  text-decoration: none;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  width: calc(50% - clamp(12px, 1.25vw, 18px));
+  flex: 1 1 0;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+  box-shadow: none; /* No shadow */
+}
+
+/* Equal 50/50 Card Widths */
+.project-card.project-wide,
+.project-card.project-compact {
+  width: calc(50% - clamp(12px, 1.25vw, 18px));
+  flex: 1 1 0;
+}
+
+/* Card Hover Elevation */
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: none;
+}
+
+.project-card-inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Top Card Header: Category Pills & Status Badge */
+.project-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  margin-bottom: clamp(14px, 1.4vw, 20px);
+}
+
+.project-pills {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.project-pill {
+  font-family: 'MozaicGEO', sans-serif;
+  font-size: clamp(11px, 0.82vw, 12.5px);
+  font-weight: 500;
+  color: #FFFCDE;
+  background: #830051;
+  border: 1px solid rgba(255, 252, 222, 0.2);
+  padding: 4px 12px;
+  border-radius: 0; /* Zero corner radius */
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
+.pill-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.project-meta-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'MozaicGEO', sans-serif;
+  font-size: clamp(11px, 0.82vw, 12.5px);
+  font-weight: 500;
+  color: #FFFCDE;
+  opacity: 0.9;
+  white-space: nowrap;
+}
+
+.meta-badge-award {
+  font-family: 'MozaicGEO', sans-serif;
+  font-size: clamp(11px, 0.82vw, 12.5px);
+  font-weight: 600;
+  color: #FFFCDE;
+  background: #830051;
+  border: 1px solid rgba(255, 252, 222, 0.3);
+  padding: 3px 10px;
+  border-radius: 0; /* Zero corner radius */
+  white-space: nowrap;
+}
+
+/* Media Showcase Frame (16:10) */
+.project-image-box {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 0; /* Zero corner radius */
+  overflow: hidden;
+  background-color: #ffffff;
+  border: none;
+  margin-bottom: clamp(18px, 1.8vw, 24px);
+  cursor: none; /* Shows custom interactive cursor */
+}
+
+.project-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  user-select: none;
+  -webkit-user-drag: none;
+  transition: transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.project-card:hover .project-img {
+  transform: scale(1.045);
+}
+
+/* Floating Case Study Action Pill on Hover (Zero Shadow on Image) */
+.project-hover-overlay {
+  position: absolute;
+  inset: 0;
+  background: transparent; /* No dark shadow or gradient overlay */
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 16px 18px;
+  box-sizing: border-box;
+  opacity: 0;
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+
+.project-card:hover .project-hover-overlay {
+  opacity: 1;
+}
+
+.project-hover-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #FFFCDE;
+  color: #700145;
+  font-family: 'MozaicGEO', sans-serif;
+  font-size: 13px;
+  font-weight: 300; /* Light font weight */
+  padding: 8px 16px;
+  border-radius: 0; /* Zero corner radius */
+  border: 1px solid #FFFCDE;
+  transform: translateY(10px);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: none; /* No shadow */
+}
+
+.project-card:hover .project-hover-pill {
+  transform: translateY(0);
+}
+
+/* Bottom Card Footer: Title, Description & Action Button */
+.project-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  width: 100%;
+}
+
+.project-title-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  flex: 1;
+}
+
+.project-card-title {
+  font-family: 'MozaicGEO', sans-serif;
+  font-size: clamp(20px, 1.65vw, 25px);
+  font-weight: 700;
+  color: #FFFCDE;
+  line-height: 1.22;
+  letter-spacing: -0.015em;
+  margin: 0;
+  transition: opacity 0.25s ease;
+}
+
+.project-card:hover .project-card-title {
+  opacity: 0.95;
+}
+
+.project-card-desc {
+  font-family: 'MozaicGEO', 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(13px, 0.92vw, 14.5px);
+  font-weight: 400;
+  color: #FFFCDE;
+  opacity: 0.9;
+  line-height: 1.45;
+  letter-spacing: 0.005em;
+  margin: 0;
+}
+
+.project-action-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #FFFCDE;
+  color: #700145;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease;
+  margin-top: 2px;
+}
+
+.project-card:hover .project-action-btn {
+  transform: scale(1.08) rotate(45deg);
+  background: #FFFCDE;
+  color: #700145;
+}
+
+/* Floating Project Cursor Badge */
+.project-cursor-badge {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 99999;
+  border-radius: 0; /* Sharp rectangular edges with zero curved radius */
+  padding: 16px 20px;
+  box-sizing: border-box;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.6);
+  transition: opacity 0.22s cubic-bezier(0.16, 1, 0.3, 1), transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.25s ease;
+  will-change: transform, opacity;
+  box-shadow: none; /* Removed shadow */
+  min-width: 175px;
+  max-width: 220px;
+}
+
+.project-cursor-badge.is-visible {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.project-cursor-badge .badge-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  width: 100%;
+}
+
+.project-cursor-badge .badge-title {
+  font-family: 'Plus Jakarta Sans', 'MozaicGEO', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.28;
+  letter-spacing: -0.01em;
+  white-space: normal;
+  user-select: none;
+}
+
+.project-cursor-badge .badge-arrow {
+  width: 28px;
+  height: 28px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: none; /* Removed shadow */
+}
+
+.project-cursor-badge .badge-arrow svg {
+  display: block;
+}
+
+.project-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* Project Tag Metadata Bar */
+.project-tags {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 14px;
+  padding: 0 2px;
+}
+
+.project-tag {
+  font-family: 'MozaicGEO', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: #1a140e;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  user-select: none;
+}
+
+/* View More Projects Small Action Button */
+.view-more-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: clamp(32px, 4vw, 48px);
+  margin-bottom: 16px;
+}
+
+.btn-view-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #700145;
+  color: #FFFCDE;
+  padding: 12px 26px;
+  border-radius: 0; /* Zero corner radius matching sharp aesthetic */
+  border: none;
+  text-decoration: none;
+  font-family: 'MozaicGEO', sans-serif;
+  font-size: 14.5px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.25s ease;
+  box-shadow: none;
+}
+
+.btn-view-more:hover {
+  transform: translateY(-3px);
+  background-color: #830051;
+}
+
+.btn-view-more-text {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
+}
+
+.btn-view-more-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-view-more:hover .btn-view-more-arrow {
+  transform: translate(2px, -2px);
+}
+
+/* Experience & Honors Section (Stacking Card Page Layer 3) */
+.experience-section {
+  position: relative;
+  z-index: 3; /* Layer 3: Stacks directly in front of Featured Work */
+  width: 100%;
+  min-height: 100vh;
+  background-color: #FFFCDE; /* Off-white sheet canvas */
+  border-radius: 0; /* Sharp rectangular edges with zero curved radius */
+  box-shadow: none; /* Removed slide elevation shadow */
+  border-top: none;
+  padding: calc(2.2vw + 100px) calc(7.2vw + 60px) 140px calc(7.2vw + 60px);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+
+.experience-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 1400px;
+  opacity: 0;
+  transform: translateY(45px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.experience-content-wrapper.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.experience-header {
+  position: relative; /* Context for absolute lotus illustration */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 36px;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.header-lotus-img {
+  position: absolute;
+  left: -115px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 95px; /* Restored prominent size to match design */
+  height: auto;
+  user-select: none;
+  -webkit-user-drag: none;
+  pointer-events: none;
+}
+
+.experience-subtitle {
+  font-family: 'MozaicGEO', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: #7A5C3E;
+  letter-spacing: 0.01em;
+  margin-bottom: 6px;
+}
+
+.experience-title {
+  font-family: 'MozaicGEO', sans-serif;
+  font-size: 38px;
+  font-weight: 700;
+  color: #4A2C11;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin: 0;
+}
+
+.experience-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 16px; /* 16px spacing between cards */
+}
+
+/* Individual Experience Boxed Card with Burgundy Ribbon */
+.experience-card {
+  display: flex;
+  align-items: stretch;
+  border: 1px solid #700145; /* Dark berry outline */
+  background-color: #FFFCDE; /* Canvas match */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.experience-ribbon {
+  flex: 0 0 30px;
+  width: 30px;
+  background-color: #700145; /* Solid dark berry vertical stripe */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+.experience-ribbon-text {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-family: 'MozaicGEO', 'Plus Jakarta Sans', sans-serif;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #FFFCDE;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.experience-card-body {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  padding: 24px 32px 28px 32px;
+  gap: 36px;
+  box-sizing: border-box;
+}
+
+.experience-logo-col {
+  flex: 0 0 300px;
+  width: 300px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding-top: 4px;
+}
+
+.experience-logo-img {
+  max-height: 42px;
+  max-width: 250px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  object-position: left center;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.experience-logo-img.experience-logo-sigchi {
+  max-height: 47px;
+  max-width: 290px;
+}
+
+.experience-content-col {
+  flex: 1;
+  max-width: 740px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.experience-role {
+  font-family: 'Cormorant Garamond', 'Cormorant', Georgia, serif;
+  font-size: 26px;
+  font-weight: 600;
+  font-style: italic; /* Bold Italic */
+  color: #1a140e;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin: 0 0 4px 0;
+}
+
+.experience-num-large {
+  font-size: 45px; /* 3px smaller than 48px */
+  line-height: 0.85;
+  display: inline-block;
+  vertical-align: -2px;
+  font-family: inherit;
+  font-style: italic;
+  font-weight: 400; /* Regular weight, not bold */
+}
+
+.experience-date {
+  font-family: 'MozaicGEO', 'Plus Jakarta Sans', sans-serif;
+  font-size: 13.5px;
+  font-weight: 400; /* Regular */
+  color: #4A2C11;
+  letter-spacing: 0.01em;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.experience-desc {
+  font-family: 'MozaicGEO', 'Plus Jakarta Sans', sans-serif;
+  font-size: 14.5px;
+  font-weight: 400; /* Regular */
+  color: #1a140e;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  margin: 0;
+}
+
+/* Responsive breakpoint for mobile/tablet */
+@media (max-width: 860px) {
+  .projects-section {
+    padding: 70px 20px 90px 20px;
+  }
+  .projects-container,
+  .projects-row {
+    flex-direction: column;
+    gap: 32px;
+    margin-bottom: 32px;
+  }
+  .project-card.project-wide,
+  .project-card.project-compact,
+  .project-card {
+    width: 100% !important;
+    flex: none !important;
+  }
+  .project-card {
+    padding: 18px 16px;
+    border-radius: 0;
+  }
+  .project-card-header {
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+  }
+  .project-pills {
+    gap: 6px;
+  }
+  .project-meta-tag {
+    margin-left: auto;
+  }
+
+  .experience-section {
+    padding: 70px 24px 90px 24px;
+  }
+
+  .experience-card-body {
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px 20px 24px 20px;
+  }
+
+  .experience-logo-col {
+    width: 100%;
+    flex: none;
+  }
+
+  .header-lotus-img {
+    position: static;
+    transform: none;
+    margin-bottom: 14px;
+    width: 52px;
+  }
+}
+
+/* Stacking Tracks */
+.work-stack-track,
+.experience-stack-track {
+  position: relative;
+  width: 100%;
+}
+
+/* Testimonials Section (Hear it from them - Layered Card Stacking Layer 4) */
+.testimonials-section {
+  position: relative;
+  z-index: 4;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #700145; /* Solid dark berry canvas */
+  box-shadow: none; /* Removed slide elevation shadow */
+  padding: calc(2.2vw + 80px) calc(7.2vw + 60px) calc(120px + 0.25rem) calc(7.2vw + 60px);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+
+.testimonials-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 1400px;
+  opacity: 0;
+  transform: translateY(45px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.testimonials-content-wrapper.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.testimonials-header {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 36px;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.testimonials-subtitle {
+  font-family: 'MozaicGEO', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: #FFFCDE;
+  letter-spacing: 0.01em;
+  margin-bottom: 6px;
+}
+
+.testimonials-title {
+  font-family: 'MozaicGEO', sans-serif;
+  font-size: 38px;
+  font-weight: 700;
+  color: #FFFCDE;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin: 0;
+}
+
+.testimonials-grid {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 32px;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 12px;
+  padding-right: 40px;
+  scrollbar-width: none; /* Clean hidden scrollbar */
+}
+
+.testimonials-grid::-webkit-scrollbar {
+  display: none;
+}
+
+.testimonial-card {
+  flex: 0 0 clamp(540px, 40vw, 640px); /* Scaled down card width */
+  min-width: 460px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem; /* 0.25rem modular gap between body, footer, and bottom stripe */
+  border-radius: 0;
+  position: relative;
+  box-sizing: border-box;
+  scroll-snap-align: start;
+}
+
+.testimonial-body {
+  background-color: #830051;
+  padding: 26px 28px 20px 28px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.testimonial-num {
+  font-family: 'MozaicGEO', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #FFFCDE;
+  margin-bottom: 14px;
+  display: block;
+  letter-spacing: -0.01em;
+}
+
+.testimonial-quote {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.testimonial-quote p {
+  font-family: 'MozaicGEO', sans-serif;
+  font-size: 13.5px;
+  font-weight: 300; /* Light font weight */
+  color: #FFFCDE;
+  line-height: 1.4;
+  letter-spacing: 0.005em;
+  margin: 0;
+}
+
+.testimonial-author-footer {
+  display: flex;
+  gap: 0.25rem; /* 0.25rem gap between author info and person's image */
+  align-items: stretch;
+}
+
+.testimonial-author-info {
+  background-color: #830051;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 15px 18px 15px 28px;
+}
+
+.testimonial-author-name {
+  font-family: 'MozaicGEO', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #FFFCDE;
+  margin-bottom: 4px;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+.testimonial-author-role,
+.testimonial-author-company {
+  font-family: 'MozaicGEO', sans-serif;
+  font-size: 12.5px;
+  font-weight: 300;
+  color: #FFFCDE;
+  opacity: 0.95;
+  line-height: 1.35;
+}
+
+.testimonial-author-role {
+  margin-bottom: 2px;
+}
+
+.testimonial-author-avatar-wrapper {
+  background-color: #830051;
+  display: flex;
+  align-items: stretch;
+  flex-shrink: 0;
+}
+
+.testimonial-author-avatar {
+  width: 105px;
+  height: 100%;
+  min-height: 90px;
+  object-fit: cover;
+  object-position: center 20%;
+  display: block;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.testimonial-bottom-stripe {
+  height: 7px;
+  width: 100%;
+  background-color: #FFFCDE;
+  flex-shrink: 0;
+}
+
+@media (max-width: 900px) {
+  .testimonials-section {
+    padding: 70px 24px 90px 24px;
+  }
+  .testimonials-grid {
+    gap: 20px;
+    padding-right: 24px;
+  }
+  .testimonial-card {
+    flex: 0 0 calc(100vw - 48px);
+    min-width: 0;
+  }
+  .testimonial-body {
+    padding: 28px 24px 24px 24px;
+  }
+  .testimonial-author-info {
+    padding: 18px 16px 18px 24px;
+  }
+  .testimonial-author-avatar {
+    width: 110px;
+  }
+  .testimonial-author-name {
+    font-size: 22px;
+  }
+}
+
+/* Contact / Footer Section (Single continuous scroll after Testimonials) */
+.footer-section {
+  position: relative;
+  z-index: 4;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #172F41;
+  background-image: url('blueBG.png');
+  background-size: 100% 100%; /* Full image top-to-bottom with zero cropping */
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  padding: clamp(30px, 4.5vh, 50px) 0 25px 0; /* 25px gap above blue background's bottom */
+}
+
+.footer-headline-container {
+  width: 100%;
+  padding: 0 clamp(20px, 4vw, 60px);
+  box-sizing: border-box;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.footer-headline {
+  font-family: 'MozaicGEO', sans-serif;
+  font-size: clamp(20px, 2.2vw, 30px); /* 30px headline font size */
+  font-weight: 700;
+  color: #FFFCDE;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.footer-card-container {
+  position: relative;
+  width: calc(100% - clamp(20px, 3.5vw, 50px)); /* Margin on left & right */
+  max-width: 1750px;
+  margin: clamp(16px, 3vh, 35px) auto 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-shrink: 0;
+}
+
+.footer-card-bg-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  user-select: none;
+  -webkit-user-drag: none;
+  pointer-events: none;
+}
+
+.footer-content-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 62.5%; /* Top beige area of harshbeige.png */
+  display: flex;
+  align-items: flex-start;
+  padding: clamp(20px, 3.5vw, 50px) clamp(24px, 4.5vw, 75px) 0 clamp(24px, 4.5vw, 75px);
+  box-sizing: border-box;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  width: 100%;
+  align-items: start;
+  gap: 20px;
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.footer-col-nav {
+  justify-self: start;
+}
+
+.footer-col-contact {
+  justify-self: center;
+}
+
+.footer-col-social {
+  justify-self: end;
+}
+
+.footer-col-label {
+  font-family: 'MozaicGEO', sans-serif;
+  font-size: 14px;
+  font-weight: 600; /* SemiBold */
+  letter-spacing: 0.12em;
+  color: #8D8E8F;
+  text-transform: uppercase;
+  margin-bottom: clamp(18px, 2.5vh, 26px); /* Increased spacing below Category Labels */
+}
+
+.footer-links-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(8px, 1.3vh, 14px); /* Increased spacing between links */
+}
+
+.footer-link {
+  font-family: 'RealistWide', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #4D9CB3; /* Updated to #4D9CB3 */
+  text-decoration: none;
+  transition: opacity 0.2s ease, transform 0.2s ease, color 0.2s ease;
+  display: inline-block;
+  width: fit-content;
+}
+
+.footer-link:hover {
+  opacity: 0.8;
+  transform: translateX(3px);
+}
+
+.footer-contact-items {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(16px, 2.4vh, 24px); /* Increased spacing between number and gmail */
+}
+
+.footer-contact-item {
+  font-family: 'MozaicGEO', sans-serif;
+  font-size: clamp(18px, 2.2vw, 34px);
+  font-weight: 700;
+  color: #4D9CB3; /* Updated to #4D9CB3 */
+  text-decoration: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.footer-contact-item:hover {
+  opacity: 0.8;
+  transform: translateX(3px);
+}
+
+@media (max-width: 860px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .footer-col-contact {
+    grid-column: 1 / -1;
+    justify-self: start;
+    order: -1;
+    width: 100%;
+  }
+  .footer-content-overlay {
+    height: 70%;
+    padding: 20px 20px 0 20px;
+  }
+  .footer-col-label {
+    font-size: 13px;
+  }
+  .footer-link {
+    font-size: 16px;
+  }
+  .footer-contact-item {
+    font-size: 22px;
+    white-space: normal;
+    word-break: break-word;
+  }
+}
+
+@media (max-width: 540px) {
+  .footer-grid {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .footer-card-container {
+    margin-top: 16px;
+  }
+}
+
+/* ==========================================================================
+   Case Study Page Styles (transportation.html)
+   ========================================================================== */
+
+.case-study-page {
+  background-color: #FFFCDE; /* Signature warm off-white canvas */
+  color: #1a140e;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Floating Dual-Pill Navbar Container */
+.case-study-navbar-container {
+  display: flex;
+  align-items: stretch; /* Forces both pills to have identical computed height */
+  gap: 12px;
+  position: fixed;
+  top: 2.2vw;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: max-content;
+  max-width: calc(100vw - 32px);
+  z-index: 1000;
+  pointer-events: auto;
+  transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease;
+  opacity: 1;
+}
+
+.case-study-navbar-container.nav-hidden {
+  transform: translateY(-140%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.case-study-page .nav-pill-btn.back-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: rgba(255, 252, 222, 0.65); /* Rich frosted translucent glass */
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border: 1px solid rgba(74, 44, 17, 0.14);
+  padding: 0 clamp(16px, 1.8vw, 24px);
+  border-radius: 9999px;
+  box-shadow: 0 10px 30px rgba(74, 44, 17, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.85);
+  color: #4A2C11; /* Dark brown text */
+  text-decoration: none;
+  font-family: 'RealistWide', sans-serif;
+  font-size: clamp(13px, 0.95vw, 15px);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.25s ease, color 0.2s ease, box-shadow 0.3s ease;
+  white-space: nowrap;
+}
+
+.case-study-page .nav-pill-btn.back-pill:hover {
+  background: rgba(255, 255, 255, 0.9);
+  color: #1a140e;
+  transform: translateY(-2px);
+  border-color: rgba(74, 44, 17, 0.28);
+  box-shadow: 0 12px 36px rgba(74, 44, 17, 0.1), inset 0 1px 0 rgba(255, 255, 255, 1);
+}
+
+.case-study-page .nav-pill-btn.back-pill svg {
+  display: block;
+  stroke: #4A2C11;
+  transition: transform 0.25s ease, stroke 0.2s ease;
+}
+
+.case-study-page .nav-pill-btn.back-pill:hover svg {
+  transform: translateX(-2px);
+  stroke: #1a140e;
+}
+
+.case-study-page .navbar {
+  background: rgba(255, 252, 222, 0.65); /* Rich frosted translucent glass */
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border: 1px solid rgba(74, 44, 17, 0.14);
+  box-shadow: 0 10px 30px rgba(74, 44, 17, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.85);
+}
+
+.case-study-page .navbar .nav-link {
+  color: #4A2C11;
+}
+
+.case-study-page .navbar .nav-link:hover {
+  color: #1a140e;
+}
+
+.case-study-page .navbar .btn-contact {
+  background: #4A2C11;
+  color: #FFFCDE;
+  box-shadow: 0 4px 14px rgba(74, 44, 17, 0.16);
+}
+
+.case-study-page .navbar .btn-contact:hover {
+  background: #381f08;
+  color: #ffffff;
+}
+
+.case-study-page .navbar .mail-icon {
+  filter: brightness(0) saturate(100%) invert(98%) sepia(20%) saturate(452%) hue-rotate(344deg) brightness(103%) contrast(101%);
+}
+
+.case-study-page-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.case-study-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: clamp(110px, 9.5vw, 140px) clamp(20px, 4vw, 40px) clamp(40px, 5vw, 64px) clamp(20px, 4vw, 40px);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(36px, 4.5vw, 56px);
+  box-sizing: border-box;
+}
+
+.case-study-bottom-nav-wrap {
+  padding-top: clamp(32px, 4vw, 56px);
+  padding-bottom: 90px;
+}
+
+/* Case Study Hero */
+.case-study-hero {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.case-study-title {
+  font-family: 'MozaicGEO', sans-serif;
+  font-size: clamp(26px, 2.4vw, 36px);
+  font-weight: 700;
+  color: #4A2C11;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  margin: 0 0 14px 0;
+}
+
+.case-study-lead {
+  font-family: 'MozaicGEO', 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(14px, 1.05vw, 16px);
+  font-weight: 400;
+  color: #3a2b1c;
+  line-height: 1.45;
+  max-width: 960px;
+  margin: 0;
+}
+
+/* Project Specifications Table Section - Off-white Glassmorphism */
+.case-study-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.spec-table-card {
+  background: rgba(250, 246, 226, 0.68);
+  backdrop-filter: blur(16px) saturate(130%);
+  -webkit-backdrop-filter: blur(16px) saturate(130%);
+  border: 1px solid rgba(74, 44, 17, 0.12);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(74, 44, 17, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+.spec-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.spec-table td {
+  padding: clamp(14px, 1.6vw, 18px) clamp(18px, 2.2vw, 26px);
+  border-bottom: 1px solid rgba(74, 44, 17, 0.08);
+  vertical-align: top;
+  box-sizing: border-box;
+}
+
+.spec-table tr:last-child td {
+  border-bottom: none;
+}
+
+.spec-key {
+  width: 28%;
+  font-family: 'MozaicGEO', sans-serif;
+  font-size: clamp(14px, 1.05vw, 16px);
+  font-weight: 600;
+  color: #381f08;
+  border-right: 1px solid rgba(74, 44, 17, 0.08);
+  background: rgba(242, 237, 212, 0.45);
+}
+
+.spec-value {
+  width: 72%;
+  font-family: 'MozaicGEO', 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(14px, 1.05vw, 15.5px);
+  font-weight: 400;
+  color: #2b1f14;
+  line-height: 1.55;
+  background: transparent;
+}
+
+/* Fullscreen Single Scrollable Presentation Slides Section */
+.case-study-slides-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  box-sizing: border-box;
+  background: #FFFCDE;
+  overflow: hidden;
+}
+
+.case-study-slide-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  margin: 0;
+  padding: 0;
+  border: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* Explore More Projects Section at bottom of Case Study */
+.case-study-explore-section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: clamp(56px, 6vw, 88px) clamp(20px, 4vw, 40px) clamp(70px, 8vw, 100px) clamp(20px, 4vw, 40px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+
+.case-study-explore-header {
+  margin-bottom: clamp(24px, 2.5vw, 36px);
+  width: 100%;
+}
+
+.case-study-explore-title {
+  font-family: 'MozaicGEO', sans-serif;
+  font-size: clamp(24px, 2.4vw, 34px);
+  font-weight: 700;
+  color: #4A2C11;
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.case-study-explore-grid {
+  width: 100%;
+  margin-bottom: 0;
+}
+
+/* Footer */
+.case-study-footer {
+  background: #172F41;
+  padding: 32px 0;
+  width: 100%;
+  color: #FFFCDE;
+  box-sizing: border-box;
+}
+
+.case-study-footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 4vw, 40px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  box-sizing: border-box;
+}
+
+.case-study-footer-copy {
+  font-family: 'MozaicGEO', sans-serif;
+  font-size: 14px;
+  opacity: 0.85;
+  margin: 0;
+}
+
+.case-study-footer-links {
+  display: flex;
+  gap: 24px;
+}
+
+.case-study-footer-links a {
+  color: #4D9CB3;
+  font-family: 'RealistWide', sans-serif;
+  font-size: 15px;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.case-study-footer-links a:hover {
+  opacity: 0.8;
+}
+
+@media (max-width: 860px) {
+  .case-study-navbar-container {
+    top: 14px;
+    gap: 8px;
+    width: max-content;
+    max-width: calc(100vw - 24px);
+  }
+  .case-study-page .nav-pill-btn.back-pill {
+    padding: 0 14px;
+    font-size: 12.5px;
+    gap: 5px;
+  }
+  .case-study-page .nav-pill-btn.back-pill svg {
+    width: 13px;
+    height: 13px;
+  }
+  .navbar-container:not(.case-study-navbar-container) {
+    top: 14px;
+    width: max-content;
+    max-width: calc(100vw - 28px);
+  }
+  .navbar {
+    gap: clamp(10px, 2.5vw, 20px);
+    padding: 4px 4px 4px 14px;
+  }
+  .nav-link {
+    font-size: 12.5px;
+  }
+  .btn-contact {
+    font-size: 11.5px;
+    padding: 6px 12px;
+    gap: 5px;
+    border-radius: 6px 9999px 9999px 6px;
+  }
+  .mail-icon {
+    width: 12px;
+    height: 12px;
+  }
+  .spec-table, .spec-table tbody, .spec-table tr, .spec-table td {
+    display: block;
+    width: 100%;
+  }
+  .spec-key {
+    border-right: none;
+    border-bottom: 1px solid rgba(74, 44, 17, 0.06);
+    padding-bottom: 8px;
+    background: rgba(242, 237, 212, 0.35);
+  }
+  .spec-value {
+    padding-top: 8px;
+  }
+}
+
+@media (max-width: 600px) {
+  .case-study-navbar-container .navbar .nav-link {
+    display: none;
+  }
+  .case-study-navbar-container .navbar {
+    padding: 4px 4px 4px 4px;
+    gap: 0;
+  }
+  .case-study-navbar-container .btn-contact {
+    border-radius: 9999px;
+    padding: 6px 12px;
+    font-size: 11.5px;
+  }
+  .case-study-page .nav-pill-btn.back-pill {
+    padding: 0 12px;
+    font-size: 11.5px;
+  }
+}
+
+
+
+

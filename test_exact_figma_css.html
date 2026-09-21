@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  @font-face {
+    font-family: 'MozaicGEO';
+    src: url('mozaic-font-family-1718270767-0/MozaicGEO-Regular-BF65792616e075e.otf') format('opentype');
+    font-weight: 400;
+  }
+  @font-face {
+    font-family: 'MozaicGEO';
+    src: url('mozaic-font-family-1718270767-0/MozaicGEO-Medium-BF65792617daaee.otf') format('opentype');
+    font-weight: 500;
+  }
+  @font-face {
+    font-family: 'MozaicGEO';
+    src: url('mozaic-font-family-1718270767-0/MozaicGEO-SemiBold-BF65792616e68bd.otf') format('opentype');
+    font-weight: 600;
+  }
+  @font-face {
+    font-family: 'MozaicGEO';
+    src: url('mozaic-font-family-1718270767-0/MozaicGEO-Bold-BF65792617206a6.otf') format('opentype');
+    font-weight: 700;
+  }
+  
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background-color: #700145;
+    padding: 80px 0;
+    font-family: 'MozaicGEO', sans-serif;
+    color: #FFFCDE;
+    display: flex;
+    justify-content: center;
+  }
+
+  .testimonials-container {
+    width: 100%;
+    max-width: 72rem;
+    padding: 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .testimonials-header {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 2.25rem;
+    margin-left: 7.2rem;
+  }
+  
+  .header-lotus-img {
+    position: absolute;
+    left: -7.2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 5.9375rem; /* ~95px */
+    height: auto;
+  }
+  
+  .testimonials-subtitle {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: #FFFCDE;
+    letter-spacing: 0.01em;
+    margin-bottom: 0.375rem;
+  }
+  
+  .testimonials-title {
+    font-size: 2.375rem;
+    font-weight: 700;
+    color: #FFFCDE;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+  }
+
+  .testimonials-grid {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    width: 100%;
+  }
+
+  /* Testimonial Card */
+  .testimonial-card {
+    width: 34.5rem;
+    background-color: #830051;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Upper Card */
+  .testimonial-upper-card {
+    width: 34.5rem;
+    height: 21.9375rem;
+    padding: 1.75rem 1.875rem 1.5rem 1.875rem;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+  }
+
+  .testimonial-num {
+    font-family: "MozaicGEO", sans-serif;
+    font-size: 1.0625rem;
+    font-weight: 600;
+    color: #FFFCDE;
+    margin-bottom: 1.125rem;
+    display: block;
+    line-height: normal;
+  }
+
+  .testimonial-quote {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .testimonial-text {
+    color: #FFFCDE;
+    font-family: "MozaicGEO", sans-serif;
+    font-size: 1.0625rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  /* Lower Card */
+  .testimonial-lower-card {
+    display: flex;
+    align-items: stretch;
+    height: 6.875rem;
+    border-top: 1.5px solid #700145;
+    background-color: #830051;
+    box-sizing: border-box;
+  }
+
+  .testimonial-lower-text-area {
+    width: 27.3125rem;
+    height: 6.875rem;
+    padding: 0 1.875rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+
+  .omkar-text {
+    color: #FFFCDE;
+    font-family: "MozaicGEO", sans-serif;
+    font-size: 1.59481rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-bottom: 0.25rem;
+  }
+
+  .deputy-general-manager-text {
+    color: #FFFCDE;
+    font-family: "MozaicGEO", sans-serif;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .testimonial-photo {
+    width: 6.875rem;
+    height: 6.875rem;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    object-position: center 20%;
+    display: block;
+    flex-shrink: 0;
+  }
+
+  /* Beige Strip */
+  .beige-strip {
+    width: 34.4375rem;
+    height: 0.6875rem;
+    background-color: #FFFCDE;
+    flex-shrink: 0;
+  }
+</style>
+</head>
+<body>
+  <div class="testimonials-container">
+    <div class="testimonials-header">
+      <img src="lotus.png" alt="Lotus" class="header-lotus-img">
+      <span class="testimonials-subtitle">Not just my perspective</span>
+      <h2 class="testimonials-title">Hear it from them</h2>
+    </div>
+
+    <div class="testimonials-grid">
+      <!-- Card 1 -->
+      <div class="testimonial-card">
+        <div class="testimonial-upper-card">
+          <span class="testimonial-num">01</span>
+          <div class="testimonial-quote">
+            <p class="testimonial-text">“I highly recommend Harsh based on our time working together during internship at SAVW. Harsh possesses a rare combination of empathetic curiosity and rigorous methodology. His approach to UX research is highly structured yet adaptable, combining qualitative insight with practical data to advocate effectively for the user. What stood out most was his ability to translate complex research findings into clear, actionable recommendations for our teams.</p>
+            <p class="testimonial-text">He was proactive, collaborated effortlessly within the team and across departments, and brought a fresh, constructive energy to the team. He significantly contributed to our project’s user-centric direction and demonstrated the maturity of a seasoned researcher. He would be a tremendous asset to any UX team lucky enough to have him even though for shorter period.”</p>
+          </div>
+        </div>
+        <div class="testimonial-lower-card">
+          <div class="testimonial-lower-text-area">
+            <span class="omkar-text">Omkar Divekar</span>
+            <span class="deputy-general-manager-text">Deputy General Manager</span>
+            <span class="deputy-general-manager-text">@ Škoda Auto Volkswagen India Pvt. Ltd.</span>
+          </div>
+          <img src="omkar.png" alt="Omkar Divekar" class="testimonial-photo">
+        </div>
+        <div class="beige-strip"></div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="testimonial-card">
+        <div class="testimonial-upper-card">
+          <span class="testimonial-num">02</span>
+          <div class="testimonial-quote">
+            <p class="testimonial-text">“During internship, Harsh demonstrated strong UX research skills by effectively conducting user studies, analyzing insights, and translating findings into actionable recommendations for automotive user experiences.</p>
+            <p class="testimonial-text">His structured approach, curiosity, and commitment to user-centered design make him a promising UX researcher with strong potential for a successful career.”</p>
+          </div>
+        </div>
+        <div class="testimonial-lower-card">
+          <div class="testimonial-lower-text-area">
+            <span class="omkar-text">Ashish Deshpande</span>
+            <span class="deputy-general-manager-text">Deputy Manager</span>
+            <span class="deputy-general-manager-text">@ Škoda Auto Volkswagen India Pvt. Ltd.</span>
+          </div>
+          <img src="ashish.png" alt="Ashish Deshpande" class="testimonial-photo">
+        </div>
+        <div class="beige-strip"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

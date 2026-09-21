@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  @font-face {
+    font-family: 'MozaicGEO';
+    src: url('mozaic-font-family-1718270767-0/MozaicGEO-Light-BF65792617d17f9.otf') format('opentype');
+    font-weight: 300;
+  }
+  @font-face {
+    font-family: 'MozaicGEO';
+    src: url('mozaic-font-family-1718270767-0/MozaicGEO-Regular-BF65792616e075e.otf') format('opentype');
+    font-weight: 400;
+  }
+  @font-face {
+    font-family: 'MozaicGEO';
+    src: url('mozaic-font-family-1718270767-0/MozaicGEO-SemiBold-BF65792616e68bd.otf') format('opentype');
+    font-weight: 600;
+  }
+  @font-face {
+    font-family: 'MozaicGEO';
+    src: url('mozaic-font-family-1718270767-0/MozaicGEO-Bold-BF65792617206a6.otf') format('opentype');
+    font-weight: 700;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background-color: #700145;
+    padding: 60px 80px;
+    font-family: 'MozaicGEO', sans-serif;
+    color: #FFFCDE;
+  }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    width: 100%;
+    max-width: 1360px;
+    margin: 0 auto;
+  }
+
+  .testimonial-card {
+    background-color: #830051;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .testimonial-body {
+    padding: 36px 36px 28px 36px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .testimonial-num {
+    font-size: 18px;
+    font-weight: 600;
+    color: #FFFCDE;
+    margin-bottom: 22px;
+    display: block;
+    letter-spacing: -0.01em;
+  }
+
+  .testimonial-quote {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .testimonial-quote p {
+    font-family: 'MozaicGEO', sans-serif;
+    font-size: 15.5px;
+    font-weight: 300; /* Light font weight */
+    color: #FFFCDE;
+    line-height: 1.38; /* Reduced line height */
+    letter-spacing: 0.005em;
+  }
+
+  .testimonial-author-footer {
+    border-top: 2px solid #700145;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #830051;
+    min-height: 125px;
+    padding: 0 0.25rem 0 0; /* 0.25rem gap on right */
+  }
+
+  .testimonial-author-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 18px 20px 18px 36px;
+  }
+
+  .testimonial-author-name {
+    font-size: 26px;
+    font-weight: 600;
+    color: #FFFCDE;
+    margin-bottom: 6px;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+  }
+
+  .testimonial-author-role,
+  .testimonial-author-company {
+    font-size: 14.5px;
+    font-weight: 300;
+    color: #FFFCDE;
+    opacity: 0.95;
+    line-height: 1.35;
+  }
+
+  .testimonial-author-role {
+    margin-bottom: 2px;
+  }
+
+  .testimonial-author-avatar {
+    width: 130px;
+    height: 120px;
+    margin: 0.25rem; /* 0.25rem gap around the person's image */
+    object-fit: cover;
+    object-position: center 20%;
+    flex-shrink: 0;
+    display: block;
+  }
+
+  .testimonial-bottom-stripe {
+    height: 10px;
+    width: 100%;
+    background-color: #FFFCDE;
+    flex-shrink: 0;
+    margin-bottom: 0.25rem; /* 0.25rem gap below */
+  }
+</style>
+</head>
+<body>
+  <div class="testimonials-grid">
+    <div class="testimonial-card">
+      <div class="testimonial-body">
+        <span class="testimonial-num">01</span>
+        <div class="testimonial-quote">
+          <p>“I highly recommend Harsh based on our time working together during internship at SAVW. Harsh possesses a rare combination of empathetic curiosity and rigorous methodology. His approach to UX research is highly structured yet adaptable, combining qualitative insight with practical data to advocate effectively for the user. What stood out most was his ability to translate complex research findings into clear, actionable recommendations for our teams.</p>
+          <p>He was proactive, collaborated effortlessly within the team and across departments, and brought a fresh, constructive energy to the team. He significantly contributed to our project’s user-centric direction and demonstrated the maturity of a seasoned researcher. He would be a tremendous asset to any UX team lucky enough to have him even though for shorter period.”</p>
+        </div>
+      </div>
+      <div class="testimonial-author-footer">
+        <div class="testimonial-author-info">
+          <span class="testimonial-author-name">Omkar Divekar</span>
+          <span class="testimonial-author-role">Deputy General Manager</span>
+          <span class="testimonial-author-company">@ Škoda Auto Volkswagen India Pvt. Ltd.</span>
+        </div>
+        <img src="omkar.png" alt="Omkar Divekar" class="testimonial-author-avatar">
+      </div>
+      <div class="testimonial-bottom-stripe"></div>
+    </div>
+  </div>
+</body>
+</html>
