@@ -4,13 +4,64 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Harsh - Portfolio</title>
-  <link rel="stylesheet" href="style.css?v=83">
+  <link rel="stylesheet" href="style.css?v=84">
   <!-- Google Fonts for Plus Jakarta Sans & Cormorant Garamond -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- Awwwards Level Editorial Portfolio Preloader -->
+  <div class="portfolio-preloader" id="portfolioPreloader" aria-hidden="false">
+    <div class="preloader-inner">
+      <!-- Top Micro-Metadata Header -->
+      <div class="preloader-header">
+        <div class="preloader-meta-left">
+          <span class="preloader-pulse-dot"></span>
+          <span class="preloader-author">Harsh Bhawsar</span>
+        </div>
+        <div class="preloader-meta-center">
+          <span class="preloader-edition">Portfolio &copy; 2026</span>
+        </div>
+        <div class="preloader-meta-right">
+          <span class="preloader-status" id="preloaderStatus">Initializing</span>
+        </div>
+      </div>
+
+      <!-- Centerpiece: Kinetic Wordmark Carousel -->
+      <div class="preloader-centerpiece">
+        <div class="preloader-words-container" id="preloaderWordsContainer">
+          <div class="preloader-word-item is-active" data-index="0">
+            <span class="word-index">01</span>
+            <span class="word-text">User Experience</span>
+          </div>
+          <div class="preloader-word-item" data-index="1">
+            <span class="word-index">02</span>
+            <span class="word-text">Interaction Design</span>
+          </div>
+          <div class="preloader-word-item" data-index="2">
+            <span class="word-index">03</span>
+            <span class="word-text">Intelligent Systems</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Progress Counter & Hairline Fill -->
+      <div class="preloader-footer">
+        <div class="preloader-counter-row">
+          <span class="preloader-loading-label">Loading Craft</span>
+          <div class="preloader-counter-box">
+            <span class="preloader-number" id="preloaderNumber">0</span>
+            <span class="preloader-percent">%</span>
+          </div>
+        </div>
+        <div class="preloader-progress-track">
+          <div class="preloader-progress-bar" id="preloaderProgressBar"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Navbar Container (Fixed on top of screen) -->
   <header class="navbar-container">
     <nav class="navbar">
@@ -32,7 +83,7 @@
     <div class="intro-container">
       <div class="name-wrapper">
         <div class="intro-top">
-          <span class="namaste">hello</span>
+          <span class="namaste">Hello</span>
           <span class="i-am">i am</span>
         </div>
         <h1 class="name">harsh</h1>
@@ -755,7 +806,89 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      const greetings = ['hello', 'नमस्ते', 'Hola!', 'Bonjour', 'こんにちは', 'Ciao', 'Hallo'];
+      // Awwwards Editorial Preloader Controller
+      const preloader = document.getElementById('portfolioPreloader');
+      const preloaderNumber = document.getElementById('preloaderNumber');
+      const preloaderProgressBar = document.getElementById('preloaderProgressBar');
+      const preloaderStatus = document.getElementById('preloaderStatus');
+      const wordItems = document.querySelectorAll('.preloader-word-item');
+
+      if (preloader && preloaderNumber && preloaderProgressBar) {
+        let count = 0;
+        let activeWordIdx = 0;
+        const totalDuration = 1600; // ms
+        const startTime = performance.now();
+
+        const updateWordSlide = (idx) => {
+          if (idx === activeWordIdx) return;
+          wordItems.forEach((item, i) => {
+            if (i === idx) {
+              item.classList.remove('is-prev');
+              item.classList.add('is-active');
+            } else if (i < idx) {
+              item.classList.remove('is-active');
+              item.classList.add('is-prev');
+            } else {
+              item.classList.remove('is-active', 'is-prev');
+            }
+          });
+          activeWordIdx = idx;
+        };
+
+        const tick = (now) => {
+          const elapsed = now - startTime;
+          const progress = Math.min(elapsed / totalDuration, 1);
+          
+          // Non-linear easing (fast start, deliberate pacing, smooth finish)
+          const easeProgress = 1 - Math.pow(1 - progress, 3);
+          count = Math.floor(easeProgress * 100);
+
+          preloaderNumber.textContent = count;
+          preloaderProgressBar.style.width = `${count}%`;
+
+          // Stage word transitions
+          if (count < 38) {
+            updateWordSlide(0);
+            if (preloaderStatus) preloaderStatus.textContent = 'Initializing';
+          } else if (count < 78) {
+            updateWordSlide(1);
+            if (preloaderStatus) preloaderStatus.textContent = 'Curating Craft';
+          } else if (count < 100) {
+            updateWordSlide(2);
+            if (preloaderStatus) preloaderStatus.textContent = 'Polishing Details';
+          } else {
+            updateWordSlide(2);
+            if (preloaderStatus) preloaderStatus.textContent = 'Ready';
+          }
+
+          if (progress < 1) {
+            requestAnimationFrame(tick);
+          } else {
+            preloaderNumber.textContent = 100;
+            preloaderProgressBar.style.width = '100%';
+            
+            // Settle pause then cinematic reveal
+            setTimeout(() => {
+              preloader.classList.add('is-dismissed');
+              document.body.classList.add('preloader-revealed');
+              
+              setTimeout(() => {
+                preloader.style.display = 'none';
+                preloader.setAttribute('aria-hidden', 'true');
+                if (typeof updateStackMetrics === 'function') {
+                  updateStackMetrics();
+                }
+              }, 1000);
+            }, 220);
+          }
+        };
+
+        requestAnimationFrame(tick);
+      } else {
+        document.body.classList.add('preloader-revealed');
+      }
+
+      const greetings = ['Hello', 'नमस्ते', 'Hola!', 'Bonjour', 'こんにちは', 'Ciao'];
       let index = 0;
       const greetingEl = document.querySelector('.namaste');
       
