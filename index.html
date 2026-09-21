@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Harsh - Portfolio</title>
-  <link rel="stylesheet" href="style.css?v=91">
+  <link rel="stylesheet" href="style.css?v=92">
   <!-- Google Fonts for Plus Jakarta Sans & Cormorant Garamond -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -917,9 +917,9 @@
         
         // Smart Navbar Show on scroll-up / Hide on scroll-down
         if (navbarContainer) {
-          if (scrollY <= 20) {
+          if (scrollY <= 10) {
             navbarContainer.classList.remove('nav-hidden');
-          } else if (scrollY > lastScrollY && scrollY > 60) {
+          } else if (scrollY > lastScrollY && scrollY > 10) {
             navbarContainer.classList.add('nav-hidden');
           } else if (scrollY < lastScrollY) {
             navbarContainer.classList.remove('nav-hidden');

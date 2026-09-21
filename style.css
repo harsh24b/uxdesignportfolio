@@ -172,9 +172,10 @@ body {
 }
 
 .navbar-container.nav-hidden {
-  transform: translateY(-140%);
-  opacity: 0;
-  pointer-events: none;
+  transform: translateY(-160%) !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  animation: none !important;
 }
 
 .navbar {
@@ -2822,8 +2823,8 @@ body:not(.preloader-revealed) {
   overflow: hidden;
 }
 
-body.preloader-revealed .navbar-container {
-  animation: navReveal 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+body.preloader-revealed .navbar-container:not(.nav-hidden) {
+  animation: navReveal 0.85s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 body.preloader-revealed .intro-container {
