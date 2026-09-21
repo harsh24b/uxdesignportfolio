@@ -1262,7 +1262,8 @@ body {
 
 /* Stacking Tracks */
 .work-stack-track,
-.experience-stack-track {
+.experience-stack-track,
+.about-stack-track {
   position: relative;
   width: 100%;
 }
@@ -1270,7 +1271,7 @@ body {
 /* Testimonials Section (Hear it from them - Layered Card Stacking Layer 4) */
 .testimonials-section {
   position: relative;
-  z-index: 4;
+  z-index: 5;
   width: 100%;
   min-height: 100vh;
   background-color: #700145; /* Solid dark berry canvas */
@@ -2060,6 +2061,553 @@ body {
   }
 }
 
+/* ==========================================================================
+   About Section & Interactive Photo Bento Architecture
+   ========================================================================== */
 
+.about-stack-track {
+  position: relative;
+  width: 100%;
+}
 
+.about-section {
+  position: relative;
+  z-index: 4;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #FFFCDE; /* Off-white sheet canvas */
+  border-radius: 0;
+  box-shadow: none;
+  border-top: none;
+  padding: calc(2.2vw + 100px) calc(7.2vw + 60px) 140px calc(7.2vw + 60px);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  box-sizing: border-box;
+}
 
+.about-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 1400px;
+  opacity: 0;
+  transform: translateY(45px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.about-content-wrapper.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.about-header {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 36px;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.about-subtitle {
+  font-family: 'MozaicGEO', 'Plus Jakarta Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: #7A5C3E;
+  letter-spacing: 0.01em;
+  margin-bottom: 6px;
+}
+
+.about-title {
+  font-family: 'MozaicGEO', 'Plus Jakarta Sans', sans-serif;
+  font-size: 38px;
+  font-weight: 700;
+  color: #4A2C11;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin: 0;
+}
+
+/* Bento Grid */
+.about-bento-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 1.35fr;
+  gap: 24px;
+  width: 100%;
+  margin-bottom: 28px;
+}
+
+.about-bento-card {
+  background: #FFFCDE;
+  border: 1px solid #700145;
+  border-radius: 0;
+  padding: clamp(24px, 2.4vw, 36px);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease;
+  will-change: transform;
+  transform-style: preserve-3d;
+}
+
+.about-bento-card:hover {
+  box-shadow: none;
+}
+
+/* Left Bio Card */
+.about-bio-card {
+  justify-content: flex-start;
+}
+
+.about-bio-portrait-wrapper {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  overflow: hidden;
+  margin-bottom: 22px;
+  background: #2B1824;
+  border: 1px solid rgba(112, 1, 69, 0.15);
+}
+
+.about-bio-portrait-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 25%;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.about-bio-card:hover .about-bio-portrait-img {
+  transform: scale(1.035);
+}
+
+.about-portrait-status-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  right: 12px;
+  background: rgba(255, 252, 222, 0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(112, 1, 69, 0.2);
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: #4A2C11;
+  letter-spacing: -0.01em;
+}
+
+.status-live-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #22c55e;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.25);
+  animation: pulseLive 2s infinite ease-in-out;
+}
+
+@keyframes pulseLive {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.5);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 6px rgba(34, 197, 94, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+  }
+}
+
+.about-bio-heading {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(22px, 1.85vw, 27px);
+  font-weight: 700;
+  color: #4A2C11;
+  line-height: 1.25;
+  margin: 0 0 14px 0;
+  letter-spacing: -0.01em;
+}
+
+.about-bio-paragraph {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 14.5px;
+  line-height: 1.62;
+  color: #5C3D2E;
+  margin: 0 0 12px 0;
+}
+
+.about-bio-paragraph strong {
+  color: #700145;
+  font-weight: 700;
+}
+
+.about-focus-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.about-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: rgba(112, 1, 69, 0.05);
+  border: 1px solid rgba(112, 1, 69, 0.22);
+  padding: 6px 13px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #700145;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: default;
+}
+
+.about-tag:hover {
+  background-color: #700145;
+  color: #FFFCDE;
+  border-color: #700145;
+  transform: translateY(-2px);
+}
+
+.tag-accent-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* Right Gallery Card */
+.about-gallery-card {
+  justify-content: flex-start;
+}
+
+.about-gallery-header {
+  margin-bottom: 20px;
+}
+
+.about-gallery-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(24px, 2vw, 30px);
+  font-weight: 700;
+  color: #4A2C11;
+  margin: 0 0 4px 0;
+  letter-spacing: -0.01em;
+}
+
+.about-gallery-caption {
+  display: block;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 13.5px;
+  color: #7A5C3E;
+  margin-bottom: 14px;
+}
+
+.about-filter-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.about-tab-btn {
+  background: transparent;
+  border: 1px solid #700145;
+  color: #700145;
+  padding: 6px 14px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 0;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.about-tab-btn:hover {
+  background: rgba(112, 1, 69, 0.12);
+  transform: translateY(-2px);
+}
+
+.about-tab-btn.active {
+  background: #700145;
+  color: #FFFCDE;
+  transform: translateY(-2px);
+}
+
+.about-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  width: 100%;
+}
+
+.about-photo-card {
+  position: relative;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  cursor: pointer;
+  background: #2B1824;
+  border: 1px solid rgba(112, 1, 69, 0.2);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease;
+  will-change: transform, opacity;
+}
+
+.photo-img-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.about-photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.about-photo-card:hover .about-photo-img {
+  transform: scale(1.08);
+}
+
+.photo-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(43, 24, 36, 0.05) 0%, rgba(43, 24, 36, 0.88) 100%);
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 10px;
+  transition: opacity 0.3s ease;
+  box-sizing: border-box;
+}
+
+.about-photo-card:hover .photo-overlay {
+  opacity: 1;
+}
+
+.photo-pill-badge {
+  align-self: flex-start;
+  background: rgba(255, 252, 222, 0.95);
+  color: #700145;
+  font-size: 10.5px;
+  font-weight: 700;
+  padding: 3px 7px;
+  margin-bottom: 4px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  letter-spacing: -0.01em;
+}
+
+.photo-caption-text {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  color: #FFFCDE;
+  line-height: 1.3;
+  margin: 0;
+}
+
+/* Bottom Insights Row */
+.about-insights-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  width: 100%;
+}
+
+.about-insight-card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background: #FFFCDE;
+  border: 1px solid #700145;
+  border-radius: 0;
+  padding: 24px 26px;
+  box-sizing: border-box;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.25s ease;
+  will-change: transform;
+}
+
+.about-insight-card:hover {
+  transform: translateY(-4px);
+  background-color: #FFF9D1;
+}
+
+.insight-icon-box {
+  width: 42px;
+  height: 42px;
+  background-color: #700145;
+  color: #FFFCDE;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.insight-title {
+  font-family: 'MozaicGEO', 'Plus Jakarta Sans', sans-serif;
+  font-size: 16.5px;
+  font-weight: 700;
+  color: #4A2C11;
+  margin: 0 0 6px 0;
+  letter-spacing: -0.01em;
+}
+
+.insight-text {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: #5C3D2E;
+  margin: 0;
+}
+
+/* Interactive Lightbox Modal */
+.about-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.about-lightbox.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.about-lightbox-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(35, 18, 28, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.about-lightbox-container {
+  position: relative;
+  z-index: 2;
+  max-width: 90vw;
+  max-height: 90vh;
+  background: #FFFCDE;
+  border: 1px solid #700145;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: scale(0.95);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.about-lightbox.is-open .about-lightbox-container {
+  transform: scale(1);
+}
+
+.about-lightbox-close {
+  position: absolute;
+  top: -16px;
+  right: -16px;
+  width: 36px;
+  height: 36px;
+  background: #700145;
+  color: #FFFCDE;
+  border: 2px solid #FFFCDE;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.about-lightbox-close:hover {
+  transform: scale(1.1);
+  background: #830051;
+}
+
+.about-lightbox-media {
+  max-width: 100%;
+  max-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.about-lightbox-media img {
+  max-width: 100%;
+  max-height: 70vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.about-lightbox-caption {
+  margin-top: 14px;
+  text-align: center;
+  width: 100%;
+}
+
+.about-lightbox-caption p {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: #4A2C11;
+  margin: 0;
+}
+
+/* Responsive Breakpoints for About Section */
+@media (max-width: 1100px) {
+  .about-bento-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .about-insights-row {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-section {
+    padding: calc(2.2vw + 60px) 24px 80px 24px;
+  }
+  .about-gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .about-bio-portrait-wrapper {
+    height: 260px;
+  }
+  .about-filter-tabs {
+    gap: 6px;
+  }
+  .about-tab-btn {
+    font-size: 11.5px;
+    padding: 5px 11px;
+  }
+}
