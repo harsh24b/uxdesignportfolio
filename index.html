@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Harsh - Portfolio</title>
-  <link rel="stylesheet" href="style.css?v=85">
+  <link rel="stylesheet" href="style.css?v=86">
   <!-- Google Fonts for Plus Jakarta Sans & Cormorant Garamond -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,7 +34,7 @@
     <nav class="navbar">
       <a href="#work" class="nav-link">Work</a>
       <a href="#about" class="nav-link">About</a>
-      <a href="#resume" class="nav-link">Resume</a>
+      <a href="https://drive.google.com/file/d/1CLON9XYxwq5IKir6hD3HLnAb5jEPf0mV/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="nav-link">Resume</a>
       <a href="#contact" class="btn-contact">
         <img src="Mail.svg" class="mail-icon" alt="Mail Icon">
         Work with me
@@ -731,7 +731,7 @@
             <ul class="footer-links-list">
               <li><a href="#work" class="footer-link">Work</a></li>
               <li><a href="#about" class="footer-link">About</a></li>
-              <li><a href="#resume" class="footer-link">Resume</a></li>
+              <li><a href="https://drive.google.com/file/d/1CLON9XYxwq5IKir6hD3HLnAb5jEPf0mV/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="footer-link">Resume</a></li>
             </ul>
           </div>
 
@@ -908,13 +908,14 @@
         const hero = document.querySelector('.hero-section');
         const navbar = document.querySelector('.navbar');
         
-        // Smart Navbar Show on scroll-up / Hide on scroll-down
+        // Smart Navbar: Appears when scrolling up, hides when scrolling down
         if (navbarContainer) {
-          if (scrollY <= 20) {
+          const delta = scrollY - lastScrollY;
+          if (scrollY <= 50) {
             navbarContainer.classList.remove('nav-hidden');
-          } else if (scrollY > lastScrollY && scrollY > 60) {
+          } else if (delta > 6 && scrollY > 70) {
             navbarContainer.classList.add('nav-hidden');
-          } else if (scrollY < lastScrollY) {
+          } else if (delta < -6) {
             navbarContainer.classList.remove('nav-hidden');
           }
         }
