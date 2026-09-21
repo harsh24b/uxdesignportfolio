@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Harsh - Portfolio</title>
-  <link rel="stylesheet" href="style.css?v=81">
+  <link rel="stylesheet" href="style.css?v=82">
   <!-- Google Fonts for Plus Jakarta Sans & Cormorant Garamond -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -321,13 +321,6 @@
             <span class="experience-subtitle">Where Craft Meets Validation</span>
             <h2 class="experience-title">Experience & Honors</h2>
           </div>
-
-          <!-- Interactive Filter Tabs -->
-          <div class="experience-filter-tabs">
-            <button class="experience-tab-btn active" data-exp-filter="all">All Milestones <span class="tab-count">4</span></button>
-            <button class="experience-tab-btn" data-exp-filter="industry">Industry & Research <span class="tab-count">2</span></button>
-            <button class="experience-tab-btn" data-exp-filter="community">Leadership & Community <span class="tab-count">2</span></button>
-          </div>
         </div>
 
         <div class="experience-milestones-list" id="experienceMilestonesList">
@@ -335,11 +328,6 @@
           <!-- Milestone 01: Škoda Auto | Volkswagen -->
           <div class="milestone-card is-expanded" data-category="industry" id="milestone-skoda">
             <button class="milestone-summary-btn" aria-expanded="true">
-              <div class="milestone-num-col">
-                <span class="milestone-num">01</span>
-                <span class="milestone-type-badge badge-industry">Internship</span>
-              </div>
-              
               <div class="milestone-main-col">
                 <div class="milestone-role-title">UX Research Intern</div>
                 <div class="milestone-company-name">Škoda Auto Volkswagen India Pvt. Ltd.</div>
@@ -347,7 +335,7 @@
 
               <div class="milestone-meta-col">
                 <span class="milestone-date-tag">Mar 2026 – Jul 2026</span>
-                <span class="milestone-location-tag">Pune, India</span>
+                <span class="milestone-location-tag">Internship</span>
               </div>
 
               <div class="milestone-expand-icon">
@@ -390,11 +378,6 @@
           <!-- Milestone 02: Samsung PRISM -->
           <div class="milestone-card" data-category="industry" id="milestone-samsung">
             <button class="milestone-summary-btn" aria-expanded="false">
-              <div class="milestone-num-col">
-                <span class="milestone-num">02</span>
-                <span class="milestone-type-badge badge-honors">2x Gold Winner</span>
-              </div>
-              
               <div class="milestone-main-col">
                 <div class="milestone-role-title"><span class="title-highlight-accent">2x</span> First Place Winner</div>
                 <div class="milestone-company-name">Samsung PRISM • Samsung R&D Institute</div>
@@ -402,7 +385,7 @@
 
               <div class="milestone-meta-col">
                 <span class="milestone-date-tag">2025 & 2026 Editions</span>
-                <span class="milestone-location-tag">National Hackathon</span>
+                <span class="milestone-location-tag">Hackathon</span>
               </div>
 
               <div class="milestone-expand-icon">
@@ -445,11 +428,6 @@
           <!-- Milestone 03: ACM SIGCHI -->
           <div class="milestone-card" data-category="community" id="milestone-sigchi">
             <button class="milestone-summary-btn" aria-expanded="false">
-              <div class="milestone-num-col">
-                <span class="milestone-num">03</span>
-                <span class="milestone-type-badge badge-community">Leadership</span>
-              </div>
-              
               <div class="milestone-main-col">
                 <div class="milestone-role-title">Vice Chair</div>
                 <div class="milestone-company-name">MITID ACM SIGCHI Student Chapter</div>
@@ -457,7 +435,7 @@
 
               <div class="milestone-meta-col">
                 <span class="milestone-date-tag">Oct 2024 – Present</span>
-                <span class="milestone-location-tag">ACM SIGCHI</span>
+                <span class="milestone-location-tag">Community</span>
               </div>
 
               <div class="milestone-expand-icon">
@@ -500,11 +478,6 @@
           <!-- Milestone 04: India HCI -->
           <div class="milestone-card" data-category="community" id="milestone-indiahci">
             <button class="milestone-summary-btn" aria-expanded="false">
-              <div class="milestone-num-col">
-                <span class="milestone-num">04</span>
-                <span class="milestone-type-badge badge-volunteering">Volunteering</span>
-              </div>
-              
               <div class="milestone-main-col">
                 <div class="milestone-role-title">Education Initiative SV</div>
                 <div class="milestone-company-name">HCIPAI • India HCI 2026</div>
@@ -512,7 +485,7 @@
 
               <div class="milestone-meta-col">
                 <span class="milestone-date-tag">Jan 2025 – Feb 2026</span>
-                <span class="milestone-location-tag">National Initiative</span>
+                <span class="milestone-location-tag">Volunteering</span>
               </div>
 
               <div class="milestone-expand-icon">
@@ -1123,11 +1096,10 @@
         });
       });
 
-      // Experience & Honors Accordion & Category Filter Controller
+      // Experience & Honors Accordion Controller
       const expCards = document.querySelectorAll('.milestone-card');
-      const expFilterBtns = document.querySelectorAll('.experience-tab-btn');
 
-      // 1. Accordion Toggle
+      // Accordion Toggle
       expCards.forEach(card => {
         const summaryBtn = card.querySelector('.milestone-summary-btn');
         if (summaryBtn) {
@@ -1153,42 +1125,6 @@
             }, 320);
           });
         }
-      });
-
-      // 2. Category Filter Switcher
-      expFilterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-          expFilterBtns.forEach(b => b.classList.remove('active'));
-          btn.classList.add('active');
-
-          const filter = btn.getAttribute('data-exp-filter');
-
-          expCards.forEach(card => {
-            const category = card.getAttribute('data-category');
-            if (filter === 'all' || category === filter) {
-              card.classList.remove('is-hidden');
-              card.style.display = 'block';
-              setTimeout(() => {
-                card.style.opacity = '1';
-                card.style.transform = 'translateY(0)';
-              }, 20);
-            } else {
-              card.classList.add('is-hidden');
-              card.style.opacity = '0';
-              card.style.transform = 'translateY(8px)';
-              setTimeout(() => {
-                if (card.classList.contains('is-hidden')) {
-                  card.style.display = 'none';
-                }
-              }, 220);
-            }
-          });
-
-          // Recalculate sticky stack heights dynamically
-          setTimeout(() => {
-            updateStackMetrics();
-          }, 300);
-        });
       });
 
       // About Gallery Filter Tabs Controller
