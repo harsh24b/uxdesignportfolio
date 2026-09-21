@@ -871,7 +871,10 @@
           const expHeight = experienceSection.offsetHeight;
           const stickyTop2 = windowH >= expHeight ? 0 : (windowH - expHeight);
           
-          expTrack.style.height = `${(windowH - stickyTop2) + windowH}px`;
+          // Generous scroll dwell buffer so Experience & Honors stays comfortably pinned
+          // and doesn't get overtaken quickly by the Testimonials slide
+          const expScrollBuffer = Math.max(windowH * 1.6, 1200);
+          expTrack.style.height = `${(windowH - stickyTop2) + expScrollBuffer}px`;
           experienceSection.style.position = 'sticky';
           experienceSection.style.top = `${stickyTop2}px`;
           testTrack.style.marginTop = `-${windowH}px`;
@@ -908,14 +911,13 @@
         const hero = document.querySelector('.hero-section');
         const navbar = document.querySelector('.navbar');
         
-        // Smart Navbar: Appears when scrolling up, hides when scrolling down
+        // Smart Navbar Show on scroll-up / Hide on scroll-down
         if (navbarContainer) {
-          const delta = scrollY - lastScrollY;
-          if (scrollY <= 50) {
+          if (scrollY <= 20) {
             navbarContainer.classList.remove('nav-hidden');
-          } else if (delta > 6 && scrollY > 70) {
+          } else if (scrollY > lastScrollY && scrollY > 60) {
             navbarContainer.classList.add('nav-hidden');
-          } else if (delta < -6) {
+          } else if (scrollY < lastScrollY) {
             navbarContainer.classList.remove('nav-hidden');
           }
         }

@@ -154,19 +154,18 @@ body {
 /* Navigation Bar */
 .navbar-container {
   position: fixed; /* Sticky fixed across scroll */
-  top: clamp(16px, 2vw, 28px);
+  top: 2.2vw;
   left: 0;
   right: 0;
   margin: 0 auto;
   width: max-content;
-  z-index: 99999; /* Floats above everything */
-  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease;
-  will-change: transform, opacity;
+  z-index: 100; /* Floats above everything */
+  transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease;
   opacity: 1;
 }
 
 .navbar-container.nav-hidden {
-  transform: translateY(-160%);
+  transform: translateY(-140%);
   opacity: 0;
   pointer-events: none;
 }
@@ -174,33 +173,32 @@ body {
 .navbar {
   display: flex;
   align-items: center;
-  gap: clamp(24px, 3.4vw, 48px); /* Spacing between items */
-  background: rgba(255, 255, 255, 0.12); /* Frosted translucent glass */
-  backdrop-filter: blur(18px) saturate(180%); /* Rich frosted glassmorphism over hero */
-  -webkit-backdrop-filter: blur(18px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.32); /* Crisp translucent glass border */
-  padding: 5px 6px 5px clamp(22px, 2.5vw, 36px); /* Left padding for balance */
+  gap: 3.8vw; /* Spacing between items */
+  background: rgba(255, 255, 255, 0.08); /* Frosted translucent glass */
+  backdrop-filter: blur(12px) saturate(140%); /* Rich frosted glassmorphism over hero */
+  -webkit-backdrop-filter: blur(12px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.28); /* Crisp translucent glass border */
+  padding: 0.35vw 0.35vw 0.35vw 3.2vw; /* Left padding for balance */
   border-radius: 9999px;
-  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.4); /* Subtle glass elevation */
-  transition: background 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08); /* Subtle glass elevation */
+  transition: background-color 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
 }
 
 /* Scrolled state over Work & Experience */
 .navbar.scrolled {
-  background: rgba(74, 44, 17, 0.72);
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border: 1px solid rgba(255, 252, 222, 0.28);
-  box-shadow: 0 14px 38px rgba(42, 25, 10, 0.25), inset 0 1px 0 rgba(255, 252, 222, 0.2);
+  background: rgba(74, 44, 17, 0.45);
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  border: 1px solid rgba(255, 252, 222, 0.3);
 }
 
 /* Maroon state when in Testimonials Section */
 .navbar.navbar-maroon {
-  background: rgba(112, 1, 69, 0.75); /* Rich frosted maroon glass */
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border: 1px solid rgba(255, 252, 222, 0.32);
-  box-shadow: 0 14px 38px rgba(45, 0, 27, 0.28), inset 0 1px 0 rgba(255, 252, 222, 0.25);
+  background: rgba(112, 1, 69, 0.88); /* Rich frosted maroon */
+  backdrop-filter: blur(16px) saturate(150%);
+  -webkit-backdrop-filter: blur(16px) saturate(150%);
+  border: 1px solid rgba(255, 252, 222, 0.35);
+  box-shadow: none; /* Removed navbar shadow on testimonial page */
 }
 
 .navbar.navbar-maroon .nav-link {
@@ -223,11 +221,11 @@ body {
 .nav-link {
   color: #FFFCDE; /* Off-white color */
   text-decoration: none;
-  font-family: 'RealistWide', 'Plus Jakarta Sans', sans-serif;
-  font-size: clamp(13px, 0.95vw, 15px);
-  font-weight: 500; /* Medium weight */
+  font-family: 'RealistWide', sans-serif;
+  font-size: 0.95vw;
+  font-weight: 400; /* Regular weight */
   letter-spacing: 0.02em;
-  transition: color 0.25s ease, opacity 0.25s ease;
+  transition: color 0.3s ease;
 }
 
 .nav-link:hover {
@@ -237,27 +235,27 @@ body {
 .btn-contact {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 0.6vw;
   background: #FFFCDE; /* Off-white background */
   color: #18728C; /* Theme teal color */
-  font-family: 'RealistWide', 'Plus Jakarta Sans', sans-serif;
+  font-family: 'RealistWide', sans-serif;
   text-decoration: none;
-  padding: 8px 20px;
-  border-radius: 9999px;
-  font-size: clamp(13px, 0.95vw, 15px);
-  font-weight: 600; /* Semi-bold weight */
-  transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  padding: 0.7vw 1.6vw;
+  border-radius: 0.8vw 9999px 9999px 0.8vw;
+  font-size: 0.95vw;
+  font-weight: 500; /* Medium weight */
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
 }
 
 .btn-contact:hover {
   background: #ffffff; /* Change background to pure white on hover */
-  transform: scale(1.03); /* Subtle energetic scale */
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  transform: none; /* Remove physical lift shift */
+  box-shadow: none; /* Remove glow shadow completely */
 }
 
 .mail-icon {
-  width: 16px;
-  height: 16px;
+  width: 1.2vw;
+  height: 1.2vw;
   object-fit: contain;
   transition: filter 0.3s ease;
 }
@@ -1013,12 +1011,12 @@ body {
   position: relative;
   z-index: 3; /* Layer 3: Stacks directly in front of Featured Work */
   width: 100%;
-  min-height: 100vh;
+  min-height: 110vh;
   background-color: #FFFCDE; /* Off-white sheet canvas */
   border-radius: 0; /* Sharp rectangular edges with zero curved radius */
   box-shadow: none; /* Removed slide elevation shadow */
   border-top: none;
-  padding: calc(2.2vw + 100px) calc(7.2vw + 60px) 140px calc(7.2vw + 60px);
+  padding: calc(2.5vw + 100px) calc(7.2vw + 60px) 240px calc(7.2vw + 60px);
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -1135,7 +1133,7 @@ body {
   width: 100%;
   background: transparent;
   border: none;
-  padding: clamp(20px, 2vw, 26px) clamp(22px, 2.4vw, 34px);
+  padding: clamp(22px, 2.2vw, 30px) clamp(24px, 2.6vw, 36px);
   display: grid;
   grid-template-columns: 1fr auto 38px;
   align-items: center;
@@ -1259,10 +1257,10 @@ body {
   display: grid;
   grid-template-columns: 220px 1fr;
   gap: clamp(24px, 2.5vw, 40px);
-  padding: 0 clamp(22px, 2.4vw, 34px) clamp(22px, 2.2vw, 28px) clamp(22px, 2.4vw, 34px);
+  padding: 0 clamp(24px, 2.6vw, 36px) clamp(26px, 2.6vw, 34px) clamp(24px, 2.6vw, 36px);
   border-top: 1px solid rgba(112, 1, 69, 0.12);
   margin-top: 2px;
-  padding-top: 20px;
+  padding-top: 22px;
   align-items: center;
   box-sizing: border-box;
 }
