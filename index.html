@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Harsh - Portfolio</title>
-  <link rel="stylesheet" href="style.css?v=93">
+  <link rel="stylesheet" href="style.css?v=94">
   <!-- Google Fonts for Plus Jakarta Sans & Cormorant Garamond -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -578,24 +578,26 @@
     <div class="about-content-wrapper">
       <div class="about-header">
         <img src="lotus.png" alt="Lotus" class="header-lotus-img">
-        <span class="about-subtitle">Behind the Craft & Rhythm</span>
+        <span class="about-subtitle">Behind the Craft & Design</span>
         <h2 class="about-title">A Little More About Me</h2>
       </div>
 
-      <!-- Main Bento Grid -->
-      <div class="about-bento-grid">
-        
-        <!-- Left Bento Card: Editorial Bio & Portrait -->
-        <div class="about-bento-card about-bio-card">
-          <div class="about-bio-portrait-wrapper">
-            <img src="about-portrait.jpeg" alt="Harsh Bhawsar - User Experience Designer" class="about-bio-portrait-img">
+      <!-- Modern Editorial 2-Column Showcase -->
+      <div class="about-showcase-container">
+        <!-- Left: Portrait Showcase -->
+        <div class="about-portrait-card">
+          <div class="about-portrait-img-box">
+            <img src="about-portrait.jpeg" alt="Harsh Bhawsar - User Experience Designer" class="about-portrait-image">
             <div class="about-portrait-status-badge">
               <span class="status-live-dot"></span>
-              <span>Pune, India • Designing at the intersection of HCI & AI</span>
+              <span>Pune, India • HCI & Intelligent Systems</span>
             </div>
           </div>
-          
-          <div class="about-bio-text-group">
+        </div>
+
+        <!-- Right: Narrative Bio & CTA Button -->
+        <div class="about-story-card">
+          <div class="about-story-content">
             <p class="about-bio-paragraph">
               Hi, I am Harsh, User Experience Designer with a strong interest in building thoughtful, scalable digital products that balance usability, clarity, and innovation. My work combines research-driven problem solving, structured design systems, and visual communication to create seamless user experiences.
             </p>
@@ -603,99 +605,67 @@
               I’ve led initiatives as Vice Chair of the ACM SIGCHI Student Chapter and contributed to HCIPAI, strengthening my leadership and collaborative skills. I’m particularly interested in the evolving role of intelligent systems in design and focus on ensuring that emerging technologies enhance, rather than complicate, human experiences.
             </p>
 
-            <div class="about-focus-tags">
-              <span class="about-tag"><span class="tag-accent-dot" style="background:#FE820A;"></span>UX Research</span>
-              <span class="about-tag"><span class="tag-accent-dot" style="background:#B757E6;"></span>Agentic AI Systems</span>
-              <span class="about-tag"><span class="tag-accent-dot" style="background:#1DA1FF;"></span>Interaction Design</span>
-              <span class="about-tag"><span class="tag-accent-dot" style="background:#6DB874;"></span>Automotive HCI</span>
-              <span class="about-tag"><span class="tag-accent-dot" style="background:#FF7A8A;"></span>Design Systems</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Right Bento Card: Interactive Life & Creative Spectrum Gallery -->
-        <div class="about-bento-card about-gallery-card">
-          <div class="about-gallery-header">
-            <div class="gallery-title-group">
-              <h3 class="about-gallery-title">Life Beyond the Screen</h3>
-              <span class="about-gallery-caption">Interactive snapshots of rhythm, stage, culture & mountain trails.</span>
-            </div>
-            
-            <!-- Interactive Category Filter Tabs (No Emojis) -->
-            <div class="about-filter-tabs">
-              <button class="about-tab-btn active" data-filter="all">All</button>
-              <button class="about-tab-btn" data-filter="music">Rhythm & Stage</button>
-              <button class="about-tab-btn" data-filter="adventure">Trails & Speed</button>
-              <button class="about-tab-btn" data-filter="culture">Culture & Moments</button>
-            </div>
-          </div>
-
-          <div class="about-gallery-grid" id="aboutGalleryGrid">
-            <!-- Item 1: Drums Concert -->
-            <div class="about-photo-card" data-category="music" data-full="about-drums.jpeg" data-caption="Live Stage Drumming">
-              <div class="photo-img-wrapper">
-                <img src="about-drums.jpeg" alt="Harsh Drumming Live on Stage" class="about-photo-img">
-                <div class="photo-overlay">
-                  <span class="photo-pill-badge">Live Drums</span>
+            <div class="about-action-row">
+              <button class="about-cta-btn" id="openLifeBeyondScreenBtn" type="button">
+                <span>Life beyond the Screen</span>
+                <div class="about-cta-arrow">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
                 </div>
-              </div>
-            </div>
-
-            <!-- Item 2: Traditional Dhol Tasha -->
-            <div class="about-photo-card" data-category="music culture" data-full="about-dhol.jpeg" data-caption="Dhol Tasha Percussion">
-              <div class="photo-img-wrapper">
-                <img src="about-dhol.jpeg" alt="Harsh Playing Dhol Tasha" class="about-photo-img">
-                <div class="photo-overlay">
-                  <span class="photo-pill-badge">Dhol Tasha</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Item 3: Mountain River Hike -->
-            <div class="about-photo-card" data-category="adventure" data-full="about-mountain.jpeg" data-caption="Mountain Trails & River Hike">
-              <div class="photo-img-wrapper">
-                <img src="about-mountain.jpeg" alt="Mountain Expedition by River" class="about-photo-img">
-                <div class="photo-overlay">
-                  <span class="photo-pill-badge">Mountain Trails</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Item 4: Go Karting -->
-            <div class="about-photo-card" data-category="adventure" data-full="about-gokart.jpeg" data-caption="Go-Kart Racing Track">
-              <div class="photo-img-wrapper">
-                <img src="about-gokart.jpeg" alt="Go-Kart Racing Track" class="about-photo-img">
-                <div class="photo-overlay">
-                  <span class="photo-pill-badge">Track Day</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Item 5: Stage Vocal Performance -->
-            <div class="about-photo-card" data-category="music culture" data-full="about-stage.jpeg" data-caption="Live Stage Vocals">
-              <div class="photo-img-wrapper">
-                <img src="about-stage.jpeg" alt="Stage Singing Performance" class="about-photo-img">
-                <div class="photo-overlay">
-                  <span class="photo-pill-badge">Stage Vocals</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Item 6: Golden Hour Celebration -->
-            <div class="about-photo-card" data-category="culture" data-full="about-traditional.jpeg" data-caption="Festive Celebration in Traditional Attire">
-              <div class="photo-img-wrapper">
-                <img src="about-traditional.jpeg" alt="Festive Celebration in Traditional Attire" class="about-photo-img">
-                <div class="photo-overlay">
-                  <span class="photo-pill-badge">Festive Spirit</span>
-                </div>
-              </div>
+              </button>
             </div>
           </div>
         </div>
       </div>
-
     </div>
   </section>
+
+  <!-- Interactive Modal / Gallery for "Life Beyond the Screen" -->
+  <div class="about-life-modal" id="aboutLifeModal" aria-hidden="true">
+    <div class="about-life-backdrop" id="aboutLifeBackdrop"></div>
+    <div class="about-life-container">
+      <div class="about-life-modal-header">
+        <div class="about-life-title-group">
+          <h3 class="about-life-modal-title">Life Beyond the Screen</h3>
+          <span class="about-life-modal-caption">Snapshots of rhythm, stage, culture & mountain trails</span>
+        </div>
+        <button class="about-life-close" id="aboutLifeClose" aria-label="Close Gallery">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="about-life-grid">
+        <div class="about-life-card" data-full="about-drums.jpeg" data-caption="Live Stage Drumming">
+          <img src="about-drums.jpeg" alt="Live Stage Drumming" class="about-life-img">
+          <span class="about-life-pill">Live Drums</span>
+        </div>
+        <div class="about-life-card" data-full="about-dhol.jpeg" data-caption="Dhol Tasha Percussion">
+          <img src="about-dhol.jpeg" alt="Dhol Tasha Percussion" class="about-life-img">
+          <span class="about-life-pill">Dhol Tasha</span>
+        </div>
+        <div class="about-life-card" data-full="about-mountain.jpeg" data-caption="Mountain Trails & River Hike">
+          <img src="about-mountain.jpeg" alt="Mountain Trails & River Hike" class="about-life-img">
+          <span class="about-life-pill">Mountain Trails</span>
+        </div>
+        <div class="about-life-card" data-full="about-gokart.jpeg" data-caption="Go-Kart Racing Track">
+          <img src="about-gokart.jpeg" alt="Go-Kart Racing Track" class="about-life-img">
+          <span class="about-life-pill">Track Day</span>
+        </div>
+        <div class="about-life-card" data-full="about-stage.jpeg" data-caption="Live Stage Vocals">
+          <img src="about-stage.jpeg" alt="Live Stage Vocals" class="about-life-img">
+          <span class="about-life-pill">Stage Vocals</span>
+        </div>
+        <div class="about-life-card" data-full="about-traditional.jpeg" data-caption="Festive Celebration in Traditional Attire">
+          <img src="about-traditional.jpeg" alt="Festive Celebration" class="about-life-img">
+          <span class="about-life-pill">Festive Spirit</span>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Interactive Lightbox Modal for Photo Gallery -->
   <div class="about-lightbox" id="aboutLightbox" aria-hidden="true">
@@ -1168,35 +1138,29 @@
       const filterTabs = document.querySelectorAll('.about-tab-btn');
       const photoCards = document.querySelectorAll('.about-photo-card');
 
-      filterTabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-          filterTabs.forEach(t => t.classList.remove('active'));
-          tab.classList.add('active');
+      // "Life Beyond the Screen" Modal Controller
+      const openLifeBtn = document.getElementById('openLifeBeyondScreenBtn');
+      const lifeModal = document.getElementById('aboutLifeModal');
+      const lifeClose = document.getElementById('aboutLifeClose');
+      const lifeBackdrop = document.getElementById('aboutLifeBackdrop');
 
-          const filter = tab.getAttribute('data-filter');
+      const openLifeModal = () => {
+        if (!lifeModal) return;
+        lifeModal.classList.add('is-open');
+        lifeModal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      };
 
-          photoCards.forEach(card => {
-            const categories = (card.getAttribute('data-category') || '').split(' ');
-            if (filter === 'all' || categories.includes(filter)) {
-              card.classList.remove('is-hidden');
-              card.style.display = 'block';
-              setTimeout(() => {
-                card.style.opacity = '1';
-                card.style.transform = 'scale(1)';
-              }, 20);
-            } else {
-              card.classList.add('is-hidden');
-              card.style.opacity = '0';
-              card.style.transform = 'scale(0.92)';
-              setTimeout(() => {
-                if (card.classList.contains('is-hidden')) {
-                  card.style.display = 'none';
-                }
-              }, 260);
-            }
-          });
-        });
-      });
+      const closeLifeModal = () => {
+        if (!lifeModal) return;
+        lifeModal.classList.remove('is-open');
+        lifeModal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      };
+
+      if (openLifeBtn) openLifeBtn.addEventListener('click', openLifeModal);
+      if (lifeClose) lifeClose.addEventListener('click', closeLifeModal);
+      if (lifeBackdrop) lifeBackdrop.addEventListener('click', closeLifeModal);
 
       // About Lightbox Modal Controller
       const lightbox = document.getElementById('aboutLightbox');
@@ -1218,10 +1182,12 @@
         if (!lightbox) return;
         lightbox.classList.remove('is-open');
         lightbox.setAttribute('aria-hidden', 'true');
-        document.body.style.overflow = '';
+        if (!lifeModal || !lifeModal.classList.contains('is-open')) {
+          document.body.style.overflow = '';
+        }
       };
 
-      photoCards.forEach(card => {
+      document.querySelectorAll('.about-life-card').forEach(card => {
         card.addEventListener('click', () => {
           const fullSrc = card.getAttribute('data-full') || card.querySelector('img').src;
           const caption = card.getAttribute('data-caption') || '';
@@ -1231,14 +1197,19 @@
 
       if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
       if (lightboxBackdrop) lightboxBackdrop.addEventListener('click', closeLightbox);
+
       window.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && lightbox && lightbox.classList.contains('is-open')) {
-          closeLightbox();
+        if (e.key === 'Escape') {
+          if (lightbox && lightbox.classList.contains('is-open')) {
+            closeLightbox();
+          } else if (lifeModal && lifeModal.classList.contains('is-open')) {
+            closeLifeModal();
+          }
         }
       });
 
-      // 3D Perspective Tilt on About Bento & Insight Cards
-      document.querySelectorAll('.about-bento-card, .about-insight-card').forEach(card => {
+      // 3D Perspective Tilt on About Showcase / Portrait
+      document.querySelectorAll('.about-portrait-card, .about-showcase-container').forEach(card => {
         let isHovered = false;
         card.addEventListener('mouseenter', () => { isHovered = true; });
         card.addEventListener('mousemove', (e) => {
@@ -1248,13 +1219,13 @@
           const y = e.clientY - rect.top;
           const centerX = rect.width / 2;
           const centerY = rect.height / 2;
-          const rotateX = ((y - centerY) / centerY) * -2.5;
-          const rotateY = ((x - centerX) / centerX) * 2.5;
-          card.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translateY(-4px)`;
+          const rotateX = ((y - centerY) / centerY) * -1.5;
+          const rotateY = ((x - centerX) / centerX) * 1.5;
+          card.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg)`;
         });
         card.addEventListener('mouseleave', () => {
           isHovered = false;
-          card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)';
+          card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
         });
       });
 
