@@ -2685,7 +2685,7 @@ body {
 }
 
 /* ==========================================================================
-   Awwwards Editorial Portfolio Preloader
+   Awwwards Minimalist Portfolio Preloader
    ========================================================================== */
 .portfolio-preloader {
   position: fixed;
@@ -2693,11 +2693,11 @@ body {
   width: 100%;
   height: 100vh;
   z-index: 9999999;
-  background: radial-gradient(ellipse at 50% 40%, #3d0126 0%, #1d0113 70%, #10000a 100%);
+  background: radial-gradient(ellipse at 50% 50%, #350122 0%, #1a0111 70%, #0d0008 100%);
   color: #FFFCDE;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-end;
   box-sizing: border-box;
   overflow: hidden;
   user-select: none;
@@ -2716,121 +2716,10 @@ body {
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-end;
   padding: clamp(24px, 3.5vw, 48px) clamp(28px, 4.5vw, 64px);
   box-sizing: border-box;
   position: relative;
-}
-
-/* Preloader Header */
-.preloader-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: clamp(11.5px, 0.9vw, 13px);
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: rgba(255, 252, 222, 0.7);
-}
-
-.preloader-meta-left {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.preloader-pulse-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #FE820A;
-  box-shadow: 0 0 12px #FE820A;
-  animation: preloaderPulse 1.4s ease-in-out infinite alternate;
-}
-
-@keyframes preloaderPulse {
-  0% { transform: scale(0.85); opacity: 0.5; }
-  100% { transform: scale(1.25); opacity: 1; }
-}
-
-.preloader-author {
-  color: #FFFCDE;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-}
-
-.preloader-edition {
-  color: rgba(255, 252, 222, 0.5);
-  font-weight: 500;
-}
-
-.preloader-status {
-  color: #FE820A;
-  font-weight: 600;
-}
-
-/* Preloader Centerpiece Wordmark */
-.preloader-centerpiece {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  min-height: 140px;
-}
-
-.preloader-words-container {
-  position: relative;
-  width: 100%;
-  max-width: 900px;
-  height: 90px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.preloader-word-item {
-  position: absolute;
-  display: flex;
-  align-items: baseline;
-  gap: clamp(12px, 1.8vw, 24px);
-  opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1), transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
-  pointer-events: none;
-  white-space: nowrap;
-}
-
-.preloader-word-item.is-active {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-}
-
-.preloader-word-item.is-prev {
-  opacity: 0;
-  transform: translateY(-28px);
-}
-
-.word-index {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: clamp(13px, 1.2vw, 16px);
-  font-weight: 700;
-  color: #FE820A;
-  letter-spacing: 0.08em;
-}
-
-.word-text {
-  font-family: 'Cormorant Garamond', 'Cormorant', Georgia, serif;
-  font-size: clamp(34px, 5.5vw, 76px);
-  font-weight: 700;
-  font-style: italic;
-  color: #FFFCDE;
-  letter-spacing: -0.02em;
-  line-height: 1;
-  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
 }
 
 /* Preloader Footer */
@@ -2843,18 +2732,9 @@ body {
 
 .preloader-counter-row {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: flex-end;
   width: 100%;
-}
-
-.preloader-loading-label {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: clamp(11.5px, 0.9vw, 13px);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: rgba(255, 252, 222, 0.6);
 }
 
 .preloader-counter-box {
@@ -2864,23 +2744,24 @@ body {
 }
 
 .preloader-number {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(48px, 6.5vw, 92px);
+  font-family: 'MozaicGEO', 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(64px, 8.5vw, 120px);
   font-weight: 700;
-  font-style: italic;
+  font-style: normal;
   color: #FFFCDE;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.04em;
   display: inline-block;
   min-width: 1.8ch;
   text-align: right;
+  font-variant-numeric: tabular-nums;
 }
 
 .preloader-percent {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: clamp(18px, 2vw, 28px);
+  font-family: 'MozaicGEO', 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(22px, 2.5vw, 38px);
   font-weight: 700;
   color: #FE820A;
-  margin-left: 4px;
+  margin-left: 6px;
 }
 
 .preloader-progress-track {
