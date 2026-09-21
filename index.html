@@ -606,7 +606,7 @@
             </p>
 
             <div class="about-action-row">
-              <button class="about-cta-btn" id="openLifeBeyondScreenBtn" type="button">
+              <a href="life-beyond-the-screen.html" class="about-cta-btn" id="openLifeBeyondScreenBtn">
                 <span>Life beyond the Screen</span>
                 <div class="about-cta-arrow">
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -614,77 +614,13 @@
                     <polyline points="12 5 19 12 12 19"></polyline>
                   </svg>
                 </div>
-              </button>
+              </a>
             </div>
           </div>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- Interactive Modal / Gallery for "Life Beyond the Screen" -->
-  <div class="about-life-modal" id="aboutLifeModal" aria-hidden="true">
-    <div class="about-life-backdrop" id="aboutLifeBackdrop"></div>
-    <div class="about-life-container">
-      <div class="about-life-modal-header">
-        <div class="about-life-title-group">
-          <h3 class="about-life-modal-title">Life Beyond the Screen</h3>
-          <span class="about-life-modal-caption">Snapshots of rhythm, stage, culture & mountain trails</span>
-        </div>
-        <button class="about-life-close" id="aboutLifeClose" aria-label="Close Gallery">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="18" y1="6" x2="6" y2="18"></line>
-            <line x1="6" y1="6" x2="18" y2="18"></line>
-          </svg>
-        </button>
-      </div>
-      <div class="about-life-grid">
-        <div class="about-life-card" data-full="about-drums.jpeg" data-caption="Live Stage Drumming">
-          <img src="about-drums.jpeg" alt="Live Stage Drumming" class="about-life-img">
-          <span class="about-life-pill">Live Drums</span>
-        </div>
-        <div class="about-life-card" data-full="about-dhol.jpeg" data-caption="Dhol Tasha Percussion">
-          <img src="about-dhol.jpeg" alt="Dhol Tasha Percussion" class="about-life-img">
-          <span class="about-life-pill">Dhol Tasha</span>
-        </div>
-        <div class="about-life-card" data-full="about-mountain.jpeg" data-caption="Mountain Trails & River Hike">
-          <img src="about-mountain.jpeg" alt="Mountain Trails & River Hike" class="about-life-img">
-          <span class="about-life-pill">Mountain Trails</span>
-        </div>
-        <div class="about-life-card" data-full="about-gokart.jpeg" data-caption="Go-Kart Racing Track">
-          <img src="about-gokart.jpeg" alt="Go-Kart Racing Track" class="about-life-img">
-          <span class="about-life-pill">Track Day</span>
-        </div>
-        <div class="about-life-card" data-full="about-stage.jpeg" data-caption="Live Stage Vocals">
-          <img src="about-stage.jpeg" alt="Live Stage Vocals" class="about-life-img">
-          <span class="about-life-pill">Stage Vocals</span>
-        </div>
-        <div class="about-life-card" data-full="about-traditional.jpeg" data-caption="Festive Celebration in Traditional Attire">
-          <img src="about-traditional.jpeg" alt="Festive Celebration" class="about-life-img">
-          <span class="about-life-pill">Festive Spirit</span>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Interactive Lightbox Modal for Photo Gallery -->
-  <div class="about-lightbox" id="aboutLightbox" aria-hidden="true">
-    <div class="about-lightbox-backdrop"></div>
-    <div class="about-lightbox-container">
-      <button class="about-lightbox-close" id="aboutLightboxClose" aria-label="Close Lightbox">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="18" y1="6" x2="6" y2="18"></line>
-          <line x1="6" y1="6" x2="18" y2="18"></line>
-        </svg>
-      </button>
-      <div class="about-lightbox-media">
-        <img src="" alt="Enlarged photo" id="lightboxImg">
-      </div>
-      <div class="about-lightbox-caption">
-        <p id="lightboxCaption"></p>
-      </div>
-    </div>
-  </div>
 
   <!-- Contact / Footer Section (Single Continuous Scroll after Testimonials) -->
   <footer class="footer-section" id="contact">
@@ -1134,79 +1070,7 @@
         }
       });
 
-      // About Gallery Filter Tabs Controller
-      const filterTabs = document.querySelectorAll('.about-tab-btn');
-      const photoCards = document.querySelectorAll('.about-photo-card');
 
-      // "Life Beyond the Screen" Modal Controller
-      const openLifeBtn = document.getElementById('openLifeBeyondScreenBtn');
-      const lifeModal = document.getElementById('aboutLifeModal');
-      const lifeClose = document.getElementById('aboutLifeClose');
-      const lifeBackdrop = document.getElementById('aboutLifeBackdrop');
-
-      const openLifeModal = () => {
-        if (!lifeModal) return;
-        lifeModal.classList.add('is-open');
-        lifeModal.setAttribute('aria-hidden', 'false');
-        document.body.style.overflow = 'hidden';
-      };
-
-      const closeLifeModal = () => {
-        if (!lifeModal) return;
-        lifeModal.classList.remove('is-open');
-        lifeModal.setAttribute('aria-hidden', 'true');
-        document.body.style.overflow = '';
-      };
-
-      if (openLifeBtn) openLifeBtn.addEventListener('click', openLifeModal);
-      if (lifeClose) lifeClose.addEventListener('click', closeLifeModal);
-      if (lifeBackdrop) lifeBackdrop.addEventListener('click', closeLifeModal);
-
-      // About Lightbox Modal Controller
-      const lightbox = document.getElementById('aboutLightbox');
-      const lightboxImg = document.getElementById('lightboxImg');
-      const lightboxCaption = document.getElementById('lightboxCaption');
-      const lightboxClose = document.getElementById('aboutLightboxClose');
-      const lightboxBackdrop = document.querySelector('.about-lightbox-backdrop');
-
-      const openLightbox = (src, caption) => {
-        if (!lightbox || !lightboxImg || !lightboxCaption) return;
-        lightboxImg.src = src;
-        lightboxCaption.textContent = caption || '';
-        lightbox.classList.add('is-open');
-        lightbox.setAttribute('aria-hidden', 'false');
-        document.body.style.overflow = 'hidden';
-      };
-
-      const closeLightbox = () => {
-        if (!lightbox) return;
-        lightbox.classList.remove('is-open');
-        lightbox.setAttribute('aria-hidden', 'true');
-        if (!lifeModal || !lifeModal.classList.contains('is-open')) {
-          document.body.style.overflow = '';
-        }
-      };
-
-      document.querySelectorAll('.about-life-card').forEach(card => {
-        card.addEventListener('click', () => {
-          const fullSrc = card.getAttribute('data-full') || card.querySelector('img').src;
-          const caption = card.getAttribute('data-caption') || '';
-          openLightbox(fullSrc, caption);
-        });
-      });
-
-      if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
-      if (lightboxBackdrop) lightboxBackdrop.addEventListener('click', closeLightbox);
-
-      window.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-          if (lightbox && lightbox.classList.contains('is-open')) {
-            closeLightbox();
-          } else if (lifeModal && lifeModal.classList.contains('is-open')) {
-            closeLifeModal();
-          }
-        }
-      });
 
       // 3D Perspective Tilt on About Showcase / Portrait
       document.querySelectorAll('.about-portrait-card, .about-showcase-container').forEach(card => {
