@@ -112,7 +112,7 @@ body {
 .hero-section {
   position: sticky;
   top: 0;
-  width: 100vw;
+  width: 100%;
   aspect-ratio: 3840 / 1624; /* Maintain the background image aspect ratio */
   background-color: #FFFCDE; /* Off-white color fallback for seamless blending */
   overflow: hidden;
@@ -144,8 +144,8 @@ body {
   width: 100%;
   height: 100%;
   background-image: url('Silverframe-bg.png');
-  background-size: cover;
-  background-position: bottom center;
+  background-size: 100% 100%;
+  background-position: center center;
   background-repeat: no-repeat;
   z-index: 2; /* Sits above the blue background layer but below elements */
   pointer-events: none; /* Let pointer click interactions pass through */
