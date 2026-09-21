@@ -1653,7 +1653,7 @@ body {
 
 .footer-headline {
   font-family: 'Basote', sans-serif;
-  font-size: clamp(16px, 1.7vw, 24px); /* Decreased by 20px */
+  font-size: clamp(20px, 2.2vw, 32px); /* Increased by 8px */
   font-weight: 400;
   color: #FFFCDE;
   letter-spacing: -0.01em;
@@ -1724,19 +1724,19 @@ body {
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: clamp(10px, 1.4vh, 14px);
+  gap: clamp(12px, 1.8vh, 18px);
 }
 
 .footer-link {
-  font-family: 'RealistWide', sans-serif; /* Changed to RealistWide */
-  font-size: clamp(14px, 1.15vw, 17px);
+  font-family: 'RealistWide', sans-serif;
+  font-size: clamp(13px, 1.05vw, 16px); /* Smaller by 1px */
   font-weight: 400;
   color: #700145;
   text-decoration: none;
   transition: opacity 0.2s ease, transform 0.2s ease;
   display: inline-block;
   width: fit-content;
-  line-height: 1.3;
+  line-height: 1.6; /* Increased line height */
 }
 
 .footer-link:hover {
@@ -1751,7 +1751,7 @@ body {
 }
 
 .footer-contact-item {
-  font-family: 'MozaicGEO', sans-serif; /* Changed to MozaicGEO Bold */
+  font-family: 'MozaicGEO', sans-serif;
   font-weight: 700;
   font-size: clamp(20px, 2.2vw, 32px);
   letter-spacing: -0.02em;
@@ -1784,13 +1784,13 @@ body {
 
 .footer-signature-text {
   font-family: 'Spoleto', cursive, sans-serif;
-  font-size: clamp(160px, 37vw, 550px); /* Made bigger */
+  font-size: clamp(180px, 40vw, 600px); /* Increased font size */
   font-weight: 400;
   color: #700145;
   display: block;
   white-space: nowrap;
   letter-spacing: -0.01em;
-  transform: translateY(calc(16% + 50px)); /* Brought down by 50px */
+  transform: translateY(calc(16% + 70px)); /* Shifted down again by 20px */
   text-align: center;
 }
 
@@ -1812,8 +1812,8 @@ body {
     word-break: break-word;
   }
   .footer-signature-text {
-    font-size: clamp(110px, 34vw, 250px);
-    transform: translateY(calc(12% + 30px));
+    font-size: clamp(120px, 36vw, 280px);
+    transform: translateY(calc(12% + 45px));
   }
 }
 
@@ -1839,8 +1839,8 @@ body {
     padding-top: 12px;
   }
   .footer-signature-text {
-    font-size: clamp(85px, 28vw, 140px);
-    transform: translateY(calc(10% + 20px));
+    font-size: clamp(95px, 30vw, 160px);
+    transform: translateY(calc(10% + 30px));
   }
 }
 
