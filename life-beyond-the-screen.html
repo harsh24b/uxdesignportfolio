@@ -4,16 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Life Beyond the Screen | Harsh Bhawsar</title>
-  <link rel="stylesheet" href="style.css?v=102_coverflow">
+  <link rel="stylesheet" href="style.css?v=103_offwhite_scrollflow">
   <!-- Google Fonts for Plus Jakarta Sans & Cormorant Garamond -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    html, body, .case-study-page, .life-page, .life-page-wrapper {
-      overflow-y: auto !important;
-      overflow-x: hidden !important;
+    html, body, .life-page, .life-page-wrapper {
+      overflow: visible !important;
+      overflow-x: clip !important;
       height: auto !important;
+      background-color: #FFFCDE !important;
     }
   </style>
 </head>
@@ -42,7 +43,7 @@
 
   <!-- Main Life Beyond Screen Page Wrapper -->
   <main class="life-page-wrapper">
-    <!-- Hero Header -->
+    <!-- Hero Article Header -->
     <section class="life-hero-section">
       <div class="life-hero-header">
         <img src="lotus.png" alt="Lotus" class="header-lotus-img" style="margin-bottom: 8px;">
@@ -50,81 +51,43 @@
         <h1 class="life-hero-title">Life Beyond the Screen</h1>
       </div>
       <p class="life-hero-lead">
-        Design is where I craft digital systems and solve complex problems, but music, art, mountains, and raw observation are where I find rhythm and perspective. Beyond Figma and prototypes, explore the three creative dimensions that shape how I see and experience the world.
+        Design is where I craft digital systems and solve complex problems, but music, art, mountains, and raw observation are where I find rhythm and perspective. Scroll down or drag horizontally to explore the 3D visual flow.
       </p>
     </section>
 
-    <!-- 3D Cover Flow Showcase Section -->
-    <section class="coverflow-section" aria-label="Interactive 3D Cover Flow Showcase">
-      
-      <!-- Category Switcher Tabs -->
-      <div class="coverflow-tabs-nav" role="tablist">
-        <button class="coverflow-tab-btn is-active" data-collection="passions" role="tab" aria-selected="true">
-          <span>🥁 Life & Passions</span>
-          <span class="tab-count">6</span>
-        </button>
-        <button class="coverflow-tab-btn" data-collection="art" role="tab" aria-selected="false">
-          <span>🎨 Art & Sketches</span>
-          <span class="tab-count">10</span>
-        </button>
-        <button class="coverflow-tab-btn" data-collection="photography" role="tab" aria-selected="false">
-          <span>📷 Photography</span>
-          <span class="tab-count">11</span>
-        </button>
-      </div>
+    <!-- Scroll-Driven 3D Horizontal Cover Flow Stage -->
+    <section class="coverflow-scroll-section" id="coverflowScrollSection" aria-label="3D Horizontal Gallery">
+      <div class="coverflow-sticky-viewport" id="coverflowStickyViewport">
+        <!-- Category Filter Pills -->
+        <div class="coverflow-tabs-nav" role="tablist">
+          <button class="coverflow-tab-btn is-active" data-collection="passions" role="tab" aria-selected="true">
+            <span>Life & Passions</span>
+            <span class="tab-count">13</span>
+          </button>
+          <button class="coverflow-tab-btn" data-collection="art" role="tab" aria-selected="false">
+            <span>Art & Sketches</span>
+            <span class="tab-count">24</span>
+          </button>
+          <button class="coverflow-tab-btn" data-collection="photography" role="tab" aria-selected="false">
+            <span>Photography</span>
+            <span class="tab-count">11</span>
+          </button>
+          <button class="coverflow-tab-btn" data-collection="all" role="tab" aria-selected="false">
+            <span>All Works</span>
+            <span class="tab-count">48</span>
+          </button>
+        </div>
 
-      <!-- 3D Perspective Stage Container -->
-      <div class="coverflow-stage-wrapper">
-        <div class="coverflow-viewport" id="coverflowViewport" tabindex="0" aria-label="3D Cover Flow Carousel: Drag or use left/right arrow keys to navigate">
-          <div class="coverflow-track" id="coverflowTrack">
-            <!-- Cards dynamically rendered and transformed via JS -->
+        <div class="coverflow-3d-stage" id="coverflowStage">
+          <div class="coverflow-3d-track" id="coverflowTrack">
+            <!-- 3D Cards dynamically populated and continuous transformed via JS -->
           </div>
         </div>
 
-        <div class="coverflow-stage-reflection"></div>
-
-        <!-- Interactive Controls (Prev/Next + Index Counter) -->
-        <div class="coverflow-controls">
-          <button class="coverflow-arrow-btn" id="coverflowPrevBtn" aria-label="Previous Item">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="19" y1="12" x2="5" y2="12"></line>
-              <polyline points="12 19 5 12 12 5"></polyline>
-            </svg>
-          </button>
-          
-          <div class="coverflow-counter-pill" id="coverflowCounter">
-            <span id="counterCurrent">01</span> / <span id="counterTotal">06</span>
-          </div>
-
-          <button class="coverflow-arrow-btn" id="coverflowNextBtn" aria-label="Next Item">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </button>
+        <div class="coverflow-scroll-hint">
+          <span>← Scroll down or drag to explore in 3D →</span>
         </div>
       </div>
-
-      <!-- Active Story Card Display -->
-      <div class="coverflow-story-box" id="coverflowStoryBox">
-        <div class="coverflow-story-badge-row">
-          <span class="coverflow-story-tag" id="storyTag">LIVE MUSIC • DRUMS</span>
-          <span class="coverflow-click-hint">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="15 3 21 3 21 9"></polyline>
-              <polyline points="9 21 3 21 3 15"></polyline>
-              <line x1="21" y1="3" x2="14" y2="10"></line>
-              <line x1="3" y1="21" x2="10" y2="14"></line>
-            </svg>
-            Click card for full view
-          </span>
-        </div>
-        <h2 class="coverflow-story-title" id="storyTitle">Live Stage Drumming</h2>
-        <p class="coverflow-story-desc" id="storyDesc">
-          Behind the drum kit, rhythm meets intuition. Drumming is all about dynamic control, pocket groove, and active listening. It teaches the discipline of pacing and flow—principles that directly shape how I build smooth, frictionless interactive digital experiences.
-        </p>
-      </div>
-
     </section>
   </main>
 
@@ -140,9 +103,6 @@
       </button>
       <div class="about-lightbox-media">
         <img src="" alt="Full view" id="lifeLightboxImg">
-      </div>
-      <div class="about-lightbox-caption">
-        <p id="lifeLightboxCaption"></p>
       </div>
     </div>
   </div>
@@ -194,203 +154,112 @@
   </footer>
 
   <script>
-    const COLLECTIONS_DATA = {
-      passions: [
-        {
-          src: 'about-drums.jpeg',
-          badge: 'LIVE DRUMS',
-          tag: 'Live Music • Drums',
-          title: 'Live Stage Drumming',
-          desc: 'Behind the drum kit, rhythm meets intuition. Drumming is all about dynamic control, pocket groove, and active listening. It teaches the discipline of pacing and flow—principles that directly shape how I build smooth, frictionless interactive digital experiences.'
-        },
-        {
-          src: 'about-dhol.jpeg',
-          badge: 'DHOL TASHA',
-          tag: 'Cultural Rhythm • Tradition',
-          title: 'Dhol Tasha Percussion',
-          desc: 'Folk percussion at scale—commanding raw, acoustic energy alongside hundreds of drummers in synchronized cadence. The resonance of Dhol Tasha celebrates cultural heritage and the sheer power of communal physical harmony.'
-        },
-        {
-          src: 'about-mountain.jpeg',
-          badge: 'MOUNTAIN TRAILS',
-          tag: 'Adventure • High Altitude Trekking',
-          title: 'High Altitude Trails',
-          desc: 'Trekking along glacial rivers and climbing rugged mountain passes. Being in the high Himalayas strips away superficial distractions, builds resilience, and brings a profound sense of clarity and perspective back to the design table.'
-        },
-        {
-          src: 'about-gokart.jpeg',
-          badge: 'TRACK DAY',
-          tag: 'Motorsport • Precision Racing',
-          title: 'Track Day & Karting',
-          desc: 'Late braking zones, hitting every apex, and making micro-adjustments at high speed. Karting demands intense spatial awareness and razor-sharp reflexes where every fraction of a second counts.'
-        },
-        {
-          src: 'about-stage.jpeg',
-          badge: 'STAGE VOCALS',
-          tag: 'Stage Expression • Vocals',
-          title: 'Live Stage Vocals',
-          desc: 'Singing under the bright stage lights is raw, vulnerable, and immediate. It’s an exercise in storytelling, vocal control, and forging genuine human connection with a live room.'
-        },
-        {
-          src: 'about-traditional.jpeg',
-          badge: 'FESTIVE SPIRIT',
-          tag: 'Culture • Community',
-          title: 'Festive Spirit & Heritage',
-          desc: 'Rooted in traditions that celebrate community, color, and heritage. Embracing culture grounds my aesthetic philosophy in human stories that endure across generations.'
-        }
-      ],
-      art: [
-        {
-          src: 'Sketches/WhatsApp Image 2026-09-21 at 10.26.12 PM.jpeg',
-          badge: 'ANATOMY & FORM',
-          tag: 'Hand Sketch • Form & Proportion',
-          title: 'Human Form & Gesture Study',
-          desc: 'Studying human anatomy, gesture, and proportion with graphite. Sketching by hand is the ultimate foundation for understanding balance, weight, and subtle emotional cues before designing digital UI systems.'
-        },
-        {
-          src: 'Sketches/WhatsApp Image 2026-09-21 at 10.26.58 PM.jpeg',
-          badge: 'SHADING & VALUE',
-          tag: 'Graphite Study • Value & Light',
-          title: 'Dynamic Shading & Tone',
-          desc: 'Exploring contrast and depth through layered pencil shading. Understanding how light interacts with curvature directly informs visual hierarchy and realistic surface rendering in digital interfaces.'
-        },
-        {
-          src: 'Sketches/WhatsApp Image 2026-09-21 at 10.27.36 PM.jpeg',
-          badge: 'INK LINEWORK',
-          tag: 'Ink & Pen • Continuous Line',
-          title: 'Expressive Ink Linework',
-          desc: 'Unfiltered, deliberate ink strokes that commit immediately without erasure. Training the hand to express ideas spontaneously and confidently.'
-        },
-        {
-          src: 'Sketches/WhatsApp Image 2026-09-21 at 10.30.51 PM.jpeg',
-          badge: 'CHARCOAL',
-          tag: 'Fine Art • Charcoal Portraiture',
-          title: 'Portrait Study in Charcoal',
-          desc: 'Capturing emotion and subtle facial contours with charcoal. It’s an exercise in empathy and observation—noticing the micro-expressions that define human character.'
-        },
-        {
-          src: 'Sketches/WhatsApp Image 2026-09-21 at 10.31.10 PM.jpeg',
-          badge: 'SPATIAL GRID',
-          tag: 'Spatial Sketch • Perspective Grid',
-          title: 'Architectural & Spatial Perspectives',
-          desc: 'Constructing environments and structural depth. Spatial drafting teaches volume, focal points, and three-dimensional layout thinking.'
-        },
-        {
-          src: 'Sketches/WhatsApp Image 2026-09-21 at 10.31.37 PM.jpeg',
-          badge: 'CONCEPT ART',
-          tag: 'Illustration • Conceptual Art',
-          title: 'Conceptual Character Rendering',
-          desc: 'Developing characters from imaginative prompts. Blending storytelling, mood, and personality into visual artifacts.'
-        },
-        {
-          src: 'Sketches/WhatsApp Image 2026-09-21 at 10.31.58 PM.jpeg',
-          badge: 'KINETIC GESTURE',
-          tag: 'Fast Sketch • Movement & Kinetic Flow',
-          title: 'Gesture & Movement Study',
-          desc: 'Capturing kinetic energy in rapid gesture sketches. Understanding motion in static art translates seamlessly into crafting fluid UI transitions and micro-interactions.'
-        },
-        {
-          src: 'Sketches/WhatsApp Image 2026-09-21 at 10.33.12 PM.jpeg',
-          badge: 'DETAILED INK',
-          tag: 'Illustration • Micro-Detailing',
-          title: 'Detailed Line Art & Stippling',
-          desc: 'Fine-tip ink illustration exploring intricate patterns, textures, and patient craftsmanship.'
-        },
-        {
-          src: 'Sketches/WhatsApp Image 2026-09-21 at 10.35.36 PM.jpeg',
-          badge: 'CHARACTER DESIGN',
-          tag: 'Illustration • Expressive Concept',
-          title: 'Expressive Character Concept',
-          desc: 'Exploring silhouette dynamics and expressive facial stylization to convey personality through minimal, calculated strokes.'
-        },
-        {
-          src: 'Sketches/WhatsApp Image 2026-09-21 at 10.36.48 PM.jpeg',
-          badge: 'COMPOSITIONAL ART',
-          tag: 'Mixed Media • Visual Narrative',
-          title: 'Narrative Visual Composition',
-          desc: 'Layering foreground focal points against textured backgrounds to tell a complete visual story on a single page.'
-        }
-      ],
-      photography: [
-        {
-          src: 'Photography/WhatsApp Image 2026-09-21 at 11.24.34 PM.jpeg',
-          badge: 'ARCHITECTURE',
-          tag: 'Street & Architecture • Geometry',
-          title: 'Architectural Geometry & Lines',
-          desc: 'Framing lines, angles, and symmetry in urban structures. Finding order and clean rhythm within everyday built environments.'
-        },
-        {
-          src: 'Photography/WhatsApp Image 2026-09-21 at 11.29.24 PM.jpeg',
-          badge: 'ATMOSPHERIC',
-          tag: 'Atmospheric • Light & Shadow',
-          title: 'Atmospheric Mood & Solitude',
-          desc: 'Capturing quiet, contemplative moments where natural light carves through shadows to define the emotional tone of a scene.'
-        },
-        {
-          src: 'Photography/WhatsApp Image 2026-09-21 at 11.29.25 PM.jpeg',
-          badge: 'STREET LIFE',
-          tag: 'Street Photography • Candid Frame',
-          title: 'Urban Cadence & Street Life',
-          desc: 'Documenting spontaneous human interactions and fleeting moments of unscripted life in the bustling city.'
-        },
-        {
-          src: 'Photography/WhatsApp Image 2026-09-21 at 11.29.29 PM.jpeg',
-          badge: 'MINIMALISM',
-          tag: 'Composition • Negative Space',
-          title: 'Minimalist Composition',
-          desc: 'Using negative space and disciplined reduction to let a single focal element command the entire frame.'
-        },
-        {
-          src: 'Photography/WhatsApp Image 2026-09-21 at 11.29.29 Pmm.jpeg',
-          badge: 'GOLDEN HOUR',
-          tag: 'Natural Light • Golden Hour',
-          title: 'Golden Hour Textures',
-          desc: 'Chasing the warm, raking light of dusk that brings out rich organic textures and vibrant earthy tones.'
-        },
-        {
-          src: 'Photography/WhatsApp Image 2026-09-21 at 11.29.30 PM.jpeg',
-          badge: 'LANDSCAPE',
-          tag: 'Landscape • Depth of Field',
-          title: 'Depth & Horizon Perspective',
-          desc: 'Layering foreground, midground, and distant horizons to create an immersive visual journey across the frame.'
-        },
-        {
-          src: 'Photography/WhatsApp Image 2026-09-21 at 11.29.30 hhPM.jpeg',
-          badge: 'MONOCHROME',
-          tag: 'Black & White • Contrast',
-          title: 'Monochrome Mood',
-          desc: 'Stripping away color to focus purely on tonality, grain, shapes, and raw emotional resonance.'
-        },
-        {
-          src: 'Photography/WhatsApp Image 2026-09-21 at 11.29.3vv1 PM.jpeg',
-          badge: 'PORTRAITURE',
-          tag: 'Portrait • Unfiltered Moment',
-          title: 'Candid Portraiture',
-          desc: 'Capturing genuine expressions and unguarded human moments through thoughtful framing and natural depth.'
-        },
-        {
-          src: 'Photography/WhatsApp Image 2026-09-21 at 11.32.0vv3 PM.jpeg',
-          badge: 'TEXTURE & DETAIL',
-          tag: 'Detail • Materiality',
-          title: 'Raw Textures & Materiality',
-          desc: 'Macro observation of surfaces, weathered materials, and organic imperfections.'
-        },
-        {
-          src: 'Photography/WhatsApp Image 2026-09-21 at 11.32vv.03 PM.jpeg',
-          badge: 'URBAN PERSPECTIVE',
-          tag: 'Perspective • Vanishing Point',
-          title: 'Vanishing Points & Scale',
-          desc: 'Using linear perspective and converging diagonals to draw the viewer eye deep into the spatial frame.'
-        },
-        {
-          src: 'Photography/WhatsApp Image 2026-09-21 at 11.3v0.32 PM.jpeg',
-          badge: 'CULTURAL MOMENT',
-          tag: 'Culture • Street Frame',
-          title: 'Cultural Rhythms in Frame',
-          desc: 'Celebrating festive movement and heritage through dynamic composition and expressive motion blur.'
-        }
-      ]
-    };
+    const COLLECTIONS = {
+  "passions": [
+    "about-drums.jpeg",
+    "about-dhol.jpeg",
+    "about-mountain.jpeg",
+    "about-gokart.jpeg",
+    "about-stage.jpeg",
+    "about-traditional.jpeg",
+    "harsh photos/WhatsApp Image 2026-09-21 at 2.57.55 PM.jpeg",
+    "harsh photos/WhatsApp Image 2026-09-21 at 3.03.59 PM.jpeg",
+    "harsh photos/WhatsApp Image 2026-09-21 at 3.04.21 PM.jpeg",
+    "harsh photos/WhatsApp Image 2026-09-21 at 3.05.02 PM.jpeg",
+    "harsh photos/WhatsApp Image 2026-09-21 at 3.05.20 PM.jpeg",
+    "harsh photos/WhatsApp Image 2026-09-21 at 5.01.16 PM.jpeg",
+    "harsh photos/WhatsApp Image 2026-09-21 at 5.02.37 PM.jpeg"
+  ],
+  "art": [
+    "Sketches/WhatsApp Image 2026-09-21 at 10.26.12 PM.jpeg",
+    "Sketches/WhatsApp Image 2026-09-21 at 10.26.58 PM.jpeg",
+    "Sketches/WhatsApp Image 2026-09-21 at 10.27.36 PM.jpeg",
+    "Sketches/WhatsApp Image 2026-09-21 at 10.30.51 PM.jpeg",
+    "Sketches/WhatsApp Image 2026-09-21 at 10.31.10 PM.jpeg",
+    "Sketches/WhatsApp Image 2026-09-21 at 10.31.37 PM.jpeg",
+    "Sketches/WhatsApp Image 2026-09-21 at 10.31.58 PM.jpeg",
+    "Sketches/WhatsApp Image 2026-09-21 at 10.33.12 PM.jpeg",
+    "Sketches/WhatsApp Image 2026-09-21 at 10.33.54 PM.jpeg",
+    "Sketches/WhatsApp Image 2026-09-21 at 10.34.23 PM.jpeg",
+    "Sketches/WhatsApp Image 2026-09-21 at 10.34.38 PM.jpeg",
+    "Sketches/WhatsApp Image 2026-09-21 at 10.34.59 PM.jpeg",
+    "Sketches/WhatsApp Image 2026-09-21 at 10.35.36 PM.jpeg",
+    "Sketches/WhatsApp Image 2026-09-21 at 10.35.59 PM.jpeg",
+    "Sketches/WhatsApp Image 2026-09-21 at 10.36.48 PM.jpeg",
+    "Sketches/WhatsApp Image 2026-09-21 at 10.37.55 PM.jpeg",
+    "Sketches/WhatsApp Image 2026-09-21 at 10.38.31 PM (1).jpeg",
+    "Sketches/WhatsApp Image 2026-09-21 at 10.38.31 PM.jpeg",
+    "Sketches/WhatsApp Image 2026-09-21 at 10.40.58 PM.jpeg",
+    "Sketches/WhatsApp Image 2026-09-21 at 10.41.22 PM.jpeg",
+    "Sketches/WhatsApp Image 2026-09-21 at 10.44.38 PM.jpeg",
+    "Sketches/WhatsApp Image 2026-09-21 at 10.47.46 PM.jpeg",
+    "Sketches/WhatsApp Image 2026-09-21 at 10.49.57 PM.jpeg",
+    "Sketches/WhatsApp Image 2026-09-21 at 11.26.03 PM.jpeg"
+  ],
+  "photography": [
+    "Photography/WhatsApp Image 2026-09-21 at 11.24.34 PM.jpeg",
+    "Photography/WhatsApp Image 2026-09-21 at 11.29.24 PM.jpeg",
+    "Photography/WhatsApp Image 2026-09-21 at 11.29.25 PM.jpeg",
+    "Photography/WhatsApp Image 2026-09-21 at 11.29.29 PM.jpeg",
+    "Photography/WhatsApp Image 2026-09-21 at 11.29.29 Pmm.jpeg",
+    "Photography/WhatsApp Image 2026-09-21 at 11.29.30 PM.jpeg",
+    "Photography/WhatsApp Image 2026-09-21 at 11.29.30 hhPM.jpeg",
+    "Photography/WhatsApp Image 2026-09-21 at 11.29.3vv1 PM.jpeg",
+    "Photography/WhatsApp Image 2026-09-21 at 11.32.0vv3 PM.jpeg",
+    "Photography/WhatsApp Image 2026-09-21 at 11.32vv.03 PM.jpeg",
+    "Photography/WhatsApp Image 2026-09-21 at 11.3v0.32 PM.jpeg"
+  ],
+  "all": [
+    "about-drums.jpeg",
+    "about-dhol.jpeg",
+    "about-mountain.jpeg",
+    "about-gokart.jpeg",
+    "about-stage.jpeg",
+    "about-traditional.jpeg",
+    "harsh photos/WhatsApp Image 2026-09-21 at 2.57.55 PM.jpeg",
+    "harsh photos/WhatsApp Image 2026-09-21 at 3.03.59 PM.jpeg",
+    "harsh photos/WhatsApp Image 2026-09-21 at 3.04.21 PM.jpeg",
+    "harsh photos/WhatsApp Image 2026-09-21 at 3.05.02 PM.jpeg",
+    "harsh photos/WhatsApp Image 2026-09-21 at 3.05.20 PM.jpeg",
+    "harsh photos/WhatsApp Image 2026-09-21 at 5.01.16 PM.jpeg",
+    "harsh photos/WhatsApp Image 2026-09-21 at 5.02.37 PM.jpeg",
+    "Sketches/WhatsApp Image 2026-09-21 at 10.26.12 PM.jpeg",
+    "Sketches/WhatsApp Image 2026-09-21 at 10.26.58 PM.jpeg",
+    "Sketches/WhatsApp Image 2026-09-21 at 10.27.36 PM.jpeg",
+    "Sketches/WhatsApp Image 2026-09-21 at 10.30.51 PM.jpeg",
+    "Sketches/WhatsApp Image 2026-09-21 at 10.31.10 PM.jpeg",
+    "Sketches/WhatsApp Image 2026-09-21 at 10.31.37 PM.jpeg",
+    "Sketches/WhatsApp Image 2026-09-21 at 10.31.58 PM.jpeg",
+    "Sketches/WhatsApp Image 2026-09-21 at 10.33.12 PM.jpeg",
+    "Sketches/WhatsApp Image 2026-09-21 at 10.33.54 PM.jpeg",
+    "Sketches/WhatsApp Image 2026-09-21 at 10.34.23 PM.jpeg",
+    "Sketches/WhatsApp Image 2026-09-21 at 10.34.38 PM.jpeg",
+    "Sketches/WhatsApp Image 2026-09-21 at 10.34.59 PM.jpeg",
+    "Sketches/WhatsApp Image 2026-09-21 at 10.35.36 PM.jpeg",
+    "Sketches/WhatsApp Image 2026-09-21 at 10.35.59 PM.jpeg",
+    "Sketches/WhatsApp Image 2026-09-21 at 10.36.48 PM.jpeg",
+    "Sketches/WhatsApp Image 2026-09-21 at 10.37.55 PM.jpeg",
+    "Sketches/WhatsApp Image 2026-09-21 at 10.38.31 PM (1).jpeg",
+    "Sketches/WhatsApp Image 2026-09-21 at 10.38.31 PM.jpeg",
+    "Sketches/WhatsApp Image 2026-09-21 at 10.40.58 PM.jpeg",
+    "Sketches/WhatsApp Image 2026-09-21 at 10.41.22 PM.jpeg",
+    "Sketches/WhatsApp Image 2026-09-21 at 10.44.38 PM.jpeg",
+    "Sketches/WhatsApp Image 2026-09-21 at 10.47.46 PM.jpeg",
+    "Sketches/WhatsApp Image 2026-09-21 at 10.49.57 PM.jpeg",
+    "Sketches/WhatsApp Image 2026-09-21 at 11.26.03 PM.jpeg",
+    "Photography/WhatsApp Image 2026-09-21 at 11.24.34 PM.jpeg",
+    "Photography/WhatsApp Image 2026-09-21 at 11.29.24 PM.jpeg",
+    "Photography/WhatsApp Image 2026-09-21 at 11.29.25 PM.jpeg",
+    "Photography/WhatsApp Image 2026-09-21 at 11.29.29 PM.jpeg",
+    "Photography/WhatsApp Image 2026-09-21 at 11.29.29 Pmm.jpeg",
+    "Photography/WhatsApp Image 2026-09-21 at 11.29.30 PM.jpeg",
+    "Photography/WhatsApp Image 2026-09-21 at 11.29.30 hhPM.jpeg",
+    "Photography/WhatsApp Image 2026-09-21 at 11.29.3vv1 PM.jpeg",
+    "Photography/WhatsApp Image 2026-09-21 at 11.32.0vv3 PM.jpeg",
+    "Photography/WhatsApp Image 2026-09-21 at 11.32vv.03 PM.jpeg",
+    "Photography/WhatsApp Image 2026-09-21 at 11.3v0.32 PM.jpeg"
+  ]
+};
 
     document.addEventListener('DOMContentLoaded', () => {
       // Navbar scroll direction hide/reveal
@@ -412,35 +281,23 @@
       window.addEventListener('scroll', handleScroll, { passive: true });
 
       // 3D Cover Flow Engine
-      let currentCollectionKey = 'passions';
-      let activeIndex = 0;
-      let items = COLLECTIONS_DATA[currentCollectionKey];
+      let currentKey = 'passions';
+      let items = COLLECTIONS[currentKey];
 
+      const section = document.getElementById('coverflowScrollSection');
+      const stage = document.getElementById('coverflowStage');
       const track = document.getElementById('coverflowTrack');
-      const viewport = document.getElementById('coverflowViewport');
-      const counterCurrent = document.getElementById('counterCurrent');
-      const counterTotal = document.getElementById('counterTotal');
-      const prevBtn = document.getElementById('coverflowPrevBtn');
-      const nextBtn = document.getElementById('coverflowNextBtn');
-
-      const storyBox = document.getElementById('coverflowStoryBox');
-      const storyTag = document.getElementById('storyTag');
-      const storyTitle = document.getElementById('storyTitle');
-      const storyDesc = document.getElementById('storyDesc');
-
       const tabs = document.querySelectorAll('.coverflow-tab-btn');
 
       // Lightbox
       const lightbox = document.getElementById('lifeLightbox');
       const lightboxImg = document.getElementById('lifeLightboxImg');
-      const lightboxCaption = document.getElementById('lifeLightboxCaption');
       const lightboxClose = document.getElementById('lifeLightboxClose');
       const lightboxBackdrop = document.querySelector('.about-lightbox-backdrop');
 
-      const openLightbox = (src, caption) => {
-        if (!lightbox || !lightboxImg || !lightboxCaption) return;
+      const openLightbox = (src) => {
+        if (!lightbox || !lightboxImg) return;
         lightboxImg.src = src;
-        lightboxCaption.textContent = caption || '';
         lightbox.classList.add('is-open');
         lightbox.setAttribute('aria-hidden', 'false');
         document.body.style.overflow = 'hidden';
@@ -462,128 +319,186 @@
         }
       });
 
-      const renderCollection = (collectionKey) => {
-        currentCollectionKey = collectionKey;
-        items = COLLECTIONS_DATA[currentCollectionKey];
-        activeIndex = 0;
+      // Physics State
+      let targetProgress = 0;
+      let currentProgress = 0;
+      let isDragging = false;
+      let hasDragged = false;
+      let dragStartX = 0;
+      let dragStartProgress = 0;
+
+      const renderCollection = (key) => {
+        currentKey = key;
+        items = COLLECTIONS[currentKey];
+        targetProgress = 0;
+        currentProgress = 0;
         track.innerHTML = '';
 
-        items.forEach((item, index) => {
+        items.forEach((src, idx) => {
           const card = document.createElement('div');
-          card.className = 'coverflow-card';
-          card.setAttribute('data-index', index);
-          card.setAttribute('data-full', item.src);
-          card.setAttribute('data-caption', `${item.title} — ${item.tag}`);
+          card.className = 'coverflow-3d-card';
+          card.setAttribute('data-index', idx);
+          card.setAttribute('data-src', src);
 
-          card.innerHTML = `
-            <img src="${item.src}" alt="${item.title}" class="coverflow-card-img" loading="${index < 4 ? 'eager' : 'lazy'}">
-            <div class="coverflow-card-shine"></div>
-            <span class="coverflow-card-badge">${item.badge}</span>
-          `;
+          const img = document.createElement('img');
+          img.src = src;
+          img.alt = `Gallery Item ${idx + 1}`;
+          img.loading = idx < 6 ? 'eager' : 'lazy';
+          img.className = 'coverflow-3d-img';
 
-          card.addEventListener('click', () => {
-            if (index === activeIndex) {
-              openLightbox(item.src, `${item.title} — ${item.tag}`);
-            } else {
-              goToIndex(index);
+          card.appendChild(img);
+
+          card.addEventListener('click', (e) => {
+            if (!hasDragged) {
+              openLightbox(src);
             }
           });
 
           track.appendChild(card);
         });
 
-        counterTotal.textContent = String(items.length).padStart(2, '0');
-        updateCoverFlow();
+        update3DTransforms();
       };
 
-      const updateCoverFlow = (interactiveOffset = 0) => {
-        const cards = track.querySelectorAll('.coverflow-card');
+      const update3DTransforms = () => {
+        const cards = track.querySelectorAll('.coverflow-3d-card');
         const count = items.length;
+        if (count === 0) return;
+
+        // Spread & spacing calculation
+        const isMobile = window.innerWidth <= 768;
+        const spacing = isMobile ? 260 : 360;
+        const totalTravel = (count - 1) * spacing;
+        const currentX = currentProgress * totalTravel;
 
         cards.forEach((card, i) => {
-          const offset = (i - activeIndex) + interactiveOffset;
-          const absOffset = Math.abs(offset);
+          const cardCenter = i * spacing;
+          const offset = cardCenter - currentX; // pixels from center
+          const normOffset = offset / spacing; // normalized index distance (-N ... 0 ... +N)
+          const absNorm = Math.abs(normOffset);
 
-          let tx = 0;
-          let tz = 0;
-          let ry = 0;
-          let scale = 1;
-          let opacity = 1;
-          let zIndex = 100;
-          let brightness = 1;
-
-          if (absOffset < 0.05) {
-            // Active Center Card (Faces Flat)
-            tx = 0;
-            tz = 40;
-            ry = 0;
-            scale = 1.05;
-            opacity = 1;
-            zIndex = 100;
-            brightness = 1;
-            card.classList.add('is-active');
-          } else if (offset < 0) {
-            // Left Cards (Rotate Inward to the right, recede in Z)
-            const d = Math.abs(offset);
-            tx = -140 - (d - 1) * 125;
-            tz = -160 - (d - 1) * 75;
-            ry = Math.min(52, 40 + d * 3.5);
-            scale = Math.max(0.68, 1 - d * 0.08);
-            opacity = Math.max(0.18, 1 - d * 0.22);
-            zIndex = Math.round(100 - d * 10);
-            brightness = Math.max(0.45, 1 - d * 0.18);
-            card.classList.remove('is-active');
+          if (absNorm > 5) {
+            card.style.display = 'none';
+            return;
           } else {
-            // Right Cards (Rotate Inward to the left, recede in Z)
-            const d = offset;
-            tx = 140 + (d - 1) * 125;
-            tz = -160 - (d - 1) * 75;
-            ry = -Math.min(52, 40 + d * 3.5);
-            scale = Math.max(0.68, 1 - d * 0.08);
-            opacity = Math.max(0.18, 1 - d * 0.22);
-            zIndex = Math.round(100 - d * 10);
-            brightness = Math.max(0.45, 1 - d * 0.18);
-            card.classList.remove('is-active');
+            card.style.display = 'block';
           }
 
-          card.style.transform = `translateX(${tx}px) translateZ(${tz}px) rotateY(${ry}deg) scale(${scale})`;
+          // 3D Mathematical Flow Curve
+          // Left cards: positive rotateY (turned inward right)
+          // Right cards: negative rotateY (turned inward left)
+          // Center card: rotateY 0, elevated Z
+          const maxRotation = isMobile ? 36 : 44;
+          const ry = -Math.sign(normOffset) * Math.min(maxRotation, Math.pow(absNorm, 0.75) * 34);
+          
+          // translateZ: recede into depth as it moves away from center
+          const tz = -Math.min(360, Math.pow(absNorm, 1.15) * (isMobile ? 90 : 130));
+          
+          // translateX with slight perspective compression
+          const tx = offset * (isMobile ? 0.92 : 0.94);
+          
+          // Scale & Opacity
+          const scale = Math.max(0.68, 1 - absNorm * 0.07);
+          const opacity = Math.max(0.12, 1 - absNorm * 0.22);
+          const zIndex = Math.round(1000 - absNorm * 20);
+
+          card.style.transform = `translateX(${tx.toFixed(1)}px) translateZ(${tz.toFixed(1)}px) rotateY(${ry.toFixed(1)}deg) scale(${scale.toFixed(3)})`;
           card.style.zIndex = zIndex;
-          card.style.opacity = opacity;
-          card.style.filter = `brightness(${brightness})`;
+          card.style.opacity = opacity.toFixed(2);
+
+          if (absNorm < 0.35) {
+            card.classList.add('is-center');
+          } else {
+            card.classList.remove('is-center');
+          }
         });
+      };
 
-        // Update Counter
-        counterCurrent.textContent = String(activeIndex + 1).padStart(2, '0');
+      // Animation Loop with Smooth Inertia (Lerp)
+      const animate = () => {
+        const diff = targetProgress - currentProgress;
+        if (Math.abs(diff) > 0.00005) {
+          currentProgress += diff * 0.09;
+          update3DTransforms();
+        }
+        requestAnimationFrame(animate);
+      };
+      requestAnimationFrame(animate);
 
-        // Update Active Story Box
-        const activeItem = items[activeIndex];
-        if (activeItem) {
-          storyBox.style.opacity = '0';
-          storyBox.style.transform = 'translateY(6px)';
-          setTimeout(() => {
-            storyTag.textContent = activeItem.tag;
-            storyTitle.textContent = activeItem.title;
-            storyDesc.textContent = activeItem.desc;
-            storyBox.style.opacity = '1';
-            storyBox.style.transform = 'translateY(0)';
-          }, 150);
+      // Scroll-Driven calculation
+      const onScroll = () => {
+        const rect = section.getBoundingClientRect();
+        const sectionHeight = section.offsetHeight - window.innerHeight;
+        if (sectionHeight <= 0) return;
+
+        const scrolled = -rect.top;
+        const progress = Math.max(0, Math.min(1, scrolled / sectionHeight));
+        if (!isDragging) {
+          targetProgress = progress;
         }
       };
 
-      const goToIndex = (index) => {
-        if (index < 0) index = 0;
-        if (index >= items.length) index = items.length - 1;
-        activeIndex = index;
-        updateCoverFlow();
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('resize', () => update3DTransforms());
+
+      // Drag & Swipe Interaction
+      const onDragStart = (e) => {
+        isDragging = true;
+        hasDragged = false;
+        dragStartX = e.clientX || (e.touches && e.touches[0].clientX) || 0;
+        dragStartProgress = targetProgress;
+        stage.classList.add('is-dragging');
       };
 
-      const prev = () => goToIndex(activeIndex - 1);
-      const next = () => goToIndex(activeIndex + 1);
+      const onDragMove = (e) => {
+        if (!isDragging) return;
+        const x = e.clientX || (e.touches && e.touches[0].clientX) || 0;
+        const diff = x - dragStartX;
+        if (Math.abs(diff) > 4) {
+          hasDragged = true;
+        }
+        const count = items.length;
+        if (count <= 1) return;
 
-      if (prevBtn) prevBtn.addEventListener('click', prev);
-      if (nextBtn) nextBtn.addEventListener('click', next);
+        const isMobile = window.innerWidth <= 768;
+        const spacing = isMobile ? 260 : 360;
+        const totalTravel = (count - 1) * spacing;
+        
+        // Convert pixel drag to progress delta
+        const progressDelta = -diff / totalTravel;
+        targetProgress = Math.max(0, Math.min(1, dragStartProgress + progressDelta));
+      };
 
-      // Tab Switching
+      const onDragEnd = () => {
+        if (!isDragging) return;
+        isDragging = false;
+        stage.classList.remove('is-dragging');
+        // Reset hasDragged after click event cycle completes
+        setTimeout(() => { hasDragged = false; }, 100);
+      };
+
+      stage.addEventListener('mousedown', onDragStart);
+      window.addEventListener('mousemove', onDragMove);
+      window.addEventListener('mouseup', onDragEnd);
+
+      stage.addEventListener('touchstart', onDragStart, { passive: true });
+      window.addEventListener('touchmove', onDragMove, { passive: true });
+      window.addEventListener('touchend', onDragEnd);
+
+      // Keyboard Left/Right Navigation
+      window.addEventListener('keydown', (e) => {
+        if (lightbox && lightbox.classList.contains('is-open')) return;
+        const count = items.length;
+        if (count <= 1) return;
+        const step = 1 / (count - 1);
+        if (e.key === 'ArrowRight') {
+          targetProgress = Math.min(1, targetProgress + step);
+        } else if (e.key === 'ArrowLeft') {
+          targetProgress = Math.max(0, targetProgress - step);
+        }
+      });
+
+      // Category Tabs Switcher
       tabs.forEach(tab => {
         tab.addEventListener('click', () => {
           tabs.forEach(t => {
@@ -594,64 +509,13 @@
           tab.setAttribute('aria-selected', 'true');
           const key = tab.getAttribute('data-collection');
           renderCollection(key);
+          onScroll();
         });
       });
 
-      // Keyboard Navigation
-      window.addEventListener('keydown', (e) => {
-        if (lightbox && lightbox.classList.contains('is-open')) return;
-        if (e.key === 'ArrowLeft') {
-          prev();
-        } else if (e.key === 'ArrowRight') {
-          next();
-        }
-      });
-
-      // Pointer Drag / Swipe Physics
-      let isDragging = false;
-      let startX = 0;
-      let currentDragX = 0;
-
-      const onPointerDown = (e) => {
-        isDragging = true;
-        startX = e.clientX || (e.touches && e.touches[0].clientX) || 0;
-        currentDragX = startX;
-        viewport.classList.add('is-dragging');
-      };
-
-      const onPointerMove = (e) => {
-        if (!isDragging) return;
-        const x = e.clientX || (e.touches && e.touches[0].clientX) || 0;
-        const diff = x - startX;
-        const interactiveOffset = -diff / 220; // sensitivity
-        updateCoverFlow(interactiveOffset);
-        currentDragX = x;
-      };
-
-      const onPointerUp = () => {
-        if (!isDragging) return;
-        isDragging = false;
-        viewport.classList.remove('is-dragging');
-        const diff = currentDragX - startX;
-        if (diff > 45) {
-          prev();
-        } else if (diff < -45) {
-          next();
-        } else {
-          updateCoverFlow(0);
-        }
-      };
-
-      viewport.addEventListener('mousedown', onPointerDown);
-      window.addEventListener('mousemove', onPointerMove);
-      window.addEventListener('mouseup', onPointerUp);
-
-      viewport.addEventListener('touchstart', onPointerDown, { passive: true });
-      window.addEventListener('touchmove', onPointerMove, { passive: true });
-      window.addEventListener('touchend', onPointerUp);
-
       // Initial Render
       renderCollection('passions');
+      onScroll();
     });
   </script>
 </body>
