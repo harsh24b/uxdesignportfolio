@@ -2916,113 +2916,296 @@ body.preloader-revealed .illustration-box {
   margin: 0;
 }
 
-.life-gallery-section {
+/* ==========================================================================
+   Interactive 3D Cover Flow Showcase System
+   ========================================================================== */
+.coverflow-section {
   width: 100%;
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 10px clamp(20px, 3.5vw, 40px) clamp(60px, 8vw, 100px) clamp(20px, 3.5vw, 40px);
+  padding: 0 clamp(20px, 3.5vw, 40px) clamp(50px, 6vw, 80px) clamp(20px, 3.5vw, 40px);
   box-sizing: border-box;
-}
-
-.life-gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: clamp(18px, 2.2vw, 28px);
-  width: 100%;
-}
-
-.life-card {
-  background: #FFFCDE;
-  border: 1px solid #700145;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+  align-items: center;
+}
+
+/* Category Tab Switcher Pills */
+.coverflow-tabs-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.coverflow-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 252, 222, 0.75);
+  border: 1px solid rgba(112, 1, 69, 0.25);
+  color: #4A2C11;
+  padding: 10px 22px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 13.5px;
+  font-weight: 500;
   cursor: pointer;
-  box-sizing: border-box;
+  border-radius: 9999px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 14px rgba(74, 44, 17, 0.04);
 }
 
-.life-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 14px 32px rgba(112, 1, 69, 0.12);
+.coverflow-tab-btn:hover {
+  background: #FFFCDE;
+  border-color: #700145;
+  color: #700145;
+  transform: translateY(-2px);
 }
 
-.life-card-img-wrap {
+.coverflow-tab-btn.is-active {
+  background: #700145;
+  color: #FFFCDE;
+  border-color: #700145;
+  box-shadow: 0 6px 20px rgba(112, 1, 69, 0.25);
+  transform: translateY(-2px);
+}
+
+.coverflow-tab-btn .tab-count {
+  font-size: 11px;
+  background: rgba(0, 0, 0, 0.1);
+  padding: 2px 7px;
+  border-radius: 9999px;
+  font-weight: 600;
+}
+
+.coverflow-tab-btn.is-active .tab-count {
+  background: rgba(255, 252, 222, 0.25);
+  color: #FFFCDE;
+}
+
+/* 3D Cover Flow Viewport Stage */
+.coverflow-stage-wrapper {
   position: relative;
   width: 100%;
-  aspect-ratio: 4/3;
+  max-width: 1100px;
+  background: #150610; /* Deep plum/black cinematic stage matching reference */
+  border: 1px solid #700145;
+  padding: 44px 0 34px 0;
   overflow: hidden;
-  background: #2B1824;
+  box-sizing: border-box;
+  box-shadow: 0 24px 60px rgba(35, 18, 28, 0.28);
 }
 
-.life-card-img {
+.coverflow-viewport {
+  position: relative;
+  width: 100%;
+  height: clamp(340px, 38vw, 440px);
+  perspective: 1100px;
+  perspective-origin: 50% 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  cursor: grab;
+  touch-action: pan-y;
+  outline: none;
+}
+
+.coverflow-viewport.is-dragging {
+  cursor: grabbing;
+}
+
+.coverflow-track {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.coverflow-card {
+  position: absolute;
+  width: clamp(230px, 24vw, 320px);
+  aspect-ratio: 4/5;
+  background: #2B1824;
+  border: 1px solid rgba(255, 252, 222, 0.18);
+  overflow: hidden;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  will-change: transform, opacity, filter;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.45s ease, filter 0.45s ease, box-shadow 0.45s ease;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.65);
+}
+
+.coverflow-card.is-active {
+  border-color: #FFFCDE;
+  box-shadow: 0 25px 65px rgba(112, 1, 69, 0.4), 0 0 0 1px #FFFCDE;
+}
+
+.coverflow-card-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+  transition: transform 0.4s ease;
 }
 
-.life-card:hover .life-card-img {
-  transform: scale(1.06);
-}
-
-.life-card-badge {
+.coverflow-card-shine {
   position: absolute;
-  bottom: 10px;
-  left: 10px;
-  background: rgba(255, 252, 222, 0.94);
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0) 60%);
+  pointer-events: none;
+}
+
+.coverflow-card-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  background: rgba(21, 6, 16, 0.88);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(112, 1, 69, 0.25);
-  padding: 5px 11px;
+  border: 1px solid rgba(255, 252, 222, 0.2);
+  color: #FFFCDE;
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 11px;
-  font-weight: 700;
-  color: #700145;
+  font-weight: 600;
+  padding: 4px 10px;
   letter-spacing: 0.02em;
+  pointer-events: none;
 }
 
-.life-card-body {
-  padding: 16px 18px 18px 18px;
+/* Floor Reflection / Ambient Glow */
+.coverflow-stage-reflection {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 35%;
+  background: linear-gradient(to top, rgba(21, 6, 16, 0.95) 0%, rgba(21, 6, 16, 0) 100%);
+  pointer-events: none;
+}
+
+/* Control Bar (Navigation arrows + counter) */
+.coverflow-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 22px;
+  z-index: 10;
+  position: relative;
+}
+
+.coverflow-arrow-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 252, 222, 0.1);
+  border: 1px solid rgba(255, 252, 222, 0.25);
+  color: #FFFCDE;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.coverflow-arrow-btn:hover {
+  background: #700145;
+  border-color: #FFFCDE;
+  transform: scale(1.08);
+}
+
+.coverflow-counter-pill {
+  font-family: 'MozaicGEO', 'Plus Jakarta Sans', sans-serif;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #FFFCDE;
+  background: rgba(255, 252, 222, 0.08);
+  border: 1px solid rgba(255, 252, 222, 0.15);
+  padding: 8px 18px;
+  border-radius: 9999px;
+  letter-spacing: 0.05em;
+}
+
+/* Active Story Box */
+.coverflow-story-box {
+  width: 100%;
+  max-width: 1100px;
+  margin: 28px auto 0 auto;
+  background: #FFFCDE;
+  border: 1px solid #700145;
+  padding: clamp(24px, 3.5vw, 36px);
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
+  gap: 10px;
+  position: relative;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.coverflow-story-badge-row {
+  display: flex;
+  align-items: center;
   justify-content: space-between;
-  border-top: 1px solid rgba(112, 1, 69, 0.15);
-  background: #FFFCDE;
+  margin-bottom: 4px;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
-.life-card-title {
-  font-family: 'MozaicGEO', 'Plus Jakarta Sans', sans-serif;
-  font-size: 17px;
-  font-weight: 700;
-  color: #4A2C11;
-  margin: 0 0 6px 0;
-  letter-spacing: -0.01em;
-}
-
-.life-card-desc {
+.coverflow-story-tag {
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 13px;
-  line-height: 1.55;
-  color: #664228;
+  font-size: 12px;
+  font-weight: 700;
+  color: #700145;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.coverflow-click-hint {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 12px;
+  color: #8C6A4E;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.coverflow-story-title {
+  font-family: 'Basote', sans-serif;
+  font-size: clamp(24px, 2.5vw, 34px);
+  color: #700145;
+  line-height: 1.15;
+  margin: 0;
+  font-weight: 400;
+}
+
+.coverflow-story-desc {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(14px, 1.05vw, 15.5px);
+  line-height: 1.7;
+  color: #4A2C11;
   margin: 0;
 }
 
-@media (max-width: 960px) {
-  .life-gallery-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+@media (max-width: 768px) {
+  .coverflow-stage-wrapper {
+    padding: 24px 0 20px 0;
   }
-}
-
-@media (max-width: 600px) {
-  .life-gallery-grid {
-    grid-template-columns: 1fr;
-    gap: 18px;
+  .coverflow-viewport {
+    height: 320px;
+    perspective: 750px;
   }
-  .life-hero-section {
-    padding-top: 110px;
+  .coverflow-card {
+    width: 200px;
+  }
+  .coverflow-story-box {
+    padding: 20px 18px;
   }
 }
