@@ -2824,8 +2824,9 @@ body {
   transition: width 0.1s linear;
 }
 
-/* Stagger entrance when preloader opens */
-body:not(.preloader-revealed) {
+/* Stagger entrance when preloader opens (only on pages containing the preloader) */
+body.has-preloader:not(.preloader-revealed),
+body:has(.portfolio-preloader):not(.preloader-revealed) {
   overflow: hidden;
 }
 
