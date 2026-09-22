@@ -1853,9 +1853,11 @@ body {
   background-color: #FFFCDE; /* Signature warm off-white canvas */
   color: #1a140e;
   min-height: 100vh;
+  height: auto !important;
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
 }
 
 /* Floating Dual-Pill Navbar Container */
