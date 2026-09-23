@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Work & Projects | Harsh Bhawsar</title>
-  <link rel="stylesheet" href="style.css?v=110_preloader_maroon_back_btns">
+  <title>Selected Work & Case Studies | Harsh Bhawsar</title>
+  <link rel="stylesheet" href="style.css?v=111_guidelines_and_styling_sync">
   <!-- Google Fonts for Plus Jakarta Sans & Cormorant Garamond -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,30 +16,17 @@
       height: auto !important;
       background-color: #FFFCDE !important;
     }
-    .work-page-hero {
-      width: 100%;
-      max-width: 1320px;
-      margin: 0 auto;
-      padding: clamp(100px, 12vh, 140px) clamp(20px, 3.5vw, 40px) clamp(30px, 4vh, 48px);
-      box-sizing: border-box;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-    }
-    .work-grid-container {
-      width: 100%;
-      max-width: 1320px;
-      margin: 0 auto;
-      padding: 0 clamp(20px, 3.5vw, 40px) clamp(80px, 10vh, 120px);
-      box-sizing: border-box;
-      display: flex;
-      flex-direction: column;
-      gap: clamp(24px, 3vw, 36px);
+    @media (max-width: 768px) {
+      .work-single-card {
+        max-width: 100% !important;
+        flex: 1 1 100% !important;
+        width: 100% !important;
+      }
     }
   </style>
 </head>
 <body class="case-study-page work-page">
-  <!-- Floating Dual-Pill Navbar Container -->
+  <!-- Floating Dual-Pill Navbar Container (Appears on Scroll Up) -->
   <header class="navbar-container case-study-navbar-container" id="workNavbar">
     <a href="index.html#work" class="nav-pill-btn back-pill">
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -60,244 +47,243 @@
     </nav>
   </header>
 
-  <!-- Main Work Archive Container -->
-  <main class="work-page-wrapper">
-    <!-- Hero Header -->
-    <section class="work-page-hero">
-      <div class="projects-header" style="margin-bottom: 0;">
-        <img src="lotus.png" alt="Lotus" class="header-lotus-img">
-        <span class="projects-subtitle">From Idea to Reality</span>
-        <h1 class="projects-title" style="font-size: clamp(34px, 4vw, 56px);">Selected Work & Case Studies</h1>
+  <!-- Main Work Archive Container adhering exactly to Homepage Structure & Scale -->
+  <main class="case-study-page-wrapper work-page-wrapper" style="width: 100%; min-height: 100vh; background-color: #FFFCDE;">
+    <div class="projects-section" style="min-height: auto; padding: calc(1.5vw + 45px) calc(7.2vw + 60px) 5vw calc(7.2vw + 60px); width: 100%; box-sizing: border-box;">
+      <div class="projects-content-wrapper in-view" style="opacity: 1; transform: none;">
+        <!-- Header -->
+        <div class="projects-header">
+          <img src="lotus.png" alt="Lotus" class="header-lotus-img">
+          <span class="projects-subtitle">From Idea to Reality</span>
+          <h1 class="projects-title">Selected Work & Case Studies</h1>
+        </div>
+
+        <!-- Row 1: Bus Transportation & SAVW Internship -->
+        <div class="projects-row">
+            <!-- Project 1: Bus Transportation Management -->
+            <a href="transportation.html" class="project-card" data-cursor-color="#FE820A" data-cursor-title="Bus Transportation<br>Management">
+              <div class="project-card-inner">
+                <div class="project-card-header">
+                  <div class="project-pills">
+                    <span class="project-pill"><span class="pill-dot" style="background:#FE820A;"></span>Object Oriented UX</span>
+                    <span class="project-pill">System Design</span>
+                  </div>
+                  <div class="project-meta-tag">
+                    <span class="meta-year">2026</span>
+                    <span class="meta-separator">•</span>
+                    <span class="meta-type">Case Study</span>
+                  </div>
+                </div>
+
+                <div class="project-image-box">
+                  <img src="bustransportation.png" alt="MIT-ADT University Bus Transportation Management" class="project-img">
+                  <div class="project-hover-overlay">
+                    <div class="project-hover-pill">
+                      <span>View Case Study</span>
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="7" y1="17" x2="17" y2="7"></line>
+                        <polyline points="7 7 17 7 17 17"></polyline>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="project-card-footer">
+                  <div class="project-title-group">
+                    <h3 class="project-card-title">Bus Transportation Management</h3>
+                    <p class="project-card-desc">Designed a unified MIT-ADT transportation system that streamlines bus operations and gives students real-time tracking, schedules, and delay updates.</p>
+                  </div>
+                  <div class="project-action-btn" aria-label="Explore Project">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="7" y1="17" x2="17" y2="7"></line>
+                      <polyline points="7 7 17 7 17 17"></polyline>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <!-- Project 2: SAVW Internship Report -->
+            <a href="savw.html" class="project-card" data-cursor-color="#00A859" data-cursor-title="SAVW UX Research<br>Internship Report">
+              <div class="project-card-inner">
+                <div class="project-card-header">
+                  <div class="project-pills">
+                    <span class="project-pill"><span class="pill-dot" style="background:#00A859;"></span>UX Research</span>
+                    <span class="project-pill">Automotive</span>
+                  </div>
+                  <div class="project-meta-tag">
+                    <span class="meta-year">2024</span>
+                    <span class="meta-separator">•</span>
+                    <span class="meta-type">Case Study</span>
+                  </div>
+                </div>
+
+                <div class="project-image-box">
+                  <img src="skoda/SkodaThumbnail.png" alt="Škoda Auto Volkswagen India UX Research Internship Report" class="project-img">
+                  <div class="project-hover-overlay">
+                    <div class="project-hover-pill">
+                      <span>View Case Study</span>
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="7" y1="17" x2="17" y2="7"></line>
+                        <polyline points="7 7 17 7 17 17"></polyline>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="project-card-footer">
+                  <div class="project-title-group">
+                    <h3 class="project-card-title">SAVW Internship Report</h3>
+                    <p class="project-card-desc">Contributed to establishing UX research capabilities at Škoda Auto Volkswagen India through research planning, execution, and automotive user insights.</p>
+                  </div>
+                  <div class="project-action-btn" aria-label="Explore Project">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="7" y1="17" x2="17" y2="7"></line>
+                      <polyline points="7 7 17 7 17 17"></polyline>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Row 2: Kamo AI & Samsung PRISM -->
+          <div class="projects-row">
+            <!-- Project 3: Kamo AI -->
+            <a href="https://www.figma.com/proto/5o3mcDvLlrFB5Ft2tNlu6e/Kamo-AI?node-id=0-1&t=nH9mkcz9T31QtaZD-1" target="_blank" rel="noopener noreferrer" class="project-card" data-cursor-color="#B757E6" data-cursor-title="Kamo AI :<br>Empathetic AI">
+              <div class="project-card-inner">
+                <div class="project-card-header">
+                  <div class="project-pills">
+                    <span class="project-pill"><span class="pill-dot" style="background:#B757E6;"></span>AI Agent</span>
+                    <span class="project-pill">Ed-Tech</span>
+                  </div>
+                  <div class="project-meta-tag">
+                    <span class="meta-year">2026</span>
+                    <span class="meta-separator">•</span>
+                    <span class="meta-type">Interaction Design</span>
+                  </div>
+                </div>
+
+                <div class="project-image-box">
+                  <img src="kamoai.png" alt="Kamo AI - Empathetic AI Agent" class="project-img">
+                  <div class="project-hover-overlay">
+                    <div class="project-hover-pill">
+                      <span>View Case Study</span>
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="7" y1="17" x2="17" y2="7"></line>
+                        <polyline points="7 7 17 7 17 17"></polyline>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="project-card-footer">
+                  <div class="project-title-group">
+                    <h3 class="project-card-title">Kamo AI : Empathetic Companion</h3>
+                    <p class="project-card-desc">Empathetic AI productivity agent helping students overcome procrastination, manage tasks, maintain focus, and build sustainable habits.</p>
+                  </div>
+                  <div class="project-action-btn" aria-label="Explore Project">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="7" y1="17" x2="17" y2="7"></line>
+                      <polyline points="7 7 17 7 17 17"></polyline>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <!-- Project 4: Samsung PRISM Hackathon -->
+            <a href="https://www.behance.net/gallery/235207603/Agentic-Travel-Planning-Samsung-Prism-Hackathon" target="_blank" rel="noopener noreferrer" class="project-card" data-cursor-color="#1DA1FF" data-cursor-title="Samsung PRISM<br>Hackathon">
+              <div class="project-card-inner">
+                <div class="project-card-header">
+                  <div class="project-pills">
+                    <span class="project-pill"><span class="pill-dot" style="background:#1DA1FF;"></span>Agentic AI</span>
+                    <span class="project-pill">Travel Tech</span>
+                  </div>
+                  <div class="project-meta-tag">
+                    <span class="meta-badge-award">🏆 2x 1st Place</span>
+                  </div>
+                </div>
+
+                <div class="project-image-box">
+                  <img src="samsung.png" alt="Samsung PRISM Hackathon" class="project-img">
+                  <div class="project-hover-overlay">
+                    <div class="project-hover-pill">
+                      <span>View Case Study</span>
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="7" y1="17" x2="17" y2="7"></line>
+                        <polyline points="7 7 17 7 17 17"></polyline>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="project-card-footer">
+                  <div class="project-title-group">
+                    <h3 class="project-card-title">Samsung PRISM Hackathon</h3>
+                    <p class="project-card-desc">Won 1st place in Samsung PRISM’s 24-hour hackathon, designing an intuitive, high-fidelity UI for an intelligent AI assistant</p>
+                  </div>
+                  <div class="project-action-btn" aria-label="Explore Project">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="7" y1="17" x2="17" y2="7"></line>
+                      <polyline points="7 7 17 7 17 17"></polyline>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Row 3: Weapons of Influence (Consistent 50% width column) -->
+          <div class="projects-row">
+            <!-- Project 5: Weapon of Influence -->
+            <a href="https://www.behance.net/gallery/228241265/Weapon-of-Influence-Data-Visualization" target="_blank" rel="noopener noreferrer" class="project-card work-single-card" style="max-width: calc(50% - clamp(12px, 1.25vw, 18px)); flex: 0 0 calc(50% - clamp(12px, 1.25vw, 18px));" data-cursor-color="#6DB874" data-cursor-title="Defense Intelligence<br>Dashboard Design">
+              <div class="project-card-inner">
+                <div class="project-card-header">
+                  <div class="project-pills">
+                    <span class="project-pill"><span class="pill-dot" style="background:#6DB874;"></span>Information Viz</span>
+                    <span class="project-pill">Dashboard Design</span>
+                  </div>
+                  <div class="project-meta-tag">
+                    <span class="meta-year">2025</span>
+                    <span class="meta-separator">•</span>
+                    <span class="meta-type">Intelligence</span>
+                  </div>
+                </div>
+
+                <div class="project-image-box">
+                  <img src="weaponofinfluence.png" alt="Weapons of Influence" class="project-img">
+                  <div class="project-hover-overlay">
+                    <div class="project-hover-pill">
+                      <span>View Case Study</span>
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="7" y1="17" x2="17" y2="7"></line>
+                        <polyline points="7 7 17 7 17 17"></polyline>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="project-card-footer">
+                  <div class="project-title-group">
+                    <h3 class="project-card-title">Defense Intelligence Dashboard Design</h3>
+                    <p class="project-card-desc">Redesigning the complex &ldquo;Global Arms Trade&rdquo; Infographics into a clean and intuitive dashboard.</p>
+                  </div>
+                  <div class="project-action-btn" aria-label="Explore Project">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="7" y1="17" x2="17" y2="7"></line>
+                      <polyline points="7 7 17 7 17 17"></polyline>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
       </div>
-    </section>
+    </main>
 
-    <!-- Full Work Showcase Grid -->
-    <div class="work-grid-container">
-      <!-- Row 1: Bus Transportation & SAVW Internship -->
-      <div class="projects-row">
-        <!-- Project 1: Bus Transportation Management -->
-        <a href="transportation.html" class="project-card" data-cursor-color="#FE820A" data-cursor-title="Bus Transportation<br>Management">
-          <div class="project-card-inner">
-            <div class="project-card-header">
-              <div class="project-pills">
-                <span class="project-pill"><span class="pill-dot" style="background:#FE820A;"></span>Object Oriented UX</span>
-                <span class="project-pill">System Design</span>
-              </div>
-              <div class="project-meta-tag">
-                <span class="meta-year">2026</span>
-                <span class="meta-separator">•</span>
-                <span class="meta-type">Case Study</span>
-              </div>
-            </div>
-
-            <div class="project-image-box">
-              <img src="bustransportation.png" alt="MIT-ADT University Bus Transportation Management" class="project-img">
-              <div class="project-hover-overlay">
-                <div class="project-hover-pill">
-                  <span>View Case Study</span>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="7" y1="17" x2="17" y2="7"></line>
-                    <polyline points="7 7 17 7 17 17"></polyline>
-                  </svg>
-                </div>
-              </div>
-            </div>
-
-            <div class="project-card-footer">
-              <div class="project-title-group">
-                <h3 class="project-card-title">Bus Transportation Management</h3>
-                <p class="project-card-desc">Designed a unified MIT-ADT transportation system that streamlines bus operations and gives students real-time tracking, schedules, and delay updates.</p>
-              </div>
-              <div class="project-action-btn" aria-label="Explore Project">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="7" y1="17" x2="17" y2="7"></line>
-                  <polyline points="7 7 17 7 17 17"></polyline>
-                </svg>
-              </div>
-            </div>
-          </div>
-        </a>
-
-        <!-- Project 2: SAVW Internship Report -->
-        <a href="savw.html" class="project-card" data-cursor-color="#00A859" data-cursor-title="SAVW UX Research<br>Internship Report">
-          <div class="project-card-inner">
-            <div class="project-card-header">
-              <div class="project-pills">
-                <span class="project-pill"><span class="pill-dot" style="background:#00A859;"></span>UX Research</span>
-                <span class="project-pill">Automotive</span>
-              </div>
-              <div class="project-meta-tag">
-                <span class="meta-year">2024</span>
-                <span class="meta-separator">•</span>
-                <span class="meta-type">Case Study</span>
-              </div>
-            </div>
-
-            <div class="project-image-box">
-              <img src="skoda/SkodaThumbnail.png" alt="Škoda Auto Volkswagen India UX Research Internship Report" class="project-img">
-              <div class="project-hover-overlay">
-                <div class="project-hover-pill">
-                  <span>View Case Study</span>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="7" y1="17" x2="17" y2="7"></line>
-                    <polyline points="7 7 17 7 17 17"></polyline>
-                  </svg>
-                </div>
-              </div>
-            </div>
-
-            <div class="project-card-footer">
-              <div class="project-title-group">
-                <h3 class="project-card-title">SAVW Internship Report</h3>
-                <p class="project-card-desc">Contributed to establishing UX research capabilities at Škoda Auto Volkswagen India through research planning, execution, and automotive user insights.</p>
-              </div>
-              <div class="project-action-btn" aria-label="Explore Project">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="7" y1="17" x2="17" y2="7"></line>
-                  <polyline points="7 7 17 7 17 17"></polyline>
-                </svg>
-              </div>
-            </div>
-          </div>
-        </a>
-      </div>
-
-      <!-- Row 2: Kamo AI & Samsung PRISM -->
-      <div class="projects-row">
-        <!-- Project 3: Kamo AI -->
-        <a href="https://www.figma.com/proto/5o3mcDvLlrFB5Ft2tNlu6e/Kamo-AI?node-id=0-1&t=nH9mkcz9T31QtaZD-1" target="_blank" rel="noopener noreferrer" class="project-card" data-cursor-color="#B757E6" data-cursor-title="Kamo AI :<br>Empathetic AI">
-          <div class="project-card-inner">
-            <div class="project-card-header">
-              <div class="project-pills">
-                <span class="project-pill"><span class="pill-dot" style="background:#B757E6;"></span>AI Agent</span>
-                <span class="project-pill">Ed-Tech</span>
-              </div>
-              <div class="project-meta-tag">
-                <span class="meta-year">2026</span>
-                <span class="meta-separator">•</span>
-                <span class="meta-type">Interaction Design</span>
-              </div>
-            </div>
-
-            <div class="project-image-box">
-              <img src="kamoai.png" alt="Kamo AI - Empathetic AI Agent" class="project-img">
-              <div class="project-hover-overlay">
-                <div class="project-hover-pill">
-                  <span>View Case Study</span>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="7" y1="17" x2="17" y2="7"></line>
-                    <polyline points="7 7 17 7 17 17"></polyline>
-                  </svg>
-                </div>
-              </div>
-            </div>
-
-            <div class="project-card-footer">
-              <div class="project-title-group">
-                <h3 class="project-card-title">Kamo AI : Empathetic Companion</h3>
-                <p class="project-card-desc">Empathetic AI productivity agent helping students overcome procrastination, manage tasks, maintain focus, and build sustainable habits.</p>
-              </div>
-              <div class="project-action-btn" aria-label="Explore Project">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="7" y1="17" x2="17" y2="7"></line>
-                  <polyline points="7 7 17 7 17 17"></polyline>
-                </svg>
-              </div>
-            </div>
-          </div>
-        </a>
-
-        <!-- Project 4: Samsung PRISM Hackathon -->
-        <a href="https://www.behance.net/gallery/235207603/Agentic-Travel-Planning-Samsung-Prism-Hackathon" target="_blank" rel="noopener noreferrer" class="project-card" data-cursor-color="#1DA1FF" data-cursor-title="Samsung PRISM<br>Hackathon">
-          <div class="project-card-inner">
-            <div class="project-card-header">
-              <div class="project-pills">
-                <span class="project-pill"><span class="pill-dot" style="background:#1DA1FF;"></span>Agentic AI</span>
-                <span class="project-pill">Travel Tech</span>
-              </div>
-              <div class="project-meta-tag">
-                <span class="meta-badge-award">🏆 2x 1st Place</span>
-              </div>
-            </div>
-
-            <div class="project-image-box">
-              <img src="samsung.png" alt="Samsung PRISM Hackathon" class="project-img">
-              <div class="project-hover-overlay">
-                <div class="project-hover-pill">
-                  <span>View Case Study</span>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="7" y1="17" x2="17" y2="7"></line>
-                    <polyline points="7 7 17 7 17 17"></polyline>
-                  </svg>
-                </div>
-              </div>
-            </div>
-
-            <div class="project-card-footer">
-              <div class="project-title-group">
-                <h3 class="project-card-title">Samsung PRISM Hackathon</h3>
-                <p class="project-card-desc">Won 1st place in Samsung PRISM’s 24-hour hackathon, designing an intuitive, high-fidelity UI for an intelligent AI assistant.</p>
-              </div>
-              <div class="project-action-btn" aria-label="Explore Project">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="7" y1="17" x2="17" y2="7"></line>
-                  <polyline points="7 7 17 7 17 17"></polyline>
-                </svg>
-              </div>
-            </div>
-          </div>
-        </a>
-      </div>
-
-      <!-- Row 3: Weapons of Influence -->
-      <div class="projects-row">
-        <!-- Project 5: Weapon of Influence -->
-        <a href="https://www.behance.net/gallery/228241265/Weapon-of-Influence-Data-Visualization" target="_blank" rel="noopener noreferrer" class="project-card" data-cursor-color="#6DB874" data-cursor-title="Defense Intelligence<br>Dashboard Design">
-          <div class="project-card-inner">
-            <div class="project-card-header">
-              <div class="project-pills">
-                <span class="project-pill"><span class="pill-dot" style="background:#6DB874;"></span>Information Viz</span>
-                <span class="project-pill">Dashboard Design</span>
-              </div>
-              <div class="project-meta-tag">
-                <span class="meta-year">2025</span>
-                <span class="meta-separator">•</span>
-                <span class="meta-type">Intelligence</span>
-              </div>
-            </div>
-
-            <div class="project-image-box">
-              <img src="weaponofinfluence.png" alt="Weapons of Influence" class="project-img">
-              <div class="project-hover-overlay">
-                <div class="project-hover-pill">
-                  <span>View Case Study</span>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="7" y1="17" x2="17" y2="7"></line>
-                    <polyline points="7 7 17 7 17 17"></polyline>
-                  </svg>
-                </div>
-              </div>
-            </div>
-
-            <div class="project-card-footer">
-              <div class="project-title-group">
-                <h3 class="project-card-title">Defense Intelligence Dashboard Design</h3>
-                <p class="project-card-desc">Redesigning the complex &ldquo;Global Arms Trade&rdquo; Infographics into a clean and intuitive dashboard.</p>
-              </div>
-              <div class="project-action-btn" aria-label="Explore Project">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="7" y1="17" x2="17" y2="7"></line>
-                  <polyline points="7 7 17 7 17 17"></polyline>
-                </svg>
-              </div>
-            </div>
-          </div>
-        </a>
-      </div>
-    </div>
-  </main>
-
-  <!-- Contact / Footer Section -->
+  <!-- Contact / Footer Section (Identical Structure & Draggable Stickers as Main Page) -->
   <footer class="footer-section" id="contact">
     <div class="footer-headline-container">
       <h2 class="footer-headline">Let’s build experiences that matter</h2>
@@ -315,56 +301,56 @@
             </ul>
           </div>
 
-          <!-- Column 2: Socials -->
+          <!-- Column 2: Social -->
           <div class="footer-col footer-col-social">
             <span class="footer-col-label">SOCIAL</span>
             <ul class="footer-links-list">
               <li><a href="https://www.behance.net/harshbhawsar" target="_blank" rel="noopener noreferrer" class="footer-link">Behance</a></li>
-              <li><a href="https://www.linkedin.com/in/harsh-bhawsar-31b0a824b/" target="_blank" rel="noopener noreferrer" class="footer-link">LinkedIn</a></li>
+              <li><a href="https://www.linkedin.com/in/harsh-bhawsar-ba25581b9/" target="_blank" rel="noopener noreferrer" class="footer-link">LinkedIn</a></li>
               <li><a href="https://wa.me/917773892631" target="_blank" rel="noopener noreferrer" class="footer-link">WhatsApp</a></li>
             </ul>
           </div>
 
-          <!-- Column 3: Contact Details -->
+          <!-- Column 3: Contact -->
           <div class="footer-col footer-col-contact">
             <span class="footer-col-label">CONTACT</span>
             <div class="footer-contact-items">
-              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=harshhbhawsar@gmail.com" target="_blank" rel="noopener noreferrer" class="footer-contact-item footer-email">harshhbhawsar@gmail.com</a>
-              <a href="tel:+917773892631" class="footer-contact-item footer-phone">+91 7773892631</a>
+              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=harshhbhawsar@gmail.com" target="_blank" rel="noopener noreferrer" class="footer-contact-item">harshhbhawsar@gmail.com</a>
+              <a href="tel:+917773892631" class="footer-contact-item">+91 7773892631</a>
             </div>
           </div>
         </div>
+      </div>
 
-        <!-- Huge Cropped Harsh Signature Wordmark -->
-        <div class="footer-signature-wrap">
-          <span class="footer-signature-text">harsh</span>
-        </div>
+      <!-- Massive Signature Typography in Spoleto Font -->
+      <div class="footer-signature-container">
+        <span class="footer-signature-text">harsh</span>
       </div>
 
       <!-- Interactive Draggable Stickers Layer -->
-      <div class="footer-stickers-layer">
-        <div class="footer-sticker footer-sticker-sun" data-sticker-id="sun">
-          <img src="suncontacts.png" alt="Sun Sticker" draggable="false">
+      <div class="footer-stickers-layer" id="footerStickersLayer">
+        <div class="footer-sticker footer-sticker-sun" data-id="sun" title="Drag me!">
+          <img src="suncontacts.png" alt="Sun sticker" draggable="false">
         </div>
-        <div class="footer-sticker footer-sticker-lotus" data-sticker-id="lotus">
-          <img src="lotuscontacts.png" alt="Lotus Sticker" draggable="false">
+        <div class="footer-sticker footer-sticker-lotus" data-id="lotus" title="Drag me!">
+          <img src="lotuscontacts.png" alt="Lotus sticker" draggable="false">
         </div>
-        <div class="footer-sticker footer-sticker-camera" data-sticker-id="camera">
-          <img src="cameracontacts.png" alt="Camera Sticker" draggable="false">
+        <div class="footer-sticker footer-sticker-camera" data-id="camera" title="Drag me!">
+          <img src="cameracontacts.png" alt="Camera sticker" draggable="false">
         </div>
-        <div class="footer-sticker footer-sticker-eye" data-sticker-id="eye">
-          <img src="eyecontacts.png" alt="Eye Sticker" draggable="false">
+        <div class="footer-sticker footer-sticker-eye" data-id="eye" title="Drag me!">
+          <img src="eyecontacts.png" alt="Eye sticker" draggable="false">
         </div>
       </div>
     </div>
   </footer>
 
-  <!-- Project Cards Custom Cursor Badge Follower -->
+  <!-- Floating Project Cursor Badge -->
   <div class="project-cursor-badge" id="projectCursorBadge">
     <div class="badge-content">
       <span class="badge-title"></span>
       <div class="badge-arrow">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FE820A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FE820A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
           <line x1="7" y1="17" x2="17" y2="7"></line>
           <polyline points="7 7 17 7 17 17"></polyline>
         </svg>
@@ -394,7 +380,7 @@
         lastScrollY = currentScrollY;
       }, { passive: true });
 
-      // Footer animation observer
+      // Footer headline and card reveal
       const footerHeadline = document.querySelector('.footer-headline');
       const footerCard = document.querySelector('.footer-card');
 
@@ -450,49 +436,44 @@
       window.addEventListener('mousemove', (e) => {
         targetX = e.clientX;
         targetY = e.clientY;
-        if (!isBadgeActive) {
-          mouseX = targetX;
-          mouseY = targetY;
-        }
       });
 
-      const updateCursorBadge = () => {
-        if (isBadgeActive && cursorBadge) {
-          mouseX += (targetX - mouseX) * 0.35;
-          mouseY += (targetY - mouseY) * 0.35;
+      const renderCursor = () => {
+        mouseX += (targetX - mouseX) * 0.18;
+        mouseY += (targetY - mouseY) * 0.18;
+        
+        if (cursorBadge) {
           cursorBadge.style.left = `${mouseX}px`;
           cursorBadge.style.top = `${mouseY}px`;
         }
-        requestAnimationFrame(updateCursorBadge);
+        requestAnimationFrame(renderCursor);
       };
-      requestAnimationFrame(updateCursorBadge);
+      requestAnimationFrame(renderCursor);
 
       document.querySelectorAll('.project-card').forEach(card => {
-        const imageBox = card.querySelector('.project-image-box');
-        if (!imageBox || !cursorBadge) return;
-
-        const badgeColor = card.getAttribute('data-cursor-color') || '#FE820A';
-        const badgeText = card.getAttribute('data-cursor-title') || '';
-
-        imageBox.addEventListener('mouseenter', (e) => {
-          isBadgeActive = true;
-          mouseX = e.clientX;
-          mouseY = e.clientY;
-          cursorBadge.style.left = `${mouseX}px`;
-          cursorBadge.style.top = `${mouseY}px`;
-          cursorBadge.style.backgroundColor = badgeColor;
-          if (badgeTitle) badgeTitle.innerHTML = badgeText;
-          if (badgeArrowSvg) badgeArrowSvg.setAttribute('stroke', badgeColor);
-          cursorBadge.classList.add('is-visible');
+        card.addEventListener('mouseenter', () => {
+          const title = card.getAttribute('data-cursor-title');
+          const badgeColor = card.getAttribute('data-cursor-color') || '#FE820A';
+          if (cursorBadge && badgeTitle) {
+            badgeTitle.innerHTML = title;
+            cursorBadge.style.backgroundColor = badgeColor;
+            if (badgeArrowSvg) {
+              badgeArrowSvg.setAttribute('stroke', badgeColor);
+            }
+            cursorBadge.classList.add('is-visible');
+            isBadgeActive = true;
+          }
         });
 
-        imageBox.addEventListener('mouseleave', () => {
-          isBadgeActive = false;
-          cursorBadge.classList.remove('is-visible');
+        card.addEventListener('mouseleave', () => {
+          if (cursorBadge) {
+            cursorBadge.classList.remove('is-visible');
+            isBadgeActive = false;
+          }
         });
       });
 
-      // Interactive Draggable & Bounded Stickers System with Smooth Glide Momentum
+      // Interactive Draggable & Bounded Stickers System for Contact Section with Smooth Glide Momentum
       const initContactStickers = () => {
         const footerCard = document.querySelector('.footer-card');
         if (!footerCard) return;
@@ -573,6 +554,7 @@
           hasMovedAny = false;
         };
 
+        // Calibrate initial layout after render
         setTimeout(() => resetStickersToDefault(false), 150);
         window.addEventListener('resize', () => {
           if (!hasMovedAny) resetStickersToDefault(false);
@@ -632,6 +614,7 @@
             const dx = clientX - lastPointerX;
             const dy = clientY - lastPointerY;
 
+            // Velocity in pixels per 16ms frame with smoothed moving average
             const instVx = (dx / dt) * 16.0;
             const instVy = (dy / dt) * 16.0;
             velocityX = velocityX * 0.35 + instVx * 0.65;
@@ -647,23 +630,21 @@
             let newLeft = startStickerLeft + totalDeltaX;
             let newTop = startStickerTop + totalDeltaY;
 
+            // Strict bounding inside .footer-card
             const cardRect = footerCard.getBoundingClientRect();
-            const stickerW = el.offsetWidth || 100;
-            const stickerH = el.offsetHeight || 100;
+            const halfW = el.offsetWidth / 2;
+            const halfH = el.offsetHeight / 2;
+            const pad = 12;
 
-            const minLeft = stickerW / 2;
-            const maxLeft = cardRect.width - (stickerW / 2);
-            const minTop = stickerH / 2;
-            const maxTop = cardRect.height - (stickerH / 2);
+            const minX = halfW + pad;
+            const maxX = cardRect.width - halfW - pad;
+            const minY = halfH + pad;
+            const maxY = cardRect.height - halfH - pad;
 
-            newLeft = Math.max(minLeft, Math.min(maxLeft, newLeft));
-            newTop = Math.max(minTop, Math.min(maxTop, newTop));
+            newLeft = Math.max(minX, Math.min(newLeft, maxX));
+            newTop = Math.max(minY, Math.min(newTop, maxY));
 
-            item.currentLeft = newLeft;
-            item.currentTop = newTop;
-            el.style.left = `${newLeft}px`;
-            el.style.top = `${newTop}px`;
-            el.style.transform = `translate(-50%, -50%) rotate(${item.defaultRot}deg) scale(1.08)`;
+            setStickerPosition(item, newLeft, newTop, false);
           };
 
           const onPointerUp = () => {
@@ -672,72 +653,63 @@
             isDraggingAny = false;
             el.classList.remove('is-dragging');
 
-            el.style.transition = 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)';
-            el.style.transform = `translate(-50%, -50%) rotate(${item.defaultRot}deg) scale(1)`;
+            // Friction-based momentum glide simulation
+            let curLeft = item.currentLeft;
+            let curTop = item.currentTop;
+            let vx = Math.max(-28, Math.min(velocityX * 1.35, 28));
+            let vy = Math.max(-28, Math.min(velocityY * 1.35, 28));
+            const friction = 0.91; // smooth natural deceleration
+            const cardRect = footerCard.getBoundingClientRect();
+            const halfW = el.offsetWidth / 2;
+            const halfH = el.offsetHeight / 2;
+            const pad = 12;
+            const minX = halfW + pad;
+            const maxX = cardRect.width - halfW - pad;
+            const minY = halfH + pad;
+            const maxY = cardRect.height - halfH - pad;
 
-            if (performance.now() - lastMoveTime > 90) {
-              velocityX = 0;
-              velocityY = 0;
-            }
+            // Give subtle tilt response based on horizontal glide speed
+            let rot = item.defaultRot + Math.max(-12, Math.min(vx * 0.7, 12));
+            item.currentRot = rot;
 
-            const speed = Math.hypot(velocityX, velocityY);
-            const maxSpeed = 32;
-            if (speed > maxSpeed) {
-              velocityX = (velocityX / speed) * maxSpeed;
-              velocityY = (velocityY / speed) * maxSpeed;
-            }
-
-            const friction = 0.925;
-            const minVelocity = 0.12;
-
-            const stepGlide = () => {
-              if (Math.abs(velocityX) < minVelocity && Math.abs(velocityY) < minVelocity) {
+            const glideStep = () => {
+              if (Math.abs(vx) < 0.2 && Math.abs(vy) < 0.2) {
                 item.animId = null;
+                // Settle back to default rotation softly
+                el.style.transition = 'transform 0.45s cubic-bezier(0.16, 1, 0.3, 1)';
+                item.currentRot = item.defaultRot;
+                el.style.transform = `translate(-50%, -50%) rotate(${item.defaultRot}deg)`;
                 return;
               }
 
-              velocityX *= friction;
-              velocityY *= friction;
+              curLeft += vx;
+              curTop += vy;
 
-              const cardRect = footerCard.getBoundingClientRect();
-              const stickerW = el.offsetWidth || 100;
-              const stickerH = el.offsetHeight || 100;
-
-              const minLeft = stickerW / 2;
-              const maxLeft = cardRect.width - (stickerW / 2);
-              const minTop = stickerH / 2;
-              const maxTop = cardRect.height - (stickerH / 2);
-
-              let nextLeft = (item.currentLeft || parseFloat(el.style.left) || 0) + velocityX;
-              let nextTop = (item.currentTop || parseFloat(el.style.top) || 0) + velocityY;
-
-              if (nextLeft <= minLeft) {
-                nextLeft = minLeft;
-                velocityX = -velocityX * 0.2;
-              } else if (nextLeft >= maxLeft) {
-                nextLeft = maxLeft;
-                velocityX = -velocityX * 0.2;
+              // Elastic boundary bounce
+              if (curLeft <= minX) {
+                curLeft = minX;
+                vx = -vx * 0.45;
+              } else if (curLeft >= maxX) {
+                curLeft = maxX;
+                vx = -vx * 0.45;
               }
 
-              if (nextTop <= minTop) {
-                nextTop = minTop;
-                velocityY = -velocityY * 0.2;
-              } else if (nextTop >= maxTop) {
-                nextTop = maxTop;
-                velocityY = -velocityY * 0.2;
+              if (curTop <= minY) {
+                curTop = minY;
+                vy = -vy * 0.45;
+              } else if (curTop >= maxY) {
+                curTop = maxY;
+                vy = -vy * 0.45;
               }
 
-              item.currentLeft = nextLeft;
-              item.currentTop = nextTop;
-              el.style.left = `${nextLeft}px`;
-              el.style.top = `${nextTop}px`;
+              vx *= friction;
+              vy *= friction;
 
-              item.animId = requestAnimationFrame(stepGlide);
+              setStickerPosition(item, curLeft, curTop, false);
+              item.animId = requestAnimationFrame(glideStep);
             };
 
-            if (Math.abs(velocityX) >= minVelocity || Math.abs(velocityY) >= minVelocity) {
-              item.animId = requestAnimationFrame(stepGlide);
-            }
+            item.animId = requestAnimationFrame(glideStep);
           };
 
           el.addEventListener('mousedown', onPointerDown);
@@ -747,29 +719,22 @@
           el.addEventListener('touchstart', onPointerDown, { passive: false });
           window.addEventListener('touchmove', onPointerMove, { passive: false });
           window.addEventListener('touchend', onPointerUp);
-
-          el.addEventListener('dblclick', () => {
-            const cardRect = footerCard.getBoundingClientRect();
-            const targetLeft = (item.defaultLeftPct / 100) * cardRect.width;
-            const targetTop = (item.defaultTopPct / 100) * cardRect.height;
-            setStickerPosition(item, targetLeft, targetTop, true);
-          });
         });
 
+        // Scroll listener: When user scrolls up away from the footer, stickers smoothly return to their default positions
         let lastScrollY = window.pageYOffset || document.documentElement.scrollTop;
         window.addEventListener('scroll', () => {
           const currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
-          const isScrollingUp = currentScrollY < lastScrollY;
-          
-          const cardRect = footerCard.getBoundingClientRect();
-          const isOutOfView = cardRect.top > window.innerHeight || cardRect.bottom < 0;
+          const scrollingUp = currentScrollY < lastScrollY;
+          lastScrollY = currentScrollY;
 
-          if (hasMovedAny && !isDraggingAny) {
-            if (isOutOfView || (isScrollingUp && cardRect.top > window.innerHeight * 0.35)) {
+          if (scrollingUp && hasMovedAny && !isDraggingAny) {
+            const footerRect = footerCard.getBoundingClientRect();
+            // If contact footer has started moving down towards bottom of screen
+            if (footerRect.top > window.innerHeight * 0.4) {
               resetStickersToDefault(true);
             }
           }
-          lastScrollY = currentScrollY;
         }, { passive: true });
       };
 

@@ -441,12 +441,12 @@ body {
 }
 
 .navbar.scrolled .btn-contact {
-  background: #4A2C11; /* Dark chocolate brown button */
+  background: #700145; /* Portfolio maroon button */
   color: #FFFCDE; /* Off-white text */
 }
 
 .navbar.scrolled .btn-contact:hover {
-  background: #38200b; /* Deep brown on hover */
+  background: #830051; /* Vibrant maroon hover */
   color: #ffffff;
 }
 
@@ -606,7 +606,7 @@ body {
   font-family: 'MozaicGEO', sans-serif;
   font-size: 15px;
   font-weight: 500; /* MozaicGEO Medium */
-  color: #7A5C3E;
+  color: #736E69;
   letter-spacing: 0.01em;
   margin-bottom: 6px;
 }
@@ -632,7 +632,8 @@ body {
   margin-bottom: clamp(36px, 4vw, 56px);
 }
 
-.projects-row:last-child {
+.projects-row:last-child,
+.projects-row:last-of-type {
   margin-bottom: 0;
 }
 
@@ -968,7 +969,7 @@ body {
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin-top: clamp(12px, 1.5vw, 20px);
+  margin-top: 18px;
   margin-bottom: 0px;
 }
 
@@ -976,24 +977,25 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background-color: #700145;
+  background: #700145;
   color: #FFFCDE;
-  padding: 12px 26px;
-  border-radius: 0; /* Zero corner radius matching sharp aesthetic */
-  border: none;
-  text-decoration: none;
-  font-family: 'MozaicGEO', sans-serif;
-  font-size: 14.5px;
-  font-weight: 600;
-  letter-spacing: 0.01em;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 13.5px;
+  font-weight: 400;
+  padding: 10px 20px;
+  border: 1px solid #700145;
+  border-radius: 0;
   cursor: pointer;
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.25s ease;
-  box-shadow: none;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+  box-shadow: none !important;
 }
 
 .btn-view-more:hover {
-  transform: translateY(-3px);
-  background-color: #830051;
+  background: #FFFCDE;
+  color: #700145;
+  transform: translateY(-2px);
+  box-shadow: none !important;
 }
 
 .btn-view-more-text {
@@ -1007,11 +1009,11 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.3s ease;
 }
 
 .btn-view-more:hover .btn-view-more-arrow {
-  transform: translate(2px, -2px);
+  transform: translateX(4px);
 }
 
 /* Experience & Honors Section (Stacking Card Page Layer 3) */
@@ -1074,7 +1076,7 @@ body {
   font-family: 'MozaicGEO', sans-serif;
   font-size: 15px;
   font-weight: 500;
-  color: #7A5C3E;
+  color: #736E69;
   letter-spacing: 0.01em;
   margin-bottom: 6px;
 }
@@ -2177,13 +2179,13 @@ body {
 }
 
 .case-study-page .navbar .btn-contact {
-  background: #4A2C11;
+  background: #700145;
   color: #FFFCDE;
-  box-shadow: 0 4px 14px rgba(74, 44, 17, 0.16);
+  box-shadow: none;
 }
 
 .case-study-page .navbar .btn-contact:hover {
-  background: #381f08;
+  background: #830051;
   color: #ffffff;
 }
 
@@ -2301,9 +2303,9 @@ body {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 0;
+  gap: 1px;
   box-sizing: border-box;
-  background: #FFFCDE;
+  background: #E2DFCF;
   overflow: hidden;
 }
 
@@ -2519,7 +2521,7 @@ body {
   font-family: 'MozaicGEO', 'Plus Jakarta Sans', sans-serif;
   font-size: 14px;
   font-weight: 500;
-  color: #7A5C3E;
+  color: #736E69;
   letter-spacing: 0.01em;
   margin-bottom: 4px;
 }
@@ -3215,7 +3217,7 @@ body.life-page {
   font-size: 11.5px;
   font-weight: 700;
   letter-spacing: 0.12em;
-  color: #FE820A;
+  color: #736E69;
   text-transform: uppercase;
   margin-bottom: 6px;
 }
