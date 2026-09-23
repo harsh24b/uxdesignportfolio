@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Harsh - Portfolio</title>
-  <link rel="stylesheet" href="style.css?v=101_noscrolllock">
+  <link rel="stylesheet" href="style.css?v=103_contact_reveal">
   <!-- Google Fonts for Plus Jakarta Sans & Cormorant Garamond -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -985,7 +985,8 @@
       const experienceWrapper = document.querySelector('.experience-content-wrapper');
       const aboutWrapper = document.querySelector('.about-content-wrapper');
       const testimonialsWrapper = document.querySelector('.testimonials-content-wrapper');
-      const footerSection = document.querySelector('.footer-section');
+      const footerHeadline = document.querySelector('.footer-headline');
+      const footerCard = document.querySelector('.footer-card');
 
       const sectionObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -994,38 +995,43 @@
           }
         });
       }, {
-        threshold: 0.08,
-        rootMargin: '0px 0px -30px 0px'
+        threshold: 0.12,
+        rootMargin: '0px 0px -40px 0px'
       });
 
       if (projectsWrapper) sectionObserver.observe(projectsWrapper);
       if (experienceWrapper) sectionObserver.observe(experienceWrapper);
       if (aboutWrapper) sectionObserver.observe(aboutWrapper);
       if (testimonialsWrapper) sectionObserver.observe(testimonialsWrapper);
-      if (footerSection) sectionObserver.observe(footerSection);
+      if (footerHeadline) sectionObserver.observe(footerHeadline);
+      if (footerCard) sectionObserver.observe(footerCard);
 
       // Fallback scroll check
       const checkSectionsInView = () => {
-        const trigger = (window.innerHeight || 800) * 0.90;
+        const windowH = window.innerHeight || 800;
         if (projectsWrapper) {
           const rect = projectsWrapper.getBoundingClientRect();
-          if (rect.top < trigger) projectsWrapper.classList.add('in-view');
+          if (rect.top < windowH * 0.90) projectsWrapper.classList.add('in-view');
         }
         if (experienceWrapper) {
           const rect = experienceWrapper.getBoundingClientRect();
-          if (rect.top < trigger) experienceWrapper.classList.add('in-view');
+          if (rect.top < windowH * 0.90) experienceWrapper.classList.add('in-view');
         }
         if (aboutWrapper) {
           const rect = aboutWrapper.getBoundingClientRect();
-          if (rect.top < trigger) aboutWrapper.classList.add('in-view');
+          if (rect.top < windowH * 0.90) aboutWrapper.classList.add('in-view');
         }
         if (testimonialsWrapper) {
           const rect = testimonialsWrapper.getBoundingClientRect();
-          if (rect.top < trigger) testimonialsWrapper.classList.add('in-view');
+          if (rect.top < windowH * 0.90) testimonialsWrapper.classList.add('in-view');
         }
-        if (footerSection) {
-          const rect = footerSection.getBoundingClientRect();
-          if (rect.top < trigger) footerSection.classList.add('in-view');
+        if (footerHeadline) {
+          const rect = footerHeadline.getBoundingClientRect();
+          if (rect.top < windowH * 0.90) footerHeadline.classList.add('in-view');
+        }
+        if (footerCard) {
+          const rect = footerCard.getBoundingClientRect();
+          if (rect.top < windowH * 0.88) footerCard.classList.add('in-view');
         }
       };
       window.addEventListener('scroll', checkSectionsInView, { passive: true });

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Life Beyond the Screen | Harsh Bhawsar</title>
-  <link rel="stylesheet" href="style.css?v=104_sequential_scrollflow">
+  <link rel="stylesheet" href="style.css?v=105_contact_reveal">
   <!-- Google Fonts for Plus Jakarta Sans & Cormorant Garamond -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -466,8 +466,10 @@
       });
 
       // Footer section appearance animation observer
-      const footerSection = document.querySelector('.footer-section');
-      if (footerSection) {
+      const footerHeadline = document.querySelector('.footer-headline');
+      const footerCard = document.querySelector('.footer-card');
+
+      if (footerHeadline || footerCard) {
         const footerObserver = new IntersectionObserver((entries) => {
           entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -475,15 +477,22 @@
             }
           });
         }, {
-          threshold: 0.08,
-          rootMargin: '0px 0px -30px 0px'
+          threshold: 0.12,
+          rootMargin: '0px 0px -40px 0px'
         });
-        footerObserver.observe(footerSection);
+        if (footerHeadline) footerObserver.observe(footerHeadline);
+        if (footerCard) footerObserver.observe(footerCard);
 
         const checkFooterInView = () => {
-          const trigger = (window.innerHeight || 800) * 0.90;
-          const rect = footerSection.getBoundingClientRect();
-          if (rect.top < trigger) footerSection.classList.add('in-view');
+          const windowH = window.innerHeight || 800;
+          if (footerHeadline) {
+            const rect = footerHeadline.getBoundingClientRect();
+            if (rect.top < windowH * 0.90) footerHeadline.classList.add('in-view');
+          }
+          if (footerCard) {
+            const rect = footerCard.getBoundingClientRect();
+            if (rect.top < windowH * 0.88) footerCard.classList.add('in-view');
+          }
         };
         window.addEventListener('scroll', checkFooterInView, { passive: true });
         checkFooterInView();
