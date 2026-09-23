@@ -1909,6 +1909,97 @@ body {
   filter: blur(0);
 }
 
+/* ==========================================================================
+   Interactive Draggable Contact Stickers Layer
+   ========================================================================== */
+.footer-stickers-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 6;
+  overflow: hidden;
+}
+
+.footer-sticker {
+  position: absolute;
+  pointer-events: auto;
+  cursor: grab;
+  user-select: none;
+  -webkit-user-drag: none;
+  touch-action: none;
+  will-change: transform, left, top;
+  filter: drop-shadow(0 6px 14px rgba(112, 1, 69, 0.14));
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.6) rotate(-8deg);
+}
+
+.footer-sticker:hover {
+  filter: drop-shadow(0 14px 24px rgba(112, 1, 69, 0.24));
+}
+
+.footer-sticker.is-dragging {
+  cursor: grabbing !important;
+  filter: drop-shadow(0 20px 36px rgba(112, 1, 69, 0.36)) !important;
+  transition: none !important;
+}
+
+.footer-sticker img {
+  display: block;
+  width: 100%;
+  height: auto;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.footer-sticker-sun {
+  width: clamp(75px, 8.2vw, 125px);
+}
+
+.footer-sticker-lotus {
+  width: clamp(80px, 9.2vw, 138px);
+}
+
+.footer-sticker-camera {
+  width: clamp(85px, 10vw, 150px);
+}
+
+.footer-sticker-eye {
+  width: clamp(70px, 8vw, 118px);
+}
+
+/* Spring Entrance Pop when Footer Card Enters View */
+.footer-card.in-view .footer-sticker-sun {
+  opacity: 1;
+  transform: translate(-50%, -50%) rotate(-2deg) scale(1);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.35s,
+              transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.35s;
+}
+
+.footer-card.in-view .footer-sticker-lotus {
+  opacity: 1;
+  transform: translate(-50%, -50%) rotate(0deg) scale(1);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.45s,
+              transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.45s;
+}
+
+.footer-card.in-view .footer-sticker-camera {
+  opacity: 1;
+  transform: translate(-50%, -50%) rotate(10deg) scale(1);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.55s,
+              transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.55s;
+}
+
+.footer-card.in-view .footer-sticker-eye {
+  opacity: 1;
+  transform: translate(-50%, -50%) rotate(-6deg) scale(1);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.65s,
+              transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.65s;
+}
+
 @media (max-width: 900px) {
   .footer-section {
     padding-top: clamp(60px, 8vh, 80px);

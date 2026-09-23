@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Harsh - Portfolio</title>
-  <link rel="stylesheet" href="style.css?v=107_about_stacking">
+  <link rel="stylesheet" href="style.css?v=108_stickers_drag">
   <!-- Google Fonts for Plus Jakarta Sans & Cormorant Garamond -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -667,6 +667,22 @@
       <div class="footer-signature-container">
         <span class="footer-signature-text">harsh</span>
       </div>
+
+      <!-- Interactive Draggable Stickers Layer -->
+      <div class="footer-stickers-layer" id="footerStickersLayer">
+        <div class="footer-sticker footer-sticker-sun" data-id="sun" title="Drag me!">
+          <img src="suncontacts.png" alt="Sun sticker" draggable="false">
+        </div>
+        <div class="footer-sticker footer-sticker-lotus" data-id="lotus" title="Drag me!">
+          <img src="lotuscontacts.png" alt="Lotus sticker" draggable="false">
+        </div>
+        <div class="footer-sticker footer-sticker-camera" data-id="camera" title="Drag me!">
+          <img src="cameracontacts.png" alt="Camera sticker" draggable="false">
+        </div>
+        <div class="footer-sticker footer-sticker-eye" data-id="eye" title="Drag me!">
+          <img src="eyecontacts.png" alt="Eye sticker" draggable="false">
+        </div>
+      </div>
     </div>
   </footer>
 
@@ -1210,6 +1226,186 @@
           testimonialsGrid.scrollLeft = scrollLeft - walk;
         });
       }
+
+      // Interactive Draggable & Bounded Stickers System for Contact Section
+      const initContactStickers = () => {
+        const footerCard = document.querySelector('.footer-card');
+        if (!footerCard) return;
+
+        const isMobile = window.innerWidth <= 768;
+        const stickers = [
+          {
+            id: 'sun',
+            el: footerCard.querySelector('.footer-sticker-sun'),
+            defaultLeftPct: isMobile ? 18.0 : 11.0,
+            defaultTopPct: isMobile ? 74.0 : 65.5,
+            defaultRot: -2
+          },
+          {
+            id: 'lotus',
+            el: footerCard.querySelector('.footer-sticker-lotus'),
+            defaultLeftPct: isMobile ? 40.0 : 35.0,
+            defaultTopPct: isMobile ? 86.0 : 80.0,
+            defaultRot: 0
+          },
+          {
+            id: 'camera',
+            el: footerCard.querySelector('.footer-sticker-camera'),
+            defaultLeftPct: isMobile ? 68.0 : 60.0,
+            defaultTopPct: isMobile ? 84.0 : 78.0,
+            defaultRot: 10
+          },
+          {
+            id: 'eye',
+            el: footerCard.querySelector('.footer-sticker-eye'),
+            defaultLeftPct: isMobile ? 82.0 : 88.5,
+            defaultTopPct: isMobile ? 73.0 : 67.5,
+            defaultRot: -6
+          }
+        ];
+
+        let highestZ = 20;
+        let isDraggingAny = false;
+        let hasMovedAny = false;
+
+        const setStickerPosition = (item, leftPx, topPx, animate = false) => {
+          if (!item.el) return;
+          if (animate) {
+            item.el.style.transition = 'left 0.75s cubic-bezier(0.16, 1, 0.3, 1), top 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1)';
+          } else {
+            item.el.style.transition = '';
+          }
+          item.currentLeft = leftPx;
+          item.currentTop = topPx;
+          item.el.style.left = `${leftPx}px`;
+          item.el.style.top = `${topPx}px`;
+          item.el.style.transform = `translate(-50%, -50%) rotate(${item.currentRot !== undefined ? item.currentRot : item.defaultRot}deg)`;
+        };
+
+        const resetStickersToDefault = (animate = true) => {
+          const cardRect = footerCard.getBoundingClientRect();
+          if (cardRect.width === 0 || cardRect.height === 0) return;
+
+          stickers.forEach(item => {
+            if (!item.el) return;
+            const targetLeft = (item.defaultLeftPct / 100) * cardRect.width;
+            const targetTop = (item.defaultTopPct / 100) * cardRect.height;
+            item.currentRot = item.defaultRot;
+            setStickerPosition(item, targetLeft, targetTop, animate);
+          });
+          hasMovedAny = false;
+        };
+
+        // Calibrate initial layout after render
+        setTimeout(() => resetStickersToDefault(false), 150);
+        window.addEventListener('resize', () => {
+          if (!hasMovedAny) resetStickersToDefault(false);
+        });
+
+        stickers.forEach(item => {
+          const el = item.el;
+          if (!el) return;
+
+          let isDragging = false;
+          let startPointerX = 0, startPointerY = 0;
+          let startStickerLeft = 0, startStickerTop = 0;
+
+          const onPointerDown = (e) => {
+            e.preventDefault();
+            isDragging = true;
+            isDraggingAny = true;
+            hasMovedAny = true;
+            highestZ += 1;
+            el.style.zIndex = highestZ;
+            el.classList.add('is-dragging');
+
+            startPointerX = e.clientX !== undefined ? e.clientX : (e.touches && e.touches[0].clientX) || 0;
+            startPointerY = e.clientY !== undefined ? e.clientY : (e.touches && e.touches[0].clientY) || 0;
+
+            startStickerLeft = item.currentLeft || (parseFloat(el.style.left) || 0);
+            startStickerTop = item.currentTop || (parseFloat(el.style.top) || 0);
+
+            el.style.transition = 'none';
+          };
+
+          const onPointerMove = (e) => {
+            if (!isDragging) return;
+            e.preventDefault();
+
+            const clientX = e.clientX !== undefined ? e.clientX : (e.touches && e.touches[0].clientX) || 0;
+            const clientY = e.clientY !== undefined ? e.clientY : (e.touches && e.touches[0].clientY) || 0;
+
+            const deltaX = clientX - startPointerX;
+            const deltaY = clientY - startPointerY;
+
+            let newLeft = startStickerLeft + deltaX;
+            let newTop = startStickerTop + deltaY;
+
+            // Strict bounding inside .footer-card
+            const cardRect = footerCard.getBoundingClientRect();
+            const stickerW = el.offsetWidth || 100;
+            const stickerH = el.offsetHeight || 100;
+
+            const minLeft = stickerW / 2;
+            const maxLeft = cardRect.width - (stickerW / 2);
+            const minTop = stickerH / 2;
+            const maxTop = cardRect.height - (stickerH / 2);
+
+            newLeft = Math.max(minLeft, Math.min(maxLeft, newLeft));
+            newTop = Math.max(minTop, Math.min(maxTop, newTop));
+
+            item.currentLeft = newLeft;
+            item.currentTop = newTop;
+            el.style.left = `${newLeft}px`;
+            el.style.top = `${newTop}px`;
+            el.style.transform = `translate(-50%, -50%) rotate(${item.defaultRot}deg) scale(1.08)`;
+          };
+
+          const onPointerUp = () => {
+            if (!isDragging) return;
+            isDragging = false;
+            isDraggingAny = false;
+            el.classList.remove('is-dragging');
+            el.style.transition = 'transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), filter 0.3s ease';
+            el.style.transform = `translate(-50%, -50%) rotate(${item.defaultRot}deg) scale(1)`;
+          };
+
+          el.addEventListener('mousedown', onPointerDown);
+          window.addEventListener('mousemove', onPointerMove);
+          window.addEventListener('mouseup', onPointerUp);
+
+          el.addEventListener('touchstart', onPointerDown, { passive: false });
+          window.addEventListener('touchmove', onPointerMove, { passive: false });
+          window.addEventListener('touchend', onPointerUp);
+
+          // Double click / tap reset
+          el.addEventListener('dblclick', () => {
+            const cardRect = footerCard.getBoundingClientRect();
+            const targetLeft = (item.defaultLeftPct / 100) * cardRect.width;
+            const targetTop = (item.defaultTopPct / 100) * cardRect.height;
+            setStickerPosition(item, targetLeft, targetTop, true);
+          });
+        });
+
+        // Reset when scrolling up or leaving view
+        let lastScrollY = window.pageYOffset || document.documentElement.scrollTop;
+        window.addEventListener('scroll', () => {
+          const currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
+          const isScrollingUp = currentScrollY < lastScrollY;
+          
+          const cardRect = footerCard.getBoundingClientRect();
+          const isOutOfView = cardRect.top > window.innerHeight || cardRect.bottom < 0;
+
+          if (hasMovedAny && !isDraggingAny) {
+            if (isOutOfView || (isScrollingUp && cardRect.top > window.innerHeight * 0.35)) {
+              resetStickersToDefault(true);
+            }
+          }
+          lastScrollY = currentScrollY;
+        }, { passive: true });
+      };
+
+      initContactStickers();
     });
   </script>
 </body>
