@@ -1807,31 +1807,15 @@ body {
   font-weight: 400;
   color: #700145;
   text-decoration: none;
-  position: relative;
   display: inline-block;
   width: fit-content;
   line-height: 1.8;
-  transition: opacity 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.footer-link::after {
-  content: '';
-  position: absolute;
-  bottom: 2px;
-  left: 0;
-  width: 0%;
-  height: 1.5px;
-  background-color: #700145;
-  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
 .footer-link:hover {
-  opacity: 0.9;
-  transform: translateX(4px);
-}
-
-.footer-link:hover::after {
-  width: 100%;
+  opacity: 0.75;
+  transform: translateX(3px);
 }
 
 .footer-contact-items {
