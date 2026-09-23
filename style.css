@@ -2925,75 +2925,29 @@ body.life-page {
 }
 
 /* ==========================================================================
-   Scroll-Driven 3D Horizontal Cover Flow Showcase (Off-White Canvas)
+   Sequential 3D Story Sections (Off-White Canvas)
    ========================================================================== */
-.coverflow-tabs-nav {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  margin: 0 auto 28px auto;
-  flex-wrap: wrap;
-  width: 100%;
-  max-width: 1000px;
-  z-index: 10;
-}
-
-.coverflow-tab-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(255, 252, 222, 0.75);
-  border: 1px solid rgba(112, 1, 69, 0.25);
-  color: #4A2C11;
-  padding: 10px 22px;
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 13.5px;
-  font-weight: 500;
-  cursor: pointer;
-  border-radius: 9999px;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 4px 14px rgba(74, 44, 17, 0.04);
-}
-
-.coverflow-tab-btn:hover {
-  background: #FFFCDE;
-  border-color: #700145;
-  color: #700145;
-  transform: translateY(-2px);
-}
-
-.coverflow-tab-btn.is-active {
-  background: #700145;
-  color: #FFFCDE;
-  border-color: #700145;
-  box-shadow: 0 6px 20px rgba(112, 1, 69, 0.25);
-  transform: translateY(-2px);
-}
-
-.coverflow-tab-btn .tab-count {
-  font-size: 11px;
-  background: rgba(0, 0, 0, 0.1);
-  padding: 2px 7px;
-  border-radius: 9999px;
-  font-weight: 600;
-}
-
-.coverflow-tab-btn.is-active .tab-count {
-  background: rgba(255, 252, 222, 0.25);
-  color: #FFFCDE;
-}
-
-/* Scroll-Driven Pinned Container */
-.coverflow-scroll-section {
+.life-story-section {
   position: relative;
   width: 100%;
-  height: 320vh; /* Smooth vertical scroll distance */
   background-color: #FFFCDE;
   box-sizing: border-box;
 }
 
-.coverflow-sticky-viewport {
+/* Scroll distances calibrated to item count */
+.life-story-section[data-section="passions"] {
+  height: 240vh; /* 7 items */
+}
+
+.life-story-section[data-section="photography"] {
+  height: 280vh; /* 11 items */
+}
+
+.life-story-section[data-section="art"] {
+  height: 380vh; /* 24 items */
+}
+
+.life-story-sticky-viewport {
   position: sticky;
   top: 0;
   width: 100%;
@@ -3001,16 +2955,46 @@ body.life-page {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  padding: clamp(48px, 6.5vh, 70px) clamp(20px, 3vw, 40px) clamp(20px, 3vh, 32px) clamp(20px, 3vw, 40px);
   overflow: hidden;
   background-color: #FFFCDE;
   box-sizing: border-box;
 }
 
+.life-story-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 8px;
+  z-index: 10;
+}
+
+.life-section-tag {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #FE820A;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.life-section-heading {
+  font-family: 'Basote', sans-serif;
+  font-size: clamp(30px, 3.6vw, 48px);
+  font-weight: 400;
+  color: #700145;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
 .coverflow-3d-stage {
   position: relative;
   width: 100%;
-  height: clamp(400px, 55vh, 580px);
+  height: clamp(340px, 48vh, 520px);
   perspective: 1200px;
   perspective-origin: 50% 50%;
   display: flex;
@@ -3020,6 +3004,7 @@ body.life-page {
   user-select: none;
   touch-action: pan-y;
   outline: none;
+  margin: auto 0;
 }
 
 .coverflow-3d-stage.is-dragging {
@@ -3038,7 +3023,7 @@ body.life-page {
 
 .coverflow-3d-card {
   position: absolute;
-  width: clamp(240px, 25vw, 360px);
+  width: clamp(220px, 22vw, 320px);
   aspect-ratio: 4/5;
   background: #FFFCDE;
   border: 1px solid rgba(112, 1, 69, 0.3);
@@ -3069,29 +3054,61 @@ body.life-page {
   transform: scale(1.03);
 }
 
-.coverflow-scroll-hint {
-  margin-top: 24px;
+.life-story-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  max-width: 720px;
+  margin-top: 10px;
+  z-index: 10;
+}
+
+.life-section-description {
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 13px;
+  font-size: clamp(13px, 1.05vw, 15px);
+  line-height: 1.65;
+  color: #5C381E;
+  text-align: center;
+  margin: 0;
+  font-weight: 400;
+  opacity: 0.95;
+}
+
+.coverflow-scroll-hint {
+  margin-top: 8px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 11.5px;
   font-weight: 500;
   color: #7A5C3E;
-  letter-spacing: 0.03em;
-  opacity: 0.85;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  letter-spacing: 0.04em;
+  opacity: 0.7;
 }
 
 @media (max-width: 768px) {
-  .coverflow-scroll-section {
-    height: 280vh;
+  .life-story-section[data-section="passions"] {
+    height: 200vh;
+  }
+  .life-story-section[data-section="photography"] {
+    height: 230vh;
+  }
+  .life-story-section[data-section="art"] {
+    height: 300vh;
+  }
+  .life-story-sticky-viewport {
+    padding: 70px 16px 20px 16px;
   }
   .coverflow-3d-stage {
-    height: 380px;
+    height: 350px;
     perspective: 800px;
   }
   .coverflow-3d-card {
-    width: 210px;
+    width: 200px;
+  }
+  .life-section-description {
+    font-size: 13px;
+    line-height: 1.55;
   }
 }
 

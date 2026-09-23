@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Life Beyond the Screen | Harsh Bhawsar</title>
-  <link rel="stylesheet" href="style.css?v=103_offwhite_scrollflow">
+  <link rel="stylesheet" href="style.css?v=104_sequential_scrollflow">
   <!-- Google Fonts for Plus Jakarta Sans & Cormorant Garamond -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -43,7 +43,7 @@
 
   <!-- Main Life Beyond Screen Page Wrapper -->
   <main class="life-page-wrapper">
-    <!-- Hero Article Header -->
+    <!-- Hero Header Section -->
     <section class="life-hero-section">
       <div class="life-hero-header">
         <img src="lotus.png" alt="Lotus" class="header-lotus-img" style="margin-bottom: 8px;">
@@ -51,41 +51,75 @@
         <h1 class="life-hero-title">Life Beyond the Screen</h1>
       </div>
       <p class="life-hero-lead">
-        Design is where I craft digital systems and solve complex problems, but music, art, mountains, and raw observation are where I find rhythm and perspective. Scroll down or drag horizontally to explore the 3D visual flow.
+        Design is where I craft digital systems and solve complex problems, but music, art, photography, and raw observation are where I find rhythm and perspective. Scroll down to explore each visual chapter in 3D.
       </p>
     </section>
 
-    <!-- Scroll-Driven 3D Horizontal Cover Flow Stage -->
-    <section class="coverflow-scroll-section" id="coverflowScrollSection" aria-label="3D Horizontal Gallery">
-      <div class="coverflow-sticky-viewport" id="coverflowStickyViewport">
-        <!-- Category Filter Pills -->
-        <div class="coverflow-tabs-nav" role="tablist">
-          <button class="coverflow-tab-btn is-active" data-collection="passions" role="tab" aria-selected="true">
-            <span>Life & Passions</span>
-            <span class="tab-count">13</span>
-          </button>
-          <button class="coverflow-tab-btn" data-collection="art" role="tab" aria-selected="false">
-            <span>Art & Sketches</span>
-            <span class="tab-count">24</span>
-          </button>
-          <button class="coverflow-tab-btn" data-collection="photography" role="tab" aria-selected="false">
-            <span>Photography</span>
-            <span class="tab-count">11</span>
-          </button>
-          <button class="coverflow-tab-btn" data-collection="all" role="tab" aria-selected="false">
-            <span>All Works</span>
-            <span class="tab-count">48</span>
-          </button>
+    <!-- SECTION 1: Life Between the Pixels (Moments & Passions) -->
+    <section class="life-story-section" id="section-passions" data-section="passions" aria-label="Life Between the Pixels">
+      <div class="life-story-sticky-viewport">
+        <div class="life-story-header">
+          <span class="life-section-tag">01 / MOMENTS & PASSIONS</span>
+          <h2 class="life-section-heading">Life Between the Pixels</h2>
         </div>
 
-        <div class="coverflow-3d-stage" id="coverflowStage">
-          <div class="coverflow-3d-track" id="coverflowTrack">
-            <!-- 3D Cards dynamically populated and continuous transformed via JS -->
+        <div class="coverflow-3d-stage" data-carousel="passions" tabindex="0">
+          <div class="coverflow-3d-track">
+            <!-- 3D Cards dynamically populated via JS -->
           </div>
         </div>
 
-        <div class="coverflow-scroll-hint">
-          <span>← Scroll down or drag to explore in 3D →</span>
+        <div class="life-story-footer">
+          <p class="life-section-description">
+            A collection of moments, places, and little things that inspire me outside of design. A glimpse into what catches my eye when I’m not designing.
+          </p>
+          <span class="coverflow-scroll-hint">← Scroll down or drag to explore in 3D →</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: Framing the Unscripted (Photography) -->
+    <section class="life-story-section" id="section-photography" data-section="photography" aria-label="Framing the Unscripted">
+      <div class="life-story-sticky-viewport">
+        <div class="life-story-header">
+          <span class="life-section-tag">02 / PHOTOGRAPHY</span>
+          <h2 class="life-section-heading">Framing the Unscripted</h2>
+        </div>
+
+        <div class="coverflow-3d-stage" data-carousel="photography" tabindex="0">
+          <div class="coverflow-3d-track">
+            <!-- 3D Cards dynamically populated via JS -->
+          </div>
+        </div>
+
+        <div class="life-story-footer">
+          <p class="life-section-description">
+            I’m drawn to moments that often go unnoticed. Photography lets me slow down, observe, and turn everyday scenes into stories worth remembering.
+          </p>
+          <span class="coverflow-scroll-hint">← Scroll down or drag to explore in 3D →</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: Thinking With Ink & Paper (Sketching & Art) -->
+    <section class="life-story-section" id="section-art" data-section="art" aria-label="Thinking With Ink & Paper">
+      <div class="life-story-sticky-viewport">
+        <div class="life-story-header">
+          <span class="life-section-tag">03 / SKETCHING & ART</span>
+          <h2 class="life-section-heading">Thinking With Ink & Paper</h2>
+        </div>
+
+        <div class="coverflow-3d-stage" data-carousel="art" tabindex="0">
+          <div class="coverflow-3d-track">
+            <!-- 3D Cards dynamically populated via JS -->
+          </div>
+        </div>
+
+        <div class="life-story-footer">
+          <p class="life-section-description">
+            Before ideas become interfaces, they often become lines. Sketching is where I explore forms, compositions, and visual ideas without overthinking them.
+          </p>
+          <span class="coverflow-scroll-hint">← Scroll down or drag to explore in 3D →</span>
         </div>
       </div>
     </section>
@@ -154,119 +188,64 @@
   </footer>
 
   <script>
+    // Unique collections with zero duplicates
     const COLLECTIONS = {
-  "passions": [
-    "about-drums.jpeg",
-    "about-dhol.jpeg",
-    "about-mountain.jpeg",
-    "about-gokart.jpeg",
-    "about-stage.jpeg",
-    "about-traditional.jpeg",
-    "harsh photos/WhatsApp Image 2026-09-21 at 2.57.55 PM.jpeg",
-    "harsh photos/WhatsApp Image 2026-09-21 at 3.03.59 PM.jpeg",
-    "harsh photos/WhatsApp Image 2026-09-21 at 3.04.21 PM.jpeg",
-    "harsh photos/WhatsApp Image 2026-09-21 at 3.05.02 PM.jpeg",
-    "harsh photos/WhatsApp Image 2026-09-21 at 3.05.20 PM.jpeg",
-    "harsh photos/WhatsApp Image 2026-09-21 at 5.01.16 PM.jpeg",
-    "harsh photos/WhatsApp Image 2026-09-21 at 5.02.37 PM.jpeg"
-  ],
-  "art": [
-    "Sketches/WhatsApp Image 2026-09-21 at 10.26.12 PM.jpeg",
-    "Sketches/WhatsApp Image 2026-09-21 at 10.26.58 PM.jpeg",
-    "Sketches/WhatsApp Image 2026-09-21 at 10.27.36 PM.jpeg",
-    "Sketches/WhatsApp Image 2026-09-21 at 10.30.51 PM.jpeg",
-    "Sketches/WhatsApp Image 2026-09-21 at 10.31.10 PM.jpeg",
-    "Sketches/WhatsApp Image 2026-09-21 at 10.31.37 PM.jpeg",
-    "Sketches/WhatsApp Image 2026-09-21 at 10.31.58 PM.jpeg",
-    "Sketches/WhatsApp Image 2026-09-21 at 10.33.12 PM.jpeg",
-    "Sketches/WhatsApp Image 2026-09-21 at 10.33.54 PM.jpeg",
-    "Sketches/WhatsApp Image 2026-09-21 at 10.34.23 PM.jpeg",
-    "Sketches/WhatsApp Image 2026-09-21 at 10.34.38 PM.jpeg",
-    "Sketches/WhatsApp Image 2026-09-21 at 10.34.59 PM.jpeg",
-    "Sketches/WhatsApp Image 2026-09-21 at 10.35.36 PM.jpeg",
-    "Sketches/WhatsApp Image 2026-09-21 at 10.35.59 PM.jpeg",
-    "Sketches/WhatsApp Image 2026-09-21 at 10.36.48 PM.jpeg",
-    "Sketches/WhatsApp Image 2026-09-21 at 10.37.55 PM.jpeg",
-    "Sketches/WhatsApp Image 2026-09-21 at 10.38.31 PM (1).jpeg",
-    "Sketches/WhatsApp Image 2026-09-21 at 10.38.31 PM.jpeg",
-    "Sketches/WhatsApp Image 2026-09-21 at 10.40.58 PM.jpeg",
-    "Sketches/WhatsApp Image 2026-09-21 at 10.41.22 PM.jpeg",
-    "Sketches/WhatsApp Image 2026-09-21 at 10.44.38 PM.jpeg",
-    "Sketches/WhatsApp Image 2026-09-21 at 10.47.46 PM.jpeg",
-    "Sketches/WhatsApp Image 2026-09-21 at 10.49.57 PM.jpeg",
-    "Sketches/WhatsApp Image 2026-09-21 at 11.26.03 PM.jpeg"
-  ],
-  "photography": [
-    "Photography/WhatsApp Image 2026-09-21 at 11.24.34 PM.jpeg",
-    "Photography/WhatsApp Image 2026-09-21 at 11.29.24 PM.jpeg",
-    "Photography/WhatsApp Image 2026-09-21 at 11.29.25 PM.jpeg",
-    "Photography/WhatsApp Image 2026-09-21 at 11.29.29 PM.jpeg",
-    "Photography/WhatsApp Image 2026-09-21 at 11.29.29 Pmm.jpeg",
-    "Photography/WhatsApp Image 2026-09-21 at 11.29.30 PM.jpeg",
-    "Photography/WhatsApp Image 2026-09-21 at 11.29.30 hhPM.jpeg",
-    "Photography/WhatsApp Image 2026-09-21 at 11.29.3vv1 PM.jpeg",
-    "Photography/WhatsApp Image 2026-09-21 at 11.32.0vv3 PM.jpeg",
-    "Photography/WhatsApp Image 2026-09-21 at 11.32vv.03 PM.jpeg",
-    "Photography/WhatsApp Image 2026-09-21 at 11.3v0.32 PM.jpeg"
-  ],
-  "all": [
-    "about-drums.jpeg",
-    "about-dhol.jpeg",
-    "about-mountain.jpeg",
-    "about-gokart.jpeg",
-    "about-stage.jpeg",
-    "about-traditional.jpeg",
-    "harsh photos/WhatsApp Image 2026-09-21 at 2.57.55 PM.jpeg",
-    "harsh photos/WhatsApp Image 2026-09-21 at 3.03.59 PM.jpeg",
-    "harsh photos/WhatsApp Image 2026-09-21 at 3.04.21 PM.jpeg",
-    "harsh photos/WhatsApp Image 2026-09-21 at 3.05.02 PM.jpeg",
-    "harsh photos/WhatsApp Image 2026-09-21 at 3.05.20 PM.jpeg",
-    "harsh photos/WhatsApp Image 2026-09-21 at 5.01.16 PM.jpeg",
-    "harsh photos/WhatsApp Image 2026-09-21 at 5.02.37 PM.jpeg",
-    "Sketches/WhatsApp Image 2026-09-21 at 10.26.12 PM.jpeg",
-    "Sketches/WhatsApp Image 2026-09-21 at 10.26.58 PM.jpeg",
-    "Sketches/WhatsApp Image 2026-09-21 at 10.27.36 PM.jpeg",
-    "Sketches/WhatsApp Image 2026-09-21 at 10.30.51 PM.jpeg",
-    "Sketches/WhatsApp Image 2026-09-21 at 10.31.10 PM.jpeg",
-    "Sketches/WhatsApp Image 2026-09-21 at 10.31.37 PM.jpeg",
-    "Sketches/WhatsApp Image 2026-09-21 at 10.31.58 PM.jpeg",
-    "Sketches/WhatsApp Image 2026-09-21 at 10.33.12 PM.jpeg",
-    "Sketches/WhatsApp Image 2026-09-21 at 10.33.54 PM.jpeg",
-    "Sketches/WhatsApp Image 2026-09-21 at 10.34.23 PM.jpeg",
-    "Sketches/WhatsApp Image 2026-09-21 at 10.34.38 PM.jpeg",
-    "Sketches/WhatsApp Image 2026-09-21 at 10.34.59 PM.jpeg",
-    "Sketches/WhatsApp Image 2026-09-21 at 10.35.36 PM.jpeg",
-    "Sketches/WhatsApp Image 2026-09-21 at 10.35.59 PM.jpeg",
-    "Sketches/WhatsApp Image 2026-09-21 at 10.36.48 PM.jpeg",
-    "Sketches/WhatsApp Image 2026-09-21 at 10.37.55 PM.jpeg",
-    "Sketches/WhatsApp Image 2026-09-21 at 10.38.31 PM (1).jpeg",
-    "Sketches/WhatsApp Image 2026-09-21 at 10.38.31 PM.jpeg",
-    "Sketches/WhatsApp Image 2026-09-21 at 10.40.58 PM.jpeg",
-    "Sketches/WhatsApp Image 2026-09-21 at 10.41.22 PM.jpeg",
-    "Sketches/WhatsApp Image 2026-09-21 at 10.44.38 PM.jpeg",
-    "Sketches/WhatsApp Image 2026-09-21 at 10.47.46 PM.jpeg",
-    "Sketches/WhatsApp Image 2026-09-21 at 10.49.57 PM.jpeg",
-    "Sketches/WhatsApp Image 2026-09-21 at 11.26.03 PM.jpeg",
-    "Photography/WhatsApp Image 2026-09-21 at 11.24.34 PM.jpeg",
-    "Photography/WhatsApp Image 2026-09-21 at 11.29.24 PM.jpeg",
-    "Photography/WhatsApp Image 2026-09-21 at 11.29.25 PM.jpeg",
-    "Photography/WhatsApp Image 2026-09-21 at 11.29.29 PM.jpeg",
-    "Photography/WhatsApp Image 2026-09-21 at 11.29.29 Pmm.jpeg",
-    "Photography/WhatsApp Image 2026-09-21 at 11.29.30 PM.jpeg",
-    "Photography/WhatsApp Image 2026-09-21 at 11.29.30 hhPM.jpeg",
-    "Photography/WhatsApp Image 2026-09-21 at 11.29.3vv1 PM.jpeg",
-    "Photography/WhatsApp Image 2026-09-21 at 11.32.0vv3 PM.jpeg",
-    "Photography/WhatsApp Image 2026-09-21 at 11.32vv.03 PM.jpeg",
-    "Photography/WhatsApp Image 2026-09-21 at 11.3v0.32 PM.jpeg"
-  ]
-};
+      "passions": [
+        "about-drums.jpeg",
+        "about-dhol.jpeg",
+        "about-mountain.jpeg",
+        "about-gokart.jpeg",
+        "about-stage.jpeg",
+        "about-traditional.jpeg",
+        "harsh photos/WhatsApp Image 2026-09-21 at 3.04.21 PM.jpeg"
+      ],
+      "photography": [
+        "Photography/WhatsApp Image 2026-09-21 at 11.24.34 PM.jpeg",
+        "Photography/WhatsApp Image 2026-09-21 at 11.29.24 PM.jpeg",
+        "Photography/WhatsApp Image 2026-09-21 at 11.29.25 PM.jpeg",
+        "Photography/WhatsApp Image 2026-09-21 at 11.29.29 PM.jpeg",
+        "Photography/WhatsApp Image 2026-09-21 at 11.29.29 Pmm.jpeg",
+        "Photography/WhatsApp Image 2026-09-21 at 11.29.30 hhPM.jpeg",
+        "Photography/WhatsApp Image 2026-09-21 at 11.29.30 PM.jpeg",
+        "Photography/WhatsApp Image 2026-09-21 at 11.29.3vv1 PM.jpeg",
+        "Photography/WhatsApp Image 2026-09-21 at 11.32.0vv3 PM.jpeg",
+        "Photography/WhatsApp Image 2026-09-21 at 11.32vv.03 PM.jpeg",
+        "Photography/WhatsApp Image 2026-09-21 at 11.3v0.32 PM.jpeg"
+      ],
+      "art": [
+        "Sketches/WhatsApp Image 2026-09-21 at 10.26.12 PM.jpeg",
+        "Sketches/WhatsApp Image 2026-09-21 at 10.26.58 PM.jpeg",
+        "Sketches/WhatsApp Image 2026-09-21 at 10.27.36 PM.jpeg",
+        "Sketches/WhatsApp Image 2026-09-21 at 10.30.51 PM.jpeg",
+        "Sketches/WhatsApp Image 2026-09-21 at 10.31.10 PM.jpeg",
+        "Sketches/WhatsApp Image 2026-09-21 at 10.31.37 PM.jpeg",
+        "Sketches/WhatsApp Image 2026-09-21 at 10.31.58 PM.jpeg",
+        "Sketches/WhatsApp Image 2026-09-21 at 10.33.12 PM.jpeg",
+        "Sketches/WhatsApp Image 2026-09-21 at 10.33.54 PM.jpeg",
+        "Sketches/WhatsApp Image 2026-09-21 at 10.34.23 PM.jpeg",
+        "Sketches/WhatsApp Image 2026-09-21 at 10.34.38 PM.jpeg",
+        "Sketches/WhatsApp Image 2026-09-21 at 10.34.59 PM.jpeg",
+        "Sketches/WhatsApp Image 2026-09-21 at 10.35.36 PM.jpeg",
+        "Sketches/WhatsApp Image 2026-09-21 at 10.35.59 PM.jpeg",
+        "Sketches/WhatsApp Image 2026-09-21 at 10.36.48 PM.jpeg",
+        "Sketches/WhatsApp Image 2026-09-21 at 10.37.55 PM.jpeg",
+        "Sketches/WhatsApp Image 2026-09-21 at 10.38.31 PM (1).jpeg",
+        "Sketches/WhatsApp Image 2026-09-21 at 10.38.31 PM.jpeg",
+        "Sketches/WhatsApp Image 2026-09-21 at 10.40.58 PM.jpeg",
+        "Sketches/WhatsApp Image 2026-09-21 at 10.41.22 PM.jpeg",
+        "Sketches/WhatsApp Image 2026-09-21 at 10.44.38 PM.jpeg",
+        "Sketches/WhatsApp Image 2026-09-21 at 10.47.46 PM.jpeg",
+        "Sketches/WhatsApp Image 2026-09-21 at 10.49.57 PM.jpeg",
+        "Sketches/WhatsApp Image 2026-09-21 at 11.26.03 PM.jpeg"
+      ]
+    };
 
     document.addEventListener('DOMContentLoaded', () => {
       // Navbar scroll direction hide/reveal
       const navbarContainer = document.getElementById('lifeNavbar');
       let lastScrollY = window.pageYOffset || document.documentElement.scrollTop;
 
-      const handleScroll = () => {
+      const handleScrollNavbar = () => {
         const currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
         if (currentScrollY <= 60) {
           navbarContainer.classList.remove('nav-hidden');
@@ -278,18 +257,9 @@
         lastScrollY = Math.max(0, currentScrollY);
       };
 
-      window.addEventListener('scroll', handleScroll, { passive: true });
+      window.addEventListener('scroll', handleScrollNavbar, { passive: true });
 
-      // 3D Cover Flow Engine
-      let currentKey = 'passions';
-      let items = COLLECTIONS[currentKey];
-
-      const section = document.getElementById('coverflowScrollSection');
-      const stage = document.getElementById('coverflowStage');
-      const track = document.getElementById('coverflowTrack');
-      const tabs = document.querySelectorAll('.coverflow-tab-btn');
-
-      // Lightbox
+      // Lightbox Elements & Handlers
       const lightbox = document.getElementById('lifeLightbox');
       const lightboxImg = document.getElementById('lifeLightboxImg');
       const lightboxClose = document.getElementById('lifeLightboxClose');
@@ -319,21 +289,33 @@
         }
       });
 
-      // Physics State
-      let targetProgress = 0;
-      let currentProgress = 0;
-      let isDragging = false;
-      let hasDragged = false;
-      let dragStartX = 0;
-      let dragStartProgress = 0;
+      // Multi-Carousel Registry
+      const carousels = [];
 
-      const renderCollection = (key) => {
-        currentKey = key;
-        items = COLLECTIONS[currentKey];
-        targetProgress = 0;
-        currentProgress = 0;
-        track.innerHTML = '';
+      const initCarousel = (key) => {
+        const section = document.getElementById(`section-${key}`);
+        if (!section) return;
 
+        const stage = section.querySelector('.coverflow-3d-stage');
+        const track = section.querySelector('.coverflow-3d-track');
+        const items = COLLECTIONS[key] || [];
+        if (!stage || !track || items.length === 0) return;
+
+        const state = {
+          key,
+          section,
+          stage,
+          track,
+          items,
+          targetProgress: 0,
+          currentProgress: 0,
+          isDragging: false,
+          hasDragged: false,
+          dragStartX: 0,
+          dragStartProgress: 0
+        };
+
+        // Populate Cards
         items.forEach((src, idx) => {
           const card = document.createElement('div');
           card.className = 'coverflow-3d-card';
@@ -342,14 +324,14 @@
 
           const img = document.createElement('img');
           img.src = src;
-          img.alt = `Gallery Item ${idx + 1}`;
-          img.loading = idx < 6 ? 'eager' : 'lazy';
+          img.alt = `${key} item ${idx + 1}`;
+          img.loading = idx < 5 ? 'eager' : 'lazy';
           img.className = 'coverflow-3d-img';
 
           card.appendChild(img);
 
-          card.addEventListener('click', (e) => {
-            if (!hasDragged) {
+          card.addEventListener('click', () => {
+            if (!state.hasDragged) {
               openLightbox(src);
             }
           });
@@ -357,165 +339,155 @@
           track.appendChild(card);
         });
 
-        update3DTransforms();
+        // 3D Transform Calculation
+        state.update3DTransforms = () => {
+          const cards = track.querySelectorAll('.coverflow-3d-card');
+          const count = items.length;
+          if (count === 0) return;
+
+          const isMobile = window.innerWidth <= 768;
+          const spacing = isMobile ? 240 : 340;
+          const totalTravel = (count - 1) * spacing;
+          const currentX = state.currentProgress * totalTravel;
+
+          cards.forEach((card, i) => {
+            const cardCenter = i * spacing;
+            const offset = cardCenter - currentX;
+            const normOffset = offset / spacing;
+            const absNorm = Math.abs(normOffset);
+
+            if (absNorm > 5) {
+              card.style.display = 'none';
+              return;
+            } else {
+              card.style.display = 'block';
+            }
+
+            const maxRotation = isMobile ? 36 : 44;
+            const ry = -Math.sign(normOffset) * Math.min(maxRotation, Math.pow(absNorm, 0.75) * 34);
+            const tz = -Math.min(360, Math.pow(absNorm, 1.15) * (isMobile ? 90 : 130));
+            const tx = offset * (isMobile ? 0.92 : 0.94);
+            const scale = Math.max(0.68, 1 - absNorm * 0.07);
+            const opacity = Math.max(0.12, 1 - absNorm * 0.22);
+            const zIndex = Math.round(1000 - absNorm * 20);
+
+            card.style.transform = `translateX(${tx.toFixed(1)}px) translateZ(${tz.toFixed(1)}px) rotateY(${ry.toFixed(1)}deg) scale(${scale.toFixed(3)})`;
+            card.style.zIndex = zIndex;
+            card.style.opacity = opacity.toFixed(2);
+
+            if (absNorm < 0.35) {
+              card.classList.add('is-center');
+            } else {
+              card.classList.remove('is-center');
+            }
+          });
+        };
+
+        // Pointer Drag & Touch Swipe
+        const onDragStart = (e) => {
+          state.isDragging = true;
+          state.hasDragged = false;
+          state.dragStartX = e.clientX || (e.touches && e.touches[0].clientX) || 0;
+          state.dragStartProgress = state.targetProgress;
+          stage.classList.add('is-dragging');
+        };
+
+        const onDragMove = (e) => {
+          if (!state.isDragging) return;
+          const x = e.clientX || (e.touches && e.touches[0].clientX) || 0;
+          const diff = x - state.dragStartX;
+          if (Math.abs(diff) > 8) {
+            state.hasDragged = true;
+          }
+          const count = items.length;
+          if (count <= 1) return;
+
+          const isMobile = window.innerWidth <= 768;
+          const spacing = isMobile ? 240 : 340;
+          const totalTravel = (count - 1) * spacing;
+          const progressDelta = -diff / totalTravel;
+          state.targetProgress = Math.max(0, Math.min(1, state.dragStartProgress + progressDelta));
+        };
+
+        const onDragEnd = () => {
+          if (!state.isDragging) return;
+          state.isDragging = false;
+          stage.classList.remove('is-dragging');
+          setTimeout(() => { state.hasDragged = false; }, 100);
+        };
+
+        stage.addEventListener('mousedown', onDragStart);
+        window.addEventListener('mousemove', onDragMove);
+        window.addEventListener('mouseup', onDragEnd);
+
+        stage.addEventListener('touchstart', onDragStart, { passive: true });
+        window.addEventListener('touchmove', onDragMove, { passive: true });
+        window.addEventListener('touchend', onDragEnd);
+
+        state.update3DTransforms();
+        carousels.push(state);
       };
 
-      const update3DTransforms = () => {
-        const cards = track.querySelectorAll('.coverflow-3d-card');
-        const count = items.length;
-        if (count === 0) return;
+      // Initialize all 3 Story Sections
+      initCarousel('passions');
+      initCarousel('photography');
+      initCarousel('art');
 
-        // Spread & spacing calculation
-        const isMobile = window.innerWidth <= 768;
-        const spacing = isMobile ? 260 : 360;
-        const totalTravel = (count - 1) * spacing;
-        const currentX = currentProgress * totalTravel;
+      // Global Scroll Sync for Pinned 3D Sections
+      const onScrollSections = () => {
+        carousels.forEach(c => {
+          const rect = c.section.getBoundingClientRect();
+          const sectionHeight = c.section.offsetHeight - window.innerHeight;
+          if (sectionHeight <= 0) return;
 
-        cards.forEach((card, i) => {
-          const cardCenter = i * spacing;
-          const offset = cardCenter - currentX; // pixels from center
-          const normOffset = offset / spacing; // normalized index distance (-N ... 0 ... +N)
-          const absNorm = Math.abs(normOffset);
-
-          if (absNorm > 5) {
-            card.style.display = 'none';
-            return;
-          } else {
-            card.style.display = 'block';
-          }
-
-          // 3D Mathematical Flow Curve
-          // Left cards: positive rotateY (turned inward right)
-          // Right cards: negative rotateY (turned inward left)
-          // Center card: rotateY 0, elevated Z
-          const maxRotation = isMobile ? 36 : 44;
-          const ry = -Math.sign(normOffset) * Math.min(maxRotation, Math.pow(absNorm, 0.75) * 34);
-          
-          // translateZ: recede into depth as it moves away from center
-          const tz = -Math.min(360, Math.pow(absNorm, 1.15) * (isMobile ? 90 : 130));
-          
-          // translateX with slight perspective compression
-          const tx = offset * (isMobile ? 0.92 : 0.94);
-          
-          // Scale & Opacity
-          const scale = Math.max(0.68, 1 - absNorm * 0.07);
-          const opacity = Math.max(0.12, 1 - absNorm * 0.22);
-          const zIndex = Math.round(1000 - absNorm * 20);
-
-          card.style.transform = `translateX(${tx.toFixed(1)}px) translateZ(${tz.toFixed(1)}px) rotateY(${ry.toFixed(1)}deg) scale(${scale.toFixed(3)})`;
-          card.style.zIndex = zIndex;
-          card.style.opacity = opacity.toFixed(2);
-
-          if (absNorm < 0.35) {
-            card.classList.add('is-center');
-          } else {
-            card.classList.remove('is-center');
+          const scrolled = -rect.top;
+          const progress = Math.max(0, Math.min(1, scrolled / sectionHeight));
+          if (!c.isDragging) {
+            c.targetProgress = progress;
           }
         });
       };
 
+      window.addEventListener('scroll', onScrollSections, { passive: true });
+      window.addEventListener('resize', () => {
+        carousels.forEach(c => c.update3DTransforms());
+      });
+
       // Animation Loop with Smooth Inertia (Lerp)
       const animate = () => {
-        const diff = targetProgress - currentProgress;
-        if (Math.abs(diff) > 0.00005) {
-          currentProgress += diff * 0.09;
-          update3DTransforms();
-        }
+        carousels.forEach(c => {
+          const diff = c.targetProgress - c.currentProgress;
+          if (Math.abs(diff) > 0.00005) {
+            c.currentProgress += diff * 0.09;
+            c.update3DTransforms();
+          }
+        });
         requestAnimationFrame(animate);
       };
       requestAnimationFrame(animate);
 
-      // Scroll-Driven calculation
-      const onScroll = () => {
-        const rect = section.getBoundingClientRect();
-        const sectionHeight = section.offsetHeight - window.innerHeight;
-        if (sectionHeight <= 0) return;
-
-        const scrolled = -rect.top;
-        const progress = Math.max(0, Math.min(1, scrolled / sectionHeight));
-        if (!isDragging) {
-          targetProgress = progress;
-        }
-      };
-
-      window.addEventListener('scroll', onScroll, { passive: true });
-      window.addEventListener('resize', () => update3DTransforms());
-
-      // Drag & Swipe Interaction
-      const onDragStart = (e) => {
-        isDragging = true;
-        hasDragged = false;
-        dragStartX = e.clientX || (e.touches && e.touches[0].clientX) || 0;
-        dragStartProgress = targetProgress;
-        stage.classList.add('is-dragging');
-      };
-
-      const onDragMove = (e) => {
-        if (!isDragging) return;
-        const x = e.clientX || (e.touches && e.touches[0].clientX) || 0;
-        const diff = x - dragStartX;
-        if (Math.abs(diff) > 4) {
-          hasDragged = true;
-        }
-        const count = items.length;
-        if (count <= 1) return;
-
-        const isMobile = window.innerWidth <= 768;
-        const spacing = isMobile ? 260 : 360;
-        const totalTravel = (count - 1) * spacing;
-        
-        // Convert pixel drag to progress delta
-        const progressDelta = -diff / totalTravel;
-        targetProgress = Math.max(0, Math.min(1, dragStartProgress + progressDelta));
-      };
-
-      const onDragEnd = () => {
-        if (!isDragging) return;
-        isDragging = false;
-        stage.classList.remove('is-dragging');
-        // Reset hasDragged after click event cycle completes
-        setTimeout(() => { hasDragged = false; }, 100);
-      };
-
-      stage.addEventListener('mousedown', onDragStart);
-      window.addEventListener('mousemove', onDragMove);
-      window.addEventListener('mouseup', onDragEnd);
-
-      stage.addEventListener('touchstart', onDragStart, { passive: true });
-      window.addEventListener('touchmove', onDragMove, { passive: true });
-      window.addEventListener('touchend', onDragEnd);
-
-      // Keyboard Left/Right Navigation
+      // Keyboard Left/Right Navigation on Visible Section
       window.addEventListener('keydown', (e) => {
         if (lightbox && lightbox.classList.contains('is-open')) return;
-        const count = items.length;
+        const activeCarousel = carousels.find(c => {
+          const r = c.section.getBoundingClientRect();
+          return r.top <= window.innerHeight * 0.6 && r.bottom >= window.innerHeight * 0.4;
+        });
+
+        if (!activeCarousel) return;
+        const count = activeCarousel.items.length;
         if (count <= 1) return;
         const step = 1 / (count - 1);
+
         if (e.key === 'ArrowRight') {
-          targetProgress = Math.min(1, targetProgress + step);
+          activeCarousel.targetProgress = Math.min(1, activeCarousel.targetProgress + step);
         } else if (e.key === 'ArrowLeft') {
-          targetProgress = Math.max(0, targetProgress - step);
+          activeCarousel.targetProgress = Math.max(0, activeCarousel.targetProgress - step);
         }
       });
 
-      // Category Tabs Switcher
-      tabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-          tabs.forEach(t => {
-            t.classList.remove('is-active');
-            t.setAttribute('aria-selected', 'false');
-          });
-          tab.classList.add('is-active');
-          tab.setAttribute('aria-selected', 'true');
-          const key = tab.getAttribute('data-collection');
-          renderCollection(key);
-          onScroll();
-        });
-      });
-
-      // Initial Render
-      renderCollection('passions');
-      onScroll();
+      // Initial Scroll Calibration
+      onScrollSections();
     });
   </script>
 </body>
