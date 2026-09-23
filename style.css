@@ -554,7 +554,7 @@ body {
 .projects-section {
   width: 100%;
   min-height: 100vh;
-  padding: calc(1.5vw + 45px) calc(7.2vw + 60px) 5vw calc(7.2vw + 60px);
+  padding: calc(1.5vw + 45px) calc(7.2vw + 60px) clamp(28px, 3.5vw, 48px) calc(7.2vw + 60px);
   display: flex;
   justify-content: center;
   align-items: flex-start; /* Fixed top alignment to keep header permanently locked in place */
@@ -969,7 +969,7 @@ body {
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin-top: 18px;
+  margin-top: 8px;
   margin-bottom: 0px;
 }
 

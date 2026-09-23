@@ -781,16 +781,21 @@
         // 1. Featured Work Stacking: Experience stacks over Featured Work
         if (workTrack && contentSection && expTrack) {
           const r2 = document.querySelectorAll('.projects-row')[1];
+          const csHeight = contentSection.offsetHeight;
           if (r2) {
             const csRect = contentSection.getBoundingClientRect();
             const r2Rect = r2.getBoundingClientRect();
             const r2TopFromCs = r2Rect.top - csRect.top;
             
-            // Target Row 2 top at 35px below top of viewport for perfect framing
-            const targetRow2TopInViewport = 35;
-            const stickyTop1 = targetRow2TopInViewport - r2TopFromCs;
+            // Ensure Row 2 and the Explore More button are fully framed in viewport
+            const row2StickyTop = 25 - r2TopFromCs;
+            const bottomVisibleStickyTop = windowH - csHeight - 20;
+            const stickyTop1 = Math.min(row2StickyTop, bottomVisibleStickyTop);
             
-            workTrack.style.height = `${(windowH - stickyTop1) + windowH}px`;
+            // Generous scroll dwell buffer so the Work section and Explore More button
+            // stay comfortably pinned and visible before Experience stacks over it
+            const workScrollBuffer = Math.max(windowH * 2.8, 2400);
+            workTrack.style.height = `${(windowH - stickyTop1) + workScrollBuffer}px`;
             contentSection.style.position = 'sticky';
             contentSection.style.top = `${stickyTop1}px`;
             expTrack.style.marginTop = `-${windowH}px`;
