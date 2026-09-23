@@ -985,6 +985,7 @@
       const experienceWrapper = document.querySelector('.experience-content-wrapper');
       const aboutWrapper = document.querySelector('.about-content-wrapper');
       const testimonialsWrapper = document.querySelector('.testimonials-content-wrapper');
+      const footerSection = document.querySelector('.footer-section');
 
       const sectionObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -993,18 +994,19 @@
           }
         });
       }, {
-        threshold: 0.1,
-        rootMargin: '0px 0px -40px 0px'
+        threshold: 0.08,
+        rootMargin: '0px 0px -30px 0px'
       });
 
       if (projectsWrapper) sectionObserver.observe(projectsWrapper);
       if (experienceWrapper) sectionObserver.observe(experienceWrapper);
       if (aboutWrapper) sectionObserver.observe(aboutWrapper);
       if (testimonialsWrapper) sectionObserver.observe(testimonialsWrapper);
+      if (footerSection) sectionObserver.observe(footerSection);
 
       // Fallback scroll check
       const checkSectionsInView = () => {
-        const trigger = (window.innerHeight || 800) * 0.85;
+        const trigger = (window.innerHeight || 800) * 0.90;
         if (projectsWrapper) {
           const rect = projectsWrapper.getBoundingClientRect();
           if (rect.top < trigger) projectsWrapper.classList.add('in-view');
@@ -1020,6 +1022,10 @@
         if (testimonialsWrapper) {
           const rect = testimonialsWrapper.getBoundingClientRect();
           if (rect.top < trigger) testimonialsWrapper.classList.add('in-view');
+        }
+        if (footerSection) {
+          const rect = footerSection.getBoundingClientRect();
+          if (rect.top < trigger) footerSection.classList.add('in-view');
         }
       };
       window.addEventListener('scroll', checkSectionsInView, { passive: true });

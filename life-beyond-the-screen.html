@@ -465,6 +465,30 @@
         }
       });
 
+      // Footer section appearance animation observer
+      const footerSection = document.querySelector('.footer-section');
+      if (footerSection) {
+        const footerObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('in-view');
+            }
+          });
+        }, {
+          threshold: 0.08,
+          rootMargin: '0px 0px -30px 0px'
+        });
+        footerObserver.observe(footerSection);
+
+        const checkFooterInView = () => {
+          const trigger = (window.innerHeight || 800) * 0.90;
+          const rect = footerSection.getBoundingClientRect();
+          if (rect.top < trigger) footerSection.classList.add('in-view');
+        };
+        window.addEventListener('scroll', checkFooterInView, { passive: true });
+        checkFooterInView();
+      }
+
       // Initial Scroll Calibration
       onScrollSections();
     });
