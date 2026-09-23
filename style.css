@@ -1380,7 +1380,8 @@ body {
 /* Stacking Tracks */
 .work-stack-track,
 .experience-stack-track,
-.testimonials-stack-track {
+.testimonials-stack-track,
+.about-stack-track {
   position: relative;
   width: 100%;
 }

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Harsh - Portfolio</title>
-  <link rel="stylesheet" href="style.css?v=106_contact_clean">
+  <link rel="stylesheet" href="style.css?v=107_about_stacking">
   <!-- Google Fonts for Plus Jakarta Sans & Cormorant Garamond -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -573,56 +573,58 @@
     </div>
   </div>
 
-  <!-- About Section (Placed after Testimonials) -->
-  <section class="about-section" id="about">
-    <div class="about-content-wrapper">
-      <div class="about-header">
-        <img src="lotus.png" alt="Lotus" class="header-lotus-img">
-        <span class="about-subtitle">Behind the Craft & Design</span>
-        <h2 class="about-title">A Little More About Me</h2>
-      </div>
+  <!-- About Section (Layered Card Stacking Layer 5 - Stacks over Testimonials after horizontal scroll) -->
+  <div class="about-stack-track">
+    <section class="about-section" id="about">
+      <div class="about-content-wrapper">
+        <div class="about-header">
+          <img src="lotus.png" alt="Lotus" class="header-lotus-img">
+          <span class="about-subtitle">Behind the Craft & Design</span>
+          <h2 class="about-title">A Little More About Me</h2>
+        </div>
 
-      <!-- Modern Editorial 2-Column Showcase -->
-      <div class="about-showcase-container">
-        <!-- Left: Portrait Showcase -->
-        <div class="about-portrait-card">
-          <div class="about-portrait-img-box">
-            <img src="about-portrait.jpeg" alt="Harsh Bhawsar - User Experience Designer" class="about-portrait-image">
-            <div class="about-portrait-status-badge">
-              <span class="status-live-dot"></span>
-              <span>Pune, India</span>
+        <!-- Modern Editorial 2-Column Showcase -->
+        <div class="about-showcase-container">
+          <!-- Left: Portrait Showcase -->
+          <div class="about-portrait-card">
+            <div class="about-portrait-img-box">
+              <img src="about-portrait.jpeg" alt="Harsh Bhawsar - User Experience Designer" class="about-portrait-image">
+              <div class="about-portrait-status-badge">
+                <span class="status-live-dot"></span>
+                <span>Pune, India</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Narrative Bio & CTA Button -->
+          <div class="about-story-card">
+            <div class="about-story-content">
+              <p class="about-bio-paragraph">
+                Hi, I am Harsh, User Experience Designer with a strong interest in building thoughtful, scalable digital products that balance usability, clarity, and innovation. My work combines research-driven problem solving, structured design systems, and visual communication to create seamless user experiences.
+              </p>
+              <p class="about-bio-paragraph">
+                I’ve led initiatives as Vice Chair of the ACM SIGCHI Student Chapter and contributed to HCIPAI, strengthening my leadership and collaborative skills. I’m particularly interested in the evolving role of intelligent systems in design and focus on ensuring that emerging technologies enhance, rather than complicate, human experiences.
+              </p>
+
+              <div class="about-action-row">
+                <a href="life-beyond-the-screen.html" class="about-cta-btn" id="openLifeBeyondScreenBtn">
+                  <span>Life beyond the Screen</span>
+                  <div class="about-cta-arrow">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </div>
+                </a>
+              </div>
             </div>
           </div>
         </div>
-
-        <!-- Right: Narrative Bio & CTA Button -->
-        <div class="about-story-card">
-          <div class="about-story-content">
-            <p class="about-bio-paragraph">
-              Hi, I am Harsh, User Experience Designer with a strong interest in building thoughtful, scalable digital products that balance usability, clarity, and innovation. My work combines research-driven problem solving, structured design systems, and visual communication to create seamless user experiences.
-            </p>
-            <p class="about-bio-paragraph">
-              I’ve led initiatives as Vice Chair of the ACM SIGCHI Student Chapter and contributed to HCIPAI, strengthening my leadership and collaborative skills. I’m particularly interested in the evolving role of intelligent systems in design and focus on ensuring that emerging technologies enhance, rather than complicate, human experiences.
-            </p>
-
-            <div class="about-action-row">
-              <a href="life-beyond-the-screen.html" class="about-cta-btn" id="openLifeBeyondScreenBtn">
-                <span>Life beyond the Screen</span>
-                <div class="about-cta-arrow">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                  </svg>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </div>
 
-  <!-- Contact / Footer Section (Single Continuous Scroll after Testimonials) -->
+  <!-- Contact / Footer Section (Single Continuous Scroll after Testimonials & About) -->
   <footer class="footer-section" id="contact">
     <div class="footer-headline-container">
       <h2 class="footer-headline">Let’s build experiences that matter</h2>
@@ -748,7 +750,10 @@
       const contentSection = document.querySelector('.content-section');
       const expTrack = document.querySelector('.experience-stack-track');
       const experienceSection = document.getElementById('experience');
+      const testTrack = document.querySelector('.testimonials-stack-track');
       const testimonialsSection = document.getElementById('testimonials');
+      const aboutTrack = document.querySelector('.about-stack-track');
+      const aboutSection = document.getElementById('about');
       
       const updateStackMetrics = () => {
         const windowH = window.innerHeight;
@@ -773,7 +778,6 @@
         }
 
         // 2. Experience Stacking: Testimonials stacks over Experience & Honors
-        const testTrack = document.querySelector('.testimonials-stack-track');
         const gridWrapper = document.getElementById('testimonialsGridWrapper');
         const grid = document.getElementById('testimonialsGrid');
 
@@ -791,7 +795,7 @@
         }
 
         // 3. Testimonials Stacking & Horizontal Scroll Range
-        if (testTrack && testimonialsSection) {
+        if (testTrack && testimonialsSection && aboutTrack) {
           const testHeight = testimonialsSection.offsetHeight;
           const stickyTop3 = windowH >= testHeight ? 0 : (windowH - testHeight);
           
@@ -804,7 +808,20 @@
           }
 
           const horizontalScrollRange = maxHorizontalScroll > 0 ? Math.max(maxHorizontalScroll * 1.35, 700) : 0;
-          testTrack.style.height = `${(windowH - stickyTop3) + horizontalScrollRange}px`;
+          // Hold testimonials pinned for horizontal scroll + window height for About card to stack over it
+          testTrack.style.height = `${(windowH - stickyTop3) + horizontalScrollRange + windowH}px`;
+          aboutTrack.style.marginTop = `-${windowH}px`;
+        }
+
+        // 4. About Section Stacking (Layer 5)
+        if (aboutTrack && aboutSection) {
+          const aboutHeight = aboutSection.offsetHeight;
+          const stickyTop4 = windowH >= aboutHeight ? 0 : (windowH - aboutHeight);
+          
+          const aboutScrollBuffer = Math.max(windowH * 0.9, 700);
+          aboutTrack.style.height = `${(windowH - stickyTop4) + aboutScrollBuffer}px`;
+          aboutSection.style.position = 'sticky';
+          aboutSection.style.top = `${stickyTop4}px`;
         }
       };
       
@@ -869,12 +886,6 @@
         }
 
         // Stacking transitions
-        const experienceSection = document.getElementById('experience');
-        const testTrack = document.querySelector('.testimonials-stack-track');
-        const testimonialsSection = document.getElementById('testimonials');
-        const gridWrapper = document.getElementById('testimonialsGridWrapper');
-        const grid = document.getElementById('testimonialsGrid');
-        
         if (experienceSection && contentSection) {
           const expRect = experienceSection.getBoundingClientRect();
           if (expRect.top <= 0) {
@@ -894,6 +905,17 @@
           } else {
             experienceSection.style.opacity = 1;
             experienceSection.style.pointerEvents = 'auto';
+          }
+        }
+
+        if (aboutSection && testimonialsSection) {
+          const aboutRect = aboutSection.getBoundingClientRect();
+          if (aboutRect.top <= 0) {
+            testimonialsSection.style.opacity = 0;
+            testimonialsSection.style.pointerEvents = 'none';
+          } else {
+            testimonialsSection.style.opacity = 1;
+            testimonialsSection.style.pointerEvents = 'auto';
           }
         }
 
