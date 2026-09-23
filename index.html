@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Harsh - Portfolio</title>
-  <link rel="stylesheet" href="style.css?v=108_stickers_drag">
+  <link rel="stylesheet" href="style.css?v=109_glide_stickers_testimonial_fix">
   <!-- Google Fonts for Plus Jakarta Sans & Cormorant Garamond -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -768,6 +768,8 @@
       const experienceSection = document.getElementById('experience');
       const testTrack = document.querySelector('.testimonials-stack-track');
       const testimonialsSection = document.getElementById('testimonials');
+      const gridWrapper = document.getElementById('testimonialsGridWrapper');
+      const grid = document.getElementById('testimonialsGrid');
       const aboutTrack = document.querySelector('.about-stack-track');
       const aboutSection = document.getElementById('about');
       
@@ -794,9 +796,6 @@
         }
 
         // 2. Experience Stacking: Testimonials stacks over Experience & Honors
-        const gridWrapper = document.getElementById('testimonialsGridWrapper');
-        const grid = document.getElementById('testimonialsGrid');
-
         if (expTrack && experienceSection && testTrack) {
           const expHeight = experienceSection.offsetHeight;
           const stickyTop2 = windowH >= expHeight ? 0 : (windowH - expHeight);
@@ -818,14 +817,21 @@
           testimonialsSection.style.position = 'sticky';
           testimonialsSection.style.top = `${stickyTop3}px`;
 
+          const card1 = grid ? grid.children[0] : null;
+          const card2 = grid ? grid.children[1] : null;
+
           let maxHorizontalScroll = 0;
-          if (gridWrapper && grid) {
-            maxHorizontalScroll = Math.max(0, grid.scrollWidth - gridWrapper.clientWidth);
+          if (grid && card1 && card2 && gridWrapper) {
+            const cardShift = card2.offsetLeft - card1.offsetLeft;
+            const overflowScroll = Math.max(0, grid.scrollWidth - gridWrapper.clientWidth);
+            maxHorizontalScroll = Math.max(cardShift, overflowScroll);
           }
 
-          const horizontalScrollRange = maxHorizontalScroll > 0 ? Math.max(maxHorizontalScroll * 1.35, 700) : 0;
-          // Hold testimonials pinned for horizontal scroll + window height for About card to stack over it
-          testTrack.style.height = `${(windowH - stickyTop3) + horizontalScrollRange + windowH}px`;
+          const horizontalScrollTravel = maxHorizontalScroll > 0 ? Math.max(maxHorizontalScroll * 1.6, 900) : 0;
+          const card2Dwell = 750;
+
+          // Hold testimonials pinned for horizontal scroll + Card 2 dwell + window height for About card to stack over it
+          testTrack.style.height = `${(windowH - stickyTop3) + horizontalScrollTravel + card2Dwell + windowH}px`;
           aboutTrack.style.marginTop = `-${windowH}px`;
         }
 
@@ -941,14 +947,21 @@
           const testHeight = testimonialsSection.offsetHeight;
           const stickyTop3 = windowH >= testHeight ? 0 : (windowH - testHeight);
           
-          const maxHorizontalScroll = Math.max(0, grid.scrollWidth - gridWrapper.clientWidth);
-          const horizontalScrollRange = maxHorizontalScroll > 0 ? Math.max(maxHorizontalScroll * 1.35, 700) : 0;
+          const card1 = grid.children[0];
+          const card2 = grid.children[1];
+          let maxHorizontalScroll = 0;
+          if (card1 && card2) {
+            const cardShift = card2.offsetLeft - card1.offsetLeft;
+            const overflowScroll = Math.max(0, grid.scrollWidth - gridWrapper.clientWidth);
+            maxHorizontalScroll = Math.max(cardShift, overflowScroll);
+          }
+          const horizontalScrollTravel = maxHorizontalScroll > 0 ? Math.max(maxHorizontalScroll * 1.6, 900) : 0;
 
           const trackRect = testTrack.getBoundingClientRect();
           const scrollInsidePin = stickyTop3 - trackRect.top;
 
-          if (horizontalScrollRange > 0 && maxHorizontalScroll > 0) {
-            const progress = Math.min(Math.max(scrollInsidePin / horizontalScrollRange, 0), 1);
+          if (horizontalScrollTravel > 0 && maxHorizontalScroll > 0) {
+            const progress = Math.min(Math.max(scrollInsidePin / horizontalScrollTravel, 0), 1);
             const targetX = progress * maxHorizontalScroll;
             grid.style.transform = `translateX(-${targetX}px)`;
 
@@ -1227,7 +1240,7 @@
         });
       }
 
-      // Interactive Draggable & Bounded Stickers System for Contact Section
+      // Interactive Draggable & Bounded Stickers System for Contact Section with Smooth Glide Momentum
       const initContactStickers = () => {
         const footerCard = document.querySelector('.footer-card');
         if (!footerCard) return;
@@ -1239,28 +1252,32 @@
             el: footerCard.querySelector('.footer-sticker-sun'),
             defaultLeftPct: isMobile ? 18.0 : 11.0,
             defaultTopPct: isMobile ? 74.0 : 65.5,
-            defaultRot: -2
+            defaultRot: -2,
+            animId: null
           },
           {
             id: 'lotus',
             el: footerCard.querySelector('.footer-sticker-lotus'),
             defaultLeftPct: isMobile ? 40.0 : 35.0,
             defaultTopPct: isMobile ? 86.0 : 80.0,
-            defaultRot: 0
+            defaultRot: 0,
+            animId: null
           },
           {
             id: 'camera',
             el: footerCard.querySelector('.footer-sticker-camera'),
             defaultLeftPct: isMobile ? 68.0 : 60.0,
             defaultTopPct: isMobile ? 84.0 : 78.0,
-            defaultRot: 10
+            defaultRot: 10,
+            animId: null
           },
           {
             id: 'eye',
             el: footerCard.querySelector('.footer-sticker-eye'),
             defaultLeftPct: isMobile ? 82.0 : 88.5,
             defaultTopPct: isMobile ? 73.0 : 67.5,
-            defaultRot: -6
+            defaultRot: -6,
+            animId: null
           }
         ];
 
@@ -1270,6 +1287,10 @@
 
         const setStickerPosition = (item, leftPx, topPx, animate = false) => {
           if (!item.el) return;
+          if (item.animId) {
+            cancelAnimationFrame(item.animId);
+            item.animId = null;
+          }
           if (animate) {
             item.el.style.transition = 'left 0.75s cubic-bezier(0.16, 1, 0.3, 1), top 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1)';
           } else {
@@ -1288,6 +1309,10 @@
 
           stickers.forEach(item => {
             if (!item.el) return;
+            if (item.animId) {
+              cancelAnimationFrame(item.animId);
+              item.animId = null;
+            }
             const targetLeft = (item.defaultLeftPct / 100) * cardRect.width;
             const targetTop = (item.defaultTopPct / 100) * cardRect.height;
             item.currentRot = item.defaultRot;
@@ -1308,10 +1333,17 @@
 
           let isDragging = false;
           let startPointerX = 0, startPointerY = 0;
+          let lastPointerX = 0, lastPointerY = 0;
+          let lastMoveTime = 0;
+          let velocityX = 0, velocityY = 0;
           let startStickerLeft = 0, startStickerTop = 0;
 
           const onPointerDown = (e) => {
             e.preventDefault();
+            if (item.animId) {
+              cancelAnimationFrame(item.animId);
+              item.animId = null;
+            }
             isDragging = true;
             isDraggingAny = true;
             hasMovedAny = true;
@@ -1319,13 +1351,22 @@
             el.style.zIndex = highestZ;
             el.classList.add('is-dragging');
 
-            startPointerX = e.clientX !== undefined ? e.clientX : (e.touches && e.touches[0].clientX) || 0;
-            startPointerY = e.clientY !== undefined ? e.clientY : (e.touches && e.touches[0].clientY) || 0;
+            const clientX = e.clientX !== undefined ? e.clientX : (e.touches && e.touches[0].clientX) || 0;
+            const clientY = e.clientY !== undefined ? e.clientY : (e.touches && e.touches[0].clientY) || 0;
+
+            startPointerX = clientX;
+            startPointerY = clientY;
+            lastPointerX = clientX;
+            lastPointerY = clientY;
+            lastMoveTime = performance.now();
+            velocityX = 0;
+            velocityY = 0;
 
             startStickerLeft = item.currentLeft || (parseFloat(el.style.left) || 0);
             startStickerTop = item.currentTop || (parseFloat(el.style.top) || 0);
 
             el.style.transition = 'none';
+            el.style.transform = `translate(-50%, -50%) rotate(${item.defaultRot}deg) scale(1.08)`;
           };
 
           const onPointerMove = (e) => {
@@ -1335,11 +1376,26 @@
             const clientX = e.clientX !== undefined ? e.clientX : (e.touches && e.touches[0].clientX) || 0;
             const clientY = e.clientY !== undefined ? e.clientY : (e.touches && e.touches[0].clientY) || 0;
 
-            const deltaX = clientX - startPointerX;
-            const deltaY = clientY - startPointerY;
+            const now = performance.now();
+            const dt = Math.max(now - lastMoveTime, 1);
+            const dx = clientX - lastPointerX;
+            const dy = clientY - lastPointerY;
 
-            let newLeft = startStickerLeft + deltaX;
-            let newTop = startStickerTop + deltaY;
+            // Velocity in pixels per 16ms frame with smoothed moving average
+            const instVx = (dx / dt) * 16.0;
+            const instVy = (dy / dt) * 16.0;
+            velocityX = velocityX * 0.35 + instVx * 0.65;
+            velocityY = velocityY * 0.35 + instVy * 0.65;
+
+            lastPointerX = clientX;
+            lastPointerY = clientY;
+            lastMoveTime = now;
+
+            const totalDeltaX = clientX - startPointerX;
+            const totalDeltaY = clientY - startPointerY;
+
+            let newLeft = startStickerLeft + totalDeltaX;
+            let newTop = startStickerTop + totalDeltaY;
 
             // Strict bounding inside .footer-card
             const cardRect = footerCard.getBoundingClientRect();
@@ -1366,8 +1422,78 @@
             isDragging = false;
             isDraggingAny = false;
             el.classList.remove('is-dragging');
-            el.style.transition = 'transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), filter 0.3s ease';
+
+            // Smooth scale down to resting state
+            el.style.transition = 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)';
             el.style.transform = `translate(-50%, -50%) rotate(${item.defaultRot}deg) scale(1)`;
+
+            // If pointer paused before release, zero out velocity
+            if (performance.now() - lastMoveTime > 90) {
+              velocityX = 0;
+              velocityY = 0;
+            }
+
+            // Cap maximum throw speed for smooth, silky momentum feel
+            const speed = Math.hypot(velocityX, velocityY);
+            const maxSpeed = 32;
+            if (speed > maxSpeed) {
+              velocityX = (velocityX / speed) * maxSpeed;
+              velocityY = (velocityY / speed) * maxSpeed;
+            }
+
+            // Launch momentum glide physics loop
+            const friction = 0.925;
+            const minVelocity = 0.12;
+
+            const stepGlide = () => {
+              if (Math.abs(velocityX) < minVelocity && Math.abs(velocityY) < minVelocity) {
+                item.animId = null;
+                return;
+              }
+
+              velocityX *= friction;
+              velocityY *= friction;
+
+              const cardRect = footerCard.getBoundingClientRect();
+              const stickerW = el.offsetWidth || 100;
+              const stickerH = el.offsetHeight || 100;
+
+              const minLeft = stickerW / 2;
+              const maxLeft = cardRect.width - (stickerW / 2);
+              const minTop = stickerH / 2;
+              const maxTop = cardRect.height - (stickerH / 2);
+
+              let nextLeft = (item.currentLeft || parseFloat(el.style.left) || 0) + velocityX;
+              let nextTop = (item.currentTop || parseFloat(el.style.top) || 0) + velocityY;
+
+              // Soft wall constraint
+              if (nextLeft <= minLeft) {
+                nextLeft = minLeft;
+                velocityX = -velocityX * 0.2;
+              } else if (nextLeft >= maxLeft) {
+                nextLeft = maxLeft;
+                velocityX = -velocityX * 0.2;
+              }
+
+              if (nextTop <= minTop) {
+                nextTop = minTop;
+                velocityY = -velocityY * 0.2;
+              } else if (nextTop >= maxTop) {
+                nextTop = maxTop;
+                velocityY = -velocityY * 0.2;
+              }
+
+              item.currentLeft = nextLeft;
+              item.currentTop = nextTop;
+              el.style.left = `${nextLeft}px`;
+              el.style.top = `${nextTop}px`;
+
+              item.animId = requestAnimationFrame(stepGlide);
+            };
+
+            if (Math.abs(velocityX) >= minVelocity || Math.abs(velocityY) >= minVelocity) {
+              item.animId = requestAnimationFrame(stepGlide);
+            }
           };
 
           el.addEventListener('mousedown', onPointerDown);

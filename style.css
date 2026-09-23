@@ -1482,8 +1482,8 @@ body {
 }
 
 .testimonial-card {
-  flex: 0 0 clamp(540px, 40vw, 640px); /* Scaled down card width */
-  min-width: 460px;
+  flex: 0 0 clamp(560px, 52vw, 740px);
+  min-width: 480px;
   display: flex;
   flex-direction: column;
   gap: 0.25rem; /* 0.25rem modular gap between body, footer, and bottom stripe */
@@ -1931,18 +1931,16 @@ body {
   -webkit-user-drag: none;
   touch-action: none;
   will-change: transform, left, top;
-  filter: drop-shadow(0 6px 14px rgba(112, 1, 69, 0.14));
   opacity: 0;
   transform: translate(-50%, -50%) scale(0.6) rotate(-8deg);
 }
 
 .footer-sticker:hover {
-  filter: drop-shadow(0 14px 24px rgba(112, 1, 69, 0.24));
+  /* No shadow */
 }
 
 .footer-sticker.is-dragging {
   cursor: grabbing !important;
-  filter: drop-shadow(0 20px 36px rgba(112, 1, 69, 0.36)) !important;
   transition: none !important;
 }
 
