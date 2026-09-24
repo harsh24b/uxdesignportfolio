@@ -6,7 +6,7 @@
   <title>Harsh - Portfolio</title>
   <link rel="icon" type="image/png" href="faviconnew.png?v=2">
   <link rel="apple-touch-icon" href="faviconnew.png?v=2">
-  <link rel="stylesheet" href="style.css?v=111_guidelines_and_styling_sync">
+  <link rel="stylesheet" href="style.css?v=112_mobile_responsive">
   <!-- Google Fonts for Plus Jakarta Sans & Cormorant Garamond -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -777,6 +777,54 @@
       
       const updateStackMetrics = () => {
         const windowH = window.innerHeight;
+        const isMobile = window.innerWidth <= 768;
+
+        if (isMobile) {
+          if (workTrack) {
+            workTrack.style.height = 'auto';
+            workTrack.style.marginTop = '0';
+          }
+          if (contentSection) {
+            contentSection.style.position = 'relative';
+            contentSection.style.top = 'auto';
+            contentSection.style.opacity = '1';
+            contentSection.style.pointerEvents = 'auto';
+          }
+          if (expTrack) {
+            expTrack.style.height = 'auto';
+            expTrack.style.marginTop = '0';
+          }
+          if (experienceSection) {
+            experienceSection.style.position = 'relative';
+            experienceSection.style.top = 'auto';
+            experienceSection.style.opacity = '1';
+            experienceSection.style.pointerEvents = 'auto';
+          }
+          if (testTrack) {
+            testTrack.style.height = 'auto';
+            testTrack.style.marginTop = '0';
+          }
+          if (testimonialsSection) {
+            testimonialsSection.style.position = 'relative';
+            testimonialsSection.style.top = 'auto';
+            testimonialsSection.style.opacity = '1';
+            testimonialsSection.style.pointerEvents = 'auto';
+          }
+          if (grid) {
+            grid.style.transform = 'none';
+          }
+          if (aboutTrack) {
+            aboutTrack.style.height = 'auto';
+            aboutTrack.style.marginTop = '0';
+          }
+          if (aboutSection) {
+            aboutSection.style.position = 'relative';
+            aboutSection.style.top = 'auto';
+            aboutSection.style.opacity = '1';
+            aboutSection.style.pointerEvents = 'auto';
+          }
+          return;
+        }
         
         // 1. Featured Work Stacking: Experience stacks over Featured Work
         if (workTrack && contentSection && expTrack) {
@@ -866,6 +914,7 @@
         const scrollY = window.scrollY;
         const hero = document.querySelector('.hero-section');
         const navbar = document.querySelector('.navbar');
+        const isMobile = window.innerWidth <= 768;
         
         // Smart Navbar Show on scroll-up / Hide on scroll-down
         if (navbarContainer) {
@@ -880,17 +929,23 @@
         lastScrollY = scrollY;
         
         if (hero) {
-          // Calculate height dynamically, fallback to aspect ratio calculation
-          const heroHeight = hero.offsetHeight || (window.innerWidth * (1624 / 3840));
-          const progress = Math.min(scrollY / heroHeight, 1);
-          
-          const blurVal = progress * 16;
-          const scaleVal = 1 + progress * 0.03;
-          const opacityVal = 1 - progress * 0.45;
-          
-          hero.style.filter = `blur(${blurVal}px)`;
-          hero.style.transform = `scale(${scaleVal})`;
-          hero.style.opacity = opacityVal;
+          if (isMobile) {
+            hero.style.filter = 'none';
+            hero.style.transform = 'none';
+            hero.style.opacity = '1';
+          } else {
+            // Calculate height dynamically, fallback to aspect ratio calculation
+            const heroHeight = hero.offsetHeight || (window.innerWidth * (1624 / 3840));
+            const progress = Math.min(scrollY / heroHeight, 1);
+            
+            const blurVal = progress * 16;
+            const scaleVal = 1 + progress * 0.03;
+            const opacityVal = 1 - progress * 0.45;
+            
+            hero.style.filter = `blur(${blurVal}px)`;
+            hero.style.transform = `scale(${scaleVal})`;
+            hero.style.opacity = opacityVal;
+          }
 
           if (navbar) {
             const testSec = document.getElementById('testimonials');
@@ -904,7 +959,7 @@
             if (testRect && testRect.top <= 120 && (!aboutRect || aboutRect.top > 120)) {
               navbar.classList.add('navbar-maroon');
               navbar.classList.remove('scrolled');
-            } else if (scrollY > (heroHeight - 100)) {
+            } else if (scrollY > 100) {
               navbar.classList.remove('navbar-maroon');
               navbar.classList.add('scrolled');
             } else {
@@ -914,7 +969,23 @@
           }
         }
 
-        // Stacking transitions
+        // Stacking transitions on desktop
+        if (isMobile) {
+          if (contentSection) {
+            contentSection.style.opacity = '1';
+            contentSection.style.pointerEvents = 'auto';
+          }
+          if (experienceSection) {
+            experienceSection.style.opacity = '1';
+            experienceSection.style.pointerEvents = 'auto';
+          }
+          if (testimonialsSection) {
+            testimonialsSection.style.opacity = '1';
+            testimonialsSection.style.pointerEvents = 'auto';
+          }
+          return;
+        }
+
         if (experienceSection && contentSection) {
           const expRect = experienceSection.getBoundingClientRect();
           if (expRect.top <= 0) {
@@ -1258,31 +1329,31 @@
             id: 'sun',
             el: footerCard.querySelector('.footer-sticker-sun'),
             defaultLeftPct: isMobile ? 18.0 : 11.0,
-            defaultTopPct: isMobile ? 74.0 : 65.5,
+            defaultTopPct: isMobile ? 82.0 : 65.5,
             defaultRot: -2,
             animId: null
           },
           {
             id: 'lotus',
             el: footerCard.querySelector('.footer-sticker-lotus'),
-            defaultLeftPct: isMobile ? 40.0 : 35.0,
-            defaultTopPct: isMobile ? 86.0 : 80.0,
+            defaultLeftPct: isMobile ? 42.0 : 35.0,
+            defaultTopPct: isMobile ? 88.0 : 80.0,
             defaultRot: 0,
             animId: null
           },
           {
             id: 'camera',
             el: footerCard.querySelector('.footer-sticker-camera'),
-            defaultLeftPct: isMobile ? 68.0 : 60.0,
-            defaultTopPct: isMobile ? 84.0 : 78.0,
+            defaultLeftPct: isMobile ? 65.0 : 60.0,
+            defaultTopPct: isMobile ? 85.0 : 78.0,
             defaultRot: 10,
             animId: null
           },
           {
             id: 'eye',
             el: footerCard.querySelector('.footer-sticker-eye'),
-            defaultLeftPct: isMobile ? 82.0 : 88.5,
-            defaultTopPct: isMobile ? 73.0 : 67.5,
+            defaultLeftPct: isMobile ? 85.0 : 88.5,
+            defaultTopPct: isMobile ? 80.0 : 67.5,
             defaultRot: -6,
             animId: null
           }

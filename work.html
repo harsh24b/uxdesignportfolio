@@ -6,7 +6,7 @@
   <title>Selected Work & Case Studies | Harsh Bhawsar</title>
   <link rel="icon" type="image/png" href="faviconnew.png?v=2">
   <link rel="apple-touch-icon" href="faviconnew.png?v=2">
-  <link rel="stylesheet" href="style.css?v=111_guidelines_and_styling_sync">
+  <link rel="stylesheet" href="style.css?v=112_mobile_responsive">
   <!-- Google Fonts for Plus Jakarta Sans & Cormorant Garamond -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -51,7 +51,7 @@
 
   <!-- Main Work Archive Container adhering exactly to Homepage Structure & Scale -->
   <main class="case-study-page-wrapper work-page-wrapper" style="width: 100%; min-height: 100vh; background-color: #FFFCDE;">
-    <div class="projects-section" style="min-height: auto; padding: calc(1.5vw + 45px) calc(7.2vw + 60px) 5vw calc(7.2vw + 60px); width: 100%; box-sizing: border-box;">
+    <div class="projects-section" style="min-height: auto; width: 100%; box-sizing: border-box;">
       <div class="projects-content-wrapper in-view" style="opacity: 1; transform: none;">
         <!-- Header -->
         <div class="projects-header">
@@ -392,10 +392,24 @@
             entry.target.classList.add('in-view');
           }
         });
-      }, { threshold: 0.12 });
+      }, { threshold: 0.08 });
 
       if (footerHeadline) footerObserver.observe(footerHeadline);
       if (footerCard) footerObserver.observe(footerCard);
+
+      const checkSectionsInView = () => {
+        const windowH = window.innerHeight || 800;
+        if (footerHeadline) {
+          const rect = footerHeadline.getBoundingClientRect();
+          if (rect.top < windowH * 0.92) footerHeadline.classList.add('in-view');
+        }
+        if (footerCard) {
+          const rect = footerCard.getBoundingClientRect();
+          if (rect.top < windowH * 0.90) footerCard.classList.add('in-view');
+        }
+      };
+      window.addEventListener('scroll', checkSectionsInView, { passive: true });
+      checkSectionsInView();
 
       // 3D Perspective Tilt for Cards
       document.querySelectorAll('.project-card').forEach(card => {
@@ -486,31 +500,31 @@
             id: 'sun',
             el: footerCard.querySelector('.footer-sticker-sun'),
             defaultLeftPct: isMobile ? 18.0 : 11.0,
-            defaultTopPct: isMobile ? 74.0 : 65.5,
+            defaultTopPct: isMobile ? 82.0 : 65.5,
             defaultRot: -2,
             animId: null
           },
           {
             id: 'lotus',
             el: footerCard.querySelector('.footer-sticker-lotus'),
-            defaultLeftPct: isMobile ? 40.0 : 35.0,
-            defaultTopPct: isMobile ? 86.0 : 80.0,
+            defaultLeftPct: isMobile ? 42.0 : 35.0,
+            defaultTopPct: isMobile ? 88.0 : 80.0,
             defaultRot: 0,
             animId: null
           },
           {
             id: 'camera',
             el: footerCard.querySelector('.footer-sticker-camera'),
-            defaultLeftPct: isMobile ? 68.0 : 60.0,
-            defaultTopPct: isMobile ? 84.0 : 78.0,
+            defaultLeftPct: isMobile ? 65.0 : 60.0,
+            defaultTopPct: isMobile ? 85.0 : 78.0,
             defaultRot: 10,
             animId: null
           },
           {
             id: 'eye',
             el: footerCard.querySelector('.footer-sticker-eye'),
-            defaultLeftPct: isMobile ? 82.0 : 88.5,
-            defaultTopPct: isMobile ? 73.0 : 67.5,
+            defaultLeftPct: isMobile ? 85.0 : 88.5,
+            defaultTopPct: isMobile ? 80.0 : 67.5,
             defaultRot: -6,
             animId: null
           }
