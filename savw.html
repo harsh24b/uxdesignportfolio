@@ -34,7 +34,7 @@
       <a href="work.html" class="nav-link">Work</a>
       <a href="index.html#about" class="nav-link">About</a>
       <a href="https://drive.google.com/drive/folders/1MXd7MDGMQqW5t3EXo6YHGRUl8pG_nnD-" target="_blank" rel="noopener noreferrer" class="nav-link">Resume</a>
-      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=harshhbhawsar@gmail.com" target="_blank" rel="noopener noreferrer" class="btn-contact">
+      <a href="#contact" class="btn-contact">
         <img src="Mail.svg" class="mail-icon" alt="Mail Icon">
         Work with me
       </a>
@@ -217,6 +217,74 @@
     </section>
   </main>
 
+  <!-- Signature Footer & Contact Section -->
+  <footer class="footer-section" id="contact">
+    <div class="footer-headline-container">
+      <h2 class="footer-headline">Let’s build experiences that matter</h2>
+    </div>
+    <div class="footer-card">
+      <div class="footer-card-content">
+        <div class="footer-grid">
+          <!-- Column 1: Navigation -->
+          <div class="footer-col footer-col-nav">
+            <span class="footer-col-label">NAVIGATION</span>
+            <ul class="footer-links-list">
+              <li><a href="work.html" class="footer-link">Work</a></li>
+              <li><a href="index.html#about" class="footer-link">About</a></li>
+              <li><a href="https://drive.google.com/drive/folders/1MXd7MDGMQqW5t3EXo6YHGRUl8pG_nnD-" target="_blank" rel="noopener noreferrer" class="footer-link">Resume</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 2: Social -->
+          <div class="footer-col footer-col-social">
+            <span class="footer-col-label">SOCIAL</span>
+            <ul class="footer-links-list">
+              <li><a href="https://www.behance.net/harshbhawsar" target="_blank" rel="noopener noreferrer" class="footer-link">Behance</a></li>
+              <li><a href="https://www.linkedin.com/in/harsh-bhawsar-ba25581b9/" target="_blank" rel="noopener noreferrer" class="footer-link">LinkedIn</a></li>
+              <li><a href="https://wa.me/917773892631" target="_blank" rel="noopener noreferrer" class="footer-link">WhatsApp</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Contact -->
+          <div class="footer-col footer-col-contact">
+            <span class="footer-col-label">CONTACT</span>
+            <div class="footer-contact-items">
+              <div class="footer-contact-item-wrap">
+                <a href="mailto:harshhbhawsar@gmail.com" class="footer-contact-item" data-copy="harshhbhawsar@gmail.com" title="Click to copy email">harshhbhawsar@gmail.com</a>
+                <span class="copied-badge" aria-hidden="true">Copied</span>
+              </div>
+              <div class="footer-contact-item-wrap">
+                <a href="tel:+917773892631" class="footer-contact-item" data-copy="+91 7773892631" title="Click to copy phone number">+91 7773892631</a>
+                <span class="copied-badge" aria-hidden="true">Copied</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Massive Signature Typography in Spoleto Font -->
+      <div class="footer-signature-container">
+        <span class="footer-signature-text">harsh</span>
+      </div>
+
+      <!-- Interactive Draggable Stickers Layer -->
+      <div class="footer-stickers-layer" id="footerStickersLayer">
+        <div class="footer-sticker footer-sticker-sun" data-id="sun" title="Drag me!">
+          <img src="suncontacts.png" alt="Sun sticker" draggable="false">
+        </div>
+        <div class="footer-sticker footer-sticker-lotus" data-id="lotus" title="Drag me!">
+          <img src="lotuscontacts.png" alt="Lotus sticker" draggable="false">
+        </div>
+        <div class="footer-sticker footer-sticker-camera" data-id="camera" title="Drag me!">
+          <img src="cameracontacts.png" alt="Camera sticker" draggable="false">
+        </div>
+        <div class="footer-sticker footer-sticker-eye" data-id="eye" title="Drag me!">
+          <img src="eyecontacts.png" alt="Eye sticker" draggable="false">
+        </div>
+      </div>
+    </div>
+  </footer>
+
   <!-- Project Cards Custom Cursor Badge Follower -->
   <div class="project-cursor-badge" id="projectCursorBadge">
     <div class="badge-content">
@@ -251,6 +319,21 @@
         
         lastScrollY = currentScrollY;
       }, { passive: true });
+
+      // Footer Scroll Reveal Observer
+      const footerHeadline = document.querySelector('.footer-headline');
+      const footerCard = document.querySelector('.footer-card');
+
+      const footerObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
+
+      if (footerHeadline) footerObserver.observe(footerHeadline);
+      if (footerCard) footerObserver.observe(footerCard);
 
       // 3D Perspective Tilt for Cards
       document.querySelectorAll('.project-card').forEach(card => {
@@ -334,6 +417,317 @@
           cursorBadge.classList.remove('is-visible');
         });
       });
+
+      // Contact Draggable Physics-Based Stickers Engine
+      const initContactStickers = () => {
+        const footerCard = document.querySelector('.footer-card');
+        if (!footerCard) return;
+
+        const isMobile = window.innerWidth <= 768;
+
+        const stickers = [
+          {
+            id: 'sun',
+            el: footerCard.querySelector('.footer-sticker-sun'),
+            defaultLeftPct: isMobile ? 18.0 : 11.0,
+            defaultTopPct: isMobile ? 82.0 : 65.5,
+            defaultRot: -2,
+            animId: null
+          },
+          {
+            id: 'lotus',
+            el: footerCard.querySelector('.footer-sticker-lotus'),
+            defaultLeftPct: isMobile ? 42.0 : 35.0,
+            defaultTopPct: isMobile ? 88.0 : 80.0,
+            defaultRot: 0,
+            animId: null
+          },
+          {
+            id: 'camera',
+            el: footerCard.querySelector('.footer-sticker-camera'),
+            defaultLeftPct: isMobile ? 65.0 : 60.0,
+            defaultTopPct: isMobile ? 85.0 : 78.0,
+            defaultRot: 10,
+            animId: null
+          },
+          {
+            id: 'eye',
+            el: footerCard.querySelector('.footer-sticker-eye'),
+            defaultLeftPct: isMobile ? 85.0 : 88.5,
+            defaultTopPct: isMobile ? 80.0 : 67.5,
+            defaultRot: -6,
+            animId: null
+          }
+        ];
+
+        let highestZ = 20;
+        let isDraggingAny = false;
+        let hasMovedAny = false;
+
+        const setStickerPosition = (item, leftPx, topPx, animate = false) => {
+          if (!item.el) return;
+          if (item.animId) {
+            cancelAnimationFrame(item.animId);
+            item.animId = null;
+          }
+          if (animate) {
+            item.el.style.transition = 'left 0.75s cubic-bezier(0.16, 1, 0.3, 1), top 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1)';
+          } else {
+            item.el.style.transition = '';
+          }
+          item.currentLeft = leftPx;
+          item.currentTop = topPx;
+          item.el.style.left = `${leftPx}px`;
+          item.el.style.top = `${topPx}px`;
+          item.el.style.transform = `translate(-50%, -50%) rotate(${item.currentRot !== undefined ? item.currentRot : item.defaultRot}deg)`;
+        };
+
+        const resetStickersToDefault = (animate = true) => {
+          const cardRect = footerCard.getBoundingClientRect();
+          if (cardRect.width === 0 || cardRect.height === 0) return;
+
+          stickers.forEach(item => {
+            if (!item.el) return;
+            if (item.animId) {
+              cancelAnimationFrame(item.animId);
+              item.animId = null;
+            }
+            const targetLeft = (item.defaultLeftPct / 100) * cardRect.width;
+            const targetTop = (item.defaultTopPct / 100) * cardRect.height;
+            item.currentRot = item.defaultRot;
+            setStickerPosition(item, targetLeft, targetTop, animate);
+          });
+          hasMovedAny = false;
+        };
+
+        // Calibrate initial layout after render
+        setTimeout(() => resetStickersToDefault(false), 150);
+        window.addEventListener('resize', () => {
+          if (!hasMovedAny) resetStickersToDefault(false);
+        });
+
+        stickers.forEach(item => {
+          const el = item.el;
+          if (!el) return;
+
+          let isDragging = false;
+          let startPointerX = 0, startPointerY = 0;
+          let lastPointerX = 0, lastPointerY = 0;
+          let lastMoveTime = 0;
+          let velocityX = 0, velocityY = 0;
+          let startStickerLeft = 0, startStickerTop = 0;
+
+          const onPointerDown = (e) => {
+            e.preventDefault();
+            if (item.animId) {
+              cancelAnimationFrame(item.animId);
+              item.animId = null;
+            }
+            isDragging = true;
+            isDraggingAny = true;
+            hasMovedAny = true;
+            highestZ += 1;
+            el.style.zIndex = highestZ;
+            el.classList.add('is-dragging');
+
+            const clientX = e.clientX !== undefined ? e.clientX : (e.touches && e.touches[0].clientX) || 0;
+            const clientY = e.clientY !== undefined ? e.clientY : (e.touches && e.touches[0].clientY) || 0;
+
+            startPointerX = clientX;
+            startPointerY = clientY;
+            lastPointerX = clientX;
+            lastPointerY = clientY;
+            lastMoveTime = performance.now();
+            velocityX = 0;
+            velocityY = 0;
+
+            startStickerLeft = item.currentLeft || (parseFloat(el.style.left) || 0);
+            startStickerTop = item.currentTop || (parseFloat(el.style.top) || 0);
+
+            el.style.transition = 'none';
+            el.style.transform = `translate(-50%, -50%) rotate(${item.defaultRot}deg) scale(1.08)`;
+          };
+
+          const onPointerMove = (e) => {
+            if (!isDragging) return;
+            e.preventDefault();
+
+            const clientX = e.clientX !== undefined ? e.clientX : (e.touches && e.touches[0].clientX) || 0;
+            const clientY = e.clientY !== undefined ? e.clientY : (e.touches && e.touches[0].clientY) || 0;
+
+            const now = performance.now();
+            const dt = Math.max(now - lastMoveTime, 1);
+            const dx = clientX - lastPointerX;
+            const dy = clientY - lastPointerY;
+
+            const instVx = (dx / dt) * 16.0;
+            const instVy = (dy / dt) * 16.0;
+            velocityX = velocityX * 0.35 + instVx * 0.65;
+            velocityY = velocityY * 0.35 + instVy * 0.65;
+
+            lastPointerX = clientX;
+            lastPointerY = clientY;
+            lastMoveTime = now;
+
+            const totalDeltaX = clientX - startPointerX;
+            const totalDeltaY = clientY - startPointerY;
+
+            let newLeft = startStickerLeft + totalDeltaX;
+            let newTop = startStickerTop + totalDeltaY;
+
+            const cardRect = footerCard.getBoundingClientRect();
+            const halfW = el.offsetWidth / 2;
+            const halfH = el.offsetHeight / 2;
+            const pad = 12;
+
+            const minX = halfW + pad;
+            const maxX = cardRect.width - halfW - pad;
+            const minY = halfH + pad;
+            const maxY = cardRect.height - halfH - pad;
+
+            newLeft = Math.max(minX, Math.min(newLeft, maxX));
+            newTop = Math.max(minY, Math.min(newTop, maxY));
+
+            setStickerPosition(item, newLeft, newTop, false);
+          };
+
+          const onPointerUp = () => {
+            if (!isDragging) return;
+            isDragging = false;
+            isDraggingAny = false;
+            el.classList.remove('is-dragging');
+
+            let curLeft = item.currentLeft;
+            let curTop = item.currentTop;
+            let vx = Math.max(-28, Math.min(velocityX * 1.35, 28));
+            let vy = Math.max(-28, Math.min(velocityY * 1.35, 28));
+            const friction = 0.91;
+            const cardRect = footerCard.getBoundingClientRect();
+            const halfW = el.offsetWidth / 2;
+            const halfH = el.offsetHeight / 2;
+            const pad = 12;
+            const minX = halfW + pad;
+            const maxX = cardRect.width - halfW - pad;
+            const minY = halfH + pad;
+            const maxY = cardRect.height - halfH - pad;
+
+            let rot = item.defaultRot + Math.max(-12, Math.min(vx * 0.7, 12));
+            item.currentRot = rot;
+
+            const glideStep = () => {
+              if (Math.abs(vx) < 0.2 && Math.abs(vy) < 0.2) {
+                item.animId = null;
+                el.style.transition = 'transform 0.45s cubic-bezier(0.16, 1, 0.3, 1)';
+                item.currentRot = item.defaultRot;
+                el.style.transform = `translate(-50%, -50%) rotate(${item.defaultRot}deg)`;
+                return;
+              }
+
+              curLeft += vx;
+              curTop += vy;
+
+              if (curLeft <= minX) {
+                curLeft = minX;
+                vx = -vx * 0.45;
+              } else if (curLeft >= maxX) {
+                curLeft = maxX;
+                vx = -vx * 0.45;
+              }
+
+              if (curTop <= minY) {
+                curTop = minY;
+                vy = -vy * 0.45;
+              } else if (curTop >= maxY) {
+                curTop = maxY;
+                vy = -vy * 0.45;
+              }
+
+              vx *= friction;
+              vy *= friction;
+
+              setStickerPosition(item, curLeft, curTop, false);
+              item.animId = requestAnimationFrame(glideStep);
+            };
+
+            item.animId = requestAnimationFrame(glideStep);
+          };
+
+          el.addEventListener('mousedown', onPointerDown);
+          window.addEventListener('mousemove', onPointerMove);
+          window.addEventListener('mouseup', onPointerUp);
+
+          el.addEventListener('touchstart', onPointerDown, { passive: false });
+          window.addEventListener('touchmove', onPointerMove, { passive: false });
+          window.addEventListener('touchend', onPointerUp);
+        });
+
+        let lastScrollY = window.pageYOffset || document.documentElement.scrollTop;
+        window.addEventListener('scroll', () => {
+          const currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
+          const scrollingUp = currentScrollY < lastScrollY;
+          lastScrollY = currentScrollY;
+
+          if (scrollingUp && hasMovedAny && !isDraggingAny) {
+            const footerRect = footerCard.getBoundingClientRect();
+            if (footerRect.top > window.innerHeight * 0.4) {
+              resetStickersToDefault(true);
+            }
+          }
+        }, { passive: true });
+      };
+
+      initContactStickers();
+
+      // Click to Copy Phone & Email with "Copied" badge
+      const initFooterContactCopy = () => {
+        document.querySelectorAll('.footer-contact-item-wrap').forEach(wrap => {
+          const link = wrap.querySelector('.footer-contact-item');
+          const badge = wrap.querySelector('.copied-badge');
+          if (!link || !badge) return;
+
+          let timeoutId = null;
+
+          wrap.addEventListener('click', (e) => {
+            e.preventDefault();
+            const textToCopy = link.getAttribute('data-copy') || link.textContent.trim();
+
+            const copyAction = () => {
+              if (navigator.clipboard && navigator.clipboard.writeText) {
+                return navigator.clipboard.writeText(textToCopy);
+              } else {
+                return new Promise((resolve, reject) => {
+                  try {
+                    const ta = document.createElement('textarea');
+                    ta.value = textToCopy;
+                    ta.style.position = 'fixed';
+                    ta.style.opacity = '0';
+                    document.body.appendChild(ta);
+                    ta.focus();
+                    ta.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(ta);
+                    resolve();
+                  } catch (err) {
+                    reject(err);
+                  }
+                });
+              }
+            };
+
+            copyAction().then(() => {
+              badge.classList.add('is-visible');
+              if (timeoutId) clearTimeout(timeoutId);
+              timeoutId = setTimeout(() => {
+                badge.classList.remove('is-visible');
+              }, 1800);
+            }).catch(err => {
+              console.error('Failed to copy: ', err);
+            });
+          });
+        });
+      };
+
+      initFooterContactCopy();
     });
   </script>
 </body>

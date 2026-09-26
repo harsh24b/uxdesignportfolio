@@ -1827,6 +1827,14 @@ body {
   gap: clamp(12px, 1.8vh, 18px);
 }
 
+.footer-contact-item-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+  width: fit-content;
+}
+
 .footer-contact-item {
   font-family: 'MozaicGEO', sans-serif;
   font-weight: 700;
@@ -1839,6 +1847,7 @@ body {
   line-height: 1.25;
   position: relative;
   display: inline-block;
+  cursor: pointer;
   opacity: 0;
   transform: translateY(24px);
   transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
@@ -1846,9 +1855,11 @@ body {
               color 0.2s ease;
 }
 
+.footer-card.in-view .footer-contact-item-wrap:nth-child(1) .footer-contact-item,
 .footer-card.in-view .footer-contact-item:nth-child(1) {
   opacity: 1; transform: translateY(0); transition-delay: 0.40s;
 }
+.footer-card.in-view .footer-contact-item-wrap:nth-child(2) .footer-contact-item,
 .footer-card.in-view .footer-contact-item:nth-child(2) {
   opacity: 1; transform: translateY(0); transition-delay: 0.48s;
 }
@@ -1871,6 +1882,47 @@ body {
 
 .footer-contact-item:hover::after {
   width: 100%;
+}
+
+/* Copied Feedback Badge */
+.copied-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: #700145;
+  color: #FFFCDE;
+  font-family: 'RealistWide', 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(10px, 0.85vw, 12px);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  padding: 4px 10px 4px 9px;
+  border-radius: 999px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-8px) scale(0.92);
+  transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              visibility 0.25s;
+  pointer-events: none;
+  box-shadow: 0 4px 14px rgba(112, 1, 69, 0.22);
+  white-space: nowrap;
+  user-select: none;
+}
+
+.copied-badge.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0) scale(1);
+}
+
+.copied-badge::before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 8px;
+  border: solid #FFFCDE;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg) translate(-1px, -1px);
 }
 
 /* Massive Signature Typography in Spoleto Font */
@@ -4074,8 +4126,9 @@ body.life-page {
     line-height: 1.5 !important;
   }
 
-  .footer-contact-items {
-    gap: 10px !important;
+  .footer-contact-item-wrap {
+    gap: 8px !important;
+    flex-wrap: wrap !important;
   }
 
   .footer-contact-item {
@@ -4084,6 +4137,11 @@ body.life-page {
     word-break: break-word !important;
     opacity: 1 !important;
     transform: none !important;
+  }
+
+  .copied-badge {
+    font-size: 10px !important;
+    padding: 2px 8px 3px 7px !important;
   }
 
   .footer-signature-container {

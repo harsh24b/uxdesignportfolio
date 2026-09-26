@@ -42,7 +42,7 @@
       <a href="work.html" class="nav-link active">Work</a>
       <a href="index.html#about" class="nav-link">About</a>
       <a href="https://drive.google.com/drive/folders/1MXd7MDGMQqW5t3EXo6YHGRUl8pG_nnD-" target="_blank" rel="noopener noreferrer" class="nav-link">Resume</a>
-      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=harshhbhawsar@gmail.com" target="_blank" rel="noopener noreferrer" class="btn-contact">
+      <a href="#contact" class="btn-contact">
         <img src="Mail.svg" class="mail-icon" alt="Mail Icon">
         Work with me
       </a>
@@ -317,8 +317,14 @@
           <div class="footer-col footer-col-contact">
             <span class="footer-col-label">CONTACT</span>
             <div class="footer-contact-items">
-              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=harshhbhawsar@gmail.com" target="_blank" rel="noopener noreferrer" class="footer-contact-item">harshhbhawsar@gmail.com</a>
-              <a href="tel:+917773892631" class="footer-contact-item">+91 7773892631</a>
+              <div class="footer-contact-item-wrap">
+                <a href="mailto:harshhbhawsar@gmail.com" class="footer-contact-item" data-copy="harshhbhawsar@gmail.com" title="Click to copy email">harshhbhawsar@gmail.com</a>
+                <span class="copied-badge" aria-hidden="true">Copied</span>
+              </div>
+              <div class="footer-contact-item-wrap">
+                <a href="tel:+917773892631" class="footer-contact-item" data-copy="+91 7773892631" title="Click to copy phone number">+91 7773892631</a>
+                <span class="copied-badge" aria-hidden="true">Copied</span>
+              </div>
             </div>
           </div>
         </div>
@@ -755,6 +761,57 @@
       };
 
       initContactStickers();
+
+      // Click to Copy Phone & Email with "Copied" badge
+      const initFooterContactCopy = () => {
+        document.querySelectorAll('.footer-contact-item-wrap').forEach(wrap => {
+          const link = wrap.querySelector('.footer-contact-item');
+          const badge = wrap.querySelector('.copied-badge');
+          if (!link || !badge) return;
+
+          let timeoutId = null;
+
+          wrap.addEventListener('click', (e) => {
+            e.preventDefault();
+            const textToCopy = link.getAttribute('data-copy') || link.textContent.trim();
+
+            const copyAction = () => {
+              if (navigator.clipboard && navigator.clipboard.writeText) {
+                return navigator.clipboard.writeText(textToCopy);
+              } else {
+                return new Promise((resolve, reject) => {
+                  try {
+                    const ta = document.createElement('textarea');
+                    ta.value = textToCopy;
+                    ta.style.position = 'fixed';
+                    ta.style.opacity = '0';
+                    document.body.appendChild(ta);
+                    ta.focus();
+                    ta.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(ta);
+                    resolve();
+                  } catch (err) {
+                    reject(err);
+                  }
+                });
+              }
+            };
+
+            copyAction().then(() => {
+              badge.classList.add('is-visible');
+              if (timeoutId) clearTimeout(timeoutId);
+              timeoutId = setTimeout(() => {
+                badge.classList.remove('is-visible');
+              }, 1800);
+            }).catch(err => {
+              console.error('Failed to copy: ', err);
+            });
+          });
+        });
+      };
+
+      initFooterContactCopy();
     });
   </script>
 </body>
