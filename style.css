@@ -135,7 +135,7 @@ body {
   left: -2%;
   width: 104%;
   height: 104%;
-  background-image: url('blueBG.png');
+  background-image: url('blueBG.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -150,7 +150,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('Silverframe-bg.png');
+  background-image: url('Silverframe-bg.webp');
   background-size: 100% 100%;
   background-position: center center;
   background-repeat: no-repeat;
@@ -3067,22 +3067,38 @@ body {
   transition: width 0.1s linear;
 }
 
-/* Stagger entrance when preloader opens (only on pages containing the preloader) */
+/* Synchronized entrance when preloader opens */
 body.has-preloader:not(.preloader-revealed),
 body:has(.portfolio-preloader):not(.preloader-revealed) {
   overflow: hidden;
 }
 
+body.has-preloader:not(.preloader-revealed) .intro-container,
+body.has-preloader:not(.preloader-revealed) .illustration-box,
+body.has-preloader:not(.preloader-revealed) .description-container,
+body.has-preloader:not(.preloader-revealed) .navbar-container {
+  opacity: 0;
+  visibility: hidden;
+}
+
 body.preloader-revealed .navbar-container:not(.nav-hidden) {
-  animation: navReveal 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  visibility: visible;
+  animation: navReveal 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 body.preloader-revealed .intro-container {
-  animation: heroIntroReveal 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.08s forwards;
+  visibility: visible;
+  animation: heroIntroReveal 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 body.preloader-revealed .illustration-box {
-  animation: heroIllustrationReveal 0.95s cubic-bezier(0.16, 1, 0.3, 1) 0.12s forwards;
+  visibility: visible;
+  animation: heroIllustrationReveal 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+body.preloader-revealed .description-container {
+  visibility: visible;
+  animation: heroDescReveal 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 @keyframes navReveal {
@@ -3091,13 +3107,18 @@ body.preloader-revealed .illustration-box {
 }
 
 @keyframes heroIntroReveal {
-  0% { transform: translateY(30px); opacity: 0; }
+  0% { transform: translateY(20px); opacity: 0; }
   100% { transform: translateY(0); opacity: 1; }
 }
 
 @keyframes heroIllustrationReveal {
-  0% { transform: translate(-50%, 30px) scale(0.94); opacity: 0; }
+  0% { transform: translate(-50%, 20px) scale(0.96); opacity: 0; }
   100% { transform: translate(-50%, 0) scale(1); opacity: 1; }
+}
+
+@keyframes heroDescReveal {
+  0% { transform: translateY(20px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
 }
 
 /* ==========================================================================

@@ -6,7 +6,15 @@
   <title>Harsh - Portfolio</title>
   <link rel="icon" type="image/png" href="faviconnew.png?v=2">
   <link rel="apple-touch-icon" href="faviconnew.png?v=2">
-  <link rel="stylesheet" href="style.css?v=112_mobile_responsive">
+  <link rel="stylesheet" href="style.css?v=113_preloader_asset_sync">
+  <!-- Preload Critical Hero Assets & Fonts for Zero-Flicker Instant Render -->
+  <link rel="preload" as="image" href="blueBG.webp" type="image/webp" fetchpriority="high">
+  <link rel="preload" as="image" href="Silverframe-bg.webp" type="image/webp" fetchpriority="high">
+  <link rel="preload" as="image" href="guy.webp" type="image/webp" fetchpriority="high">
+  <link rel="preload" as="image" href="circle.webp" type="image/webp" fetchpriority="high">
+  <link rel="preload" as="font" href="basote-font/Basote-BF66e77629b4955.ttf" type="font/ttf" crossorigin>
+  <link rel="preload" as="font" href="mozaic-font-family-1718270767-0/MozaicGEO-Bold-BF65792617206a6.otf" type="font/otf" crossorigin>
+  <link rel="preload" as="font" href="fonnts.com-RealistWide.otf" type="font/otf" crossorigin>
   <!-- Google Fonts for Plus Jakarta Sans & Cormorant Garamond -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -70,11 +78,17 @@
     <div class="illustration-box">
       <!-- Rotating Circle Backdrop -->
       <div class="circle-container">
-        <img src="circle.png" alt="Rotating Background Element" class="circle-img">
+        <picture>
+          <source srcset="circle.webp" type="image/webp">
+          <img src="circle.png" alt="Rotating Background Element" class="circle-img" fetchpriority="high">
+        </picture>
       </div>
       <!-- Floating Character -->
       <div class="guy-container">
-        <img src="guy,png.png" alt="Floating Designer Illustration" class="guy-img">
+        <picture>
+          <source srcset="guy.webp" type="image/webp">
+          <img src="guy,png.png" alt="Floating Designer Illustration" class="guy-img" fetchpriority="high">
+        </picture>
       </div>
     </div>
   </div>
@@ -703,50 +717,123 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // Awwwards Editorial Preloader Controller
+      // Awwwards Editorial Real Asset-Backed Preloader Controller
       const preloader = document.getElementById('portfolioPreloader');
       const preloaderNumber = document.getElementById('preloaderNumber');
       const preloaderProgressBar = document.getElementById('preloaderProgressBar');
 
       if (preloader && preloaderNumber && preloaderProgressBar) {
-        let count = 0;
-        const totalDuration = 1500; // ms
+        // Critical assets that must be 100% loaded & GPU decoded before unveiling
+        const criticalImages = [
+          'blueBG.webp',
+          'Silverframe-bg.webp',
+          'circle.webp',
+          'guy.webp',
+          'lotus.webp'
+        ];
+
+        let loadedCount = 0;
+        const totalItems = criticalImages.length + 1; // +1 for document.fonts.ready
+        let targetProgress = 0;
+        let currentProgress = 0;
+        let isComplete = false;
+
+        const updateProgress = () => {
+          loadedCount++;
+          targetProgress = Math.min((loadedCount / totalItems) * 100, 100);
+        };
+
+        // Preload individual image with GPU bitmap decode guarantee
+        const preloadImage = (url) => {
+          return new Promise((resolve) => {
+            const img = new Image();
+            img.src = url;
+            if (img.decode) {
+              img.decode().then(() => {
+                updateProgress();
+                resolve(url);
+              }).catch(() => {
+                img.onload = () => { updateProgress(); resolve(url); };
+                img.onerror = () => { updateProgress(); resolve(url); };
+              });
+            } else {
+              img.onload = () => { updateProgress(); resolve(url); };
+              img.onerror = () => { updateProgress(); resolve(url); };
+            }
+          });
+        };
+
+        // Track fonts readiness
+        const fontsPromise = (document.fonts && document.fonts.ready)
+          ? document.fonts.ready.then(() => updateProgress()).catch(() => updateProgress())
+          : Promise.resolve().then(() => updateProgress());
+
+        // Launch parallel asset download and GPU rasterization
+        const assetPromises = criticalImages.map(preloadImage);
+        assetPromises.push(fontsPromise);
+
+        Promise.all(assetPromises).then(() => {
+          targetProgress = 100;
+          isComplete = true;
+        });
+
+        // Safety fallback: maximum 4.5s
+        setTimeout(() => {
+          targetProgress = 100;
+          isComplete = true;
+        }, 4500);
+
+        // Smooth continuous counter animation
         const startTime = performance.now();
+        const minDuration = 900; // ms minimum for smooth visual counter experience
 
-        const tick = (now) => {
+        const animatePreloader = (now) => {
           const elapsed = now - startTime;
-          const progress = Math.min(elapsed / totalDuration, 1);
+          const timeProgress = Math.min((elapsed / minDuration) * 100, 100);
           
-          // Non-linear easing (smooth acceleration and deceleration)
-          const easeProgress = 1 - Math.pow(1 - progress, 3);
-          count = Math.floor(easeProgress * 100);
+          // Current progress follows both time baseline and real asset loading
+          const effectiveTarget = isComplete ? 100 : Math.min(targetProgress, timeProgress);
+          
+          if (currentProgress < effectiveTarget) {
+            currentProgress += Math.max((effectiveTarget - currentProgress) * 0.16, 0.6);
+            if (currentProgress > 99 && !isComplete) currentProgress = 99;
+          }
 
-          preloaderNumber.textContent = count;
-          preloaderProgressBar.style.width = `${count}%`;
+          if (isComplete && currentProgress >= 99.4) {
+            currentProgress = 100;
+          }
 
-          if (progress < 1) {
-            requestAnimationFrame(tick);
-          } else {
+          const displayNum = Math.floor(currentProgress);
+          preloaderNumber.textContent = displayNum;
+          preloaderProgressBar.style.width = `${displayNum}%`;
+
+          if (isComplete && currentProgress >= 100 && elapsed >= minDuration) {
             preloaderNumber.textContent = 100;
             preloaderProgressBar.style.width = '100%';
-            
-            // Settle pause then cinematic shutter reveal
+
+            // Settle pause then synchronized reveal
             setTimeout(() => {
               preloader.classList.add('is-dismissed');
               document.body.classList.add('preloader-revealed');
               
+              if (typeof updateStackMetrics === 'function') {
+                updateStackMetrics();
+              }
+
               setTimeout(() => {
                 preloader.style.display = 'none';
                 preloader.setAttribute('aria-hidden', 'true');
                 if (typeof updateStackMetrics === 'function') {
                   updateStackMetrics();
                 }
-              }, 1000);
+              }, 950);
             }, 180);
+          } else {
+            requestAnimationFrame(animatePreloader);
           }
         };
 
-        requestAnimationFrame(tick);
+        requestAnimationFrame(animatePreloader);
       } else {
         document.body.classList.add('preloader-revealed');
       }
