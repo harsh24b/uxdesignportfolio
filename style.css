@@ -181,14 +181,14 @@ body {
   display: flex;
   align-items: center;
   gap: 3.8vw; /* Spacing between items */
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0.09) 100%); /* Refined subtle frosted glass */
-  backdrop-filter: blur(16px) saturate(150%) brightness(104%); /* Rich frosted glassmorphism over hero */
-  -webkit-backdrop-filter: blur(16px) saturate(150%) brightness(104%);
-  border: 1px solid rgba(255, 255, 255, 0.35); /* Crisp luminous glass border */
+  background: rgba(255, 255, 255, 0.14); /* Frosted translucent glass */
+  backdrop-filter: blur(16px) saturate(150%); /* Subtle rich background blur over hero */
+  -webkit-backdrop-filter: blur(16px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.32); /* Crisp translucent glass border */
   padding: 0.35vw 0.35vw 0.35vw 3.2vw; /* Left padding for balance */
   border-radius: 9999px;
-  box-shadow: 0 10px 32px rgba(0, 32, 48, 0.14), inset 0 1px 1.5px rgba(255, 255, 255, 0.55), inset 0 -1px 1px rgba(255, 255, 255, 0.15); /* Dual glass specular highlights */
-  transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, backdrop-filter 0.35s ease;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.10), inset 0 1px 0 rgba(255, 255, 255, 0.35); /* Glass elevation with highlight */
+  transition: background-color 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, backdrop-filter 0.35s ease;
 }
 
 /* Scrolled state over Work & Experience */
