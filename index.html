@@ -56,18 +56,18 @@
     <!-- Layered Backgrounds (For mouse move parallax) -->
     <div class="hero-bg-blue"></div>
     <div class="hero-bg-silver"></div>
-    <!-- Intro Text -->
+    <!-- Intro Text (Desktop) -->
     <div class="intro-container">
       <div class="name-wrapper">
         <div class="intro-top">
-          <span class="namaste">Hello</span>
+          <span class="namaste">namaste,</span>
           <span class="i-am">i am</span>
         </div>
         <h1 class="name">harsh</h1>
       </div>
     </div>
 
-    <!-- Description Text (Right Side) -->
+    <!-- Description Text (Desktop Right Side) -->
     <div class="description-container">
       <p class="description-text">
         Product Designer focused on making digital experiences clearer, simpler and more human.
@@ -139,6 +139,24 @@
               <img src="indiahcigrey.png" alt="IndiaHCI" class="marquee-logo logo-indiahci">
             </div>
           </div>
+        </div>
+      </div>
+
+      <!-- Responsive Maroon Intro Section (Displays on Responsive Screens Below Marquee) -->
+      <div class="responsive-hero-intro">
+        <div class="responsive-intro-left">
+          <div class="name-wrapper">
+            <div class="intro-top">
+              <span class="namaste">namaste,</span>
+              <span class="i-am">i am</span>
+            </div>
+            <h1 class="name">harsh</h1>
+          </div>
+        </div>
+        <div class="responsive-intro-right">
+          <p class="description-text">
+            Product Designer focused on making digital experiences clearer, simpler and more human.
+          </p>
         </div>
       </div>
 
@@ -808,16 +826,17 @@
         document.body.classList.add('preloader-revealed');
       }
 
-      const greetings = ['Hello', 'नमस्ते', 'Hola!', 'Bonjour', 'こんにちは', 'Ciao'];
+      const greetings = ['namaste,', 'hello,', 'hola!,', 'bonjour,', 'こんにちは,', 'ciao,'];
       let index = 0;
-      const greetingEl = document.querySelector('.namaste');
+      const greetingEls = document.querySelectorAll('.namaste');
       
-      if (greetingEl) {
-        // Let 'hello' display for the first 1 seconds, then rotate
+      if (greetingEls.length > 0) {
         setInterval(() => {
-          greetingEl.textContent = greetings[index];
+          greetingEls.forEach(el => {
+            el.textContent = greetings[index];
+          });
           index = (index + 1) % greetings.length;
-        }, 1000);
+        }, 1200);
       }
 
       // Configure Multi-Stage Card Stacking Tracks & Sticky Offsets

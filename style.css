@@ -421,6 +421,11 @@ body {
   text-align: justify; /* Justify text to align both left and right edges */
 }
 
+/* Responsive Hero Intro (Hidden on desktop widescreen, visible on responsive) */
+.responsive-hero-intro {
+  display: none;
+}
+
 /* Scrolled Header Styles (Solid Warm Cream Theme - No Glassmorphism) */
 .navbar.scrolled {
   background: #F9F5D8; /* Solid warm cream pill background matching reference */
@@ -3568,17 +3573,14 @@ body.life-page {
     height: 10px !important;
   }
 
-  /* Hero Section (index.html) */
+  /* Hero Section (index.html) - Visual Only on Responsive */
   .hero-section {
     position: relative !important;
-    aspect-ratio: auto !important;
-    min-height: auto !important;
+    aspect-ratio: 3840 / 1624 !important;
+    min-height: clamp(240px, 42vw, 440px) !important;
     height: auto !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: flex-start !important;
-    padding: clamp(72px, 9vh, 88px) 20px clamp(85px, 13vh, 125px) 20px !important;
+    display: block !important;
+    padding: 0 !important;
     box-sizing: border-box !important;
     overflow: hidden !important;
     transform: none !important;
@@ -3593,6 +3595,7 @@ body.life-page {
     background-size: cover !important;
     background-position: center !important;
     transform: none !important;
+    z-index: 1 !important;
   }
 
   .hero-bg-silver {
@@ -3603,18 +3606,25 @@ body.life-page {
     background-size: 100% 100% !important;
     background-position: center !important;
     pointer-events: none !important;
+    z-index: 2 !important;
   }
 
-  /* 1. Illustration at Top */
+  /* Hide inner hero text on responsive */
+  .hero-section .intro-container,
+  .hero-section .description-container {
+    display: none !important;
+  }
+
+  /* Centered Illustration inside Hero visual banner */
   .illustration-box {
-    order: 1 !important;
-    position: relative !important;
-    left: auto !important;
+    position: absolute !important;
+    left: 50% !important;
+    top: 52% !important;
     bottom: auto !important;
-    transform: none !important;
-    width: clamp(200px, 30vw, 265px) !important;
-    height: clamp(165px, 25vw, 215px) !important;
-    margin: 0 auto clamp(4px, 1vh, 8px) auto !important;
+    transform: translate(-50%, -50%) !important;
+    width: clamp(280px, 48vw, 460px) !important;
+    height: clamp(210px, 36vw, 340px) !important;
+    margin: 0 !important;
     z-index: 3 !important;
     display: flex !important;
     justify-content: center !important;
@@ -3623,8 +3633,8 @@ body.life-page {
 
   .circle-container {
     position: absolute !important;
-    width: 82% !important;
-    height: 82% !important;
+    width: 78% !important;
+    height: 78% !important;
     top: 48% !important;
     left: 50% !important;
     transform: translate(-50%, -50%) !important;
@@ -3632,76 +3642,77 @@ body.life-page {
 
   .guy-container {
     position: absolute !important;
-    width: 95% !important;
-    height: 95% !important;
+    width: 94% !important;
+    height: 94% !important;
     bottom: 0 !important;
     left: 50% !important;
     transform: translateX(-50%) !important;
   }
 
-  /* 2. Intro Name Text in the Middle (Below Illustration) */
-  .intro-container {
-    order: 2 !important;
-    position: relative !important;
-    left: auto !important;
-    top: auto !important;
-    width: 100% !important;
-    max-width: 250px !important;
-    margin: 0 auto clamp(3px, 0.6vh, 6px) auto !important;
-    z-index: 5 !important;
-    text-align: center !important;
-    display: flex !important;
-    justify-content: center !important;
-  }
-
-  .name-wrapper {
-    width: 100% !important;
-    max-width: 200px !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-  }
-
-  .intro-top {
-    width: 100% !important;
-    max-width: 170px !important;
-    font-size: clamp(15px, 2vw, 18px) !important;
-    height: auto !important;
-    margin-bottom: 2px !important;
+  /* Responsive Maroon Intro Section (Below Marquee) */
+  .responsive-hero-intro {
     display: flex !important;
     justify-content: space-between !important;
-    align-items: baseline !important;
-  }
-
-  .name {
-    font-size: clamp(44px, 6.5vw, 58px) !important;
-    text-align: center !important;
-    line-height: 0.88 !important;
-    margin: 0 !important;
-  }
-
-  /* 3. Description Text Below Intro */
-  .description-container {
-    order: 3 !important;
-    position: relative !important;
-    right: auto !important;
-    top: auto !important;
+    align-items: flex-start !important;
     width: 100% !important;
-    max-width: 300px !important;
+    max-width: 1240px !important;
     margin: 0 auto !important;
-    z-index: 5 !important;
-    text-align: center !important;
-    padding: 0 10px !important;
+    padding: clamp(36px, 5.5vw, 64px) clamp(24px, 6vw, 70px) clamp(20px, 3.5vw, 36px) clamp(24px, 6vw, 70px) !important;
     box-sizing: border-box !important;
+    gap: clamp(24px, 4vw, 48px) !important;
+    background-color: #FFFCDE !important;
   }
 
-  .description-text {
+  .responsive-intro-left {
+    flex-shrink: 0 !important;
+  }
+
+  .responsive-intro-left .name-wrapper {
+    width: clamp(220px, 28vw, 290px) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+
+  .responsive-intro-left .intro-top {
     width: 100% !important;
-    font-size: clamp(12.5px, 1.6vw, 14px) !important;
-    line-height: 1.4 !important;
-    text-align: center !important;
-    margin: 0 auto !important;
-    color: rgba(255, 255, 255, 0.95) !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: flex-end !important;
+    font-family: 'MozaicGEO', sans-serif !important;
+    font-size: clamp(20px, 2.6vw, 28px) !important;
+    font-weight: 500 !important;
+    color: #700145 !important;
+    letter-spacing: 0.02em !important;
+    margin-bottom: 6px !important;
+    height: auto !important;
+  }
+
+  .responsive-intro-left .name {
+    font-family: 'Basote', sans-serif !important;
+    font-size: clamp(66px, 8.8vw, 96px) !important;
+    font-weight: normal !important;
+    color: #700145 !important;
+    margin: 0 !important;
+    line-height: 0.82 !important;
+    letter-spacing: -0.01em !important;
+    text-align: left !important;
+  }
+
+  .responsive-intro-right {
+    max-width: clamp(340px, 48vw, 520px) !important;
+  }
+
+  .responsive-intro-right .description-text {
+    font-family: 'MozaicGEO', sans-serif !important;
+    font-size: clamp(20px, 2.6vw, 28px) !important;
+    font-weight: 500 !important;
+    line-height: 1.25 !important;
+    letter-spacing: 0.01em !important;
+    color: #700145 !important;
+    margin: 0 !important;
+    text-align: left !important;
+    width: 100% !important;
   }
 
   /* Marquee */
@@ -4281,37 +4292,67 @@ body.life-page {
   }
 }
 
+@media (max-width: 680px) {
+  .responsive-hero-intro {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 24px !important;
+    padding: 32px 20px 16px 20px !important;
+  }
+
+  .responsive-intro-left .name-wrapper {
+    width: 220px !important;
+  }
+
+  .responsive-intro-left .intro-top {
+    font-size: 20px !important;
+    margin-bottom: 4px !important;
+  }
+
+  .responsive-intro-left .name {
+    font-size: 64px !important;
+  }
+
+  .responsive-intro-right {
+    max-width: 100% !important;
+  }
+
+  .responsive-intro-right .description-text {
+    font-size: 19px !important;
+    line-height: 1.35 !important;
+  }
+}
+
 @media (max-width: 480px) {
   .hero-section {
-    padding: 72px 16px 74px 16px !important;
+    min-height: clamp(200px, 52vw, 260px) !important;
   }
 
   .illustration-box {
-    width: clamp(180px, 52vw, 220px) !important;
-    height: clamp(145px, 42vw, 180px) !important;
-    margin: 0 auto 4px auto !important;
+    width: clamp(220px, 58vw, 275px) !important;
+    height: clamp(160px, 42vw, 200px) !important;
+    top: 52% !important;
   }
 
-  .intro-container {
-    max-width: 190px !important;
-    margin: 0 auto 3px auto !important;
+  .responsive-hero-intro {
+    padding: 24px 16px 10px 16px !important;
+    gap: 18px !important;
   }
 
-  .intro-top {
-    font-size: 14px !important;
-    max-width: 135px !important;
+  .responsive-intro-left .name-wrapper {
+    width: 190px !important;
   }
 
-  .name {
-    font-size: clamp(38px, 10vw, 44px) !important;
+  .responsive-intro-left .intro-top {
+    font-size: 18px !important;
   }
 
-  .description-container {
-    max-width: 250px !important;
+  .responsive-intro-left .name {
+    font-size: 54px !important;
   }
 
-  .description-text {
-    font-size: 11.5px !important;
+  .responsive-intro-right .description-text {
+    font-size: 16.5px !important;
     line-height: 1.35 !important;
   }
 
