@@ -3649,26 +3649,28 @@ body.life-page {
     transform: translateX(-50%) !important;
   }
 
-  /* Responsive Maroon Intro Section (Below Marquee) */
+  /* Responsive Maroon Intro Section (Below Marquee) - Side by Side */
   .responsive-hero-intro {
     display: flex !important;
+    flex-direction: row !important;
     justify-content: space-between !important;
     align-items: flex-start !important;
     width: 100% !important;
     max-width: 1240px !important;
     margin: 0 auto !important;
-    padding: clamp(36px, 5.5vw, 64px) clamp(24px, 6vw, 70px) clamp(20px, 3.5vw, 36px) clamp(24px, 6vw, 70px) !important;
+    padding: clamp(28px, 4.5vw, 56px) clamp(16px, 4.5vw, 60px) clamp(16px, 2.5vw, 28px) clamp(16px, 4.5vw, 60px) !important;
     box-sizing: border-box !important;
-    gap: clamp(24px, 4vw, 48px) !important;
+    gap: clamp(14px, 3vw, 40px) !important;
     background-color: #FFFCDE !important;
   }
 
   .responsive-intro-left {
-    flex-shrink: 0 !important;
+    flex: 0 0 auto !important;
+    max-width: 48% !important;
   }
 
   .responsive-intro-left .name-wrapper {
-    width: clamp(220px, 28vw, 290px) !important;
+    width: clamp(140px, 26vw, 280px) !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: stretch !important;
@@ -3680,17 +3682,17 @@ body.life-page {
     justify-content: space-between !important;
     align-items: flex-end !important;
     font-family: 'MozaicGEO', sans-serif !important;
-    font-size: clamp(20px, 2.6vw, 28px) !important;
+    font-size: clamp(14px, 2.2vw, 26px) !important;
     font-weight: 500 !important;
     color: #700145 !important;
     letter-spacing: 0.02em !important;
-    margin-bottom: 6px !important;
+    margin-bottom: clamp(2px, 0.5vw, 6px) !important;
     height: auto !important;
   }
 
   .responsive-intro-left .name {
     font-family: 'Basote', sans-serif !important;
-    font-size: clamp(66px, 8.8vw, 96px) !important;
+    font-size: clamp(42px, 7.5vw, 92px) !important;
     font-weight: normal !important;
     color: #700145 !important;
     margin: 0 !important;
@@ -3700,12 +3702,13 @@ body.life-page {
   }
 
   .responsive-intro-right {
-    max-width: clamp(340px, 48vw, 520px) !important;
+    flex: 1 1 auto !important;
+    max-width: clamp(180px, 50vw, 520px) !important;
   }
 
   .responsive-intro-right .description-text {
     font-family: 'MozaicGEO', sans-serif !important;
-    font-size: clamp(20px, 2.6vw, 28px) !important;
+    font-size: clamp(13px, 2.1vw, 25px) !important;
     font-weight: 500 !important;
     line-height: 1.25 !important;
     letter-spacing: 0.01em !important;
@@ -3750,18 +3753,13 @@ body.life-page {
     padding-left: 0 !important;
   }
 
+  /* Remove Rose / Lotus Icon beside headings on responsive */
   .header-lotus-img,
   .projects-header .header-lotus-img,
-  .experience-header .header-lotus-img {
-    position: static !important;
-    left: auto !important;
-    right: auto !important;
-    top: auto !important;
-    transform: none !important;
-    height: 36px !important;
-    width: auto !important;
-    margin-bottom: 8px !important;
-    display: inline-block !important;
+  .experience-header .header-lotus-img,
+  .testimonials-header .header-lotus-img,
+  .about-header .header-lotus-img {
+    display: none !important;
   }
 
   .projects-subtitle {
@@ -3965,37 +3963,33 @@ body.life-page {
 
   .testimonials-grid-wrapper {
     width: 100% !important;
-    overflow-x: auto !important;
-    -webkit-overflow-scrolling: touch !important;
+    overflow: visible !important;
     padding: 10px 0 16px 0 !important;
     mask-image: none !important;
     -webkit-mask-image: none !important;
-    scroll-snap-type: x mandatory !important;
-    scrollbar-width: none !important;
-  }
-
-  .testimonials-grid-wrapper::-webkit-scrollbar {
-    display: none;
   }
 
   .testimonials-grid {
     display: flex !important;
-    flex-direction: row !important;
-    gap: 16px !important;
-    padding-right: 20px !important;
-    width: max-content !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+    width: 100% !important;
     transform: none !important;
+    padding: 0 !important;
   }
 
   .testimonial-card {
-    flex: 0 0 calc(100vw - 44px) !important;
-    min-width: calc(100vw - 44px) !important;
-    max-width: 360px !important;
-    scroll-snap-align: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    flex: 1 1 auto !important;
+    margin: 0 !important;
+    border-radius: 16px !important;
+    box-sizing: border-box !important;
   }
 
   .testimonial-body {
-    padding: 20px 18px 16px 18px !important;
+    padding: clamp(20px, 3.5vw, 28px) clamp(18px, 3vw, 24px) clamp(16px, 2.5vw, 20px) clamp(18px, 3vw, 24px) !important;
   }
 
   .testimonial-num {
@@ -4004,8 +3998,8 @@ body.life-page {
   }
 
   .testimonial-quote p {
-    font-size: 13px !important;
-    line-height: 1.45 !important;
+    font-size: 13.5px !important;
+    line-height: 1.5 !important;
   }
 
   .testimonial-author-footer {
@@ -4082,97 +4076,157 @@ body.life-page {
 
   /* Footer / Contact Section (index.html, work.html) */
   .footer-section {
-    padding: 45px 16px 16px 16px !important;
+    padding: clamp(36px, 6vw, 60px) 16px 0 16px !important;
     min-height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    background-color: #FFFCDE !important;
   }
 
   .footer-headline-container {
-    margin-bottom: 20px !important;
-    padding: 0 8px !important;
+    margin-bottom: clamp(20px, 3.5vw, 32px) !important;
+    padding: 0 4px !important;
   }
 
   .footer-headline {
-    font-size: clamp(18px, 5.5vw, 24px) !important;
+    font-size: clamp(22px, 6vw, 34px) !important;
+    line-height: 1.25 !important;
+    color: #700145 !important;
+    text-align: left !important;
   }
 
   .footer-card {
-    border-radius: 18px 18px 0 0 !important;
-    min-height: 480px !important;
+    border-radius: 24px 24px 0 0 !important;
+    min-height: auto !important;
+    height: auto !important;
+    padding: 0 !important;
+    background-color: #700145 !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
   }
 
   .footer-card-content {
-    padding: 24px 18px 0 18px !important;
+    padding: clamp(28px, 4.5vw, 44px) clamp(20px, 4vw, 36px) clamp(16px, 2.5vw, 24px) clamp(20px, 4vw, 36px) !important;
   }
 
   .footer-grid {
+    display: grid !important;
     grid-template-columns: 1fr !important;
-    gap: 20px !important;
+    gap: 24px !important;
+  }
+
+  .footer-col-contact {
+    order: 1 !important;
+    padding-bottom: 20px !important;
+    border-bottom: 1px solid rgba(255, 252, 222, 0.15) !important;
+  }
+
+  .footer-col-nav {
+    order: 2 !important;
+  }
+
+  .footer-col-social {
+    order: 3 !important;
   }
 
   .footer-col-label {
     font-size: 11px !important;
     letter-spacing: 0.18em !important;
-    margin-bottom: 10px !important;
+    margin-bottom: 12px !important;
+    color: rgba(255, 252, 222, 0.65) !important;
     opacity: 1 !important;
     transform: none !important;
+    font-weight: 600 !important;
+  }
+
+  .footer-contact-items {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+
+  .footer-contact-item-wrap {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    flex-wrap: wrap !important;
+  }
+
+  .footer-contact-item {
+    font-size: clamp(18px, 5vw, 24px) !important;
+    color: #FFFCDE !important;
+    font-family: 'RealistWide', sans-serif !important;
+    font-weight: 500 !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+    opacity: 1 !important;
+    transform: none !important;
+    text-decoration: none !important;
+    transition: color 0.2s ease !important;
+  }
+
+  .footer-contact-item:hover {
+    color: #ffffff !important;
+  }
+
+  .copied-badge {
+    font-size: 10.5px !important;
+    padding: 3px 8px 3px 8px !important;
+    background: #FFFCDE !important;
+    color: #700145 !important;
+    border-radius: 9999px !important;
+    font-weight: 600 !important;
   }
 
   .footer-links-list {
-    gap: 10px !important;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    gap: 12px 24px !important;
   }
 
   .footer-links-list li {
     opacity: 1 !important;
     transform: none !important;
+    list-style: none !important;
   }
 
   .footer-link {
-    font-size: 13px !important;
-    line-height: 1.5 !important;
+    font-size: 14.5px !important;
+    color: rgba(255, 252, 222, 0.92) !important;
+    font-family: 'RealistWide', sans-serif !important;
+    text-decoration: none !important;
+    padding: 4px 0 !important;
+    display: inline-block !important;
   }
 
-  .footer-contact-item-wrap {
-    gap: 8px !important;
-    flex-wrap: wrap !important;
-  }
-
-  .footer-contact-item {
-    font-size: clamp(16px, 4.8vw, 22px) !important;
-    white-space: normal !important;
-    word-break: break-word !important;
-    opacity: 1 !important;
-    transform: none !important;
-  }
-
-  .copied-badge {
-    font-size: 10px !important;
-    padding: 2px 8px 3px 7px !important;
+  .footer-link:hover {
+    color: #ffffff !important;
   }
 
   .footer-signature-container {
-    padding-top: 20px !important;
-    line-height: 0.55 !important;
+    padding: 20px 0 0 0 !important;
+    line-height: 0.65 !important;
+    text-align: center !important;
+    overflow: hidden !important;
   }
 
   .footer-signature-text {
-    font-size: clamp(90px, 28vw, 150px) !important;
-    transform: translateY(calc(10% + 20px)) !important;
+    font-size: clamp(76px, 24vw, 140px) !important;
+    color: rgba(255, 252, 222, 0.95) !important;
+    opacity: 1 !important;
+    transform: translateY(12%) !important;
+    display: inline-block !important;
   }
 
-  .footer-sticker-sun {
-    width: clamp(50px, 14vw, 75px) !important;
-  }
-
-  .footer-sticker-lotus {
-    width: clamp(55px, 15vw, 80px) !important;
-  }
-
-  .footer-sticker-camera {
-    width: clamp(55px, 16vw, 85px) !important;
-  }
-
+  /* Remove all footer stickers on responsive */
+  .footer-stickers-layer,
+  .footer-sticker,
+  .footer-sticker-sun,
+  .footer-sticker-lotus,
+  .footer-sticker-camera,
   .footer-sticker-eye {
-    width: clamp(45px, 13vw, 70px) !important;
+    display: none !important;
   }
 
   /* Case Study Pages (savw.html, transportation.html) */
@@ -4294,32 +4348,40 @@ body.life-page {
 
 @media (max-width: 680px) {
   .responsive-hero-intro {
-    flex-direction: column !important;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
     align-items: flex-start !important;
-    gap: 24px !important;
-    padding: 32px 20px 16px 20px !important;
+    gap: 16px !important;
+    padding: 24px 18px 12px 18px !important;
+  }
+
+  .responsive-intro-left {
+    flex: 0 0 auto !important;
+    max-width: 48% !important;
   }
 
   .responsive-intro-left .name-wrapper {
-    width: 220px !important;
+    width: clamp(130px, 26vw, 200px) !important;
   }
 
   .responsive-intro-left .intro-top {
-    font-size: 20px !important;
-    margin-bottom: 4px !important;
+    font-size: clamp(14px, 2.5vw, 18px) !important;
+    margin-bottom: 2px !important;
   }
 
   .responsive-intro-left .name {
-    font-size: 64px !important;
+    font-size: clamp(38px, 8.5vw, 56px) !important;
   }
 
   .responsive-intro-right {
-    max-width: 100% !important;
+    flex: 1 1 auto !important;
+    max-width: clamp(160px, 50vw, 320px) !important;
   }
 
   .responsive-intro-right .description-text {
-    font-size: 19px !important;
-    line-height: 1.35 !important;
+    font-size: clamp(12px, 2.3vw, 16px) !important;
+    line-height: 1.25 !important;
   }
 }
 
@@ -4335,25 +4397,35 @@ body.life-page {
   }
 
   .responsive-hero-intro {
-    padding: 24px 16px 10px 16px !important;
-    gap: 18px !important;
+    padding: 20px 14px 8px 14px !important;
+    gap: 12px !important;
+  }
+
+  .responsive-intro-left {
+    flex: 0 0 auto !important;
+    max-width: 46% !important;
   }
 
   .responsive-intro-left .name-wrapper {
-    width: 190px !important;
+    width: clamp(115px, 28vw, 150px) !important;
   }
 
   .responsive-intro-left .intro-top {
-    font-size: 18px !important;
+    font-size: 13px !important;
   }
 
   .responsive-intro-left .name {
-    font-size: 54px !important;
+    font-size: clamp(34px, 8.5vw, 44px) !important;
+  }
+
+  .responsive-intro-right {
+    flex: 1 1 auto !important;
+    max-width: 52% !important;
   }
 
   .responsive-intro-right .description-text {
-    font-size: 16.5px !important;
-    line-height: 1.35 !important;
+    font-size: 11.5px !important;
+    line-height: 1.25 !important;
   }
 
   .case-study-page .navbar .nav-link {
