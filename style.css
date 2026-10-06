@@ -844,63 +844,50 @@ body {
   color: #700145;
 }
 
-/* Floating Project Cursor Badge */
+/* Floating Project Cursor Sticker */
 .project-cursor-badge {
   position: fixed;
   top: 0;
   left: 0;
   pointer-events: none;
   z-index: 99999;
-  border-radius: 0; /* Sharp rectangular edges with zero curved radius */
-  padding: 16px 20px;
-  box-sizing: border-box;
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  box-shadow: none !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   opacity: 0;
-  transform: translate(-50%, -50%) scale(0.6);
-  transition: opacity 0.22s cubic-bezier(0.16, 1, 0.3, 1), transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.25s ease;
+  transform: translate(-50%, -50%) rotate(var(--sticker-rot, -4deg)) scale(0.35);
+  transition: opacity 0.22s cubic-bezier(0.175, 0.885, 0.32, 1.275), transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   will-change: transform, opacity;
-  box-shadow: none; /* Removed shadow */
-  min-width: 175px;
-  max-width: 220px;
 }
 
 .project-cursor-badge.is-visible {
   opacity: 1;
-  transform: translate(-50%, -50%) scale(1);
+  transform: translate(-50%, -50%) rotate(var(--sticker-rot, -4deg)) scale(1);
 }
 
-.project-cursor-badge .badge-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 16px;
-  width: 100%;
-}
-
-.project-cursor-badge .badge-title {
-  font-family: 'Plus Jakarta Sans', 'MozaicGEO', sans-serif;
-  font-size: 15px;
-  font-weight: 700;
-  color: #ffffff;
-  line-height: 1.28;
-  letter-spacing: -0.01em;
-  white-space: normal;
-  user-select: none;
-}
-
-.project-cursor-badge .badge-arrow {
-  width: 28px;
-  height: 28px;
-  background-color: #ffffff;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  box-shadow: none; /* Removed shadow */
-}
-
-.project-cursor-badge .badge-arrow svg {
+.project-cursor-badge .cursor-sticker-img {
+  width: 125px;
+  max-width: 140px;
+  max-height: 140px;
+  height: auto;
+  object-fit: contain;
   display: block;
+  filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.22)) drop-shadow(0 3px 6px rgba(0, 0, 0, 0.14));
+  user-select: none;
+  -webkit-user-drag: none;
+  pointer-events: none;
+  transform-origin: center center;
 }
 
 .project-img {

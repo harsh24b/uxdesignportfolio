@@ -63,7 +63,7 @@
         <!-- Row 1: Bus Transportation & SAVW Internship -->
         <div class="projects-row">
             <!-- Project 1: Bus Transportation Management -->
-            <a href="transportation.html" class="project-card" data-cursor-color="#FE820A" data-cursor-title="Bus Transportation<br>Management">
+            <a href="transportation.html" class="project-card" data-cursor-sticker="sticker-bus.webp" data-cursor-rotation="-5deg">
               <div class="project-card-inner">
                 <div class="project-card-header">
                   <div class="project-pills">
@@ -97,7 +97,7 @@
             </a>
 
             <!-- Project 2: SAVW Internship Report -->
-            <a href="savw.html" class="project-card" data-cursor-color="#00A859" data-cursor-title="SAVW UX Research<br>Internship Report">
+            <a href="savw.html" class="project-card" data-cursor-sticker="sticker-savw.webp" data-cursor-rotation="5deg">
               <div class="project-card-inner">
                 <div class="project-card-header">
                   <div class="project-pills">
@@ -134,7 +134,7 @@
           <!-- Row 2: Kamo AI & Samsung PRISM -->
           <div class="projects-row">
             <!-- Project 3: Kamo AI -->
-            <a href="https://www.figma.com/proto/5o3mcDvLlrFB5Ft2tNlu6e/Kamo-AI?node-id=0-1&t=nH9mkcz9T31QtaZD-1" target="_blank" rel="noopener noreferrer" class="project-card" data-cursor-color="#B757E6" data-cursor-title="Kamo AI :<br>Empathetic AI">
+            <a href="https://www.figma.com/proto/5o3mcDvLlrFB5Ft2tNlu6e/Kamo-AI?node-id=0-1&t=nH9mkcz9T31QtaZD-1" target="_blank" rel="noopener noreferrer" class="project-card" data-cursor-sticker="sticker-kamo.webp" data-cursor-rotation="6deg">
               <div class="project-card-inner">
                 <div class="project-card-header">
                   <div class="project-pills">
@@ -168,7 +168,7 @@
             </a>
 
             <!-- Project 4: Samsung PRISM Hackathon -->
-            <a href="https://www.behance.net/gallery/235207603/Agentic-Travel-Planning-Samsung-Prism-Hackathon" target="_blank" rel="noopener noreferrer" class="project-card" data-cursor-color="#1DA1FF" data-cursor-title="Samsung PRISM<br>Hackathon">
+            <a href="https://www.behance.net/gallery/235207603/Agentic-Travel-Planning-Samsung-Prism-Hackathon" target="_blank" rel="noopener noreferrer" class="project-card" data-cursor-sticker="sticker-samsung.webp" data-cursor-rotation="-4deg">
               <div class="project-card-inner">
                 <div class="project-card-header">
                   <div class="project-pills">
@@ -203,7 +203,7 @@
           <!-- Row 3: Weapons of Influence (Consistent 50% width column) -->
           <div class="projects-row">
             <!-- Project 5: Weapon of Influence -->
-            <a href="https://www.behance.net/gallery/228241265/Weapon-of-Influence-Data-Visualization" target="_blank" rel="noopener noreferrer" class="project-card work-single-card" style="max-width: calc(50% - clamp(12px, 1.25vw, 18px)); flex: 0 0 calc(50% - clamp(12px, 1.25vw, 18px));" data-cursor-color="#6DB874" data-cursor-title="Defense Intelligence<br>Dashboard Design">
+            <a href="https://www.behance.net/gallery/228241265/Weapon-of-Influence-Data-Visualization" target="_blank" rel="noopener noreferrer" class="project-card work-single-card" style="max-width: calc(50% - clamp(12px, 1.25vw, 18px)); flex: 0 0 calc(50% - clamp(12px, 1.25vw, 18px));" data-cursor-sticker="sticker-weapon.webp" data-cursor-rotation="-3deg">
               <div class="project-card-inner">
                 <div class="project-card-header">
                   <div class="project-pills">
@@ -308,17 +308,9 @@
     </div>
   </footer>
 
-  <!-- Floating Project Cursor Badge -->
-  <div class="project-cursor-badge" id="projectCursorBadge">
-    <div class="badge-content">
-      <span class="badge-title"></span>
-      <div class="badge-arrow">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FE820A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="7" y1="17" x2="17" y2="7"></line>
-          <polyline points="7 7 17 7 17 17"></polyline>
-        </svg>
-      </div>
-    </div>
+  <!-- Floating Project Cursor Sticker -->
+  <div class="project-cursor-badge" id="projectCursorBadge" aria-hidden="true">
+    <img id="cursorStickerImg" class="cursor-sticker-img" src="sticker-bus.webp" alt="Project Sticker">
   </div>
 
   <script>
@@ -401,10 +393,9 @@
         });
       });
 
-      // Project Cards Custom Cursor Badge Follower
+      // Project Cards Custom Cursor Sticker Follower
       const cursorBadge = document.getElementById('projectCursorBadge');
-      const badgeTitle = cursorBadge ? cursorBadge.querySelector('.badge-title') : null;
-      const badgeArrowSvg = cursorBadge ? cursorBadge.querySelector('.badge-arrow svg') : null;
+      const cursorStickerImg = document.getElementById('cursorStickerImg');
 
       let mouseX = -1000, mouseY = -1000;
       let targetX = -1000, targetY = -1000;
@@ -413,13 +404,16 @@
       window.addEventListener('mousemove', (e) => {
         targetX = e.clientX;
         targetY = e.clientY;
-      });
+        if (!isBadgeActive) {
+          mouseX = targetX;
+          mouseY = targetY;
+        }
+      }, { passive: true });
 
       const renderCursor = () => {
-        mouseX += (targetX - mouseX) * 0.18;
-        mouseY += (targetY - mouseY) * 0.18;
-        
-        if (cursorBadge) {
+        if (isBadgeActive && cursorBadge) {
+          mouseX += (targetX - mouseX) * 0.35;
+          mouseY += (targetY - mouseY) * 0.35;
           cursorBadge.style.left = `${mouseX}px`;
           cursorBadge.style.top = `${mouseY}px`;
         }
@@ -428,25 +422,28 @@
       requestAnimationFrame(renderCursor);
 
       document.querySelectorAll('.project-card').forEach(card => {
-        card.addEventListener('mouseenter', () => {
-          const title = card.getAttribute('data-cursor-title');
-          const badgeColor = card.getAttribute('data-cursor-color') || '#FE820A';
-          if (cursorBadge && badgeTitle) {
-            badgeTitle.innerHTML = title;
-            cursorBadge.style.backgroundColor = badgeColor;
-            if (badgeArrowSvg) {
-              badgeArrowSvg.setAttribute('stroke', badgeColor);
-            }
-            cursorBadge.classList.add('is-visible');
-            isBadgeActive = true;
+        const stickerSrc = card.getAttribute('data-cursor-sticker');
+        const stickerRot = card.getAttribute('data-cursor-rotation') || '-4deg';
+        const imageBox = card.querySelector('.project-image-box') || card;
+        if (!imageBox || !cursorBadge) return;
+
+        imageBox.addEventListener('mouseenter', (e) => {
+          if (!stickerSrc) return;
+          if (cursorStickerImg && cursorStickerImg.getAttribute('src') !== stickerSrc) {
+            cursorStickerImg.src = stickerSrc;
           }
+          cursorBadge.style.setProperty('--sticker-rot', stickerRot);
+          isBadgeActive = true;
+          mouseX = e.clientX;
+          mouseY = e.clientY;
+          cursorBadge.style.left = `${mouseX}px`;
+          cursorBadge.style.top = `${mouseY}px`;
+          cursorBadge.classList.add('is-visible');
         });
 
-        card.addEventListener('mouseleave', () => {
-          if (cursorBadge) {
-            cursorBadge.classList.remove('is-visible');
-            isBadgeActive = false;
-          }
+        imageBox.addEventListener('mouseleave', () => {
+          isBadgeActive = false;
+          cursorBadge.classList.remove('is-visible');
         });
       });
 

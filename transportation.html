@@ -115,7 +115,7 @@
 
       <div class="projects-row case-study-explore-grid">
         <!-- Project 2: SAVW Internship Report -->
-        <a href="savw.html" class="project-card" data-cursor-color="#00A859" data-cursor-title="SAVW UX Research<br>Internship Report">
+        <a href="savw.html" class="project-card" data-cursor-sticker="sticker-savw.webp" data-cursor-rotation="5deg">
           <div class="project-card-inner">
             <div class="project-card-header">
               <div class="project-pills">
@@ -149,7 +149,7 @@
         </a>
 
         <!-- Project 3: Kamo AI -->
-        <a href="https://www.figma.com/proto/5o3mcDvLlrFB5Ft2tNlu6e/Kamo-AI?node-id=0-1&t=nH9mkcz9T31QtaZD-1" target="_blank" rel="noopener noreferrer" class="project-card" data-cursor-color="#B757E6" data-cursor-title="Kamo AI :<br>Empathetic AI">
+        <a href="https://www.figma.com/proto/5o3mcDvLlrFB5Ft2tNlu6e/Kamo-AI?node-id=0-1&t=nH9mkcz9T31QtaZD-1" target="_blank" rel="noopener noreferrer" class="project-card" data-cursor-sticker="sticker-kamo.webp" data-cursor-rotation="6deg">
           <div class="project-card-inner">
             <div class="project-card-header">
               <div class="project-pills">
@@ -194,19 +194,6 @@
             </svg>
           </div>
         </a>
-      </div>
-
-      <!-- Custom Project Cursor Badge Element -->
-      <div class="project-cursor-badge" id="projectCursorBadge">
-        <div class="badge-content">
-          <span class="badge-title"></span>
-          <div class="badge-arrow">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FE820A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="7" y1="17" x2="17" y2="7"></line>
-              <polyline points="7 7 17 7 17 17"></polyline>
-            </svg>
-          </div>
-        </div>
       </div>
     </section>
   </main>
@@ -279,17 +266,9 @@
     </div>
   </footer>
 
-  <!-- Custom Project Cursor Badge Element -->
-  <div class="project-cursor-badge" id="projectCursorBadge">
-    <div class="badge-content">
-      <span class="badge-title"></span>
-      <div class="badge-arrow">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FE820A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="7" y1="17" x2="17" y2="7"></line>
-          <polyline points="7 7 17 7 17 17"></polyline>
-        </svg>
-      </div>
-    </div>
+  <!-- Custom Project Cursor Sticker Follower -->
+  <div class="project-cursor-badge" id="projectCursorBadge" aria-hidden="true">
+    <img id="cursorStickerImg" class="cursor-sticker-img" src="sticker-bus.webp" alt="Project Sticker">
   </div>
 
   <script>
@@ -356,10 +335,9 @@
         });
       });
 
-      // Project Cards Custom Cursor Badge Follower
+      // Project Cards Custom Cursor Sticker Follower
       const cursorBadge = document.getElementById('projectCursorBadge');
-      const badgeTitle = cursorBadge ? cursorBadge.querySelector('.badge-title') : null;
-      const badgeArrowSvg = cursorBadge ? cursorBadge.querySelector('.badge-arrow svg') : null;
+      const cursorStickerImg = document.getElementById('cursorStickerImg');
 
       let mouseX = -1000, mouseY = -1000;
       let targetX = -1000, targetY = -1000;
@@ -372,7 +350,7 @@
           mouseX = targetX;
           mouseY = targetY;
         }
-      });
+      }, { passive: true });
 
       const updateCursorBadge = () => {
         if (isBadgeActive && cursorBadge) {
@@ -386,21 +364,22 @@
       requestAnimationFrame(updateCursorBadge);
 
       document.querySelectorAll('.project-card').forEach(card => {
-        const imageBox = card.querySelector('.project-image-box');
+        const stickerSrc = card.getAttribute('data-cursor-sticker');
+        const stickerRot = card.getAttribute('data-cursor-rotation') || '-4deg';
+        const imageBox = card.querySelector('.project-image-box') || card;
         if (!imageBox || !cursorBadge) return;
 
-        const badgeColor = card.getAttribute('data-cursor-color') || '#FE820A';
-        const badgeText = card.getAttribute('data-cursor-title') || '';
-
         imageBox.addEventListener('mouseenter', (e) => {
+          if (!stickerSrc) return;
+          if (cursorStickerImg && cursorStickerImg.getAttribute('src') !== stickerSrc) {
+            cursorStickerImg.src = stickerSrc;
+          }
+          cursorBadge.style.setProperty('--sticker-rot', stickerRot);
           isBadgeActive = true;
           mouseX = e.clientX;
           mouseY = e.clientY;
           cursorBadge.style.left = `${mouseX}px`;
           cursorBadge.style.top = `${mouseY}px`;
-          cursorBadge.style.backgroundColor = badgeColor;
-          if (badgeTitle) badgeTitle.innerHTML = badgeText;
-          if (badgeArrowSvg) badgeArrowSvg.setAttribute('stroke', badgeColor);
           cursorBadge.classList.add('is-visible');
         });
 
