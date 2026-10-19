@@ -942,10 +942,11 @@ body {
   overflow: hidden;
 }
 
-/* Subtle organic paper parchment texture for Work, Experience & Honors, and About sections - 100% procedural SVG, zero image files */
+/* Subtle organic paper parchment texture for Work, Experience & Honors, About, and Footer sections - 100% procedural SVG, zero image files */
 .projects-section::before,
 .experience-section::before,
-.about-section::before {
+.about-section::before,
+.footer-card::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -956,6 +957,7 @@ body {
   background-size: 320px 320px;
   pointer-events: none;
   z-index: 0;
+  border-radius: inherit;
 }
 
 .work-page-wrapper .projects-section {
@@ -2233,6 +2235,8 @@ body {
 }
 
 .footer-card-content {
+  position: relative;
+  z-index: 1;
   width: 100%;
   box-sizing: border-box;
   padding: clamp(32px, 4vw, 56px) clamp(32px, 4.5vw, 68px) 0 clamp(32px, 4.5vw, 68px);
@@ -2450,6 +2454,8 @@ body {
 
 /* Massive Signature Typography in Spoleto Font */
 .footer-signature-container {
+  position: relative;
+  z-index: 1;
   width: 100%;
   display: flex;
   justify-content: center;
