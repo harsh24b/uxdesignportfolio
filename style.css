@@ -3337,13 +3337,16 @@ body {
   padding: clamp(56px, 6vw, 88px) clamp(20px, 4vw, 40px) clamp(70px, 8vw, 100px) clamp(20px, 4vw, 40px);
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   box-sizing: border-box;
 }
 
 .case-study-explore-header {
   margin-bottom: clamp(24px, 2.5vw, 36px);
   width: 100%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }
 
 .case-study-explore-title {
@@ -3353,9 +3356,11 @@ body {
   color: #700145;
   letter-spacing: -0.01em;
   line-height: 1.05;
-  margin: 0;
-  display: flex;
+  margin: 0 auto;
+  display: inline-flex;
   align-items: baseline;
+  justify-content: center;
+  text-align: center;
 }
 
 .case-study-explore-grid {
