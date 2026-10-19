@@ -1238,6 +1238,8 @@ body {
   opacity: 0;
   pointer-events: none;
   filter: none;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
 }
 
 /* Instant, continuous cycling across all 6 slides with zero transition and zero gap */
