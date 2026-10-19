@@ -12,6 +12,9 @@ Desktop.ini
 .vscode/
 .idea/
 
+# Vercel
+.vercel/
+
 # Scratch & temporary test scripts
 scratch/
 

@@ -4,17 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bus Transportation Management - Case Study | Harsh</title>
-  <link rel="icon" type="image/png" href="faviconnew.png?v=2">
-  <link rel="apple-touch-icon" href="faviconnew.png?v=2">
-  <link rel="stylesheet" href="style.css?v=112_mobile_responsive">
-  <!-- Google Fonts for Plus Jakarta Sans & Cormorant Garamond -->
+  <link rel="icon" type="image/png" href="faviconnew.webp?v=2">
+  <link rel="apple-touch-icon" href="faviconnew.webp?v=2">
+  <link rel="stylesheet" href="style.css?v=157_kamo_purple">
+  <!-- Google Fonts for Plus Jakarta Sans, Cormorant Garamond & Carattere -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Carattere&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    html, body, .case-study-page, .case-study-page-wrapper {
-      overflow-y: auto !important;
-      overflow-x: hidden !important;
+    html {
+      overflow-x: clip;
+      scroll-behavior: smooth;
+    }
+    body.case-study-page {
+      overflow-x: clip !important;
+      overflow-y: visible !important;
+      height: auto !important;
+    }
+    .case-study-page, .case-study-page-wrapper {
+      overflow: visible !important;
       height: auto !important;
     }
   </style>
@@ -43,94 +51,226 @@
 
   <!-- Main Case Study Content Container -->
   <main class="case-study-page-wrapper">
-    <!-- Top Text & Specifications Container (Centered Layout) -->
-    <div class="case-study-container">
-      <!-- Hero Article Header -->
-      <section class="case-study-hero">
-        <h1 class="case-study-title">Bus Transportation Management</h1>
-        
-        <p class="case-study-lead">
-          MIT ADT manages 37 university and third-party buses, yet daily operations depended on WhatsApp, Excel, and calls. I designed a unified transport management system with an administrative dashboard and student mobile experience, centralising routes, schedules, fees, requests, live tracking, and delay notifications while improving coordination between the university, students, and Tarawade Transport.
-        </p>
-      </section>
+    <!-- Main Case Study Layout with Open Sticky Left Sidebar & Single Unified Slide Presentation -->
+    <div class="case-study-layout-wrapper" id="caseStudyLayout">
+      <!-- Open Sticky Left Sidebar Navigation (Starts from the very start, no box, no pills, no drop shadows, no numbers) -->
+      <aside class="case-study-sidebar" id="caseStudySidebar" aria-label="Topics Index">
+        <nav class="sidebar-nav">
+          <ul class="sidebar-nav-list" role="tablist">
+            <li class="sidebar-nav-item">
+              <a href="#overview" class="sidebar-nav-link active" data-topic="overview">Overview</a>
+            </li>
+            <li class="sidebar-nav-item">
+              <a href="#secondary-research" class="sidebar-nav-link" data-topic="secondary-research">Secondary Research</a>
+            </li>
+            <li class="sidebar-nav-item">
+              <a href="#primary-research" class="sidebar-nav-link" data-topic="primary-research">Primary Research</a>
+            </li>
+            <li class="sidebar-nav-item">
+              <a href="#tools-techniques" class="sidebar-nav-link" data-topic="tools-techniques">Tools &amp; Techniques</a>
+            </li>
+            <li class="sidebar-nav-item">
+              <a href="#object-action-mapping" class="sidebar-nav-link" data-topic="object-action-mapping">Object-Action Mapping</a>
+            </li>
+            <li class="sidebar-nav-item">
+              <a href="#information-architecture" class="sidebar-nav-link" data-topic="information-architecture">Information Architecture</a>
+            </li>
+            <li class="sidebar-nav-item">
+              <a href="#solution" class="sidebar-nav-link" data-topic="solution">Solution</a>
+            </li>
+            <li class="sidebar-nav-item">
+              <a href="#prototype" class="sidebar-nav-link" data-topic="prototype">Prototype</a>
+            </li>
+            <li class="sidebar-nav-item">
+              <a href="#dashboard-ui" class="sidebar-nav-link" data-topic="dashboard-ui">Dashboard UI</a>
+            </li>
+            <li class="sidebar-nav-item">
+              <a href="#phone-ui" class="sidebar-nav-link" data-topic="phone-ui">Phone UI</a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
 
-      <!-- Project Specifications Table Section -->
-      <section class="case-study-section">
-        <div class="spec-table-card">
-          <table class="spec-table">
-            <tbody>
-              <tr>
-                <td class="spec-key">Project type</td>
-                <td class="spec-value">UI/UX Case Study - System Design</td>
-              </tr>
-              <tr>
-                <td class="spec-key">Domain</td>
-                <td class="spec-value">Campus Mobility / Transportation</td>
-              </tr>
-              <tr>
-                <td class="spec-key">Duration</td>
-                <td class="spec-value">3 Weeks</td>
-              </tr>
-              <tr>
-                <td class="spec-key">Platform</td>
-                <td class="spec-value">Desktop Dashboard + Mobile App</td>
-              </tr>
-              <tr>
-                <td class="spec-key">Users</td>
-                <td class="spec-value">Transport Department, Students, Faculty and Coordinators</td>
-              </tr>
-              <tr>
-                <td class="spec-key">Methods</td>
-                <td class="spec-value">Stakeholder Mapping, Swimlane Model, User Stories, Object-Action Mapping, Competitor Analysis, Information Architecture</td>
-              </tr>
-              <tr>
-                <td class="spec-key">Outcome</td>
-                <td class="spec-value">Unified transport management experience</td>
-              </tr>
-            </tbody>
-          </table>
+      <!-- Right Content Area (Starts with Hero Header & Specs Table, then Continuous Slide Flow) -->
+      <div class="case-study-content-area" id="caseStudyContentArea">
+        <!-- Hero Article Header -->
+        <section class="case-study-hero">
+          <h1 class="case-study-title">Bus Transportation Management</h1>
+          
+          <p class="case-study-lead">
+            MIT ADT manages 37 university and third-party buses, yet daily operations depended on WhatsApp, Excel, and calls. Designed a unified transport management system with an administrative dashboard and student mobile experience, centralising routes, schedules, fees, requests, live tracking, and delay notifications while improving coordination between the university, students, and Tarawade Transport.
+          </p>
+        </section>
+
+        <!-- Project Specifications Table Section -->
+        <section class="case-study-section">
+          <div class="spec-table-card">
+            <table class="spec-table">
+              <tbody>
+                <tr>
+                  <td class="spec-key">Project type</td>
+                  <td class="spec-value">UI/UX Case Study - System Design</td>
+                </tr>
+                <tr>
+                  <td class="spec-key">Domain</td>
+                  <td class="spec-value">Campus Mobility / Transportation</td>
+                </tr>
+                <tr>
+                  <td class="spec-key">Duration</td>
+                  <td class="spec-value">3 Weeks</td>
+                </tr>
+                <tr>
+                  <td class="spec-key">Platform</td>
+                  <td class="spec-value">Desktop Dashboard + Mobile App</td>
+                </tr>
+                <tr>
+                  <td class="spec-key">Users</td>
+                  <td class="spec-value">Transport Department, Students, Faculty and Coordinators</td>
+                </tr>
+                <tr>
+                  <td class="spec-key">Methods</td>
+                  <td class="spec-value">Stakeholder Mapping, Swimlane Model, User Stories, Object-Action Mapping, Competitor Analysis, Information Architecture</td>
+                </tr>
+                <tr>
+                  <td class="spec-key">Outcome</td>
+                  <td class="spec-value">Unified transport management experience</td>
+                </tr>
+                <tr>
+                  <td class="spec-key">Project links</td>
+                  <td class="spec-value">
+                    <div class="spec-links-group">
+                      <a href="https://www.figma.com/board/egrJGmkak4uewsONbjzBrC/OOUX---User-flows-and-Swimlane?node-id=0-1&t=H2iODHZUfmf5h83Z-1" target="_blank" rel="noopener noreferrer" class="spec-link-btn">
+                        <span>Flow model &amp; Swimlane model</span>
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                          <line x1="7" y1="17" x2="17" y2="7"></line>
+                          <polyline points="7 7 17 7 17 17"></polyline>
+                        </svg>
+                      </a>
+                      <a href="https://docs.google.com/document/d/1TCdoGR3UayHCeZH8-Xvsqi31Rda-49NkMOHn3wLo660/edit?tab=t.0" target="_blank" rel="noopener noreferrer" class="spec-link-btn">
+                        <span>User stories</span>
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                          <line x1="7" y1="17" x2="17" y2="7"></line>
+                          <polyline points="7 7 17 7 17 17"></polyline>
+                        </svg>
+                      </a>
+                      <a href="https://docs.google.com/spreadsheets/d/1t1fNI4NZyWC9vOUhzrbKbGGyJQ6Aayh9YY0g4zDNAmw/edit?gid=907359686#gid=907359686" target="_blank" rel="noopener noreferrer" class="spec-link-btn">
+                        <span>Object action mapping</span>
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                          <line x1="7" y1="17" x2="17" y2="7"></line>
+                          <polyline points="7 7 17 7 17 17"></polyline>
+                        </svg>
+                      </a>
+                      <a href="https://mitbuses.vercel.app/" target="_blank" rel="noopener noreferrer" class="spec-link-btn">
+                        <span>Management prototype</span>
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                          <line x1="7" y1="17" x2="17" y2="7"></line>
+                          <polyline points="7 7 17 7 17 17"></polyline>
+                        </svg>
+                      </a>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- Single Continuous Slide Presentation (No separated slides, No headings above slides, No drop shadows) -->
+        <div class="case-study-slides-flow">
+          <!-- Slide 01: Overview -->
+          <div class="slide-section" id="overview" data-topic="overview">
+            <img src="Bus transportation management/1OVERVIEW.webp" alt="Bus Transportation Management - Overview" class="topic-image" loading="eager">
+          </div>
+
+          <!-- Slide 02: Secondary Research -->
+          <div class="slide-section" id="secondary-research" data-topic="secondary-research">
+            <img src="Bus transportation management/2SECONDARYRESEARCH.webp" alt="Bus Transportation Management - Secondary Research" class="topic-image" loading="lazy">
+          </div>
+
+          <!-- Slide 03: Primary Research -->
+          <div class="slide-section" id="primary-research" data-topic="primary-research">
+            <img src="Bus transportation management/3PRIMARY%20RESEARCH.webp" alt="Bus Transportation Management - Primary Research" class="topic-image" loading="lazy">
+          </div>
+
+          <!-- Slide 04: Tools and Techniques -->
+          <div class="slide-section" id="tools-techniques" data-topic="tools-techniques">
+            <img src="Bus transportation management/4TOOLS%20AND%20TECHNIQUES.webp" alt="Bus Transportation Management - Tools and Techniques" class="topic-image" loading="lazy">
+          </div>
+
+          <!-- Slide 05: Object-Action Mapping -->
+          <div class="slide-section" id="object-action-mapping" data-topic="object-action-mapping">
+            <img src="Bus transportation management/5OBJECT-ACTION%20MAPPING.webp" alt="Bus Transportation Management - Object-Action Mapping" class="topic-image" loading="lazy">
+          </div>
+
+          <!-- Slide 06: Information Architecture -->
+          <div class="slide-section" id="information-architecture" data-topic="information-architecture">
+            <img src="Bus transportation management/6INFORMATION%20ARCHITECTURE.webp" alt="Bus Transportation Management - Information Architecture" class="topic-image" loading="lazy">
+          </div>
+
+          <!-- Slide 07: Solution (7solution) -->
+          <div class="slide-section" id="solution" data-topic="solution">
+            <img src="Bus transportation management/7SOLUTION.webp" alt="Bus Transportation Management - Solution" class="topic-image" loading="lazy">
+          </div>
+
+          <!-- Slide 08: Prototype (Live Dashboard with Centered Action Button) -->
+          <div class="slide-section prototype-slide-section" id="prototype" data-topic="prototype">
+            <a href="https://mitbuses.vercel.app/" target="_blank" rel="noopener noreferrer" class="prototype-stage" aria-label="Open MIT Buses Management Prototype" data-cursor-color="#FE820A" data-cursor-title="Open Prototype<br>mitbuses.vercel.app">
+              <img src="Bus Transportation management/dashboard.webp" alt="Bus Transportation Management - Interactive Prototype Dashboard" class="topic-image prototype-img" loading="lazy">
+              <div class="prototype-dark-overlay"></div>
+              <div class="prototype-center-btn-wrap">
+                <div class="prototype-center-content">
+                  <img src="Bus Transportation management/dashboardlogo.webp" alt="MIT Buses Logo" class="prototype-center-logo" loading="lazy">
+                  <span class="prototype-action-btn">Click to access full prototype</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Slide 09: Dashboard UI (BTM Slide 3, 4, 5, 6 dashboard) -->
+          <div class="slide-section" id="dashboard-ui" data-topic="dashboard-ui">
+            <img src="Bus transportation management/BTM%20Slide3.webp" alt="Dashboard UI - Home &amp; Routes" class="topic-image" loading="lazy">
+            <img src="Bus transportation management/BTM%20Slide4.webp" alt="Dashboard UI - Buses" class="topic-image" loading="lazy">
+            <img src="Bus transportation management/BTM%20Slide5.webp" alt="Dashboard UI - Chat &amp; Complaints" class="topic-image" loading="lazy">
+            <img src="Bus transportation management/BTM%20Slide6_dashboard.webp" alt="Dashboard UI - Passengers" class="topic-image" loading="lazy">
+          </div>
+
+          <!-- Slide 09: Phone UI (BTM Slide 6 starting at Phone UI heading, BTM Slide 7) -->
+          <div class="slide-section" id="phone-ui" data-topic="phone-ui">
+            <img src="Bus transportation management/BTM%20Slide6_phone.webp" alt="Phone UI - Mobile Screens &amp; Homepage" class="topic-image" loading="lazy">
+            <img src="Bus transportation management/BTM%20Slide7.webp" alt="Phone UI - My Bus, Chat &amp; Profile" class="topic-image" loading="lazy">
+          </div>
+
+          <!-- Slide 10: Thank You Slide -->
+          <div class="slide-section" id="thank-you" data-topic="thank-you">
+            <img src="Bus transportation management/thankyou.webp" alt="Bus Transportation Management - Thank You" class="topic-image" loading="lazy">
+          </div>
         </div>
-      </section>
+      </div>
     </div>
-
-    <!-- Fullscreen Single Scrollable Slides Section -->
-    <section class="case-study-slides-container" aria-label="Bus Transportation Management Presentation Slides">
-      <img src="bus transportation management slides/BTM Slide1.png" alt="Bus Transportation Management - Slide 1" class="case-study-slide-img" loading="eager">
-      <img src="bus transportation management slides/BTM Slide2.png" alt="Bus Transportation Management - Slide 2" class="case-study-slide-img" loading="eager">
-      <img src="bus transportation management slides/BTM Slide3.png" alt="Bus Transportation Management - Slide 3" class="case-study-slide-img" loading="lazy">
-      <img src="bus transportation management slides/BTM Slide4.png" alt="Bus Transportation Management - Slide 4" class="case-study-slide-img" loading="lazy">
-      <img src="bus transportation management slides/BTM Slide5.png" alt="Bus Transportation Management - Slide 5" class="case-study-slide-img" loading="lazy">
-      <img src="bus transportation management slides/BTM Slide6.png" alt="Bus Transportation Management - Slide 6" class="case-study-slide-img" loading="lazy">
-      <img src="bus transportation management slides/BTM Slide7.png" alt="Bus Transportation Management - Slide 7" class="case-study-slide-img" loading="lazy">
-      <img src="bus transportation management slides/BTM Slide8.png" alt="Bus Transportation Management - Slide 8" class="case-study-slide-img" loading="lazy">
-      <img src="bus transportation management slides/BTM Slide9.png" alt="Bus Transportation Management - Slide 9" class="case-study-slide-img" loading="lazy">
-      <img src="bus transportation management slides/BTM Slide10.png" alt="Bus Transportation Management - Slide 10" class="case-study-slide-img" loading="lazy">
-    </section>
 
     <!-- Explore More Projects Section -->
     <section class="case-study-explore-section">
       <div class="case-study-explore-header">
-        <h2 class="case-study-explore-title">Explore more projects:</h2>
+        <h2 class="case-study-explore-title"><span class="heading-cap">E</span><span class="heading-rest">xplore more projects</span></h2>
       </div>
 
       <div class="projects-row case-study-explore-grid">
         <!-- Project 2: SAVW Internship Report -->
-        <a href="savw.html" class="project-card" data-cursor-sticker="sticker-savw.webp" data-cursor-rotation="5deg">
+        <a href="savw.html" class="project-card" data-cursor-color="#00A859" data-cursor-title="SAVW UX Research<br>Internship Report">
           <div class="project-card-inner">
-            <div class="project-card-header">
-              <div class="project-pills">
-                <span class="project-pill"><span class="pill-dot" style="background:#00A859;"></span>UX Research</span>
-                <span class="project-pill">Automotive</span>
-              </div>
-              <div class="project-meta-tag">
-                <span class="meta-year">2024</span>
-                <span class="meta-separator">•</span>
-                <span class="meta-type">Case Study</span>
-              </div>
-            </div>
-
             <div class="project-image-box">
-              <img src="skoda/SkodaThumbnail.png" alt="Škoda Auto Volkswagen India UX Research Internship Report" class="project-img">
+              <img src="skoda new.webp" alt="Škoda Auto Volkswagen India UX Research Internship Report" class="project-img" loading="lazy" decoding="async">
+              <div class="project-card-tags-overlay">
+                <div class="project-pills">
+                  <span class="project-pill"><span class="pill-dot" style="background:#00A859;"></span>UX Research</span>
+                  <span class="project-pill">Automotive</span>
+                </div>
+                <div class="project-meta-tag">
+                  <span class="meta-year">2024</span>
+                  <span class="meta-separator">•</span>
+                  <span class="meta-type">Case Study</span>
+                </div>
+              </div>
             </div>
 
             <div class="project-card-footer">
@@ -149,22 +289,21 @@
         </a>
 
         <!-- Project 3: Kamo AI -->
-        <a href="https://www.figma.com/proto/5o3mcDvLlrFB5Ft2tNlu6e/Kamo-AI?node-id=0-1&t=nH9mkcz9T31QtaZD-1" target="_blank" rel="noopener noreferrer" class="project-card" data-cursor-sticker="sticker-kamo.webp" data-cursor-rotation="6deg">
+        <a href="kamo-ai.html" class="project-card" data-cursor-color="#B757E6" data-cursor-title="Kamo AI :<br>Empathetic AI">
           <div class="project-card-inner">
-            <div class="project-card-header">
-              <div class="project-pills">
-                <span class="project-pill"><span class="pill-dot" style="background:#B757E6;"></span>AI Agent</span>
-                <span class="project-pill">Ed-Tech</span>
-              </div>
-              <div class="project-meta-tag">
-                <span class="meta-year">2026</span>
-                <span class="meta-separator">•</span>
-                <span class="meta-type">Interaction Design</span>
-              </div>
-            </div>
-
             <div class="project-image-box">
-              <img src="kamoai.png" alt="Kamo AI - Empathetic AI Agent" class="project-img">
+              <img src="Kamo ai new.webp" alt="Kamo AI - Empathetic AI Agent" class="project-img" loading="lazy" decoding="async">
+              <div class="project-card-tags-overlay">
+                <div class="project-pills">
+                  <span class="project-pill"><span class="pill-dot" style="background:#B757E6;"></span>AI Agent</span>
+                  <span class="project-pill">Ed-Tech</span>
+                </div>
+                <div class="project-meta-tag">
+                  <span class="meta-year">2026</span>
+                  <span class="meta-separator">•</span>
+                  <span class="meta-type">Interaction Design</span>
+                </div>
+              </div>
             </div>
 
             <div class="project-card-footer">
@@ -195,13 +334,14 @@
           </div>
         </a>
       </div>
+
     </section>
   </main>
 
   <!-- Signature Footer & Contact Section -->
   <footer class="footer-section" id="contact">
     <div class="footer-headline-container">
-      <h2 class="footer-headline">Let’s build experiences that matter</h2>
+      <h2 class="footer-headline"><span class="heading-cap">L</span><span class="heading-rest">et’s build experiences that matter</span></h2>
     </div>
     <div class="footer-card">
       <div class="footer-card-content">
@@ -251,25 +391,20 @@
       <!-- Interactive Draggable Stickers Layer -->
       <div class="footer-stickers-layer" id="footerStickersLayer">
         <div class="footer-sticker footer-sticker-sun" data-id="sun" title="Drag me!">
-          <img src="suncontacts.png" alt="Sun sticker" draggable="false">
+          <img src="suncontacts.webp" alt="Sun sticker" draggable="false" loading="lazy" decoding="async">
         </div>
         <div class="footer-sticker footer-sticker-lotus" data-id="lotus" title="Drag me!">
-          <img src="lotuscontacts.png" alt="Lotus sticker" draggable="false">
+          <img src="lotuscontacts.webp" alt="Lotus sticker" draggable="false" loading="lazy" decoding="async">
         </div>
         <div class="footer-sticker footer-sticker-camera" data-id="camera" title="Drag me!">
-          <img src="cameracontacts.png" alt="Camera sticker" draggable="false">
+          <img src="cameracontacts.webp" alt="Camera sticker" draggable="false" loading="lazy" decoding="async">
         </div>
         <div class="footer-sticker footer-sticker-eye" data-id="eye" title="Drag me!">
-          <img src="eyecontacts.png" alt="Eye sticker" draggable="false">
+          <img src="eyecontacts.webp" alt="Eye sticker" draggable="false" loading="lazy" decoding="async">
         </div>
       </div>
     </div>
   </footer>
-
-  <!-- Custom Project Cursor Sticker Follower -->
-  <div class="project-cursor-badge" id="projectCursorBadge" aria-hidden="true">
-    <img id="cursorStickerImg" class="cursor-sticker-img" src="sticker-bus.webp" alt="Project Sticker">
-  </div>
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -291,6 +426,96 @@
         lastScrollY = scrollY;
       }, { passive: true });
 
+      // Open Left Sidebar Navigation & ScrollSpy Controller (Single Continuous Slide Flow)
+      const sidebarLinks = document.querySelectorAll('.case-study-sidebar .sidebar-nav-link');
+      const slideSections = document.querySelectorAll('.slide-section');
+      const heroSection = document.querySelector('.case-study-hero');
+
+      function setActiveTopic(topicId, updateHash = false) {
+        if (!topicId) return;
+        sidebarLinks.forEach(link => {
+          const isCurrent = link.getAttribute('data-topic') === topicId;
+          link.classList.toggle('active', isCurrent);
+          link.setAttribute('aria-selected', isCurrent ? 'true' : 'false');
+        });
+
+        if (updateHash) {
+          if (history.pushState) {
+            history.pushState(null, '', `#${topicId}`);
+          } else {
+            window.location.hash = topicId;
+          }
+        }
+      }
+
+      function scrollToTopic(topicId) {
+        const targetEl = document.getElementById(topicId);
+        if (targetEl) {
+          const yOffset = -96; // accounts for navbar
+          const y = targetEl.getBoundingClientRect().top + window.pageYOffset + yOffset;
+          window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+          setActiveTopic(topicId, true);
+        }
+      }
+
+      // Sidebar link clicks: smooth scroll to topic
+      sidebarLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          const topicId = link.getAttribute('data-topic');
+          scrollToTopic(topicId);
+        });
+      });
+
+      // ScrollSpy: highlight topic text in orange as user scrolls past each slide
+      const slideObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const topicId = entry.target.getAttribute('data-topic');
+            if (topicId) {
+              setActiveTopic(topicId, false);
+            }
+          }
+        });
+      }, {
+        rootMargin: '-20% 0px -60% 0px',
+        threshold: 0
+      });
+
+      slideSections.forEach(section => slideObserver.observe(section));
+
+      // Hero observer: highlights "overview" when scrolled near the top
+      if (heroSection) {
+        const heroObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              setActiveTopic('overview', false);
+            }
+          });
+        }, {
+          rootMargin: '0px 0px -40% 0px',
+          threshold: 0
+        });
+        heroObserver.observe(heroSection);
+      }
+
+      // Initial route from URL hash
+      const initialHash = window.location.hash.replace('#', '').toLowerCase();
+      const validTopics = ['overview', 'secondary-research', 'primary-research', 'tools-techniques', 'object-action-mapping', 'information-architecture', 'solution', 'prototype', 'dashboard-ui', 'phone-ui'];
+      if (validTopics.includes(initialHash)) {
+        setTimeout(() => {
+          scrollToTopic(initialHash);
+        }, 150);
+      }
+
+      // Handle browser back/forward buttons
+      window.addEventListener('popstate', () => {
+        const hash = window.location.hash.replace('#', '').toLowerCase();
+        if (validTopics.includes(hash)) {
+          scrollToTopic(hash);
+        }
+      });
+
       // Footer Scroll Reveal Observer
       const footerHeadline = document.querySelector('.footer-headline');
       const footerCard = document.querySelector('.footer-card');
@@ -305,89 +530,6 @@
 
       if (footerHeadline) footerObserver.observe(footerHeadline);
       if (footerCard) footerObserver.observe(footerCard);
-
-      // Interactive 3D Perspective Tilt for Project Cards
-      document.querySelectorAll('.project-card').forEach(card => {
-        let isHovered = false;
-        
-        card.addEventListener('mouseenter', () => {
-          isHovered = true;
-        });
-        
-        card.addEventListener('mousemove', (e) => {
-          if (!isHovered) return;
-          const rect = card.getBoundingClientRect();
-          const x = e.clientX - rect.left;
-          const y = e.clientY - rect.top;
-          
-          const centerX = rect.width / 2;
-          const centerY = rect.height / 2;
-          
-          const rotateX = ((y - centerY) / centerY) * -4.5;
-          const rotateY = ((x - centerX) / centerX) * 4.5;
-          
-          card.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translateY(-8px)`;
-        });
-        
-        card.addEventListener('mouseleave', () => {
-          isHovered = false;
-          card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)';
-        });
-      });
-
-      // Project Cards Custom Cursor Sticker Follower
-      const cursorBadge = document.getElementById('projectCursorBadge');
-      const cursorStickerImg = document.getElementById('cursorStickerImg');
-
-      let mouseX = -1000, mouseY = -1000;
-      let targetX = -1000, targetY = -1000;
-      let isBadgeActive = false;
-
-      window.addEventListener('mousemove', (e) => {
-        targetX = e.clientX;
-        targetY = e.clientY;
-        if (!isBadgeActive) {
-          mouseX = targetX;
-          mouseY = targetY;
-        }
-      }, { passive: true });
-
-      const updateCursorBadge = () => {
-        if (isBadgeActive && cursorBadge) {
-          mouseX += (targetX - mouseX) * 0.35;
-          mouseY += (targetY - mouseY) * 0.35;
-          cursorBadge.style.left = `${mouseX}px`;
-          cursorBadge.style.top = `${mouseY}px`;
-        }
-        requestAnimationFrame(updateCursorBadge);
-      };
-      requestAnimationFrame(updateCursorBadge);
-
-      document.querySelectorAll('.project-card').forEach(card => {
-        const stickerSrc = card.getAttribute('data-cursor-sticker');
-        const stickerRot = card.getAttribute('data-cursor-rotation') || '-4deg';
-        const imageBox = card.querySelector('.project-image-box') || card;
-        if (!imageBox || !cursorBadge) return;
-
-        imageBox.addEventListener('mouseenter', (e) => {
-          if (!stickerSrc) return;
-          if (cursorStickerImg && cursorStickerImg.getAttribute('src') !== stickerSrc) {
-            cursorStickerImg.src = stickerSrc;
-          }
-          cursorBadge.style.setProperty('--sticker-rot', stickerRot);
-          isBadgeActive = true;
-          mouseX = e.clientX;
-          mouseY = e.clientY;
-          cursorBadge.style.left = `${mouseX}px`;
-          cursorBadge.style.top = `${mouseY}px`;
-          cursorBadge.classList.add('is-visible');
-        });
-
-        imageBox.addEventListener('mouseleave', () => {
-          isBadgeActive = false;
-          cursorBadge.classList.remove('is-visible');
-        });
-      });
 
       // Contact Draggable Physics-Based Stickers Engine
       const initContactStickers = () => {
@@ -699,6 +841,44 @@
       };
 
       initFooterContactCopy();
+
+      // Visuvate Pill Button Rolling Text Initializer (View all projects matching home page hover interaction)
+      const initButtonRollingText = () => {
+        const rollSelectors = ['.btn-view-more', '.about-cta-btn'];
+        document.querySelectorAll(rollSelectors.join(', ')).forEach(btn => {
+          if (btn.querySelector('.vv-roll')) return;
+          
+          const textSpan = btn.querySelector('.btn-view-more-text, .about-cta-text') || btn.querySelector('span:not(.vv-roll)') || btn;
+          const text = (btn.getAttribute('data-roll') || textSpan.textContent).trim();
+          if (!text) return;
+          
+          const rollContainer = document.createElement('span');
+          rollContainer.className = 'vv-roll';
+          rollContainer.setAttribute('aria-label', text);
+          
+          [...text].forEach((char, i) => {
+            const charSpan = document.createElement('span');
+            charSpan.className = 'vv-roll-char';
+            charSpan.style.setProperty('--i', i);
+            const displayChar = char === ' ' ? '&nbsp;' : char;
+            charSpan.innerHTML = `<span>${displayChar}</span><span>${displayChar}</span>`;
+            rollContainer.appendChild(charSpan);
+          });
+          
+          if (textSpan && textSpan !== btn) {
+            textSpan.replaceWith(rollContainer);
+          } else {
+            const arrow = btn.querySelector('svg, .btn-view-more-arrow, .about-cta-arrow');
+            if (arrow) {
+              btn.insertBefore(rollContainer, arrow);
+            } else {
+              btn.appendChild(rollContainer);
+            }
+          }
+        });
+      };
+
+      initButtonRollingText();
     });
   </script>
 </body>

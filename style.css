@@ -1,9 +1,126 @@
+/* Google Fonts & Custom Typography */
+@font-face {
+  font-family: 'GT Walsheim Trial';
+  src: url('GT%20Walsheim%20Font/GT-Walsheim-Medium-Trial-BF651b7fc728fb3.otf') format('opentype'),
+       url('GT-Walsheim-Medium-Trial-BF651b7fc728fb3.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GT Walsheim Trial';
+  src: url('GT%20Walsheim%20Font/GT-Walsheim-Regular-Trial-BF651b7fc71a47d.otf') format('opentype'),
+       url('GT-Walsheim-Regular-Trial-BF651b7fc71a47d.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GT Walsheim Trial';
+  src: url('GT%20Walsheim%20Font/GT-Walsheim-Bold-Trial-BF651b7fc737c57.otf') format('opentype'),
+       url('GT-Walsheim-Bold-Trial-BF651b7fc737c57.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Riccione Serial Light';
+  src: url('Riccione-Serial-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Riccione Serial Light';
+  src: url('Riccione-Serial-Light.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Riccione-Serial';
+  src: url('Riccione-Serial-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Riccione-Serial';
+  src: url('Riccione-Serial-Light.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Riccione-Serial';
+  src: url('Riccione-Serial Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Riccione-Serial';
+  src: url('Riccione-Serial-Light RegularItalic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Riccione-Serial';
+  src: url('Riccione-Serial BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
 /* Custom Fonts */
 @font-face {
   font-family: 'Basote';
   src: url('basote-font/Basote-BF66e77629b4955.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'Gilmer';
+  src: url('fonts_gilmer/Gilmer-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gilmer';
+  src: url('fonts_gilmer/Gilmer-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gilmer';
+  src: url('fonts_gilmer/Gilmer-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gilmer';
+  src: url('fonts_gilmer/Gilmer-Heavy.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -11,6 +128,7 @@
   src: url('spoleto.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -18,6 +136,7 @@
   src: url('mozaic-font-family-1718270767-0/MozaicGEO-Light-BF65792617d17f9.otf') format('opentype');
   font-weight: 300;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -25,6 +144,7 @@
   src: url('mozaic-font-family-1718270767-0/MozaicGEO-Regular-BF65792616e075e.otf') format('opentype');
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -32,6 +152,7 @@
   src: url('mozaic-font-family-1718270767-0/MozaicGEO-Medium-BF65792617daaee.otf') format('opentype');
   font-weight: 500;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -39,6 +160,7 @@
   src: url('mozaic-font-family-1718270767-0/MozaicGEO-SemiBold-BF65792616e68bd.otf') format('opentype');
   font-weight: 600;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -46,6 +168,39 @@
   src: url('mozaic-font-family-1718270767-0/MozaicGEO-Bold-BF65792617206a6.otf') format('opentype');
   font-weight: 700;
   font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'MozaicHUM';
+  src: url('mozaic-font-family-1718270767-0/MozaicHUM-Regular-BF6579261638d46.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'MozaicHUM';
+  src: url('mozaic-font-family-1718270767-0/MozaicHUM-Medium-BF657926164b627.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'MozaicHUM';
+  src: url('mozaic-font-family-1718270767-0/MozaicHUM-SemiBold-BF657926160a3b7.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'MozaicHUM';
+  src: url('mozaic-font-family-1718270767-0/MozaicHUM-Bold-BF6579261779191.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -53,6 +208,7 @@
   src: url('fonnts.com-RealistWide.otf') format('opentype');
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -60,6 +216,7 @@
   src: url('fonnts.com-RealistWide_Italic.otf') format('opentype');
   font-weight: 400;
   font-style: italic;
+  font-display: swap;
 }
 
 @font-face {
@@ -67,6 +224,7 @@
   src: url('fonnts.com-RealistWide_Medium.otf') format('opentype');
   font-weight: 500;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -74,6 +232,7 @@
   src: url('fonnts.com-RealistWide_Medium_Italic.otf') format('opentype');
   font-weight: 500;
   font-style: italic;
+  font-display: swap;
 }
 
 @font-face {
@@ -81,6 +240,7 @@
   src: url('1. OpenType Font Files/Cormorant-BoldItalic.otf') format('opentype');
   font-weight: 700;
   font-style: italic;
+  font-display: swap;
 }
 
 @font-face {
@@ -88,6 +248,7 @@
   src: url('1. OpenType Font Files/Cormorant-RegularItalic.otf') format('opentype');
   font-weight: 400;
   font-style: italic;
+  font-display: swap;
 }
 
 @font-face {
@@ -95,6 +256,7 @@
   src: url('1. OpenType Font Files/Cormorant-Regular.otf') format('opentype');
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 
 /* CSS Reset & Variables */
@@ -127,20 +289,15 @@ body {
   transform-origin: center center;
 }
 
-/* Layered Backgrounds for Mouse Move Parallax */
-.hero-bg-blue {
+/* Layered Backgrounds for Hero WebGL Atmospheric Cloud Canvas & Decorative Silver Frame */
+.hero-cloud-canvas {
   position: absolute;
-  top: -2%; /* Extend slightly beyond container to prevent gaps when translating */
-  left: -2%;
-  width: 104%;
-  height: 104%;
-  background-image: url('blueBG.webp');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   z-index: 1;
-  transition: transform 0.1s ease-out; /* Smooth transition lag for organic movement */
-  will-change: transform;
+  pointer-events: none;
+  display: block;
 }
 
 .hero-bg-silver {
@@ -323,11 +480,11 @@ body {
 /* Rotating Circle */
 .circle-container {
   position: absolute;
-  left: 50%;
-  top: calc(43% + 40px);
+  left: calc(50% - 5px);
+  top: calc(43% + 51px);
   transform: translate(-50%, -50%);
-  width: 30.6vw;
-  height: 29.6vw;
+  width: 29.9vw;
+  height: 28.9vw;
   z-index: 1;
 }
 
@@ -342,11 +499,11 @@ body {
 /* Floating Character */
 .guy-container {
   position: absolute;
-  left: 50%;
+  left: calc(50% - 5px);
   bottom: 3.5vw;
   transform: translateX(-50%);
-  width: 43.9vw;
-  height: 29.2vw;
+  width: 43.2vw;
+  height: 28.5vw;
   z-index: 2;
 }
 
@@ -354,7 +511,7 @@ body {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  animation: floatGuy 3s ease-in-out infinite alternate; /* Gentle, slightly faster vertical bobbing */
+  animation: floatGuy 2s ease-in-out infinite alternate; /* Fast floating bob */
 }
 
 /* Animations */
@@ -372,31 +529,29 @@ body {
     transform: translateY(0);
   }
   100% {
-    transform: translateY(-0.7vw); /* Subtle float movement */
+    transform: translateY(-1.4vw); /* More visible float movement */
   }
 }
 
-/* Work Stacking Track (Enables full 4-project browsing, then sticky freeze) */
+/* Work Section Track - Seamless Flow into Experience */
 .work-stack-track {
   position: relative;
   width: 100%;
+  height: auto;
   z-index: 2;
+  background-color: #FFFCDE;
 }
 
-/* Extra Content Section */
+/* Extra Content Section - Seamless Flow */
 .content-section {
-  position: sticky; /* Sticky Layer 2: Slides over Hero, freezes as Experience stacks over it */
-  top: 0;
+  position: relative;
   width: 100%;
-  min-height: 100vh;
+  min-height: auto;
   margin-top: 0; /* Aligns flush below hero with zero overlap */
   background-color: #FFFCDE; /* Off-white canvas matching the user request */
   box-shadow: none; /* Removed slide elevation shadow */
   display: flex;
   flex-direction: column;
-  transform-origin: center bottom;
-  will-change: transform, filter;
-  transition: transform 0.1s linear, filter 0.1s linear;
 }
 
 /* Description Text (Right Side) */
@@ -464,7 +619,7 @@ body {
   width: 100%;
   overflow: hidden;
   position: relative;
-  padding: clamp(20px, 2.2vh, 32px) 0;
+  padding: 28px 0 12px 0; /* Fixed px — identical height on all screen sizes/DPIs */
   background-color: #FFFCDE;
   mask-image: linear-gradient(to right, transparent 0%, black 16%, black 84%, transparent 100%);
   -webkit-mask-image: linear-gradient(to right, transparent 0%, black 16%, black 84%, transparent 100%);
@@ -511,7 +666,7 @@ body {
 
 .marquee-label {
   font-family: 'MozaicGEO', 'Plus Jakarta Sans', sans-serif;
-  font-size: clamp(12.5px, 0.92vw, 14.5px);
+  font-size: clamp(14.5px, 1.05vw, 16.5px);
   font-weight: 500;
   color: #666666;
   letter-spacing: -0.01em;
@@ -550,22 +705,266 @@ body {
   transform: scale(1.04);
 }
 
-.marquee-item:hover .marquee-label {
-  color: #1a140e;
+/* ==========================================================================
+   Philosophy & Craft Section (Rich Green Gradient with Auto-Rotating Mandalas & Elephants)
+   ========================================================================== */
+.philosophy-section {
+  position: relative;
+  width: 100%;
+  min-height: clamp(360px, 28vw, 480px);
+  background: linear-gradient(90deg, #4b6333 0%, #4f6836 25%, #58753c 50%, #607f41 75%, #658644 100%);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(52px, 5vw, 76px) clamp(20px, 4vw, 60px);
+  box-sizing: border-box;
+  margin-top: max(36px, calc(100vh - (100vw * 1624 / 3840 + 74px) + 4px));
+}
+
+/* Auto-Rotating Mandalas / Circles - Exactly 30% visible */
+.philosophy-circle {
+  position: absolute;
+  left: 50%;
+  width: clamp(220px, 20vw, 300px);
+  height: clamp(220px, 20vw, 300px);
+  pointer-events: none;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.philosophy-circle-top {
+  top: 0;
+  transform: translate(-50%, -70%);
+}
+
+.philosophy-circle-bottom {
+  bottom: 0;
+  transform: translate(-50%, 70%);
+}
+
+.philosophy-circle-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  animation: rotateMandala 38s linear infinite;
+  will-change: transform;
+  filter: drop-shadow(0 4px 18px rgba(0, 0, 0, 0.16));
+}
+
+.philosophy-circle-bottom .philosophy-circle-img {
+  animation-direction: reverse;
+}
+
+@keyframes rotateMandala {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.philosophy-content-wrapper {
+  position: relative;
+  z-index: 4;
+  width: 100%;
+  max-width: 1400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 0 clamp(16px, 2vw, 32px);
+  pointer-events: none;
+}
+
+.philosophy-text-box {
+  max-width: clamp(340px, 44vw, 720px);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  pointer-events: auto;
+  opacity: 0;
+  transform: translateY(20px);
+  filter: blur(3px);
+  transition: opacity 1.1s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 1.1s cubic-bezier(0.16, 1, 0.3, 1), 
+              filter 1.1s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform, filter;
+}
+
+.philosophy-section.in-view .philosophy-text-box {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+.philosophy-quote {
+  font-family: 'Gilmer', sans-serif;
+  font-size: clamp(17px, 1.38vw, 20.5px);
+  font-weight: 500;
+  line-height: 1.48;
+  color: #FFFFFF;
+  letter-spacing: -0.01em;
+  margin: 0;
+  text-align: left;
+}
+
+/* Progressive Word-by-Word Feed Illumination Interaction */
+.philosophy-word {
+  display: inline;
+  opacity: 0.28;
+  color: #FFFFFF;
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), color 0.35s ease;
+  will-change: opacity;
+}
+
+.philosophy-word.is-revealed {
+  opacity: 1;
+  color: #FFFFFF;
+}
+
+/* Single Image Ornate Elephants - Exactly Two Front Legs & Face Visible */
+.philosophy-elephant {
+  position: absolute;
+  top: 50%;
+  width: clamp(300px, 35vw, 560px);
+  aspect-ratio: 1536 / 1024;
+  pointer-events: none;
+  z-index: 3;
+  user-select: none;
+  -webkit-user-drag: none;
+  will-change: transform, opacity;
+  transition: transform 1.15s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.95s ease;
+}
+
+.philosophy-elephant-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  user-select: none;
+  -webkit-user-drag: none;
+  filter: drop-shadow(0 12px 28px rgba(0, 0, 0, 0.14));
+}
+
+/* Left elephant: naturally faces left, so FLIP with scaleX(-1) to face inward (right).
+   Push left by ~42% so rear body is off-screen, and face, trunk, and two front legs are visible! */
+.philosophy-elephant-left {
+  left: 0;
+  transform: translateY(-50%) translateX(-50%);
+  opacity: 0;
+}
+
+.philosophy-elephant-left .philosophy-elephant-img {
+  transform: scaleX(-1);
+}
+
+.philosophy-section.in-view .philosophy-elephant-left {
+  transform: translateY(-50%) translateX(-42%);
+  opacity: 1;
+}
+
+/* Right elephant: naturally faces left (inward). DO NOT FLIP.
+   Push right by ~42% so rear body is off-screen, and face, trunk, and two front legs are visible! */
+.philosophy-elephant-right {
+  right: 0;
+  transform: translateY(-50%) translateX(50%);
+  opacity: 0;
+}
+
+.philosophy-elephant-right .philosophy-elephant-img {
+  transform: none;
+}
+
+.philosophy-section.in-view .philosophy-elephant-right {
+  transform: translateY(-50%) translateX(42%);
+  opacity: 1;
+}
+
+@media (max-width: 1100px) {
+  .philosophy-elephant {
+    width: clamp(230px, 32vw, 360px);
+  }
+  .philosophy-text-box {
+    max-width: clamp(320px, 52vw, 560px);
+  }
+  .philosophy-circle {
+    width: clamp(160px, 18vw, 220px);
+    height: clamp(160px, 18vw, 220px);
+  }
+}
+
+@media (max-width: 768px) {
+  .philosophy-section {
+    margin-top: 0;
+    min-height: auto;
+    padding: 70px 24px 70px 24px;
+  }
+  .philosophy-text-box {
+    max-width: 100%;
+    z-index: 5;
+  }
+  .philosophy-quote {
+    font-size: clamp(16px, 4.2vw, 19px);
+    line-height: 1.48;
+  }
+  .philosophy-elephant {
+    display: none !important;
+  }
+  .philosophy-circle {
+    width: 160px;
+    height: 160px;
+  }
+  .philosophy-circle-top {
+    transform: translate(-50%, -70%);
+  }
+  .philosophy-circle-bottom {
+    transform: translate(-50%, 70%);
+  }
 }
 
 /* Interactive Projects Showcase Section */
 .projects-section {
+  position: relative;
   width: 100%;
-  min-height: 100vh;
-  padding: calc(1.5vw + 45px) calc(7.2vw + 60px) clamp(28px, 3.5vw, 48px) calc(7.2vw + 60px);
+  min-height: auto;
+  padding: calc(1.5vw + 35px) calc(7.2vw + 60px) clamp(60px, calc(2vw + 50px), 80px) calc(7.2vw + 60px);
+  background-color: #FFFCDE;
   display: flex;
   justify-content: center;
   align-items: flex-start; /* Fixed top alignment to keep header permanently locked in place */
   box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Subtle organic paper parchment texture for Work, Experience & Honors, and About sections - 100% procedural SVG, zero image files */
+.projects-section::before,
+.experience-section::before,
+.about-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22320%22%20height%3D%22320%22%3E%0A%20%20%3Cfilter%20id%3D%22paper%22%20x%3D%220%22%20y%3D%220%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%0A%20%20%20%20%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%220.025%22%20numOctaves%3D%223%22%20result%3D%22clouds%22%20stitchTiles%3D%22stitch%22/%3E%0A%20%20%20%20%3CfeColorMatrix%20in%3D%22clouds%22%20type%3D%22matrix%22%20values%3D%220%200%200%200%200.75%20%200%200%200%200%200.70%20%200%200%200%200%200.58%20%200%200%200%200.16%200%22%20result%3D%22mClouds%22/%3E%0A%20%20%20%20%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%220.72%22%20numOctaves%3D%223%22%20result%3D%22grain%22%20stitchTiles%3D%22stitch%22/%3E%0A%20%20%20%20%3CfeColorMatrix%20in%3D%22grain%22%20type%3D%22matrix%22%20values%3D%220%200%200%200%200.18%20%200%200%200%200%200.14%20%200%200%200%200%200.08%20%200%200%200%200.22%200%22%20result%3D%22mGrain%22/%3E%0A%20%20%20%20%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%220.22%200.1%22%20numOctaves%3D%222%22%20result%3D%22fibers%22%20stitchTiles%3D%22stitch%22/%3E%0A%20%20%20%20%3CfeColorMatrix%20in%3D%22fibers%22%20type%3D%22matrix%22%20values%3D%220%200%200%200%200.25%20%200%200%200%200%200.20%20%200%200%200%200%200.12%20%200%200%200%200.10%200%22%20result%3D%22mFibers%22/%3E%0A%20%20%20%20%3CfeComposite%20in%3D%22mGrain%22%20in2%3D%22mClouds%22%20operator%3D%22over%22%20result%3D%22c1%22/%3E%0A%20%20%20%20%3CfeComposite%20in%3D%22mFibers%22%20in2%3D%22c1%22%20operator%3D%22over%22/%3E%0A%20%20%3C/filter%3E%0A%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20filter%3D%22url%28%23paper%29%22/%3E%0A%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 320px 320px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.work-page-wrapper .projects-section {
+  padding-top: clamp(100px, 8.5vw, 130px) !important;
 }
 
 .projects-content-wrapper {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -584,56 +983,117 @@ body {
 }
 
 .projects-header {
-  position: relative; /* Context for absolute lotus illustration */
+  position: relative;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  margin-bottom: 24px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 36px;
   width: 100%;
-  flex-shrink: 0; /* Header size and position are strictly locked */
+  text-align: center;
+}
+
+.projects-header-left,
+.projects-header-group {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .header-lotus-img {
-  position: absolute;
-  right: calc(100% + 18px); /* Sits to the left of heading text with clean spacing */
-  top: 50%;
-  transform: translateY(-50%);
-  height: 58px;
-  width: auto;
-  object-fit: contain;
-  pointer-events: none;
-  user-select: none;
-  -webkit-user-drag: none;
+  display: none !important;
+}
+
+.heading-cap {
+  font-family: 'Carattere', cursive;
+  font-size: 54px;
+  line-height: 0.8;
+  font-weight: 400;
+  margin-right: 2px;
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+.heading-rest {
+  font-family: 'Riccione Serial Light', serif;
+  font-size: 34px;
+  font-weight: 300;
+  line-height: 1;
+  display: inline;
 }
 
 .projects-subtitle {
-  font-family: 'MozaicGEO', sans-serif;
-  font-size: 15px;
-  font-weight: 500; /* MozaicGEO Medium */
-  color: #736E69;
-  letter-spacing: 0.01em;
-  margin-bottom: 6px;
+  font-family: 'GT Walsheim Trial', sans-serif;
+  font-size: 17px;
+  font-weight: 500;
+  color: #373737;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  margin-bottom: 2px;
+  align-self: flex-end;
+  text-align: right;
+  width: 100%;
+  transform: translate(20px, 4px);
 }
 
 .projects-title {
-  font-family: 'MozaicGEO', sans-serif;
-  font-size: 38px;
-  font-weight: 700; /* MozaicGEO Bold */
-  color: #4A2C11;
-  letter-spacing: -0.02em;
-  line-height: 1.15;
+  font-family: 'Riccione Serial Light', serif;
+  font-size: 34px;
+  font-weight: 300;
+  color: #700145;
+  letter-spacing: -0.01em;
+  line-height: 1.05;
   margin: 0;
+  display: flex;
+  align-items: baseline;
 }
 
-/* Modern Asymmetric Editorial Project Rows */
-.projects-container,
+.projects-more-btn {
+  position: absolute;
+  right: 0;
+  bottom: 2px;
+}
+
+.projects-bottom-btn-wrap {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .projects-header .projects-more-btn {
+    display: none !important;
+  }
+
+  .projects-bottom-btn-wrap {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: clamp(20px, 3.5vw, 32px);
+    margin-bottom: 8px;
+  }
+
+  .projects-bottom-btn-wrap .projects-more-btn {
+    position: static !important;
+    margin: 0 auto !important;
+  }
+}
+
+/* Modern Compact Project Rows - Scaled Down Max Width */
+.projects-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1140px; /* Scaled down for refined aesthetic balance */
+  margin: 0 auto;
+}
+
 .projects-row {
   display: flex;
   justify-content: space-between;
   align-items: stretch;
-  gap: clamp(24px, 2.5vw, 36px);
+  gap: clamp(14px, 1.4vw, 22px);
   width: 100%;
-  margin-bottom: clamp(36px, 4vw, 56px);
+  margin-bottom: clamp(16px, 1.6vw, 24px);
 }
 
 .projects-row:last-child,
@@ -641,38 +1101,49 @@ body {
   margin-bottom: 0;
 }
 
-/* Base Project Card Architecture */
+/* Base Project Card Architecture - Clean Solid Gradient, Zero Radius, Scaled Down */
 .project-card {
   position: relative;
   display: flex;
   flex-direction: column;
-  background: #700145; /* Dark berry canvas */
-  border: none;
-  border-radius: 0; /* Zero corner radius */
-  padding: clamp(18px, 2vw, 28px);
+  background: linear-gradient(155deg, #740148 0%, #5c0039 60%, #4a002e 100%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 0 !important; /* Zero curved radius */
   box-sizing: border-box;
   text-decoration: none;
   cursor: pointer;
-  transform-style: preserve-3d;
-  perspective: 1000px;
-  width: calc(50% - clamp(12px, 1.25vw, 18px));
+  width: calc(50% - clamp(8px, 0.8vw, 12px));
   flex: 1 1 0;
-  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: 0 !important; /* Zero card padding - image is completely flush with edges */
+  box-shadow: 0 10px 26px -8px rgba(70, 0, 42, 0.22), 0 2px 6px rgba(0, 0, 0, 0.03);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              background 0.3s ease,
+              border-color 0.3s ease;
   will-change: transform;
-  box-shadow: none; /* No shadow */
+  overflow: hidden;
+}
+
+/* Remove any scallop circle perforations */
+.project-card::before,
+.project-image-box::before,
+.project-image-box::after {
+  display: none !important;
 }
 
 /* Equal 50/50 Card Widths */
 .project-card.project-wide,
 .project-card.project-compact {
-  width: calc(50% - clamp(12px, 1.25vw, 18px));
+  width: calc(50% - clamp(8px, 0.8vw, 12px));
   flex: 1 1 0;
 }
 
 /* Card Hover Elevation */
 .project-card:hover {
-  transform: translateY(-8px);
-  box-shadow: none;
+  transform: translateY(-4px);
+  background: linear-gradient(155deg, #820151 0%, #680040 60%, #520033 100%);
+  border-color: rgba(255, 255, 255, 0.24);
+  box-shadow: 0 16px 36px -8px rgba(70, 0, 42, 0.3), 0 4px 10px rgba(0, 0, 0, 0.06);
 }
 
 .project-card-inner {
@@ -680,46 +1151,244 @@ body {
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  position: relative;
 }
 
-/* Top Card Header: Category Pills & Status Badge */
-.project-card-header {
+/* Full Bleed Flush Image Canvas - Zero Borders, Zero Gaps */
+.project-image-box {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9; /* Matches native 16:9 images */
+  border-radius: 0 !important;
+  overflow: hidden;
+  background-color: transparent !important; /* Eliminates white gap around dark images */
+  border: none !important; /* Eliminates 1px border around image */
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  display: block;
+  z-index: 2;
+  transition: background-color 0.4s ease;
+  clip-path: none !important;
+}
+
+.project-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Flush edge-to-edge with card frame */
+  object-position: center;
+  border-radius: 0 !important;
+  border: none !important;
+  margin: 0;
+  padding: 0;
+  display: block;
+  user-select: none;
+  -webkit-user-drag: none;
+  pointer-events: none;
+  transform: none !important;
+  transition: opacity 0.4s ease, filter 0.4s ease;
+}
+
+/* Base Cover Image & box fade black on hover with translucent opacity */
+.project-card:hover .project-image-box {
+  background-color: #0b0b0d !important;
+}
+
+.project-card:hover .project-img {
+  opacity: 0.45;
+  filter: brightness(0.75);
+  transform: none !important;
+}
+
+/* Kamo AI: Soft white fade on hover to give high contrast for dark UI preview images */
+.project-card[href*="kamo"]:hover .project-image-box {
+  background-color: #f8f9fa !important;
+}
+
+.project-card[href*="kamo"]:hover .project-img {
+  opacity: 0.32 !important;
+  filter: brightness(1.2) contrast(0.92) !important;
+  transform: none !important;
+}
+
+/* Bus & Kamo AI Hover Thumbnail Sequences */
+.bus-hover-sequence,
+.kamo-hover-sequence {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  width: calc(100% - 40px);
+  height: calc(100% - 40px);
+  pointer-events: none;
+  z-index: 10;
+}
+
+.bus-thumb-slide,
+.kamo-thumb-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0;
+  pointer-events: none;
+  filter: none;
+}
+
+/* Instant, continuous cycling across all 6 slides with zero transition and zero gap */
+.project-card:hover .bus-thumb-slide,
+.project-card:hover .kamo-thumb-slide {
+  animation: busSlideInstant 3.6s infinite step-end;
+}
+
+.project-card:hover .bus-thumb-slide:nth-child(1),
+.project-card:hover .kamo-thumb-slide:nth-child(1) { animation-delay: 0s; }
+.project-card:hover .bus-thumb-slide:nth-child(2),
+.project-card:hover .kamo-thumb-slide:nth-child(2) { animation-delay: 0.6s; }
+.project-card:hover .bus-thumb-slide:nth-child(3),
+.project-card:hover .kamo-thumb-slide:nth-child(3) { animation-delay: 1.2s; }
+.project-card:hover .bus-thumb-slide:nth-child(4),
+.project-card:hover .kamo-thumb-slide:nth-child(4) { animation-delay: 1.8s; }
+.project-card:hover .bus-thumb-slide:nth-child(5),
+.project-card:hover .kamo-thumb-slide:nth-child(5) { animation-delay: 2.4s; }
+.project-card:hover .bus-thumb-slide:nth-child(6),
+.project-card:hover .kamo-thumb-slide:nth-child(6) { animation-delay: 3.0s; }
+
+/* Exactly 1/6 (16.666%) on, completely instant snap to next image, zero fade, zero gap */
+@keyframes busSlideInstant {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+  16.666% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.project-card-divider {
+  display: none !important;
+}
+
+/* Bottom Card Footer */
+.project-card-footer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: transparent;
+  padding: 10px 16px 12px 16px; /* Decreased bottom padding by another 8px (to 12px) */
+  box-sizing: border-box;
+  clip-path: none !important;
+}
+
+.project-title-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px; /* Reduced gap by 2px */
+  width: 100%;
+  position: relative;
+  padding-right: 0;
+}
+
+/* Arrow completely removed */
+.project-title-group::after {
+  display: none !important;
+  content: none !important;
+}
+
+.project-card-title {
+  font-family: 'Gilmer', 'MozaicGEO', 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(14px, 1.05vw, 16.5px);
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.22;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  margin: 0;
+  transition: color 0.25s ease;
+}
+
+.project-card:hover .project-card-title {
+  color: #FFFCDE;
+}
+
+/* Description using Gilmer font */
+.project-card-desc {
+  font-family: 'Gilmer', 'MozaicGEO', 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(11.5px, 0.8vw, 12.5px);
+  font-weight: 400; /* Gilmer Regular */
+  color: rgba(255, 252, 222, 0.88);
+  line-height: 1.45;
+  letter-spacing: 0.005em;
+  margin: 0;
+}
+
+/* Action button hidden */
+.project-action-btn {
+  display: none !important;
+}
+
+/* Bottom Tags & Meta Bar */
+.project-card-tags-overlay {
+  position: static;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 12px;
-  width: 100%;
-  margin-bottom: clamp(14px, 1.4vw, 20px);
+  gap: 8px;
+  z-index: 5;
+  opacity: 1 !important;
+  transform: none !important;
+  pointer-events: auto;
+  box-sizing: border-box;
+  margin-top: 22px; /* Brought upward by 5px (from 27px to 22px) */
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
 }
 
 .project-pills {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   flex-wrap: wrap;
 }
 
+/* Sharp rectangular pills with Gilmer Regular */
 .project-pill {
-  font-family: 'MozaicGEO', sans-serif;
-  font-size: clamp(11px, 0.82vw, 12.5px);
-  font-weight: 500;
-  color: #FFFCDE;
-  background: #830051;
-  border: 1px solid rgba(255, 252, 222, 0.2);
-  padding: 4px 12px;
-  border-radius: 0; /* Zero corner radius */
+  font-family: 'Gilmer', 'MozaicGEO', 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(10.5px, 0.72vw, 11.5px);
+  font-weight: 400; /* Gilmer Regular */
+  color: #ffffff;
+  background-color: #830051;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  padding: 3px 8.5px;
+  border-radius: 0 !important; /* Zero curved radius */
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  letter-spacing: 0.01em;
+  gap: 5px;
+  letter-spacing: 0.005em;
   white-space: nowrap;
+  box-shadow: none !important;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.project-card:hover .project-pill {
+  border-color: rgba(255, 255, 255, 0.5);
+  background-color: #830051;
 }
 
 .pill-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
+  width: 5px;
+  height: 5px;
+  border-radius: 0 !important; /* Zero curved radius */
   display: inline-block;
   flex-shrink: 0;
 }
@@ -727,196 +1396,28 @@ body {
 .project-meta-tag {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  font-family: 'MozaicGEO', sans-serif;
-  font-size: clamp(11px, 0.82vw, 12.5px);
-  font-weight: 500;
-  color: #FFFCDE;
-  opacity: 0.9;
+  gap: 5px;
+  font-family: 'Gilmer', 'MozaicGEO', 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(10.5px, 0.72vw, 12px);
+  font-weight: 700;
+  color: rgba(255, 252, 222, 0.88);
+  background: transparent;
+  border: none;
+  padding: 0;
+  letter-spacing: -0.005em;
   white-space: nowrap;
+  box-shadow: none !important;
 }
 
 .meta-badge-award {
-  font-family: 'MozaicGEO', sans-serif;
-  font-size: clamp(11px, 0.82vw, 12.5px);
-  font-weight: 600;
-  color: #FFFCDE;
-  background: #830051;
-  border: 1px solid rgba(255, 252, 222, 0.3);
-  padding: 3px 10px;
-  border-radius: 0; /* Zero corner radius */
-  white-space: nowrap;
-}
-
-/* Media Showcase Frame (16:10) */
-.project-image-box {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 16 / 10;
-  border-radius: 0; /* Zero corner radius */
-  overflow: hidden;
-  background-color: #ffffff;
-  border: none;
-  margin-bottom: clamp(18px, 1.8vw, 24px);
-  cursor: pointer;
-}
-
-.project-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  user-select: none;
-  -webkit-user-drag: none;
-  transition: transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: transform;
-}
-
-.project-card:hover .project-img {
-  transform: scale(1.045);
-}
-
-.project-hover-overlay,
-.project-hover-pill {
-  display: none !important;
-}
-
-/* Bottom Card Footer: Title, Description & Action Button */
-.project-card-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 16px;
-  width: 100%;
-}
-
-.project-title-group {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 6px;
-  flex: 1;
-}
-
-.project-card-title {
-  font-family: 'MozaicGEO', sans-serif;
-  font-size: clamp(20px, 1.65vw, 25px);
+  font-family: inherit;
+  font-size: inherit;
   font-weight: 700;
-  color: #FFFCDE;
-  line-height: 1.22;
-  letter-spacing: -0.015em;
-  margin: 0;
-  transition: opacity 0.25s ease;
-}
-
-.project-card:hover .project-card-title {
-  opacity: 0.95;
-}
-
-.project-card-desc {
-  font-family: 'MozaicGEO', 'Plus Jakarta Sans', sans-serif;
-  font-size: clamp(13px, 0.92vw, 14.5px);
-  font-weight: 400;
-  color: #FFFCDE;
-  opacity: 0.9;
-  line-height: 1.45;
-  letter-spacing: 0.005em;
-  margin: 0;
-}
-
-.project-action-btn {
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  background: #FFFCDE;
-  color: #700145;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease;
-  margin-top: 2px;
-}
-
-.project-card:hover .project-action-btn {
-  transform: scale(1.08) rotate(45deg);
-  background: #FFFCDE;
-  color: #700145;
-}
-
-/* Floating Project Cursor Sticker */
-.project-cursor-badge {
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  z-index: 99999;
+  color: inherit;
   background: transparent !important;
-  background-color: transparent !important;
   border: none !important;
-  border-radius: 0 !important;
   padding: 0 !important;
-  margin: 0 !important;
-  box-shadow: none !important;
-  min-width: 0 !important;
-  max-width: none !important;
-  width: auto;
-  height: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transform: translate(-50%, -50%) rotate(var(--sticker-rot, -4deg)) scale(0.35);
-  transition: opacity 0.22s cubic-bezier(0.175, 0.885, 0.32, 1.275), transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  will-change: transform, opacity;
-}
-
-.project-cursor-badge.is-visible {
-  opacity: 1;
-  transform: translate(-50%, -50%) rotate(var(--sticker-rot, -4deg)) scale(1);
-}
-
-.project-cursor-badge .cursor-sticker-img {
-  width: 125px;
-  max-width: 140px;
-  max-height: 140px;
-  height: auto;
-  object-fit: contain;
-  display: block;
-  filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.22)) drop-shadow(0 3px 6px rgba(0, 0, 0, 0.14));
-  user-select: none;
-  -webkit-user-drag: none;
-  pointer-events: none;
-  transform-origin: center center;
-}
-
-.project-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  user-select: none;
-  -webkit-user-drag: none;
-}
-
-/* Project Tag Metadata Bar */
-.project-tags {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  margin-top: 14px;
-  padding: 0 2px;
-}
-
-.project-tag {
-  font-family: 'MozaicGEO', sans-serif;
-  font-size: 15px;
-  font-weight: 500;
-  color: #1a140e;
-  letter-spacing: 0.01em;
-  white-space: nowrap;
-  user-select: none;
+  display: inline;
 }
 
 /* View More Projects Small Action Button */
@@ -937,14 +1438,15 @@ body {
   color: #FFFCDE;
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 13.5px;
-  font-weight: 400;
-  padding: 10px 20px;
+  font-weight: 500;
+  padding: 9px 18px;
   border: 1px solid #700145;
   border-radius: 0;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   text-decoration: none;
   box-shadow: none !important;
+  white-space: nowrap;
 }
 
 .btn-view-more:hover {
@@ -972,24 +1474,27 @@ body {
   transform: translateX(4px);
 }
 
-/* Experience & Honors Section (Stacking Card Page Layer 3) */
+/* Experience & Honors Section - Seamless Flow from Work */
 .experience-section {
   position: relative;
-  z-index: 3; /* Layer 3: Stacks directly in front of Featured Work */
+  z-index: 2; /* Seamless flow on same plane as Featured Work */
   width: 100%;
-  min-height: 110vh;
+  min-height: auto;
   background-color: #FFFCDE; /* Off-white sheet canvas */
   border-radius: 0; /* Sharp rectangular edges with zero curved radius */
-  box-shadow: none; /* Removed slide elevation shadow */
+  box-shadow: none !important; /* No drop shadow */
   border-top: none;
-  padding: calc(2.5vw + 100px) calc(7.2vw + 60px) 240px calc(7.2vw + 60px);
+  padding: clamp(60px, calc(2vw + 40px), 80px) calc(7.2vw + 60px) clamp(100px, 12vh, 180px) calc(7.2vw + 60px);
   display: flex;
   justify-content: center;
   align-items: flex-start;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 .experience-content-wrapper {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -1007,62 +1512,48 @@ body {
 }
 
 .experience-header {
-  position: relative; /* Context for absolute lotus illustration */
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin-bottom: 36px;
-  width: 100%;
-  flex-shrink: 0;
-}
-
-.header-lotus-img {
-  position: absolute;
-  left: -115px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 95px; /* Restored prominent size to match design */
-  height: auto;
-  user-select: none;
-  -webkit-user-drag: none;
-  pointer-events: none;
-}
-
-.experience-subtitle {
-  font-family: 'MozaicGEO', sans-serif;
-  font-size: 15px;
-  font-weight: 500;
-  color: #736E69;
-  letter-spacing: 0.01em;
-  margin-bottom: 6px;
-}
-
-.experience-title {
-  font-family: 'MozaicGEO', sans-serif;
-  font-size: 38px;
-  font-weight: 700;
-  color: #4A2C11;
-  letter-spacing: -0.02em;
-  line-height: 1.15;
-  margin: 0;
-}
-
-/* Experience Header */
-.experience-header {
   position: relative;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  margin-bottom: 32px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 36px;
   width: 100%;
+  text-align: center;
   flex-shrink: 0;
 }
 
-.experience-header-top {
-  display: flex;
+.experience-header-top,
+.experience-header-group {
+  display: inline-flex;
   flex-direction: column;
   align-items: flex-start;
+}
+
+.experience-subtitle {
+  font-family: 'GT Walsheim Trial', sans-serif;
+  font-size: 17px;
+  font-weight: 500;
+  color: #373737;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  margin-bottom: 2px;
+  align-self: flex-end;
+  text-align: right;
   width: 100%;
+  transform: translate(20px, 4px);
+}
+
+.experience-title {
+  font-family: 'Riccione Serial Light', serif;
+  font-size: 34px;
+  font-weight: 300;
+  color: #700145;
+  letter-spacing: -0.01em;
+  line-height: 1.05;
+  margin: 0;
+  display: flex;
+  align-items: baseline;
 }
 
 /* Milestones List & Interactive Accordion Cards */
@@ -1085,13 +1576,18 @@ body {
 
 .milestone-card:hover {
   border-color: #830051;
-  background-color: #FFFDF0;
+  background-color: #FFFCD8;
 }
 
 .milestone-card.is-expanded {
   background-color: #FFFCDE;
   border-color: #700145;
   box-shadow: 0 8px 30px rgba(112, 1, 69, 0.06);
+}
+
+.milestone-card.is-expanded:hover {
+  border-color: #830051;
+  background-color: #FFFCD8;
 }
 
 /* Summary Trigger Button */
@@ -1119,20 +1615,20 @@ body {
 }
 
 .milestone-role-title {
-  font-family: 'Cormorant Garamond', 'Cormorant', Georgia, serif;
-  font-size: clamp(20px, 1.7vw, 25px);
-  font-weight: 700;
-  font-style: italic;
+  font-family: 'MozaicGEO', 'Plus Jakarta Sans', sans-serif !important;
+  font-size: clamp(14px, 1.25vw, 19px) !important;
+  font-weight: 600 !important;
+  font-style: normal !important;
   color: #1a140e;
-  line-height: 1.2;
+  line-height: 1.25;
   letter-spacing: -0.01em;
 }
 
 .title-highlight-accent {
   font-family: inherit;
   color: #1a140e;
-  font-style: italic;
-  font-weight: 700;
+  font-style: normal !important;
+  font-weight: 600 !important;
   margin-right: 3px;
 }
 
@@ -1320,7 +1816,9 @@ body {
 
 @media (max-width: 600px) {
   .milestone-role-title {
-    font-size: 20px;
+    font-size: clamp(17px, 4.4vw, 21px) !important;
+    font-weight: 600 !important;
+    line-height: 1.25 !important;
   }
   .milestone-company-name {
     font-size: 13px;
@@ -1335,13 +1833,44 @@ body {
   }
 }
 
-/* Stacking Tracks */
-.work-stack-track,
-.experience-stack-track,
-.testimonials-stack-track,
+/* Stacking Tracks with explicit Layer Hierarchy & GPU Compositing */
+.work-stack-track {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  background-color: #FFFCDE;
+}
+
+.experience-stack-track {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  margin-top: 0;
+  background-color: #FFFCDE;
+}
+
+.testimonials-stack-track {
+  position: relative;
+  z-index: 4;
+  width: 100%;
+  background-color: #700145;
+}
+
 .about-stack-track {
   position: relative;
+  z-index: 5;
   width: 100%;
+  background-color: #FFFCDE;
+}
+
+.content-section,
+.experience-section,
+.testimonials-section,
+.about-section {
+  will-change: transform;
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 /* Testimonials Section (Hear it from them - Layered Card Stacking Layer 4 with Horizontal Scroll) */
@@ -1381,29 +1910,50 @@ body {
   position: relative;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: center;
   margin-bottom: 36px;
   width: 100%;
+  text-align: center;
   flex-shrink: 0;
 }
 
+.testimonials-header-group {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
 .testimonials-subtitle {
-  font-family: 'MozaicGEO', sans-serif;
-  font-size: 15px;
+  font-family: 'GT Walsheim Trial', sans-serif;
+  font-size: 17px;
   font-weight: 500;
-  color: #FFFCDE;
-  letter-spacing: 0.01em;
-  margin-bottom: 6px;
+  color: #FFFFFF;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  margin-bottom: 2px;
+  align-self: flex-end;
+  text-align: right;
+  width: 100%;
+  transform: translate(20px, 4px);
 }
 
 .testimonials-title {
-  font-family: 'MozaicGEO', sans-serif;
-  font-size: 38px;
-  font-weight: 700;
+  font-family: 'Riccione Serial Light', serif;
+  font-size: 34px;
+  font-weight: 300;
   color: #FFFCDE;
-  letter-spacing: -0.02em;
-  line-height: 1.15;
+  letter-spacing: -0.01em;
+  line-height: 1.05;
   margin: 0;
+  display: flex;
+  align-items: baseline;
+}
+
+.testimonials-title .heading-cap,
+.testimonials-title .heading-rest,
+.testimonials-title .reveal-char {
+  color: #FFFCDE !important;
 }
 
 /* Horizontal Scroll Carousel Wrapper with Right Fade Gradient Mask (No Left Fade) */
@@ -1612,8 +2162,8 @@ body {
 }
 
 .footer-headline {
-  font-family: 'Basote', sans-serif;
-  font-size: clamp(20px, 2.2vw, 32px); /* Increased by 8px */
+  font-family: 'Riccione-Serial', 'Riccione Serial Light', serif;
+  font-size: clamp(16px, 1.9vw, 30px);
   font-weight: 400;
   color: #FFFCDE;
   letter-spacing: -0.01em;
@@ -1627,6 +2177,28 @@ body {
               transform 0.85s cubic-bezier(0.16, 1, 0.3, 1),
               filter 0.85s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform, opacity, filter;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+}
+
+.footer-headline .heading-cap {
+  font-family: 'Carattere', cursive;
+  font-size: clamp(46px, 4.6vw, 68px);
+  line-height: 0.8;
+  font-weight: 400;
+  margin-right: 3px;
+  display: inline-block;
+  vertical-align: baseline;
+  color: #FFFCDE;
+}
+
+.footer-headline .heading-rest {
+  font-family: 'Riccione-Serial', 'Riccione Serial Light', serif;
+  font-size: inherit;
+  font-weight: 400;
+  color: #FFFCDE;
+  display: inline;
 }
 
 .footer-headline.in-view,
@@ -1840,45 +2412,40 @@ body {
   width: 100%;
 }
 
-/* Copied Feedback Badge */
+/* Copied Feedback Text (Minimal Text-Only Feedback) */
 .copied-badge {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
-  background: #700145;
-  color: #FFFCDE;
-  font-family: 'RealistWide', 'Plus Jakarta Sans', sans-serif;
-  font-size: clamp(10px, 0.85vw, 12px);
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  padding: 4px 10px 4px 9px;
-  border-radius: 999px;
+  gap: 0;
+  background: transparent !important;
+  color: #700145 !important;
+  font-family: 'MozaicGEO', 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(11.5px, 0.9vw, 13px);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  padding: 0 0 0 6px !important;
+  border-radius: 0 !important;
+  border: none !important;
   opacity: 0;
   visibility: hidden;
-  transform: translateX(-8px) scale(0.92);
+  transform: translateX(-4px);
   transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1),
               transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
               visibility 0.25s;
   pointer-events: none;
-  box-shadow: 0 4px 14px rgba(112, 1, 69, 0.22);
+  box-shadow: none !important;
   white-space: nowrap;
   user-select: none;
 }
 
 .copied-badge.is-visible {
-  opacity: 1;
+  opacity: 0.9;
   visibility: visible;
-  transform: translateX(0) scale(1);
+  transform: translateX(0);
 }
 
 .copied-badge::before {
-  content: '';
-  display: inline-block;
-  width: 4px;
-  height: 8px;
-  border: solid #FFFCDE;
-  border-width: 0 2px 2px 0;
-  transform: rotate(45deg) translate(-1px, -1px);
+  display: none !important;
 }
 
 /* Massive Signature Typography in Spoleto Font */
@@ -2306,27 +2873,373 @@ body {
   background: transparent;
 }
 
-/* Fullscreen Single Scrollable Presentation Slides Section */
+/* ==========================================================================
+   SAVW Internship Fullscreen Slides Section (savw.html)
+   ========================================================================== */
 .case-study-slides-container {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 1px;
+  align-items: center;
+  gap: 0;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
-  background: #E2DFCF;
-  overflow: hidden;
 }
 
 .case-study-slide-img {
   width: 100%;
+  max-width: 100%;
   height: auto;
   display: block;
-  object-fit: cover;
   margin: 0;
   padding: 0;
   border: none;
+  border-radius: 0;
+  box-shadow: none;
   user-select: none;
   -webkit-user-drag: none;
+}
+
+/* ==========================================================================
+   Case Study Layout & Open Sticky Left Sidebar Navigation
+   ========================================================================== */
+.case-study-layout-wrapper {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding-top: clamp(100px, 8.5vw, 124px);
+  padding-bottom: clamp(60px, 6vw, 100px);
+  padding-left: clamp(24px, 3.2vw, 64px);
+  padding-right: 0; /* Fully utilizes right space with zero wasted off-white margin */
+  display: flex;
+  gap: clamp(24px, 2.5vw, 44px);
+  align-items: flex-start;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* Open Left Sidebar Navigation (Sticky, No Box, No Drop Shadow, No Pills) */
+.case-study-sidebar {
+  width: clamp(190px, 15vw, 240px);
+  flex-shrink: 0;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 96px;
+  align-self: flex-start;
+  z-index: 40;
+  box-sizing: border-box;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+}
+
+.case-study-sidebar .sidebar-nav {
+  width: 100%;
+}
+
+.case-study-sidebar .sidebar-nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.case-study-sidebar .sidebar-nav-item {
+  margin: 0;
+  padding: 0;
+}
+
+.case-study-sidebar .sidebar-nav-link {
+  display: inline-block;
+  text-decoration: none;
+  color: #4A4540;
+  font-family: 'MozaicHUM', 'Mozaic HUM', 'MozaicGEO', sans-serif;
+  font-size: clamp(15px, 1.15vw, 17px);
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  box-shadow: none;
+  border-radius: 0;
+  transition: color 0.2s ease;
+  cursor: pointer;
+}
+
+/* Hover: Just text changes color to orange, no pill, no shadow, no bolding */
+.case-study-sidebar .sidebar-nav-link:hover {
+  color: #FE820A;
+  font-weight: 500;
+  background: transparent;
+  box-shadow: none;
+  border: none;
+  transform: none;
+}
+
+/* Active / Selected: Just text in orange, strictly not bold */
+.case-study-sidebar .sidebar-nav-link.active {
+  color: #FE820A;
+  font-weight: 500;
+  background: transparent;
+  box-shadow: none;
+  border: none;
+}
+
+/* Spec Table Links & Orange Buttons */
+.spec-links-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.spec-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 15px;
+  background-color: #FE820A;
+  color: #FFFFFF !important;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(13px, 0.95vw, 14px);
+  font-weight: 600;
+  line-height: 1.3;
+  text-decoration: none;
+  border-radius: 9999px;
+  border: none;
+  box-shadow: none !important;
+  transition: background-color 0.2s cubic-bezier(0.16, 1, 0.3, 1), transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+}
+
+.spec-link-btn:hover {
+  background-color: #FFA13D; /* Lighter vibrant orange on hover */
+  transform: translateY(-1.5px);
+  box-shadow: none !important;
+  color: #FFFFFF !important;
+}
+
+.spec-link-btn svg {
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.spec-link-btn:hover svg {
+  transform: translate(2px, -2px);
+}
+
+/* Right Content Area */
+.case-study-content-area {
+  flex: 1 1 0;
+  min-width: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.case-study-content-area .case-study-hero {
+  max-width: 1080px;
+  margin-bottom: clamp(28px, 3.2vw, 40px);
+  padding-right: clamp(20px, 3vw, 48px);
+}
+
+.case-study-content-area .case-study-section {
+  max-width: 1080px;
+  margin-bottom: clamp(36px, 4vw, 56px);
+  padding-right: clamp(20px, 3vw, 48px);
+}
+
+/* Continuous Slide Presentation (No gap between slides, full right space utilization) */
+.case-study-slides-flow {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0; /* Zero gap between slides */
+  margin: 0;
+  padding: 0;
+}
+
+.slide-section {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+  box-sizing: border-box;
+  scroll-margin-top: 96px;
+}
+
+.slide-section .topic-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  box-shadow: none; /* No drop shadows per user request */
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* Prototype Slide Section & Centered Action Button */
+.prototype-slide-section {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-margin-top: 96px;
+  position: relative;
+  line-height: 0;
+}
+
+.prototype-stage {
+  display: block;
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  cursor: pointer;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.prototype-stage .prototype-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* Fade to black a little */
+.prototype-dark-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.45);
+  pointer-events: none;
+  transition: background 0.3s ease;
+  z-index: 2;
+}
+
+.prototype-stage:hover .prototype-dark-overlay {
+  background: rgba(0, 0, 0, 0.55);
+}
+
+/* Centered Button & Logo Overlay - No Arrow, No Shadow, Zero Curved Radius */
+.prototype-center-btn-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.prototype-center-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(14px, 1.8vw, 22px);
+  pointer-events: auto;
+  text-align: center;
+}
+
+.prototype-center-logo {
+  width: clamp(80px, 7vw, 115px);
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  user-select: none;
+  -webkit-user-drag: none;
+  filter: none !important; /* Drop shadow removed */
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.prototype-stage:hover .prototype-center-logo {
+  transform: scale(1.06);
+}
+
+.prototype-action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(12px, 1.2vw, 16px) clamp(24px, 2.5vw, 38px);
+  background-color: #FE820A;
+  color: #FFFFFF !important;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(13.5px, 1.1vw, 16px);
+  font-weight: 600;
+  line-height: 1.3;
+  text-decoration: none;
+  border-radius: 0 !important; /* Zero curved radius */
+  border: none !important;
+  box-shadow: none !important; /* Zero shadow */
+  filter: none !important;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  pointer-events: auto;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.prototype-stage:hover .prototype-action-btn,
+.prototype-action-btn:hover {
+  background-color: #e57204;
+  transform: scale(1.03);
+  box-shadow: none !important;
+  filter: none !important;
+  color: #FFFFFF !important;
+}
+
+/* KAMO AI Specific Theme: Purple Accent for Sidebar */
+.kamo-ai-page .case-study-sidebar .sidebar-nav-link:hover {
+  color: #B757E6 !important;
+}
+
+.kamo-ai-page .case-study-sidebar .sidebar-nav-link.active {
+  color: #B757E6 !important;
+}
+
+/* Responsive Open Sidebar */
+@media (max-width: 1024px) {
+  .case-study-layout-wrapper {
+    flex-direction: column;
+    padding: clamp(84px, 10vw, 104px) 0 48px 0;
+    gap: 20px;
+  }
+
+  .case-study-content-area .case-study-hero,
+  .case-study-content-area .case-study-section {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .case-study-sidebar {
+    display: none !important;
+  }
 }
 
 /* Explore More Projects Section at bottom of Case Study */
@@ -2347,13 +3260,15 @@ body {
 }
 
 .case-study-explore-title {
-  font-family: 'MozaicGEO', sans-serif;
-  font-size: clamp(24px, 2.4vw, 34px);
-  font-weight: 700;
-  color: #4A2C11;
-  letter-spacing: -0.015em;
-  line-height: 1.2;
+  font-family: 'Riccione Serial Light', serif;
+  font-size: 34px;
+  font-weight: 300;
+  color: #700145;
+  letter-spacing: -0.01em;
+  line-height: 1.05;
   margin: 0;
+  display: flex;
+  align-items: baseline;
 }
 
 .case-study-explore-grid {
@@ -2496,9 +3411,12 @@ body {
   justify-content: center;
   align-items: flex-start;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 .about-content-wrapper {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -2519,29 +3437,44 @@ body {
   position: relative;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: center;
   margin-bottom: 24px;
   width: 100%;
+  text-align: center;
   flex-shrink: 0;
 }
 
+.about-header-group {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
 .about-subtitle {
-  font-family: 'MozaicGEO', 'Plus Jakarta Sans', sans-serif;
-  font-size: 14px;
+  font-family: 'GT Walsheim Trial', sans-serif;
+  font-size: 17px;
   font-weight: 500;
-  color: #736E69;
-  letter-spacing: 0.01em;
-  margin-bottom: 4px;
+  color: #373737;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  margin-bottom: 2px;
+  align-self: flex-end;
+  text-align: right;
+  width: 100%;
+  transform: translate(20px, 4px);
 }
 
 .about-title {
-  font-family: 'MozaicGEO', 'Plus Jakarta Sans', sans-serif;
+  font-family: 'Riccione Serial Light', serif;
   font-size: 34px;
-  font-weight: 700;
-  color: #4A2C11;
-  letter-spacing: -0.02em;
-  line-height: 1.15;
+  font-weight: 300;
+  color: #700145;
+  letter-spacing: -0.01em;
+  line-height: 1.05;
   margin: 0;
+  display: flex;
+  align-items: baseline;
 }
 
 /* Modern Editorial About Showcase */
@@ -2976,103 +3909,138 @@ body {
 }
 
 /* ==========================================================================
-   Awwwards Minimalist Portfolio Preloader
+   Atmos Gallery Editorial Preloader (Maroon & Off-White)
    ========================================================================== */
-.portfolio-preloader {
+.portfolio-preloader,
+.atmos-preloader {
   position: fixed;
   inset: 0;
   width: 100%;
   height: 100vh;
   z-index: 9999999;
-  background-color: #700145;
-  color: #FFFCDE;
+  background-color: #700145; /* Rich Maroon Backdrop */
+  color: #FFFCDE;            /* Off-White Typography & Line */
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  align-items: center;
+  justify-content: center;
   box-sizing: border-box;
   overflow: hidden;
   user-select: none;
   pointer-events: auto;
-  transition: transform 0.92s cubic-bezier(0.85, 0, 0.15, 1), opacity 0.4s ease 0.6s;
+  transition: transform 0.95s cubic-bezier(0.85, 0, 0.15, 1);
   will-change: transform;
 }
 
-.portfolio-preloader.is-dismissed {
+.portfolio-preloader.is-dismissed,
+.atmos-preloader.is-dismissed {
   transform: translateY(-100%);
   pointer-events: none;
 }
 
-.preloader-inner {
+.atmos-preloader-inner {
   width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: clamp(24px, 3.5vw, 48px) clamp(28px, 4.5vw, 64px);
+  max-width: 1400px;
+  padding: 0 clamp(24px, 5.5vw, 80px);
   box-sizing: border-box;
+}
+
+.atmos-loader-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(18px, 2.8vw, 42px);
+  width: 100%;
   position: relative;
 }
 
-/* Preloader Footer */
-.preloader-footer {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  width: 100%;
+/* Masking containers for text and counter reveal */
+.atmos-loader-title-mask,
+.atmos-loader-counter-mask {
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  line-height: 1.15;
+  padding: 6px 0;
 }
 
-.preloader-counter-row {
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-  width: 100%;
-}
-
-.preloader-counter-box {
-  display: flex;
-  align-items: baseline;
-  line-height: 0.85;
-}
-
-.preloader-number {
-  font-family: 'MozaicGEO', 'Plus Jakarta Sans', sans-serif;
-  font-size: clamp(64px, 8.5vw, 120px);
-  font-weight: 700;
-  font-style: normal;
+.atmos-loader-title {
+  font-family: 'Basote', sans-serif !important;
+  font-size: clamp(26px, 3vw, 42px);
+  font-weight: normal;
   color: #FFFCDE;
-  letter-spacing: -0.04em;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  font-variant: small-caps;
+  font-variant-caps: all-small-caps;
+  -webkit-font-variant-caps: all-small-caps;
+  text-transform: lowercase;
+  transform: translateY(115%);
+  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
   display: inline-block;
-  min-width: 1.8ch;
-  text-align: right;
-  font-variant-numeric: tabular-nums;
+  line-height: 1;
 }
 
-.preloader-percent {
-  font-family: 'MozaicGEO', 'Plus Jakarta Sans', sans-serif;
-  font-size: clamp(22px, 2.5vw, 38px);
-  font-weight: 700;
+svg.atmos-loader-title,
+.atmos-loader-svg {
+  height: clamp(24px, 2.8vw, 38px);
+  width: auto;
   color: #FFFCDE;
-  margin-left: 6px;
-  opacity: 0.92;
+  fill: #FFFCDE;
+  display: block;
 }
 
-.preloader-progress-track {
-  width: 100%;
-  height: 2px;
+.atmos-loader-line-track {
+  flex: 1;
+  height: 1.5px;
   background: rgba(255, 252, 222, 0.18);
   position: relative;
   overflow: hidden;
 }
 
-.preloader-progress-bar {
+.atmos-loader-line {
   position: absolute;
   top: 0;
   left: 0;
   height: 100%;
-  width: 0%;
+  width: 100%;
   background: #FFFCDE;
-  box-shadow: 0 0 10px rgba(255, 252, 222, 0.45);
-  transition: width 0.1s linear;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.1s linear;
+}
+
+.atmos-loader-line.exit-collapse {
+  transform-origin: right center !important;
+  transition: transform 0.65s cubic-bezier(0.85, 0, 0.15, 1) !important;
+  transform: scaleX(0) !important;
+}
+
+.atmos-loader-counter {
+  font-family: 'Basote', sans-serif;
+  font-size: clamp(24px, 2.8vw, 40px);
+  font-weight: normal;
+  color: #FFFCDE;
+  letter-spacing: -0.01em;
+  min-width: 2.2ch;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  transform: translateY(115%);
+  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-block;
+  line-height: 1;
+}
+
+/* Active entrance state */
+.atmos-preloader.is-entered .atmos-loader-title,
+.atmos-preloader.is-entered .atmos-loader-counter {
+  transform: translateY(0%);
+}
+
+/* Exit slide-up state for elements */
+.atmos-preloader.is-exiting .atmos-loader-title,
+.atmos-preloader.is-exiting .atmos-loader-counter {
+  transform: translateY(-115%);
+  transition: transform 0.65s cubic-bezier(0.85, 0, 0.15, 1);
 }
 
 /* Synchronized entrance when preloader opens */
@@ -3111,6 +4079,11 @@ body.preloader-revealed .description-container {
 
 @keyframes navReveal {
   0% { transform: translateY(-100%); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes navRevealBottom {
+  0% { transform: translateY(100%); opacity: 0; }
   100% { transform: translateY(0); opacity: 1; }
 }
 
@@ -3252,13 +4225,34 @@ body.life-page {
 }
 
 .life-section-heading {
-  font-family: 'Basote', sans-serif;
-  font-size: clamp(30px, 3.6vw, 48px);
-  font-weight: 400;
+  font-family: 'Riccione Serial Light', serif;
+  font-size: 34px;
+  font-weight: 300;
   color: #700145;
-  line-height: 1.12;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
+  line-height: 1.05;
   margin: 0;
+  display: inline-flex;
+  align-items: baseline;
+  justify-content: center;
+}
+
+.life-section-heading .heading-cap {
+  font-family: 'Carattere', cursive;
+  font-size: 54px;
+  line-height: 0.8;
+  font-weight: 400;
+  margin-right: 2px;
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+.life-section-heading .heading-rest {
+  font-family: 'Riccione Serial Light', serif;
+  font-size: 34px;
+  font-weight: 300;
+  line-height: 1;
+  display: inline;
 }
 
 .coverflow-3d-stage {
@@ -3483,20 +4477,23 @@ body.life-page {
     margin-left: 3px !important;
   }
 
-  /* Standard Single-Pill Header / Navbar (index.html) */
+  /* Standard Single-Pill Header / Navbar (index.html) - Positioned at original place (top) */
   .navbar-container:not(.case-study-navbar-container) {
-    top: 12px !important;
+    top: calc(14px + env(safe-area-inset-top, 0px)) !important;
+    bottom: auto !important;
     width: calc(100% - 24px) !important;
     max-width: 390px !important;
     display: flex !important;
     justify-content: center !important;
+    z-index: 1000 !important;
   }
 
   .navbar-container:not(.case-study-navbar-container) .navbar {
     width: 100% !important;
     justify-content: space-between !important;
     gap: 8px !important;
-    padding: 3px 3px 3px 12px !important;
+    padding: 4px 4px 4px 12px !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.16) !important;
   }
 
   .navbar-container:not(.case-study-navbar-container) .nav-link {
@@ -3516,13 +4513,15 @@ body.life-page {
     height: 11px !important;
   }
 
-  /* Dual-Pill Navbar (work.html, savw.html, transportation.html, life-beyond-the-screen.html) */
+  /* Dual-Pill Navbar (work.html, savw.html, transportation.html, life-beyond-the-screen.html) - Positioned at original place (top) */
   .case-study-navbar-container {
-    top: 12px !important;
+    top: calc(14px + env(safe-area-inset-top, 0px)) !important;
+    bottom: auto !important;
     width: calc(100% - 20px) !important;
     max-width: 390px !important;
     gap: 6px !important;
     justify-content: center !important;
+    z-index: 1000 !important;
   }
 
   .case-study-page .nav-pill-btn.back-pill {
@@ -3531,6 +4530,7 @@ body.life-page {
     gap: 4px !important;
     flex-shrink: 0 !important;
     border-radius: 9999px !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.16) !important;
   }
 
   .case-study-page .nav-pill-btn.back-pill svg {
@@ -3542,6 +4542,7 @@ body.life-page {
     gap: 6px !important;
     padding: 3px 3px 3px 8px !important;
     border-radius: 9999px !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.16) !important;
   }
 
   .case-study-page .navbar .nav-link {
@@ -3553,6 +4554,18 @@ body.life-page {
     padding: 5px 8px !important;
     gap: 3px !important;
     border-radius: 9999px !important;
+  }
+
+  /* Navbar hidden state when scrolling down: slide UP out of view */
+  .navbar-container.nav-hidden,
+  .case-study-navbar-container.nav-hidden {
+    transform: translateY(-160%) !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+
+  body.preloader-revealed .navbar-container:not(.nav-hidden) {
+    animation: navReveal 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
   }
 
   .case-study-page .navbar .mail-icon {
@@ -3574,15 +4587,14 @@ body.life-page {
     filter: none !important;
   }
 
-  .hero-bg-blue {
+  .hero-cloud-canvas {
     position: absolute !important;
     inset: 0 !important;
     width: 100% !important;
     height: 100% !important;
-    background-size: cover !important;
-    background-position: center !important;
     transform: none !important;
     z-index: 1 !important;
+    pointer-events: none !important;
   }
 
   .hero-bg-silver {
@@ -3653,12 +4665,13 @@ body.life-page {
 
   .responsive-intro-left {
     flex: 0 0 auto !important;
-    max-width: 48% !important;
+    max-width: 52% !important;
   }
 
   .responsive-intro-left .name-wrapper {
-    width: clamp(140px, 26vw, 280px) !important;
-    display: flex !important;
+    width: max-content !important;
+    max-width: 100% !important;
+    display: inline-flex !important;
     flex-direction: column !important;
     align-items: stretch !important;
   }
@@ -3669,28 +4682,42 @@ body.life-page {
     justify-content: space-between !important;
     align-items: flex-end !important;
     font-family: 'MozaicGEO', sans-serif !important;
-    font-size: clamp(14px, 2.2vw, 26px) !important;
+    font-size: clamp(14px, 2.2vw, 24px) !important;
     font-weight: 500 !important;
     color: #700145 !important;
     letter-spacing: 0.02em !important;
     margin-bottom: clamp(2px, 0.5vw, 6px) !important;
-    height: auto !important;
+    height: clamp(24px, 3.8vw, 32px) !important;
+    min-height: clamp(24px, 3.8vw, 32px) !important;
+    max-height: clamp(24px, 3.8vw, 32px) !important;
+    line-height: 1 !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+  }
+
+  .responsive-intro-left .intro-top .namaste,
+  .responsive-intro-left .intro-top .i-am {
+    display: inline-flex !important;
+    align-items: flex-end !important;
+    line-height: 1 !important;
+    height: 100% !important;
+    white-space: nowrap !important;
   }
 
   .responsive-intro-left .name {
     font-family: 'Basote', sans-serif !important;
-    font-size: clamp(42px, 7.5vw, 92px) !important;
+    font-size: clamp(52px, 9vw, 92px) !important;
     font-weight: normal !important;
     color: #700145 !important;
     margin: 0 !important;
-    line-height: 0.82 !important;
+    line-height: 0.85 !important;
     letter-spacing: -0.01em !important;
     text-align: left !important;
   }
 
   .responsive-intro-right {
     flex: 1 1 auto !important;
-    max-width: clamp(180px, 50vw, 520px) !important;
+    max-width: clamp(180px, 48vw, 520px) !important;
   }
 
   .responsive-intro-right .description-text {
@@ -3720,24 +4747,54 @@ body.life-page {
   }
 
   .marquee-label {
-    font-size: 11.5px !important;
+    font-size: 12.5px !important;
   }
 
   /* Projects / Work Section (index.html & work.html) */
   .projects-section {
-    padding: 50px 20px 40px 20px !important;
+    padding: 50px 20px 140px 20px !important;
     min-height: auto !important;
   }
 
   .work-page-wrapper .projects-section {
-    padding: 75px 20px 40px 20px !important;
+    padding: 75px 20px 140px 20px !important;
   }
 
-  .projects-header {
+  .projects-header,
+  .experience-header,
+  .testimonials-header,
+  .about-header {
     position: relative !important;
     width: 100% !important;
     margin-bottom: 20px !important;
     padding-left: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  .projects-header-left,
+  .projects-header-group,
+  .experience-header-top,
+  .experience-header-group,
+  .testimonials-header-group,
+  .about-header-group {
+    display: inline-flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  .projects-header .btn-view-more {
+    display: none !important;
+  }
+
+  /* Remove Elephants on responsive */
+  .philosophy-elephant,
+  .philosophy-elephant-left,
+  .philosophy-elephant-right {
+    display: none !important;
   }
 
   /* Remove Rose / Lotus Icon beside headings on responsive */
@@ -3749,14 +4806,37 @@ body.life-page {
     display: none !important;
   }
 
-  .projects-subtitle {
-    font-size: 13.5px !important;
-    margin-bottom: 4px !important;
+  /* Remove small subtitles - keep only big headings on responsive */
+  .projects-subtitle,
+  .experience-subtitle,
+  .testimonials-subtitle,
+  .about-subtitle {
+    display: none !important;
   }
 
-  .projects-title {
-    font-size: clamp(26px, 7vw, 34px) !important;
-    line-height: 1.2 !important;
+  .projects-title,
+  .experience-title,
+  .testimonials-title,
+  .about-title,
+  .life-section-heading {
+    font-size: clamp(24px, 6.5vw, 32px) !important;
+    line-height: 1.1 !important;
+  }
+
+  .projects-title .heading-cap,
+  .experience-title .heading-cap,
+  .testimonials-title .heading-cap,
+  .about-title .heading-cap,
+  .life-section-heading .heading-cap {
+    font-size: clamp(42px, 10vw, 52px) !important;
+  }
+
+  .projects-title .heading-rest,
+  .experience-title .heading-rest,
+  .testimonials-title .heading-rest,
+  .about-title .heading-rest,
+  .life-section-heading .heading-rest {
+    font-size: clamp(24px, 6.5vw, 32px) !important;
   }
 
   .projects-container,
@@ -3775,7 +4855,8 @@ body.life-page {
     width: 100% !important;
     max-width: 100% !important;
     flex: 1 1 100% !important;
-    padding: 16px 16px !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
     transform: none !important;
   }
 
@@ -3783,55 +4864,97 @@ body.life-page {
     transform: none !important;
   }
 
-  .project-card-header {
-    flex-wrap: wrap !important;
-    gap: 6px !important;
-    margin-bottom: 10px !important;
+  /* Keep tags visible in footer on responsive */
+  .project-card-tags-overlay {
+    display: flex !important;
+    margin-top: 22px !important; /* Brought upward by 5px */
+    padding-top: 10px !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.16) !important;
   }
-
   .project-pills {
-    gap: 6px !important;
-    flex-wrap: wrap !important;
+    display: flex !important;
   }
-
   .project-pill {
-    font-size: 11px !important;
-    padding: 3px 8px !important;
+    display: inline-flex !important;
+    font-family: 'Gilmer', 'MozaicGEO', 'Plus Jakarta Sans', sans-serif !important;
+    font-weight: 400 !important;
+    border-radius: 0 !important;
   }
-
   .project-meta-tag {
-    font-size: 11px !important;
+    display: inline-flex !important;
+    font-family: 'Gilmer', 'MozaicGEO', 'Plus Jakarta Sans', sans-serif !important;
+    font-weight: 700 !important;
+    border-radius: 0 !important;
   }
-
+  .pill-dot {
+    border-radius: 0 !important;
+  }
   .meta-badge-award {
-    font-size: 11px !important;
-    padding: 2px 7px !important;
+    display: inline !important;
   }
 
   .project-image-box {
-    aspect-ratio: 16 / 10 !important;
-    margin-bottom: 12px !important;
-    cursor: default !important;
+    aspect-ratio: 16 / 9 !important;
+    border-radius: 0 !important;
+    border: none !important;
+    background-color: transparent !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    cursor: pointer !important;
+  }
+
+  .project-img {
+    border-radius: 0 !important;
+    border: none !important;
+    object-fit: cover !important;
+    transform: none !important;
+  }
+
+  .project-image-box::before,
+  .project-image-box::after {
+    display: none !important;
   }
 
   .project-card-footer {
-    gap: 10px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    background: transparent !important;
+    padding: 10px 14px 12px 14px !important;
+    clip-path: none !important;
+  }
+
+  .project-title-group {
+    width: 100% !important;
+    max-width: 100% !important;
+    gap: 4px !important;
+    padding-right: 0 !important;
+  }
+
+  .project-title-group::after {
+    display: none !important;
+    content: none !important;
   }
 
   .project-card-title {
-    font-size: 18px !important;
+    font-family: 'Gilmer', 'MozaicGEO', 'Plus Jakarta Sans', sans-serif !important;
+    font-size: 14.5px !important;
+    font-weight: 700 !important;
     line-height: 1.25 !important;
+    color: #ffffff !important;
   }
 
   .project-card-desc {
-    font-size: 13px !important;
+    font-family: 'Gilmer', 'MozaicGEO', 'Plus Jakarta Sans', sans-serif !important;
+    font-size: 11.5px !important;
+    font-weight: 400 !important;
+    opacity: 0.9 !important;
     line-height: 1.45 !important;
+    color: rgba(255, 252, 222, 0.88) !important;
   }
 
+  /* Remove filled circle arrow action button on responsive */
   .project-action-btn {
-    width: 36px !important;
-    height: 36px !important;
-    min-width: 36px !important;
+    display: none !important;
   }
 
   .project-cursor-badge {
@@ -3859,20 +4982,6 @@ body.life-page {
     min-height: auto !important;
   }
 
-  .experience-header {
-    margin-bottom: 20px !important;
-  }
-
-  .experience-subtitle {
-    font-size: 13.5px !important;
-    margin-bottom: 4px !important;
-  }
-
-  .experience-title {
-    font-size: clamp(26px, 7vw, 34px) !important;
-    line-height: 1.2 !important;
-  }
-
   .milestone-summary-btn {
     grid-template-columns: 1fr auto !important;
     grid-template-rows: auto auto !important;
@@ -3881,7 +4990,10 @@ body.life-page {
   }
 
   .milestone-role-title {
-    font-size: 18px !important;
+    font-size: clamp(17px, 4.4vw, 21px) !important;
+    font-weight: 600 !important;
+    line-height: 1.25 !important;
+    letter-spacing: -0.01em !important;
   }
 
   .milestone-company-name {
@@ -3932,20 +5044,6 @@ body.life-page {
     padding: 50px 20px 60px 20px !important;
     min-height: auto !important;
     overflow: hidden !important;
-  }
-
-  .testimonials-header {
-    margin-bottom: 20px !important;
-  }
-
-  .testimonials-subtitle {
-    font-size: 13.5px !important;
-    margin-bottom: 4px !important;
-  }
-
-  .testimonials-title {
-    font-size: clamp(26px, 7vw, 34px) !important;
-    line-height: 1.2 !important;
   }
 
   .testimonials-grid-wrapper {
@@ -4017,20 +5115,6 @@ body.life-page {
     min-height: auto !important;
   }
 
-  .about-header {
-    margin-bottom: 20px !important;
-  }
-
-  .about-subtitle {
-    font-size: 13.5px !important;
-    margin-bottom: 4px !important;
-  }
-
-  .about-title {
-    font-size: clamp(26px, 7vw, 34px) !important;
-    line-height: 1.2 !important;
-  }
-
   .about-showcase-container {
     grid-template-columns: 1fr !important;
     gap: 20px !important;
@@ -4076,7 +5160,7 @@ body.life-page {
   }
 
   .footer-headline {
-    font-size: clamp(22px, 6vw, 34px) !important;
+    font-size: clamp(16px, 5vw, 28px) !important;
     line-height: 1.25 !important;
     color: #700145 !important;
     text-align: left !important;
@@ -4093,7 +5177,7 @@ body.life-page {
   }
 
   .footer-card-content {
-    padding: clamp(28px, 4.5vw, 44px) clamp(20px, 4vw, 36px) clamp(16px, 2.5vw, 24px) clamp(20px, 4vw, 36px) !important;
+    padding: clamp(28px, 4.5vw, 44px) clamp(20px, 4vw, 36px) calc(clamp(32px, 6vw, 48px) + 64px) clamp(20px, 4vw, 36px) !important;
   }
 
   .footer-grid {
@@ -4157,12 +5241,13 @@ body.life-page {
   }
 
   .copied-badge {
-    font-size: 10.5px !important;
-    padding: 3px 8px 3px 8px !important;
-    background: #FFFCDE !important;
+    font-size: 11px !important;
+    padding: 0 0 0 6px !important;
+    background: transparent !important;
     color: #700145 !important;
-    border-radius: 9999px !important;
+    border-radius: 0 !important;
     font-weight: 600 !important;
+    box-shadow: none !important;
   }
 
   .footer-links-list {
@@ -4191,19 +5276,10 @@ body.life-page {
     color: #ffffff !important;
   }
 
-  .footer-signature-container {
-    padding: 20px 0 0 0 !important;
-    line-height: 0.65 !important;
-    text-align: center !important;
-    overflow: hidden !important;
-  }
-
+  /* Remove signature typography from footer on responsive */
+  .footer-signature-container,
   .footer-signature-text {
-    font-size: clamp(76px, 24vw, 140px) !important;
-    color: rgba(255, 252, 222, 0.95) !important;
-    opacity: 1 !important;
-    transform: translateY(12%) !important;
-    display: inline-block !important;
+    display: none !important;
   }
 
   /* Remove all footer stickers on responsive */
@@ -4303,7 +5379,9 @@ body.life-page {
   }
 
   .life-section-heading {
-    font-size: clamp(22px, 6vw, 30px) !important;
+    display: inline-flex !important;
+    align-items: baseline !important;
+    justify-content: center !important;
   }
 
   .coverflow-3d-stage {
@@ -4345,25 +5423,48 @@ body.life-page {
 
   .responsive-intro-left {
     flex: 0 0 auto !important;
-    max-width: 48% !important;
+    max-width: 52% !important;
   }
 
   .responsive-intro-left .name-wrapper {
-    width: clamp(130px, 26vw, 200px) !important;
+    width: max-content !important;
+    max-width: 100% !important;
+    display: inline-flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
   }
 
   .responsive-intro-left .intro-top {
-    font-size: clamp(14px, 2.5vw, 18px) !important;
+    width: 100% !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: flex-end !important;
+    font-size: clamp(13px, 2.8vw, 17px) !important;
     margin-bottom: 2px !important;
+    height: clamp(20px, 4vw, 26px) !important;
+    min-height: clamp(20px, 4vw, 26px) !important;
+    max-height: clamp(20px, 4vw, 26px) !important;
+    line-height: 1 !important;
+    overflow: hidden !important;
+  }
+
+  .responsive-intro-left .intro-top .namaste,
+  .responsive-intro-left .intro-top .i-am {
+    display: inline-flex !important;
+    align-items: flex-end !important;
+    line-height: 1 !important;
+    height: 100% !important;
+    white-space: nowrap !important;
   }
 
   .responsive-intro-left .name {
-    font-size: clamp(38px, 8.5vw, 56px) !important;
+    font-size: clamp(48px, 12vw, 68px) !important;
+    line-height: 0.85 !important;
   }
 
   .responsive-intro-right {
     flex: 1 1 auto !important;
-    max-width: clamp(160px, 50vw, 320px) !important;
+    max-width: clamp(150px, 46vw, 320px) !important;
   }
 
   .responsive-intro-right .description-text {
@@ -4390,24 +5491,48 @@ body.life-page {
 
   .responsive-intro-left {
     flex: 0 0 auto !important;
-    max-width: 46% !important;
+    max-width: 54% !important;
   }
 
   .responsive-intro-left .name-wrapper {
-    width: clamp(115px, 28vw, 150px) !important;
+    width: max-content !important;
+    max-width: 100% !important;
+    display: inline-flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
   }
 
   .responsive-intro-left .intro-top {
-    font-size: 13px !important;
+    width: 100% !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: flex-end !important;
+    font-size: 13.5px !important;
+    margin-bottom: 2px !important;
+    height: 22px !important;
+    min-height: 22px !important;
+    max-height: 22px !important;
+    line-height: 1 !important;
+    overflow: hidden !important;
+  }
+
+  .responsive-intro-left .intro-top .namaste,
+  .responsive-intro-left .intro-top .i-am {
+    display: inline-flex !important;
+    align-items: flex-end !important;
+    line-height: 1 !important;
+    height: 100% !important;
+    white-space: nowrap !important;
   }
 
   .responsive-intro-left .name {
-    font-size: clamp(34px, 8.5vw, 44px) !important;
+    font-size: clamp(46px, 12.5vw, 60px) !important;
+    line-height: 0.85 !important;
   }
 
   .responsive-intro-right {
     flex: 1 1 auto !important;
-    max-width: 52% !important;
+    max-width: 46% !important;
   }
 
   .responsive-intro-right .description-text {
@@ -4421,5 +5546,91 @@ body.life-page {
 
   .case-study-page .navbar {
     padding: 3px 3px 3px 3px !important;
+  }
+}
+
+/* ==========================================================================
+   Visuvate-Inspired Motion System
+   1. Dynamic Text Roll Hover for Pill Buttons (.vv-roll)
+   2. Dreamy Blur-Up Character Stagger Scroll Reveal for Headings (.reveal-heading)
+   ========================================================================== */
+
+/* 1. Pill Button Rolling Text Interaction (.vv-roll) */
+.vv-roll {
+  display: inline-block;
+  height: 1.3em;
+  line-height: 1.3em;
+  overflow: hidden;
+  vertical-align: -0.15em;
+  position: relative;
+}
+
+.vv-roll-char {
+  display: inline-block;
+  white-space: pre;
+  transform: translateY(0);
+  transition: transform 0.45s cubic-bezier(0.22, 0.61, 0.36, 1);
+  transition-delay: calc(var(--i) * 16ms);
+  vertical-align: top;
+}
+
+.vv-roll-char > span {
+  display: block;
+  height: 1.3em;
+  line-height: 1.3em;
+}
+
+:is(a, button):hover .vv-roll-char,
+:is(a, button):focus-visible .vv-roll-char,
+.is-hovered .vv-roll-char {
+  transform: translateY(-50%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vv-roll-char {
+    transition: none !important;
+  }
+  :is(a, button):hover .vv-roll-char,
+  :is(a, button):focus-visible .vv-roll-char {
+    transform: none !important;
+  }
+}
+
+/* 2. Dreamy Blur-Up Character Reveal on Scroll for Headings */
+.reveal-heading {
+  opacity: 1;
+}
+
+.reveal-word {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.reveal-char {
+  display: inline-block;
+  white-space: pre;
+  opacity: 0;
+  transform: translateY(45%);
+  filter: blur(8px);
+  transition: opacity 0.75s cubic-bezier(0.22, 0.61, 0.36, 1),
+              transform 0.75s cubic-bezier(0.22, 0.61, 0.36, 1),
+              filter 0.75s cubic-bezier(0.22, 0.61, 0.36, 1);
+  transition-delay: calc(var(--char-index) * 20ms);
+  will-change: opacity, transform, filter;
+}
+
+.reveal-heading.in-view .reveal-char,
+.in-view .reveal-char {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-char {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
   }
 }
