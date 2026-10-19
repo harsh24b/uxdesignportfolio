@@ -18,7 +18,7 @@
   <!-- Google Fonts for Plus Jakarta Sans & Cormorant Garamond -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Carattere&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Carattere&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body class="has-preloader">
   <!-- Atmos Gallery Editorial Preloader (Maroon & Off-White) -->
@@ -61,7 +61,7 @@
     <div class="intro-container">
       <div class="name-wrapper">
         <div class="intro-top">
-          <span class="namaste">namaste,</span>
+          <span class="namaste">नमस्ते,</span>
           <span class="i-am">i am</span>
         </div>
         <h1 class="name">harsh</h1>
@@ -148,7 +148,7 @@
         <div class="responsive-intro-left">
           <div class="name-wrapper">
             <div class="intro-top">
-              <span class="namaste">namaste,</span>
+              <span class="namaste">नमस्ते,</span>
               <span class="i-am">i am</span>
             </div>
             <h1 class="name">harsh</h1>
@@ -992,7 +992,7 @@
         document.body.classList.add('preloader-revealed');
       }
 
-      const greetings = ['namaste,', 'hello,', 'hola!,', 'bonjour,', 'こんにちは,', 'ciao,'];
+      const greetings = ['नमस्ते,', 'hello,', 'hola!,', 'bonjour,', 'こんにちは,', 'ciao,'];
       let index = 0;
       const greetingEls = document.querySelectorAll('.namaste');
       
@@ -1002,7 +1002,7 @@
             el.textContent = greetings[index];
           });
           index = (index + 1) % greetings.length;
-        }, 1200);
+        }, 2200);
       }
 
       // Configure Multi-Stage Card Stacking Tracks & Sticky Offsets

@@ -448,12 +448,13 @@ body {
   align-items: flex-end; /* Anchor baseline of text to the bottom of the container */
   width: 100%;
   height: 32px; /* Lock height to prevent vertical shifting when text changes */
-  font-family: 'MozaicGEO', sans-serif;
+  font-family: 'MozaicGEO', 'Noto Sans Devanagari', 'Plus Jakarta Sans', sans-serif;
   font-size: 24px;
   font-weight: 500; /* Medium weight looks very elegant for Mozaic */
   color: rgba(255, 255, 255, 0.85);
   letter-spacing: 0.05em;
   margin-bottom: 8px; /* Shift the name down slightly for perfect spacing */
+  overflow: visible !important;
 }
 
 .name {
@@ -3231,6 +3232,75 @@ body {
   color: #B757E6 !important;
 }
 
+/* Design Research Specific Theme: Vibrant Blue Accent for Sidebar */
+.design-research-page .case-study-sidebar .sidebar-nav-link:hover {
+  color: #1DA1FF !important;
+}
+
+.design-research-page .case-study-sidebar .sidebar-nav-link.active {
+  color: #1DA1FF !important;
+}
+
+.design-research-page .spec-link-btn {
+  background-color: #1DA1FF !important;
+}
+
+.design-research-page .spec-link-btn:hover {
+  background-color: #0d8de6 !important;
+}
+
+/* Raw Files Link Button on Slide 2 */
+.raw-files-stage {
+  position: relative;
+  width: 100%;
+  line-height: 0;
+  display: block;
+}
+
+.raw-files-btn-wrap {
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.raw-files-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 12px 24px;
+  background-color: #1DA1FF;
+  color: #FFFFFF !important;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(12px, 1vw, 15px);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 4px 24px rgba(29, 161, 255, 0.45);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+}
+
+.raw-files-action-btn:hover {
+  background-color: #0088ea;
+  color: #FFFFFF !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(29, 161, 255, 0.65);
+}
+
+.raw-files-action-btn svg {
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.raw-files-action-btn:hover svg {
+  transform: translate(2px, -2px);
+}
+
 /* Responsive Open Sidebar */
 @media (max-width: 1024px) {
   .case-study-layout-wrapper {
@@ -4689,7 +4759,7 @@ body.life-page {
     display: flex !important;
     justify-content: space-between !important;
     align-items: flex-end !important;
-    font-family: 'MozaicGEO', sans-serif !important;
+    font-family: 'MozaicGEO', 'Noto Sans Devanagari', 'Plus Jakarta Sans', sans-serif !important;
     font-size: clamp(14px, 2.2vw, 24px) !important;
     font-weight: 500 !important;
     color: #700145 !important;
@@ -4699,7 +4769,7 @@ body.life-page {
     min-height: clamp(24px, 3.8vw, 32px) !important;
     max-height: clamp(24px, 3.8vw, 32px) !important;
     line-height: 1 !important;
-    overflow: hidden !important;
+    overflow: visible !important;
     box-sizing: border-box !important;
   }
 
@@ -5453,7 +5523,7 @@ body.life-page {
     min-height: clamp(20px, 4vw, 26px) !important;
     max-height: clamp(20px, 4vw, 26px) !important;
     line-height: 1 !important;
-    overflow: hidden !important;
+    overflow: visible !important;
   }
 
   .responsive-intro-left .intro-top .namaste,
