@@ -1239,8 +1239,7 @@ body {
   opacity: 0;
   pointer-events: none;
   filter: none;
-  image-rendering: -webkit-optimize-contrast;
-  image-rendering: crisp-edges;
+  image-rendering: auto;
 }
 
 /* Instant, continuous cycling across all 6 slides with zero transition and zero gap */
@@ -3249,7 +3248,7 @@ body {
   background-color: #0d8de6 !important;
 }
 
-/* Raw Files Link Button on Slide 2 */
+/* Raw Files Link on Slide 2 (Text without blue pill, shifted left by 200px) */
 .raw-files-stage {
   position: relative;
   width: 100%;
@@ -3259,7 +3258,7 @@ body {
 
 .raw-files-btn-wrap {
   position: absolute;
-  right: 5%;
+  right: calc(5% + 200px);
   top: 50%;
   transform: translateY(-50%);
   z-index: 10;
@@ -3268,37 +3267,47 @@ body {
 .raw-files-action-btn {
   display: inline-flex;
   align-items: center;
-  gap: 9px;
-  padding: 12px 24px;
-  background-color: #1DA1FF;
+  gap: 8px;
+  padding: 0;
+  background: transparent !important;
   color: #FFFFFF !important;
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: clamp(12px, 1vw, 15px);
+  font-size: clamp(13px, 1.05vw, 16px);
   font-weight: 700;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  text-decoration: none;
-  border-radius: 9999px;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  box-shadow: 0 4px 24px rgba(29, 161, 255, 0.45);
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 1.5px;
+  border-radius: 0;
+  border: none !important;
+  box-shadow: none !important;
+  transition: color 0.2s ease, transform 0.2s ease;
   white-space: nowrap;
 }
 
 .raw-files-action-btn:hover {
-  background-color: #0088ea;
-  color: #FFFFFF !important;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 32px rgba(29, 161, 255, 0.65);
+  background: transparent !important;
+  color: #1DA1FF !important;
+  transform: translateX(3px);
+  box-shadow: none !important;
 }
 
 .raw-files-action-btn svg {
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, stroke 0.2s ease;
   flex-shrink: 0;
+  stroke: #FFFFFF;
 }
 
 .raw-files-action-btn:hover svg {
   transform: translate(2px, -2px);
+  stroke: #1DA1FF;
+}
+
+@media (max-width: 860px) {
+  .raw-files-btn-wrap {
+    right: 5%;
+  }
 }
 
 /* Responsive Open Sidebar */
