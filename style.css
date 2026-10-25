@@ -6246,7 +6246,7 @@ body.life-page {
 
 /* ==========================================================================
    About Page - Creative Story Sections (Photography & Sketches)
-   Calibrated heights, eliminated dead gaps, and smooth vertical flow
+   Calibrated Sticky Pinning: Pauses at center during scroll, zero dead gaps
    ========================================================================== */
 .about-page .about-page-wrapper {
   padding-bottom: clamp(24px, 4vh, 48px);
@@ -6255,56 +6255,68 @@ body.life-page {
 .about-page .life-story-section {
   position: relative;
   width: 100%;
-  height: auto !important;
-  min-height: 100vh;
   background-color: #FFFCDE;
   box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: clamp(32px, 5vh, 56px) clamp(16px, 3vw, 40px);
   margin: 0;
-  overflow: hidden;
 }
 
-.about-page .life-story-section[data-section="photography"],
+.about-page .life-story-section[data-section="photography"] {
+  height: calc(100vh + 1100px) !important;
+}
+
 .about-page .life-story-section[data-section="art"] {
-  height: auto !important;
-  min-height: 100vh;
+  height: calc(100vh + 1600px) !important;
 }
 
 .about-page .life-story-sticky-viewport {
-  position: relative !important;
-  top: auto !important;
+  position: sticky !important;
+  top: 0 !important;
   width: 100%;
-  max-width: 1400px;
-  height: auto !important;
-  min-height: auto !important;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 0 !important;
-  margin: 0 auto;
-  overflow: visible;
-  background-color: transparent;
-  box-sizing: border-box;
+  height: 100vh !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: clamp(65px, 8.5vh, 85px) clamp(20px, 3vw, 40px) clamp(20px, 3.2vh, 36px) clamp(20px, 3vw, 40px) !important;
+  overflow: hidden !important;
+  background-color: #FFFCDE !important;
+  box-sizing: border-box !important;
+  z-index: 2;
 }
 
 .about-page .life-story-header {
-  margin-bottom: clamp(12px, 2vh, 20px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 4px;
   z-index: 10;
 }
 
 .about-page .coverflow-3d-stage {
-  height: clamp(360px, 48vh, 500px);
-  margin: 0 0 clamp(12px, 2vh, 20px) 0;
+  position: relative;
+  width: 100%;
+  height: clamp(340px, 46vh, 480px);
+  perspective: 1200px;
+  perspective-origin: 50% 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: grab;
+  user-select: none;
+  touch-action: pan-y;
+  outline: none;
+  margin: auto 0;
 }
 
 .about-page .life-story-footer {
-  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
   max-width: 680px;
+  margin-top: 6px;
   z-index: 10;
 }
 
@@ -6313,14 +6325,20 @@ body.life-page {
 }
 
 @media (max-width: 768px) {
-  .about-page .life-story-section {
-    min-height: 90vh;
-    padding: 28px 14px;
+  .about-page .life-story-section[data-section="photography"] {
+    height: calc(100vh + 800px) !important;
+  }
+  .about-page .life-story-section[data-section="art"] {
+    height: calc(100vh + 1200px) !important;
+  }
+  .about-page .life-story-sticky-viewport {
+    padding: 60px 14px 20px 14px !important;
   }
   .about-page .coverflow-3d-stage {
     height: 380px;
   }
 }
+
 
 
 
