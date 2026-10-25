@@ -5738,8 +5738,21 @@ body.life-page {
   background-color: #FFFCDE !important;
   color: #700145;
   font-family: 'Plus Jakarta Sans', sans-serif;
-  overflow-x: clip;
+  overflow: visible !important;
+  overflow-x: visible !important;
 }
+
+body.about-page {
+  overflow: visible !important;
+  overflow-x: visible !important;
+  overflow-y: visible !important;
+}
+
+html:has(body.about-page) {
+  overflow: visible !important;
+  overflow-x: visible !important;
+}
+
 
 .about-page-wrapper {
   width: 100%;
@@ -6245,27 +6258,45 @@ body.life-page {
 }
 
 /* ==========================================================================
-   About Page - Creative Story Sections (Photography & Sketches)
-   Calibrated Sticky Pinning: Pauses at center during scroll, zero dead gaps
+   About Page - Organic Paper Texture & Calibrated Sticky Pinning
    ========================================================================== */
+
+/* Subtle organic paper parchment texture for About Page (identical to home page) */
+.about-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22320%22%20height%3D%22320%22%3E%0A%20%20%3Cfilter%20id%3D%22paper%22%20x%3D%220%22%20y%3D%220%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%0A%20%20%20%20%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%220.025%22%20numOctaves%3D%223%22%20result%3D%22clouds%22%20stitchTiles%3D%22stitch%22/%3E%0A%20%20%20%20%3CfeColorMatrix%20in%3D%22clouds%22%20type%3D%22matrix%22%20values%3D%220%200%200%200%200.75%20%200%200%200%200%200.70%20%200%200%200%200%200.58%20%200%200%200%200.16%200%22%20result%3D%22mClouds%22/%3E%0A%20%20%20%20%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%220.72%22%20numOctaves%3D%223%22%20result%3D%22grain%22%20stitchTiles%3D%22stitch%22/%3E%0A%20%20%20%20%3CfeColorMatrix%20in%3D%22grain%22%20type%3D%22matrix%22%20values%3D%220%200%200%200%200.18%20%200%200%200%200%200.14%20%200%200%200%200%200.08%20%200%200%200%200.22%200%22%20result%3D%22mGrain%22/%3E%0A%20%20%20%20%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%220.22%200.1%22%20numOctaves%3D%222%22%20result%3D%22fibers%22%20stitchTiles%3D%22stitch%22/%3E%0A%20%20%20%20%3CfeColorMatrix%20in%3D%22fibers%22%20type%3D%22matrix%22%20values%3D%220%200%200%200%200.25%20%200%200%200%200%200.20%20%200%200%200%200%200.12%20%200%200%200%200%200.10%200%22%20result%3D%22mFibers%22/%3E%0A%20%20%20%20%3CfeComposite%20in%3D%22mGrain%22%20in2%3D%22mClouds%22%20operator%3D%22over%22%20result%3D%22c1%22/%3E%0A%20%20%20%20%3CfeComposite%20in%3D%22mFibers%22%20in2%3D%22c1%22%20operator%3D%22over%22/%3E%0A%20%20%3C/filter%3E%0A%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20filter%3D%22url%28%23paper%29%22/%3E%0A%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 320px 320px;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.95;
+}
+
 .about-page .about-page-wrapper {
-  padding-bottom: clamp(24px, 4vh, 48px);
+  position: relative;
+  z-index: 1;
+  padding-bottom: clamp(16px, 2.5vh, 32px);
 }
 
 .about-page .life-story-section {
   position: relative;
   width: 100%;
-  background-color: #FFFCDE;
+  background-color: transparent;
   box-sizing: border-box;
   margin: 0;
+  overflow: visible !important;
 }
 
 .about-page .life-story-section[data-section="photography"] {
-  height: calc(100vh + 1100px) !important;
+  height: calc(100vh + 550px) !important;
 }
 
 .about-page .life-story-section[data-section="art"] {
-  height: calc(100vh + 1600px) !important;
+  height: calc(100vh + 750px) !important;
 }
 
 .about-page .life-story-sticky-viewport {
@@ -6277,7 +6308,7 @@ body.life-page {
   flex-direction: column !important;
   align-items: center !important;
   justify-content: space-between !important;
-  padding: clamp(65px, 8.5vh, 85px) clamp(20px, 3vw, 40px) clamp(20px, 3.2vh, 36px) clamp(20px, 3vw, 40px) !important;
+  padding: clamp(65px, 8.5vh, 85px) clamp(20px, 3vw, 40px) clamp(20px, 3vh, 32px) clamp(20px, 3vw, 40px) !important;
   overflow: hidden !important;
   background-color: #FFFCDE !important;
   box-sizing: border-box !important;
@@ -6322,14 +6353,16 @@ body.life-page {
 
 .about-page .footer-section {
   margin-top: 0;
+  position: relative;
+  z-index: 3;
 }
 
 @media (max-width: 768px) {
   .about-page .life-story-section[data-section="photography"] {
-    height: calc(100vh + 800px) !important;
+    height: calc(100vh + 450px) !important;
   }
   .about-page .life-story-section[data-section="art"] {
-    height: calc(100vh + 1200px) !important;
+    height: calc(100vh + 600px) !important;
   }
   .about-page .life-story-sticky-viewport {
     padding: 60px 14px 20px 14px !important;
@@ -6338,6 +6371,7 @@ body.life-page {
     height: 380px;
   }
 }
+
 
 
 
