@@ -13,14 +13,23 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Carattere&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    html, body, .about-page, .about-page-wrapper {
-      overflow: visible !important;
+    html, body {
       overflow-x: clip !important;
-      height: auto !important;
       background-color: #FFFCDE !important;
       color: #700145;
       margin: 0;
       padding: 0;
+    }
+    .about-page {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+    .about-page-wrapper {
+      margin: 0 auto !important;
+      width: 100%;
+      max-width: 1260px;
     }
   </style>
 </head>
@@ -1312,7 +1321,40 @@
         carousels.forEach(c => c.update3DTransforms());
       });
 
-      // 6. Interactive Draggable Stickers in Contact Footer
+      // 6. Footer Section Appearance Animation Observer
+      const footerHeadline = document.querySelector('.footer-headline');
+      const footerCard = document.querySelector('.footer-card');
+
+      if (footerHeadline || footerCard) {
+        const footerObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('in-view');
+            }
+          });
+        }, {
+          threshold: 0.12,
+          rootMargin: '0px 0px -40px 0px'
+        });
+        if (footerHeadline) footerObserver.observe(footerHeadline);
+        if (footerCard) footerObserver.observe(footerCard);
+
+        const checkFooterInView = () => {
+          const windowH = window.innerHeight || 800;
+          if (footerHeadline) {
+            const rect = footerHeadline.getBoundingClientRect();
+            if (rect.top < windowH * 0.90) footerHeadline.classList.add('in-view');
+          }
+          if (footerCard) {
+            const rect = footerCard.getBoundingClientRect();
+            if (rect.top < windowH * 0.88) footerCard.classList.add('in-view');
+          }
+        };
+        window.addEventListener('scroll', checkFooterInView, { passive: true });
+        checkFooterInView();
+      }
+
+      // 7. Interactive Draggable Stickers in Contact Footer
       const initContactStickers = () => {
         const footerCard = document.querySelector('.footer-card');
         if (!footerCard) return;
