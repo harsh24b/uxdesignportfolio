@@ -5826,36 +5826,76 @@ body.life-page {
 }
 
 /* --------------------------------------------------------------------------
-   1. HERO INTRO & 7-PHOTO ARCHITECTURAL SHOWCASE
+   1. HERO INTRO & TACTILE EDITORIAL PHOTO DECK (Creative Card Stack)
    -------------------------------------------------------------------------- */
 .about-hero-grid {
   display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: clamp(36px, 4.5vw, 64px);
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(40px, 5vw, 72px);
   align-items: center;
   width: 100%;
 }
 
-/* Left: Interactive Multi-Photo Stage */
-.about-photo-deck {
+.about-deck-container {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  align-items: center;
+  gap: 20px;
   width: 100%;
 }
 
-.about-photo-viewport {
+.about-deck-stage {
   position: relative;
   width: 100%;
-  height: clamp(440px, 52vh, 560px);
-  background: #FAF8EB;
-  border: 1px solid #700145;
-  border-radius: 4px;
-  overflow: hidden;
-  box-shadow: none !important;
+  max-width: 440px;
+  height: clamp(460px, 54vh, 550px);
+  perspective: 1200px;
+  user-select: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.about-photo-display-img {
+.about-deck-card {
+  position: absolute;
+  width: clamp(270px, 30vw, 350px);
+  aspect-ratio: 3 / 4.15;
+  background: #FFFDF0;
+  border: 1px solid rgba(112, 1, 69, 0.35);
+  border-radius: 6px;
+  padding: 12px 12px 16px;
+  box-sizing: border-box;
+  box-shadow: 0 16px 36px -12px rgba(112, 1, 69, 0.22), 0 3px 8px rgba(0, 0, 0, 0.04);
+  transform-origin: center center;
+  transition: transform 0.52s cubic-bezier(0.2, 0.9, 0.3, 1.2), box-shadow 0.3s ease, opacity 0.3s ease;
+  touch-action: none;
+  will-change: transform;
+}
+
+.about-deck-card:hover {
+  box-shadow: 0 22px 48px -12px rgba(112, 1, 69, 0.32), 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.deck-card-inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.deck-card-image-box {
+  width: 100%;
+  flex: 1;
+  border-radius: 3px;
+  overflow: hidden;
+  background: #FAF8EB;
+  border: 1px solid rgba(112, 1, 69, 0.15);
+  position: relative;
+}
+
+.deck-card-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -5863,135 +5903,102 @@ body.life-page {
   display: block;
   image-rendering: -webkit-optimize-contrast;
   image-rendering: crisp-edges;
-  transition: opacity 0.35s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
 }
 
-.about-photo-viewport:hover .about-photo-display-img {
-  transform: scale(1.02);
+.deck-card-footer {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 2px 4px 0;
 }
 
-.about-photo-meta-bar {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(255, 252, 222, 0.96);
-  border-top: 1px solid #700145;
-  padding: 12px 18px;
+.deck-card-caption {
+  font-family: 'Carattere', cursive;
+  font-size: 26px;
+  line-height: 0.95;
+  color: #700145;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+.deck-card-num {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: rgba(112, 1, 69, 0.65);
+}
+
+/* Controls */
+.about-deck-controls {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  z-index: 3;
-  backdrop-filter: blur(6px);
+  width: 100%;
+  max-width: 440px;
+  flex-wrap: wrap;
 }
 
-.about-photo-caption-title {
-  font-size: 14px;
-  font-weight: 700;
-  color: #700145;
-  display: flex;
+.about-deck-shuffle-btn {
+  display: inline-flex;
   align-items: center;
   gap: 8px;
-}
-
-.about-photo-caption-sub {
-  font-size: 12.5px;
-  font-weight: 500;
-  color: rgba(112, 1, 69, 0.75);
-}
-
-.about-photo-counter {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 13px;
-  font-weight: 700;
+  background: #FFFDF0;
   color: #700145;
-  letter-spacing: 0.08em;
-}
-
-/* Interactive 7-Photo Filmstrip */
-.about-filmstrip-strip {
-  display: flex;
-  gap: 10px;
-  width: 100%;
-}
-
-.about-filmstrip-thumb {
-  flex: 1;
-  aspect-ratio: 1;
-  height: 64px;
-  border: 1px solid rgba(112, 1, 69, 0.25);
+  border: 1px solid #700145;
   border-radius: 4px;
-  overflow: hidden;
-  background: #FAF8EB;
+  padding: 7px 14px;
+  font-size: 12.5px;
+  font-weight: 600;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   cursor: pointer;
-  padding: 0;
-  position: relative;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.2s ease;
   box-shadow: none !important;
 }
 
-.about-filmstrip-thumb img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  image-rendering: -webkit-optimize-contrast;
-  filter: grayscale(30%) contrast(98%);
-  transition: all 0.25s ease;
+.about-deck-shuffle-btn:hover {
+  background: #700145;
+  color: #FFFCDE;
+  transform: translateY(-1px);
 }
 
-.about-filmstrip-thumb:hover {
-  border-color: #FE820A;
-  transform: translateY(-2px);
-}
-
-.about-filmstrip-thumb:hover img {
-  filter: none;
-}
-
-.about-filmstrip-thumb.is-active {
-  border: 2px solid #700145;
-  transform: translateY(-2px);
-}
-
-.about-filmstrip-thumb.is-active img {
-  filter: none;
-}
-
-.about-filmstrip-nav-row {
+.about-deck-pills {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 12px;
-  font-weight: 600;
-  color: rgba(112, 1, 69, 0.7);
-  padding: 2px 4px 0;
+  gap: 5px;
 }
 
-.about-filmstrip-arrows {
-  display: flex;
-  gap: 6px;
-}
-
-.about-filmstrip-arrow-btn {
-  background: transparent;
-  border: 1px solid rgba(112, 1, 69, 0.3);
-  border-radius: 4px;
-  width: 28px;
-  height: 28px;
+.about-deck-pill {
+  width: 26px;
+  height: 26px;
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 3px;
+  border: 1px solid rgba(112, 1, 69, 0.25);
+  background: #FFFDF0;
   color: #700145;
+  font-size: 11.5px;
+  font-weight: 700;
   cursor: pointer;
   transition: all 0.2s ease;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  box-shadow: none !important;
 }
 
-.about-filmstrip-arrow-btn:hover {
-  border-color: #700145;
+.about-deck-pill:hover,
+.about-deck-pill.is-active {
   background: #700145;
   color: #FFFCDE;
+  border-color: #700145;
+}
+
+.about-deck-hint {
+  font-size: 11.5px;
+  font-weight: 500;
+  color: rgba(112, 1, 69, 0.65);
+  margin-left: auto;
 }
 
 /* Right: Narrative Side */
@@ -6003,8 +6010,8 @@ body.life-page {
 
 .about-hero-p {
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: clamp(15.5px, 1.15vw, 17.5px);
-  line-height: 1.7;
+  font-size: clamp(16px, 1.2vw, 18px);
+  line-height: 1.75;
   color: rgba(112, 1, 69, 0.9);
   margin: 0;
 }
@@ -6091,219 +6098,7 @@ body.life-page {
   background: rgba(112, 1, 69, 0.06);
 }
 
-/* --------------------------------------------------------------------------
-   2. EXPERIENCE & EDUCATION ACCORDION MILESTONES (With Official Brand Logos)
-   -------------------------------------------------------------------------- */
-.about-milestones-list {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  width: 100%;
-}
 
-.about-milestone-card {
-  background: #FFFCDE;
-  border: 1px solid #700145;
-  border-radius: 4px;
-  overflow: hidden;
-  transition: all 0.25s ease;
-  box-shadow: none !important;
-}
-
-.about-milestone-card.is-expanded {
-  background: #FFFDF0;
-}
-
-.about-milestone-summary-btn {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 18px;
-  padding: clamp(16px, 2vw, 22px) clamp(18px, 2.5vw, 28px);
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  text-align: left;
-  color: #700145;
-  transition: background 0.2s ease;
-}
-
-.about-milestone-summary-btn:hover {
-  background: rgba(112, 1, 69, 0.03);
-}
-
-.about-milestone-main-col {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-  flex: 1;
-}
-
-.about-milestone-brand-icon-box {
-  width: 44px;
-  height: 44px;
-  border: 1px solid rgba(112, 1, 69, 0.25);
-  border-radius: 4px;
-  background: #FFFFFF;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  padding: 4px;
-  box-sizing: border-box;
-}
-
-.about-milestone-brand-icon-box img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-.about-milestone-role-title {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: clamp(17px, 1.3vw, 20px);
-  font-weight: 700;
-  color: #700145;
-  margin: 0;
-  line-height: 1.25;
-}
-
-.about-milestone-company-name {
-  font-size: 14px;
-  font-weight: 600;
-  color: rgba(112, 1, 69, 0.75);
-  margin-top: 3px;
-}
-
-.about-milestone-meta-col {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.about-milestone-date-tag {
-  font-size: 12.5px;
-  font-weight: 700;
-  color: #700145;
-  border: 1px solid rgba(112, 1, 69, 0.25);
-  border-radius: 4px;
-  padding: 4px 10px;
-  white-space: nowrap;
-}
-
-.about-milestone-type-tag {
-  font-size: 11.5px;
-  font-weight: 700;
-  color: #FE820A;
-  border: 1px solid rgba(254, 130, 10, 0.4);
-  border-radius: 4px;
-  padding: 4px 9px;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  white-space: nowrap;
-}
-
-.about-milestone-expand-arrow {
-  width: 28px;
-  height: 28px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid rgba(112, 1, 69, 0.25);
-  border-radius: 4px;
-  color: #700145;
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background 0.2s ease;
-  flex-shrink: 0;
-}
-
-.about-milestone-card.is-expanded .about-milestone-expand-arrow {
-  transform: rotate(180deg);
-  background: #700145;
-  color: #FFFCDE;
-  border-color: #700145;
-}
-
-.about-milestone-drawer {
-  display: none;
-  border-top: 1px solid rgba(112, 1, 69, 0.15);
-  padding: clamp(20px, 2.5vw, 28px) clamp(18px, 2.5vw, 28px);
-}
-
-.about-milestone-card.is-expanded .about-milestone-drawer {
-  display: block;
-}
-
-.about-milestone-drawer-grid {
-  display: grid;
-  grid-template-columns: minmax(130px, 160px) 1fr;
-  gap: clamp(20px, 3vw, 36px);
-  align-items: start;
-}
-
-.about-milestone-logo-frame {
-  width: 100%;
-  aspect-ratio: 16 / 10;
-  border: 1px solid rgba(112, 1, 69, 0.25);
-  border-radius: 4px;
-  background: #FFFFFF;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 14px;
-  box-sizing: border-box;
-}
-
-.about-milestone-logo-frame img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-}
-
-.about-milestone-drawer-body {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.about-milestone-desc {
-  font-size: 14.5px;
-  line-height: 1.65;
-  color: rgba(112, 1, 69, 0.9);
-  margin: 0;
-}
-
-.about-milestone-bullets {
-  margin: 0;
-  padding-left: 18px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  font-size: 14px;
-  line-height: 1.6;
-  color: rgba(112, 1, 69, 0.85);
-}
-
-.about-milestone-bullets li::marker {
-  color: #700145;
-}
-
-.about-milestone-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 4px;
-}
-
-.about-milestone-tag {
-  font-size: 12px;
-  font-weight: 600;
-  color: #700145;
-  background: #FFFCDE;
-  border: 1px solid rgba(112, 1, 69, 0.2);
-  border-radius: 4px;
-  padding: 4px 10px;
-}
 
 /* --------------------------------------------------------------------------
    3. SKILLS & METHODOLOGIES (4-Quadrant Architectural Grid)
@@ -6520,17 +6315,11 @@ body.life-page {
 @media (max-width: 992px) {
   .about-hero-grid {
     grid-template-columns: 1fr;
-    gap: 36px;
+    gap: 40px;
   }
   .about-skills-quadrant-grid,
   .about-tools-workbench-grid {
     grid-template-columns: 1fr;
-  }
-  .about-milestone-drawer-grid {
-    grid-template-columns: 1fr;
-  }
-  .about-milestone-logo-frame {
-    max-width: 140px;
   }
 }
 
@@ -6539,17 +6328,19 @@ body.life-page {
     padding-top: 80px;
     gap: 48px;
   }
-  .about-filmstrip-strip {
-    gap: 5px;
+  .about-deck-stage {
+    height: 420px;
   }
-  .about-milestone-summary-btn {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
+  .about-deck-card {
+    width: 250px;
   }
-  .about-milestone-meta-col {
+  .about-deck-controls {
+    justify-content: center;
+  }
+  .about-deck-hint {
     width: 100%;
-    justify-content: space-between;
+    text-align: center;
+    margin-left: 0;
   }
   .about-workbench-tiles-grid {
     grid-template-columns: 1fr;
