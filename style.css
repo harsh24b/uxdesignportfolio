@@ -5760,34 +5760,46 @@ body.life-page {
   position: relative;
 }
 
-/* Editorial Section Header matching index.html */
-.about-header-group {
+/* Centered Section Header matching home section (index.html) */
+.about-section-header {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  margin-bottom: clamp(28px, 3.5vw, 44px);
-  position: relative;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
   width: 100%;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.about-header-group {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
 }
 
 .about-subtitle {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 13px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: #700145;
-  margin-bottom: 8px;
-  display: block;
+  font-family: 'GT Walsheim Trial', sans-serif;
+  font-size: 17px;
+  font-weight: 500;
+  color: #373737;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  margin-bottom: 2px;
+  align-self: flex-end;
+  text-align: right;
+  width: 100%;
+  transform: translate(20px, 4px);
 }
 
 .about-title {
   font-family: 'Riccione Serial Light', serif;
-  font-size: clamp(30px, 3.6vw, 46px);
+  font-size: 34px;
   font-weight: 300;
-  line-height: 1.05;
   color: #700145;
-  letter-spacing: -0.015em;
+  letter-spacing: -0.01em;
+  line-height: 1.05;
   margin: 0;
   display: flex;
   align-items: baseline;
@@ -5795,10 +5807,10 @@ body.life-page {
 
 .about-title .heading-cap {
   font-family: 'Carattere', cursive;
-  font-size: clamp(50px, 5.8vw, 74px);
+  font-size: 54px;
   line-height: 0.8;
   font-weight: 400;
-  margin-right: 3px;
+  margin-right: 2px;
   display: inline-block;
   vertical-align: baseline;
   color: #700145;
@@ -5806,8 +5818,10 @@ body.life-page {
 
 .about-title .heading-rest {
   font-family: 'Riccione Serial Light', serif;
-  font-size: clamp(30px, 3.6vw, 46px);
+  font-size: 34px;
   font-weight: 300;
+  line-height: 1;
+  display: inline;
   color: #700145;
 }
 
@@ -5816,9 +5830,9 @@ body.life-page {
    -------------------------------------------------------------------------- */
 .about-hero-grid {
   display: grid;
-  grid-template-columns: 1.1fr 1.05fr;
+  grid-template-columns: 1.2fr 1fr;
   gap: clamp(36px, 4.5vw, 64px);
-  align-items: start;
+  align-items: center;
   width: 100%;
 }
 
@@ -5833,7 +5847,7 @@ body.life-page {
 .about-photo-viewport {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 12;
+  height: clamp(440px, 52vh, 560px);
   background: #FAF8EB;
   border: 1px solid #700145;
   border-radius: 4px;
@@ -5845,38 +5859,15 @@ body.life-page {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   display: block;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
   transition: opacity 0.35s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .about-photo-viewport:hover .about-photo-display-img {
-  transform: scale(1.025);
-}
-
-.about-photo-status-badge {
-  position: absolute;
-  top: 14px;
-  left: 14px;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(255, 252, 222, 0.94);
-  border: 1px solid #700145;
-  border-radius: 4px;
-  padding: 5px 11px;
-  font-size: 11.5px;
-  font-weight: 700;
-  color: #700145;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  z-index: 3;
-}
-
-.about-photo-status-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #00A859;
+  transform: scale(1.02);
 }
 
 .about-photo-meta-bar {
@@ -5884,19 +5875,19 @@ body.life-page {
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(255, 252, 222, 0.95);
+  background: rgba(255, 252, 222, 0.96);
   border-top: 1px solid #700145;
-  padding: 10px 16px;
+  padding: 12px 18px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
   z-index: 3;
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(6px);
 }
 
 .about-photo-caption-title {
-  font-size: 13.5px;
+  font-size: 14px;
   font-weight: 700;
   color: #700145;
   display: flex;
@@ -5905,14 +5896,14 @@ body.life-page {
 }
 
 .about-photo-caption-sub {
-  font-size: 12px;
+  font-size: 12.5px;
   font-weight: 500;
-  color: rgba(112, 1, 69, 0.7);
+  color: rgba(112, 1, 69, 0.75);
 }
 
 .about-photo-counter {
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 700;
   color: #700145;
   letter-spacing: 0.08em;
@@ -5921,13 +5912,14 @@ body.life-page {
 /* Interactive 7-Photo Filmstrip */
 .about-filmstrip-strip {
   display: flex;
-  gap: 8px;
+  gap: 10px;
   width: 100%;
 }
 
 .about-filmstrip-thumb {
   flex: 1;
   aspect-ratio: 1;
+  height: 64px;
   border: 1px solid rgba(112, 1, 69, 0.25);
   border-radius: 4px;
   overflow: hidden;
@@ -5944,7 +5936,8 @@ body.life-page {
   height: 100%;
   object-fit: cover;
   display: block;
-  filter: grayscale(40%) contrast(95%);
+  image-rendering: -webkit-optimize-contrast;
+  filter: grayscale(30%) contrast(98%);
   transition: all 0.25s ease;
 }
 
