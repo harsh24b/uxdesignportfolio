@@ -7,7 +7,7 @@
   <meta name="description" content="Hey, I’m Harsh, a Product Designer pursuing B.Des in User Experience Design at MIT Institute of Design, Pune. Explore my experience at Škoda Auto Volkswagen India, CIY Crafts, design craft, tools, photography, and sketches.">
   <link rel="icon" type="image/png" href="faviconnew.webp?v=2">
   <link rel="apple-touch-icon" href="faviconnew.webp?v=2">
-  <link rel="stylesheet" href="style.css?v=154_editorial_about">
+  <link rel="stylesheet" href="style.css?v=155_coverflow_scroll_chain">
   <!-- Google Fonts for Plus Jakarta Sans, Cormorant Garamond, and Carattere -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -77,104 +77,59 @@
           <div class="about-deck-stage" id="aboutDeckStage" role="region" aria-label="Interactive Photo Deck">
             
             <!-- Card 01 -->
-            <div class="about-deck-card" data-index="0" data-caption="Moments & Flow" data-stamp="01 / 06">
+            <div class="about-deck-card" data-index="0">
               <div class="deck-card-inner">
                 <div class="deck-card-image-box">
-                  <img src="about-photo-1.webp" alt="Harsh - Snapshot 01" class="deck-card-img" loading="eager" decoding="async">
-                </div>
-                <div class="deck-card-footer">
-                  <span class="deck-card-caption">Moments &amp; Flow</span>
-                  <span class="deck-card-num">01 / 06</span>
+                  <img src="about-photo-1.webp" alt="Harsh - Photo 01" class="deck-card-img" loading="eager" decoding="async">
                 </div>
               </div>
             </div>
 
             <!-- Card 02 -->
-            <div class="about-deck-card" data-index="1" data-caption="Behind the Lens" data-stamp="02 / 06">
+            <div class="about-deck-card" data-index="1">
               <div class="deck-card-inner">
                 <div class="deck-card-image-box">
-                  <img src="about-photo-2.webp" alt="Harsh - Snapshot 02" class="deck-card-img" loading="eager" decoding="async">
-                </div>
-                <div class="deck-card-footer">
-                  <span class="deck-card-caption">Behind the Lens</span>
-                  <span class="deck-card-num">02 / 06</span>
+                  <img src="about-photo-2.webp" alt="Harsh - Photo 02" class="deck-card-img" loading="eager" decoding="async">
                 </div>
               </div>
             </div>
 
             <!-- Card 03 -->
-            <div class="about-deck-card" data-index="2" data-caption="Quiet Focus" data-stamp="03 / 06">
+            <div class="about-deck-card" data-index="2">
               <div class="deck-card-inner">
                 <div class="deck-card-image-box">
-                  <img src="about-photo-3.webp" alt="Harsh - Snapshot 03" class="deck-card-img" loading="lazy" decoding="async">
-                </div>
-                <div class="deck-card-footer">
-                  <span class="deck-card-caption">Quiet Focus</span>
-                  <span class="deck-card-num">03 / 06</span>
+                  <img src="about-photo-3.webp" alt="Harsh - Photo 03" class="deck-card-img" loading="lazy" decoding="async">
                 </div>
               </div>
             </div>
 
             <!-- Card 04 -->
-            <div class="about-deck-card" data-index="3" data-caption="In the Element" data-stamp="04 / 06">
+            <div class="about-deck-card" data-index="3">
               <div class="deck-card-inner">
                 <div class="deck-card-image-box">
-                  <img src="about-photo-4.webp" alt="Harsh - Snapshot 04" class="deck-card-img" loading="lazy" decoding="async">
-                </div>
-                <div class="deck-card-footer">
-                  <span class="deck-card-caption">In the Element</span>
-                  <span class="deck-card-num">04 / 06</span>
+                  <img src="about-photo-4.webp" alt="Harsh - Photo 04" class="deck-card-img" loading="lazy" decoding="async">
                 </div>
               </div>
             </div>
 
             <!-- Card 05 -->
-            <div class="about-deck-card" data-index="4" data-caption="Perspective & Light" data-stamp="05 / 06">
+            <div class="about-deck-card" data-index="4">
               <div class="deck-card-inner">
                 <div class="deck-card-image-box">
-                  <img src="about-photo-5.webp" alt="Harsh - Snapshot 05" class="deck-card-img" loading="lazy" decoding="async">
-                </div>
-                <div class="deck-card-footer">
-                  <span class="deck-card-caption">Perspective &amp; Light</span>
-                  <span class="deck-card-num">05 / 06</span>
+                  <img src="about-photo-5.webp" alt="Harsh - Photo 05" class="deck-card-img" loading="lazy" decoding="async">
                 </div>
               </div>
             </div>
 
             <!-- Card 06 -->
-            <div class="about-deck-card" data-index="5" data-caption="The Human Spark" data-stamp="06 / 06">
+            <div class="about-deck-card" data-index="5">
               <div class="deck-card-inner">
                 <div class="deck-card-image-box">
-                  <img src="about-photo-6.webp" alt="Harsh - Snapshot 06" class="deck-card-img" loading="lazy" decoding="async">
-                </div>
-                <div class="deck-card-footer">
-                  <span class="deck-card-caption">The Human Spark</span>
-                  <span class="deck-card-num">06 / 06</span>
+                  <img src="about-photo-6.webp" alt="Harsh - Photo 06" class="deck-card-img" loading="lazy" decoding="async">
                 </div>
               </div>
             </div>
 
-          </div>
-
-          <!-- Tactile Deck Controls -->
-          <div class="about-deck-controls">
-            <button class="about-deck-shuffle-btn" id="deckShuffleBtn" aria-label="Shuffle photo deck" title="Click to cycle next snapshot">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="23 4 23 10 17 10"></polyline>
-                <polyline points="1 20 1 14 7 14"></polyline>
-                <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
-              </svg>
-              <span>Cycle Snapshot</span>
-            </button>
-            <div class="about-deck-pills" role="tablist" aria-label="Select snapshot">
-              <button class="about-deck-pill is-active" data-index="0" aria-label="Snapshot 1">1</button>
-              <button class="about-deck-pill" data-index="1" aria-label="Snapshot 2">2</button>
-              <button class="about-deck-pill" data-index="2" aria-label="Snapshot 3">3</button>
-              <button class="about-deck-pill" data-index="3" aria-label="Snapshot 4">4</button>
-              <button class="about-deck-pill" data-index="4" aria-label="Snapshot 5">5</button>
-              <button class="about-deck-pill" data-index="5" aria-label="Snapshot 6">6</button>
-            </div>
-            <span class="about-deck-hint">Click card to flick • 6 snapshots</span>
           </div>
         </div>
 
@@ -225,6 +180,7 @@
             <span class="about-quadrant-tag">Stakeholder Interviews</span>
             <span class="about-quadrant-tag">Customer Journey Mapping</span>
             <span class="about-quadrant-tag">Mental Modeling</span>
+            <span class="about-quadrant-tag">Questionnaire Design</span>
           </div>
         </article>
 
@@ -285,7 +241,6 @@
             <span class="about-quadrant-tag">A/B Testing</span>
             <span class="about-quadrant-tag">Eye Tracking Studies</span>
             <span class="about-quadrant-tag">Usability Benchmarking</span>
-            <span class="about-quadrant-tag">Survey & Questionnaire Design</span>
           </div>
         </article>
       </div>
@@ -483,18 +438,6 @@
               </div>
             </div>
 
-            <!-- Git & GitHub -->
-            <div class="about-tool-tile" title="Git & GitHub: Version Control">
-              <div class="about-tool-logo-box">
-                <svg viewBox="0 0 24 24" fill="#F05032" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M23.546 10.93L13.067.452a1.536 1.536 0 0 0-2.174 0L8.74 2.604l3.14 3.14a1.823 1.823 0 0 1 2.308 2.32l3.02 3.02a1.82 1.82 0 0 1 1.957 2.997 1.824 1.824 0 0 1-2.583-2.583l-2.88-2.88v5.52a1.82 1.82 0 0 1 .494 1.258 1.824 1.824 0 0 1-3.648 0 1.82 1.82 0 0 1 .632-1.39v-5.65a1.82 1.82 0 0 1-.954-1.57c0-.494.2-.942.52-1.27l-3.08-3.08-6.12 6.12a1.536 1.536 0 0 0 0 2.174l10.48 10.48a1.536 1.536 0 0 0 2.174 0l10.48-10.48a1.536 1.536 0 0 0 0-2.174"/>
-                </svg>
-              </div>
-              <div class="about-tool-tile-info">
-                <span class="about-tool-name">Git & GitHub</span>
-                <span class="about-tool-role">Version Control & Branching</span>
-              </div>
-            </div>
           </div>
         </div>
 
@@ -769,12 +712,6 @@
             card.style.transform = `translate(${cfg.x}px, ${cfg.y}px) rotate(${cfg.r}deg)`;
             card.style.opacity = stackPos > 4 ? '0.45' : '1';
           });
-
-          // Update active pill
-          const activeCardIdx = order[0];
-          pills.forEach((p, idx) => {
-            p.classList.toggle('is-active', idx === activeCardIdx);
-          });
         };
 
         // Initialize deck
@@ -825,7 +762,7 @@
 
             requestAnimationFrame(() => {
               cards.forEach(c => {
-                c.style.transition = 'transform 0.52s cubic-bezier(0.2, 0.9, 0.3, 1.2), box-shadow 0.3s ease, opacity 0.3s ease';
+                c.style.transition = 'transform 0.52s cubic-bezier(0.2, 0.9, 0.3, 1.2), opacity 0.3s ease';
               });
               updateDeckPositions(isHovered);
               setTimeout(() => {
@@ -846,20 +783,6 @@
               order.unshift(cardIdx);
               updateDeckPositions(isHovered);
             }
-          });
-        });
-
-        if (shuffleBtn) {
-          shuffleBtn.addEventListener('click', cycleCard);
-        }
-
-        pills.forEach((pill) => {
-          pill.addEventListener('click', () => {
-            const targetIdx = parseInt(pill.dataset.index, 10);
-            if (order[0] === targetIdx) return;
-            order = order.filter(idx => idx !== targetIdx);
-            order.unshift(targetIdx);
-            updateDeckPositions(isHovered);
           });
         });
 
@@ -928,6 +851,7 @@
           stage,
           track,
           items,
+          currentIndex: 0,
           targetProgress: 0,
           currentProgress: 0,
           isDragging: false,
@@ -959,14 +883,19 @@
 
           card.addEventListener('click', () => {
             if (!state.hasDragged) {
-              openLightbox(src);
+              if (state.currentIndex === idx) {
+                openLightbox(src);
+              } else {
+                state.currentIndex = idx;
+                state.targetProgress = idx / Math.max(1, items.length - 1);
+              }
             }
           });
 
           track.appendChild(card);
         });
 
-        // 3D Transform Calculation (Identical to life-beyond-the-screen.html)
+        // 3D Transform Calculation
         state.update3DTransforms = () => {
           const cards = track.querySelectorAll('.coverflow-3d-card');
           const count = items.length;
@@ -1043,7 +972,8 @@
           const count = items.length;
           if (count > 1) {
             const nearestIdx = Math.round(state.targetProgress * (count - 1));
-            state.targetProgress = nearestIdx / (count - 1);
+            state.currentIndex = Math.max(0, Math.min(count - 1, nearestIdx));
+            state.targetProgress = state.currentIndex / (count - 1);
           }
         };
 
@@ -1055,15 +985,77 @@
         window.addEventListener('touchmove', onPointerMove, { passive: true });
         window.addEventListener('touchend', onPointerUp);
 
-        // Wheel horizontal scrubbing
-        stage.addEventListener('wheel', (e) => {
-          const delta = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY;
+        // Vertical Scroll Hijack Engine with Scroll Chaining
+        let wheelDeltaAccum = 0;
+        let lastStepTimestamp = 0;
+        const COOLDOWN_MS = 220; // Snappy & controlled transition between photos
+        const DELTA_TRIGGER = 30; // Threshold of delta for 1 step
+
+        const handleWheel = (e) => {
+          if (lightbox && lightbox.classList.contains('is-open')) return;
+
+          const delta = e.deltaY;
           if (Math.abs(delta) < 4) return;
-          e.preventDefault();
+
           const count = items.length;
-          const step = (delta > 0 ? 1 : -1) / Math.max(1, count - 1) * 0.45;
-          state.targetProgress = Math.max(0, Math.min(1, state.targetProgress + step));
-        }, { passive: false });
+          if (count <= 1) return;
+
+          const rect = section.getBoundingClientRect();
+          const winH = window.innerHeight;
+
+          if (delta > 0) {
+            // Scrolling down
+            // If the section top is not yet in view (e.g. above viewport or still scrolling in), let page scroll into view
+            if (rect.top > 60) {
+              return;
+            }
+
+            // If we have NOT reached the last photo yet:
+            if (state.currentIndex < count - 1) {
+              e.preventDefault(); // Stop page from scrolling!
+              wheelDeltaAccum += delta;
+              const now = performance.now();
+              if (now - lastStepTimestamp > COOLDOWN_MS && wheelDeltaAccum >= DELTA_TRIGGER) {
+                state.currentIndex = Math.min(count - 1, state.currentIndex + 1);
+                state.targetProgress = state.currentIndex / (count - 1);
+                lastStepTimestamp = now;
+                wheelDeltaAccum = 0;
+              }
+              return;
+            }
+
+            // Last photo reached! Allow page to scroll below naturally
+            wheelDeltaAccum = 0;
+            return;
+          } else {
+            // Scrolling up
+            // If section bottom is not in view (scrolling from below), let page scroll up into view
+            if (rect.bottom < winH - 60) {
+              return;
+            }
+
+            // If we are NOT at the first photo yet:
+            if (state.currentIndex > 0) {
+              e.preventDefault(); // Stop page from scrolling!
+              wheelDeltaAccum += delta;
+              const now = performance.now();
+              if (now - lastStepTimestamp > COOLDOWN_MS && wheelDeltaAccum <= -DELTA_TRIGGER) {
+                state.currentIndex = Math.max(0, state.currentIndex - 1);
+                state.targetProgress = state.currentIndex / (count - 1);
+                lastStepTimestamp = now;
+                wheelDeltaAccum = 0;
+              }
+              return;
+            }
+
+            // First photo reached! Allow page to scroll above naturally
+            wheelDeltaAccum = 0;
+            return;
+          }
+        };
+
+        // Attach wheel listener to section so scrolling over the entire section controls the carousel
+        section.addEventListener('wheel', handleWheel, { passive: false });
 
         state.update3DTransforms();
         carousels.push(state);
@@ -1072,28 +1064,12 @@
       initCarousel('photography');
       initCarousel('art');
 
-      // Global Scroll Sync for Pinned 3D Sections (Identical to life-beyond-the-screen.html)
-      const onScrollSections = () => {
-        carousels.forEach(c => {
-          const rect = c.section.getBoundingClientRect();
-          const sectionHeight = c.section.offsetHeight - window.innerHeight;
-          if (sectionHeight <= 0) return;
-
-          const scrolled = -rect.top;
-          const progress = Math.max(0, Math.min(1, scrolled / sectionHeight));
-          if (!c.isDragging) {
-            c.targetProgress = progress;
-          }
-        });
-      };
-      window.addEventListener('scroll', onScrollSections, { passive: true });
-
       // Shared Animation Loop with Smooth Inertia (Lerp)
       const animate = () => {
         carousels.forEach(c => {
           const diff = c.targetProgress - c.currentProgress;
           if (Math.abs(diff) > 0.00005) {
-            c.currentProgress += diff * 0.1;
+            c.currentProgress += diff * 0.12;
             c.update3DTransforms();
           }
         });
@@ -1112,12 +1088,13 @@
         if (!activeCarousel) return;
         const count = activeCarousel.items.length;
         if (count <= 1) return;
-        const step = 1 / (count - 1);
 
         if (e.key === 'ArrowRight') {
-          activeCarousel.targetProgress = Math.min(1, activeCarousel.targetProgress + step);
+          activeCarousel.currentIndex = Math.min(count - 1, activeCarousel.currentIndex + 1);
+          activeCarousel.targetProgress = activeCarousel.currentIndex / (count - 1);
         } else if (e.key === 'ArrowLeft') {
-          activeCarousel.targetProgress = Math.max(0, activeCarousel.targetProgress - step);
+          activeCarousel.currentIndex = Math.max(0, activeCarousel.currentIndex - 1);
+          activeCarousel.targetProgress = activeCarousel.currentIndex / (count - 1);
         }
       });
 

@@ -5860,21 +5860,21 @@ body.life-page {
 .about-deck-card {
   position: absolute;
   width: clamp(270px, 30vw, 350px);
-  aspect-ratio: 3 / 4.15;
+  aspect-ratio: 3 / 4;
   background: #FFFDF0;
   border: 1px solid rgba(112, 1, 69, 0.35);
-  border-radius: 6px;
-  padding: 12px 12px 16px;
+  border-radius: 4px;
+  padding: 12px;
   box-sizing: border-box;
-  box-shadow: 0 16px 36px -12px rgba(112, 1, 69, 0.22), 0 3px 8px rgba(0, 0, 0, 0.04);
+  box-shadow: none !important;
   transform-origin: center center;
-  transition: transform 0.52s cubic-bezier(0.2, 0.9, 0.3, 1.2), box-shadow 0.3s ease, opacity 0.3s ease;
+  transition: transform 0.52s cubic-bezier(0.2, 0.9, 0.3, 1.2), opacity 0.3s ease;
   touch-action: none;
   will-change: transform;
 }
 
 .about-deck-card:hover {
-  box-shadow: 0 22px 48px -12px rgba(112, 1, 69, 0.32), 0 4px 12px rgba(0, 0, 0, 0.06);
+  box-shadow: none !important;
 }
 
 .deck-card-inner {
@@ -5882,13 +5882,13 @@ body.life-page {
   height: 100%;
   display: flex;
   flex-direction: column;
-  gap: 10px;
 }
 
 .deck-card-image-box {
   width: 100%;
+  height: 100%;
   flex: 1;
-  border-radius: 3px;
+  border-radius: 2px;
   overflow: hidden;
   background: #FAF8EB;
   border: 1px solid rgba(112, 1, 69, 0.15);
@@ -5904,101 +5904,6 @@ body.life-page {
   image-rendering: -webkit-optimize-contrast;
   image-rendering: crisp-edges;
   pointer-events: none;
-}
-
-.deck-card-footer {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  padding: 2px 4px 0;
-}
-
-.deck-card-caption {
-  font-family: 'Carattere', cursive;
-  font-size: 26px;
-  line-height: 0.95;
-  color: #700145;
-  font-weight: 400;
-  letter-spacing: 0.02em;
-}
-
-.deck-card-num {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 11.5px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  color: rgba(112, 1, 69, 0.65);
-}
-
-/* Controls */
-.about-deck-controls {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  width: 100%;
-  max-width: 440px;
-  flex-wrap: wrap;
-}
-
-.about-deck-shuffle-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: #FFFDF0;
-  color: #700145;
-  border: 1px solid #700145;
-  border-radius: 4px;
-  padding: 7px 14px;
-  font-size: 12.5px;
-  font-weight: 600;
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  box-shadow: none !important;
-}
-
-.about-deck-shuffle-btn:hover {
-  background: #700145;
-  color: #FFFCDE;
-  transform: translateY(-1px);
-}
-
-.about-deck-pills {
-  display: flex;
-  gap: 5px;
-}
-
-.about-deck-pill {
-  width: 26px;
-  height: 26px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 3px;
-  border: 1px solid rgba(112, 1, 69, 0.25);
-  background: #FFFDF0;
-  color: #700145;
-  font-size: 11.5px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  box-shadow: none !important;
-}
-
-.about-deck-pill:hover,
-.about-deck-pill.is-active {
-  background: #700145;
-  color: #FFFCDE;
-  border-color: #700145;
-}
-
-.about-deck-hint {
-  font-size: 11.5px;
-  font-weight: 500;
-  color: rgba(112, 1, 69, 0.65);
-  margin-left: auto;
 }
 
 /* Right: Narrative Side */
@@ -6334,17 +6239,88 @@ body.life-page {
   .about-deck-card {
     width: 250px;
   }
-  .about-deck-controls {
-    justify-content: center;
-  }
-  .about-deck-hint {
-    width: 100%;
-    text-align: center;
-    margin-left: 0;
-  }
   .about-workbench-tiles-grid {
     grid-template-columns: 1fr;
   }
 }
+
+/* ==========================================================================
+   About Page - Creative Story Sections (Photography & Sketches)
+   Calibrated heights, eliminated dead gaps, and smooth vertical flow
+   ========================================================================== */
+.about-page .about-page-wrapper {
+  padding-bottom: clamp(24px, 4vh, 48px);
+}
+
+.about-page .life-story-section {
+  position: relative;
+  width: 100%;
+  height: auto !important;
+  min-height: 100vh;
+  background-color: #FFFCDE;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(32px, 5vh, 56px) clamp(16px, 3vw, 40px);
+  margin: 0;
+  overflow: hidden;
+}
+
+.about-page .life-story-section[data-section="photography"],
+.about-page .life-story-section[data-section="art"] {
+  height: auto !important;
+  min-height: 100vh;
+}
+
+.about-page .life-story-sticky-viewport {
+  position: relative !important;
+  top: auto !important;
+  width: 100%;
+  max-width: 1400px;
+  height: auto !important;
+  min-height: auto !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 !important;
+  margin: 0 auto;
+  overflow: visible;
+  background-color: transparent;
+  box-sizing: border-box;
+}
+
+.about-page .life-story-header {
+  margin-bottom: clamp(12px, 2vh, 20px);
+  z-index: 10;
+}
+
+.about-page .coverflow-3d-stage {
+  height: clamp(360px, 48vh, 500px);
+  margin: 0 0 clamp(12px, 2vh, 20px) 0;
+}
+
+.about-page .life-story-footer {
+  margin-top: 0;
+  max-width: 680px;
+  z-index: 10;
+}
+
+.about-page .footer-section {
+  margin-top: 0;
+}
+
+@media (max-width: 768px) {
+  .about-page .life-story-section {
+    min-height: 90vh;
+    padding: 28px 14px;
+  }
+  .about-page .coverflow-3d-stage {
+    height: 380px;
+  }
+}
+
 
 
