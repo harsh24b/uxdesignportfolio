@@ -6,7 +6,7 @@
   <title>SAVW Internship Report - Case Study | Harsh Bhawsar</title>
   <link rel="icon" type="image/png" href="faviconnew.webp?v=2">
   <link rel="apple-touch-icon" href="faviconnew.webp?v=2">
-  <link rel="stylesheet" href="style.css?v=132_scallop_circles">
+  <link rel="stylesheet" href="style.css?v=161_matching_navbar">
   <!-- Google Fonts for Plus Jakarta Sans, Cormorant Garamond & Carattere -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,10 +16,16 @@
       overflow-y: auto !important;
       overflow-x: hidden !important;
       height: auto !important;
+      background-color: #FFFFFF !important;
+    }
+    .skoda-page .nav-pill-btn.back-pill,
+    .skoda-page .navbar {
+      background: rgba(255, 255, 255, 0.88) !important;
+      border-color: rgba(74, 44, 17, 0.12) !important;
     }
   </style>
 </head>
-<body class="case-study-page">
+<body class="case-study-page skoda-page">
   <!-- Floating Dual-Pill Navbar Container -->
   <header class="navbar-container case-study-navbar-container">
     <a href="index.html#work" class="nav-pill-btn back-pill">
@@ -89,24 +95,501 @@
       </section>
     </div>
 
-    <!-- Fullscreen Single Scrollable Slides Section -->
-    <section class="case-study-slides-container" aria-label="Škoda Auto Volkswagen India UX Research Presentation Slides">
-      <img src="skoda/Slide 1.webp" alt="SAVW Internship Report - Slide 1" class="case-study-slide-img" loading="eager">
-      <img src="skoda/Slide 2.webp" alt="SAVW Internship Report - Slide 2" class="case-study-slide-img" loading="eager">
-      <img src="skoda/Slide 3.webp" alt="SAVW Internship Report - Slide 3" class="case-study-slide-img" loading="lazy">
-      <img src="skoda/Slide 4.webp" alt="SAVW Internship Report - Slide 4" class="case-study-slide-img" loading="lazy">
-      <img src="skoda/Slide 5.webp" alt="SAVW Internship Report - Slide 5" class="case-study-slide-img" loading="lazy">
-      <img src="skoda/Slide 6.webp" alt="SAVW Internship Report - Slide 6" class="case-study-slide-img" loading="lazy">
-      <img src="skoda/Slide 7.webp" alt="SAVW Internship Report - Slide 7" class="case-study-slide-img" loading="lazy">
-      <img src="skoda/Slide 8.webp" alt="SAVW Internship Report - Slide 8" class="case-study-slide-img" loading="lazy">
-      <img src="skoda/Slide 9.webp" alt="SAVW Internship Report - Slide 9" class="case-study-slide-img" loading="lazy">
-      <img src="skoda/Slide 10.webp" alt="SAVW Internship Report - Slide 10" class="case-study-slide-img" loading="lazy">
-      <img src="skoda/Slide 11.webp" alt="SAVW Internship Report - Slide 11" class="case-study-slide-img" loading="lazy">
-      <img src="skoda/Slide 12.webp" alt="SAVW Internship Report - Slide 12" class="case-study-slide-img" loading="lazy">
-      <img src="skoda/Slide 13.webp" alt="SAVW Internship Report - Slide 13" class="case-study-slide-img" loading="lazy">
-      <img src="skoda/Slide 14.webp" alt="SAVW Internship Report - Slide 14" class="case-study-slide-img" loading="lazy">
-      <img src="skoda/Slide 15.webp" alt="SAVW Internship Report - Slide 15" class="case-study-slide-img" loading="lazy">
+    <!-- ========================================================
+         SAVW Internship Report — Page Flip Book Viewer
+         ======================================================== -->
+    <section class="savw-book-section" id="savwBookSection" aria-label="SAVW Internship Report Book Viewer">
+
+      <!-- Section Label -->
+      <div class="savw-book-eyebrow">
+        <span class="savw-book-eyebrow-line"></span>
+        <span class="savw-book-eyebrow-text">INTERNSHIP REPORT</span>
+        <span class="savw-book-eyebrow-line"></span>
+      </div>
+
+      <!-- Book Stage -->
+      <div class="savw-book-stage" id="savwBookStage">
+
+        <!-- Left Arrow -->
+        <button class="savw-book-arrow savw-book-arrow--left" id="savwPrev" aria-label="Previous page" disabled>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+
+        <!-- Book Container -->
+        <div class="savw-book-container" id="savwBook">
+
+          <!-- Left page -->
+          <div class="savw-book-page savw-book-page--left" id="savwPageLeft" title="Click to go back">
+            <img class="savw-book-img" id="savwImgLeft" src="skoda-flip-pages/page-01.webp" alt="Report page 1" draggable="false">
+            <div class="savw-spine-shadow savw-spine-shadow--left"></div>
+          </div>
+
+          <!-- Flipping leaf (3D animated leaf, only displayed during flip) -->
+          <div class="savw-flip-page" id="savwFlipPage" style="display: none;">
+            <div class="savw-flip-face savw-flip-front">
+              <img class="savw-book-img" id="savwFlipFrontImg" src="" alt="" draggable="false">
+              <div class="savw-flip-overlay" id="savwFlipFrontOverlay"></div>
+            </div>
+            <div class="savw-flip-face savw-flip-back">
+              <img class="savw-book-img" id="savwFlipBackImg" src="" alt="" draggable="false">
+              <div class="savw-flip-overlay" id="savwFlipBackOverlay"></div>
+            </div>
+          </div>
+
+          <!-- Right page -->
+          <div class="savw-book-page savw-book-page--right" id="savwPageRight" title="Click to turn page">
+            <img class="savw-book-img" id="savwImgRight" src="skoda-flip-pages/page-02.webp" alt="Report page 2" draggable="false">
+            <div class="savw-spine-shadow savw-spine-shadow--right"></div>
+          </div>
+
+          <!-- Center spine crease line -->
+          <div class="savw-spine-line" aria-hidden="true"></div>
+
+        </div><!-- /book-container -->
+
+        <!-- Right Arrow -->
+        <button class="savw-book-arrow savw-book-arrow--right" id="savwNext" aria-label="Next page">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+
+      </div><!-- /book-stage -->
+
+      <!-- Counter & Progress -->
+      <div class="savw-book-footer">
+        <span class="savw-book-counter" id="savwCounter">Pages 1 – 2 of 30</span>
+        <div class="savw-book-progress" id="savwProgress">
+          <div class="savw-book-progress-fill" id="savwProgressFill"></div>
+        </div>
+      </div>
+
     </section>
+
+    <style>
+    /* =====================================================
+       SAVW Book Flip Viewer — Styles
+       ===================================================== */
+    .savw-book-section {
+      width: 100%;
+      padding: clamp(40px, 6vw, 80px) 0 clamp(50px, 7vw, 90px);
+      background: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    /* Eyebrow in Skoda green */
+    .savw-book-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: clamp(24px, 4vw, 44px);
+    }
+    .savw-book-eyebrow-text {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 3.5px;
+      color: #00A859; /* Skoda Brand Green */
+      text-transform: uppercase;
+    }
+    .savw-book-eyebrow-line {
+      display: block;
+      width: 44px;
+      height: 1.5px;
+      background: #00A859; /* Skoda Brand Green */
+      opacity: 0.6;
+    }
+
+    /* Stage */
+    .savw-book-stage {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(16px, 3vw, 44px);
+      width: 100%;
+      max-width: 1260px;
+      padding: 0 24px;
+      box-sizing: border-box;
+    }
+
+    /* Arrow buttons */
+    .savw-book-arrow {
+      flex-shrink: 0;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(0,0,0,0.12);
+      background: #ffffff;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #111111;
+      box-shadow: 0 3px 14px rgba(0,0,0,0.08);
+      transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+      z-index: 10;
+    }
+    .savw-book-arrow:hover:not(:disabled) {
+      background: #111111;
+      color: #ffffff;
+      border-color: #111111;
+      box-shadow: 0 6px 22px rgba(0,0,0,0.2);
+      transform: scale(1.06);
+    }
+    .savw-book-arrow:disabled {
+      opacity: 0.25;
+      cursor: default;
+      pointer-events: none;
+    }
+
+    /* Book Container */
+    .savw-book-container {
+      position: relative;
+      display: flex;
+      flex: 1;
+      max-width: 1040px;
+      aspect-ratio: 2 / 1.414; /* Two A4 pages side by side */
+      perspective: 2600px;
+      perspective-origin: 50% 50%;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.13), 0 4px 18px rgba(0,0,0,0.06);
+      border-radius: 4px;
+      background: #ffffff;
+    }
+
+    /* Static Pages */
+    .savw-book-page {
+      position: relative;
+      flex: 1;
+      height: 100%;
+      overflow: hidden;
+      background: #ffffff;
+      cursor: pointer;
+    }
+    .savw-book-page--left {
+      border-radius: 4px 0 0 4px;
+    }
+    .savw-book-page--right {
+      border-radius: 0 4px 4px 0;
+    }
+    .savw-book-img {
+      width: 100%;
+      height: 100%;
+      object-fit: fill;
+      display: block;
+      background: #ffffff;
+    }
+
+    /* Spine shadows */
+    .savw-spine-shadow {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 36px;
+      pointer-events: none;
+      z-index: 2;
+    }
+    .savw-spine-shadow--left {
+      right: 0;
+      background: linear-gradient(to left, rgba(0,0,0,0.11) 0%, rgba(0,0,0,0.03) 55%, transparent 100%);
+    }
+    .savw-spine-shadow--right {
+      left: 0;
+      background: linear-gradient(to right, rgba(0,0,0,0.11) 0%, rgba(0,0,0,0.03) 55%, transparent 100%);
+    }
+    .savw-spine-line {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 1px;
+      background: rgba(0,0,0,0.14);
+      z-index: 4;
+      transform: translateX(-50%);
+      pointer-events: none;
+    }
+
+    /* Flipping Leaf */
+    .savw-flip-page {
+      position: absolute;
+      top: 0;
+      width: 50%;
+      height: 100%;
+      transform-style: preserve-3d;
+      -webkit-transform-style: preserve-3d;
+      z-index: 8;
+      pointer-events: none;
+      will-change: transform;
+    }
+    .savw-flip-face {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      overflow: hidden;
+      background: #ffffff;
+    }
+    .savw-flip-front {
+      transform: rotateY(0deg);
+      border-radius: 0 4px 4px 0;
+    }
+    .savw-flip-back {
+      transform: rotateY(180deg);
+      border-radius: 4px 0 0 4px;
+    }
+    .savw-flip-overlay {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.6s ease;
+      background: rgba(0,0,0,0.1);
+    }
+
+    /* Footer: Counter & Progress */
+    .savw-book-footer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      margin-top: 28px;
+    }
+    .savw-book-counter {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      color: rgba(0,0,0,0.5);
+      letter-spacing: 0.5px;
+    }
+    .savw-book-progress {
+      width: 180px;
+      height: 2.5px;
+      background: rgba(0,0,0,0.08);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+    .savw-book-progress-fill {
+      height: 100%;
+      background: #00A859; /* Skoda Brand Green */
+      border-radius: 2px;
+      transition: width 0.35s ease;
+    }
+
+    /* Responsive */
+    @media (max-width: 640px) {
+      .savw-book-stage { gap: 8px; padding: 0 10px; }
+      .savw-book-arrow { width: 38px; height: 38px; }
+      .savw-book-container { border-radius: 3px; }
+    }
+    </style>
+
+    <script>
+    /* =====================================================
+       SAVW Book Flip Controller
+       ===================================================== */
+    (function() {
+      'use strict';
+
+      const TOTAL_PAGES = 30;
+      const BASE = 'skoda-flip-pages/';
+      const pages = [];
+      for (let i = 1; i <= TOTAL_PAGES; i++) {
+        pages.push(BASE + 'page-' + String(i).padStart(2, '0') + '.webp');
+      }
+
+      // 15 spreads of 2 pages each (15 x 2 = 30 pages)
+      const spreads = [];
+      for (let i = 0; i < TOTAL_PAGES; i += 2) {
+        spreads.push([i, i + 1]);
+      }
+
+      let currentSpread = 0;
+      let isAnimating = false;
+      const DURATION = 620; // ms
+
+      const elBook        = document.getElementById('savwBook');
+      const elPageLeft    = document.getElementById('savwPageLeft');
+      const elPageRight   = document.getElementById('savwPageRight');
+      const elImgLeft     = document.getElementById('savwImgLeft');
+      const elImgRight    = document.getElementById('savwImgRight');
+      const elFlip        = document.getElementById('savwFlipPage');
+      const elFlipFrontImg= document.getElementById('savwFlipFrontImg');
+      const elFlipBackImg = document.getElementById('savwFlipBackImg');
+      const elPrev        = document.getElementById('savwPrev');
+      const elNext        = document.getElementById('savwNext');
+      const elCounter     = document.getElementById('savwCounter');
+      const elFill        = document.getElementById('savwProgressFill');
+
+      function updateUI(idx) {
+        elPrev.disabled = idx === 0;
+        elNext.disabled = idx === spreads.length - 1;
+
+        const sp = spreads[idx];
+        const p1 = sp[0] + 1;
+        const p2 = sp[1] + 1;
+        elCounter.textContent = `Pages ${p1} – ${p2} of ${TOTAL_PAGES}`;
+
+        const pct = (idx / (spreads.length - 1)) * 100;
+        elFill.style.width = pct + '%';
+      }
+
+      function flipForward() {
+        if (isAnimating || currentSpread >= spreads.length - 1) return;
+        isAnimating = true;
+
+        const targetSpread = currentSpread + 1;
+        const currentL = spreads[currentSpread][0];
+        const currentR = spreads[currentSpread][1];
+        const nextL    = spreads[targetSpread][0];
+        const nextR    = spreads[targetSpread][1];
+
+        // Static Left stays currentL
+        // Static Right immediately shows nextR
+        elImgRight.src = pages[nextR];
+
+        // Flipping leaf sits on the RIGHT half
+        elFlip.style.left = '50%';
+        elFlip.style.right = 'auto';
+        elFlip.style.transformOrigin = 'left center';
+
+        // Front shows currentR, Back shows nextL
+        elFlipFrontImg.src = pages[currentR];
+        elFlipBackImg.src  = pages[nextL];
+
+        // Reset transform & display
+        elFlip.style.transition = 'none';
+        elFlip.style.transform = 'rotateY(0deg)';
+        elFlip.style.display = 'block';
+
+        // Force reflow
+        void elFlip.offsetWidth;
+
+        // Turn page from right to left
+        elFlip.style.transition = `transform ${DURATION}ms cubic-bezier(0.25, 1, 0.5, 1)`;
+        elFlip.style.transform = 'rotateY(-180deg)';
+
+        setTimeout(() => {
+          // Flip completes:
+          elImgLeft.src = pages[nextL];
+
+          // Hide flip leaf completely
+          elFlip.style.display = 'none';
+          elFlip.style.transition = 'none';
+          elFlip.style.transform = 'rotateY(0deg)';
+          elFlipFrontImg.src = '';
+          elFlipBackImg.src  = '';
+
+          currentSpread = targetSpread;
+          isAnimating = false;
+          updateUI(currentSpread);
+          preload(currentSpread + 1);
+        }, DURATION + 20);
+      }
+
+      function flipBackward() {
+        if (isAnimating || currentSpread <= 0) return;
+        isAnimating = true;
+
+        const targetSpread = currentSpread - 1;
+        const currentL = spreads[currentSpread][0];
+        const currentR = spreads[currentSpread][1];
+        const prevL    = spreads[targetSpread][0];
+        const prevR    = spreads[targetSpread][1];
+
+        // Static Right stays currentR
+        // Static Left immediately shows prevL
+        elImgLeft.src = pages[prevL];
+
+        // Flipping leaf sits on the LEFT half
+        elFlip.style.left = '0';
+        elFlip.style.right = 'auto';
+        elFlip.style.transformOrigin = 'right center';
+
+        // Front shows currentL, Back shows prevR
+        elFlipFrontImg.src = pages[currentL];
+        elFlipBackImg.src  = pages[prevR];
+
+        // Reset transform & display
+        elFlip.style.transition = 'none';
+        elFlip.style.transform = 'rotateY(0deg)';
+        elFlip.style.display = 'block';
+
+        // Force reflow
+        void elFlip.offsetWidth;
+
+        // Turn page from left to right
+        elFlip.style.transition = `transform ${DURATION}ms cubic-bezier(0.25, 1, 0.5, 1)`;
+        elFlip.style.transform = 'rotateY(180deg)';
+
+        setTimeout(() => {
+          // Flip completes:
+          elImgRight.src = pages[prevR];
+
+          // Hide flip leaf completely
+          elFlip.style.display = 'none';
+          elFlip.style.transition = 'none';
+          elFlip.style.transform = 'rotateY(0deg)';
+          elFlipFrontImg.src = '';
+          elFlipBackImg.src  = '';
+
+          currentSpread = targetSpread;
+          isAnimating = false;
+          updateUI(currentSpread);
+          preload(currentSpread - 1);
+        }, DURATION + 20);
+      }
+
+      function preload(idx) {
+        if (idx >= 0 && idx < spreads.length) {
+          spreads[idx].forEach(p => {
+            const img = new Image();
+            img.src = pages[p];
+          });
+        }
+      }
+
+      // Event listeners
+      elNext.addEventListener('click', flipForward);
+      elPrev.addEventListener('click', flipBackward);
+      elPageRight.addEventListener('click', flipForward);
+      elPageLeft.addEventListener('click', flipBackward);
+
+      // Keyboard arrow navigation
+      document.addEventListener('keydown', (e) => {
+        const sec = document.getElementById('savwBookSection');
+        if (!sec) return;
+        const rect = sec.getBoundingClientRect();
+        if (rect.bottom < 0 || rect.top > window.innerHeight) return;
+        if (e.key === 'ArrowRight') flipForward();
+        if (e.key === 'ArrowLeft')  flipBackward();
+      });
+
+      // Touch / swipe support
+      let touchStartX = 0;
+      elBook.addEventListener('touchstart', (e) => {
+        touchStartX = e.touches[0].clientX;
+      }, { passive: true });
+      elBook.addEventListener('touchend', (e) => {
+        const dx = e.changedTouches[0].clientX - touchStartX;
+        if (Math.abs(dx) > 40) {
+          if (dx < 0) flipForward();
+          else flipBackward();
+        }
+      }, { passive: true });
+
+      // Init
+      updateUI(0);
+      preload(1);
+    })();
+    </script>
 
     <!-- Explore More Projects Section -->
     <section class="case-study-explore-section">

@@ -2681,6 +2681,87 @@ body {
   overflow-y: auto !important;
 }
 
+/* Page-Specific Background & Navbar Overrides */
+.transportation-page,
+body.transportation-page {
+  background-color: #FFFFFF !important;
+}
+
+.transportation-page .nav-pill-btn.back-pill,
+.transportation-page .navbar {
+  background: rgba(255, 255, 255, 0.88) !important;
+  border-color: rgba(74, 44, 17, 0.12) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
+}
+
+.transportation-page .nav-pill-btn.back-pill:hover {
+  background: #FFFFFF !important;
+  border-color: rgba(74, 44, 17, 0.28) !important;
+}
+
+.transportation-page .spec-table-card {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(74, 44, 17, 0.12);
+  box-shadow: 0 8px 32px rgba(74, 44, 17, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.transportation-page .spec-key {
+  background: rgba(245, 245, 247, 0.7);
+}
+
+.kamo-ai-page,
+body.kamo-ai-page {
+  background-color: #FFFEF5 !important;
+}
+
+.kamo-ai-page .nav-pill-btn.back-pill,
+.kamo-ai-page .navbar {
+  background: rgba(255, 254, 245, 0.88) !important;
+  border-color: rgba(74, 44, 17, 0.12) !important;
+  box-shadow: 0 10px 30px rgba(74, 44, 17, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
+}
+
+.kamo-ai-page .nav-pill-btn.back-pill:hover {
+  background: #FFFEF5 !important;
+  border-color: rgba(74, 44, 17, 0.28) !important;
+}
+
+.kamo-ai-page .spec-table-card {
+  background: rgba(255, 254, 245, 0.95);
+  border: 1px solid rgba(74, 44, 17, 0.12);
+}
+
+.kamo-ai-page .spec-key {
+  background: rgba(248, 246, 235, 0.6);
+}
+
+.skoda-page,
+body.skoda-page {
+  background-color: #FFFFFF !important;
+}
+
+.skoda-page .nav-pill-btn.back-pill,
+.skoda-page .navbar {
+  background: rgba(255, 255, 255, 0.88) !important;
+  border-color: rgba(74, 44, 17, 0.12) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
+}
+
+.skoda-page .nav-pill-btn.back-pill:hover {
+  background: #FFFFFF !important;
+  border-color: rgba(74, 44, 17, 0.28) !important;
+}
+
+.skoda-page .spec-table-card {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(74, 44, 17, 0.12);
+  box-shadow: 0 8px 32px rgba(74, 44, 17, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.skoda-page .spec-key {
+  background: rgba(245, 245, 247, 0.7);
+}
+
 /* Floating Dual-Pill Navbar Container */
 .case-study-navbar-container {
   display: flex;
@@ -6259,12 +6340,17 @@ html:has(body.about-page) {
 }
 
 /* ==========================================================================
-   About Page - Calibrated Sticky Pinning & Clean Solid Aesthetic
+   About Page - Background & Calibrated Sticky Pinning
    ========================================================================== */
-.about-page::before,
-.about-page .footer-card::before {
-  display: none !important;
-  background: none !important;
+body.about-page,
+.about-page {
+  background-color: #FFFCDE !important;
+  background-image: none !important;
+}
+
+.about-page .life-story-sticky-viewport {
+  background-color: transparent !important;
+  background-image: none !important;
 }
 
 .about-page .about-page-wrapper {
