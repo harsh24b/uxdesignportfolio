@@ -21,3 +21,7 @@ scratch/
 
 # Source assets for flip pages
 skoda pages flip interaction/
+
+# Source PNG assets for BTM slides
+Bus Transportation management/*new.png
+Bus Transportation management/presentation1stpage.png
