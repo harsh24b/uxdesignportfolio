@@ -6193,14 +6193,16 @@ html:has(body.about-page) {
   border: 1px solid rgba(112, 1, 69, 0.22);
   border-radius: 4px;
   padding: 5px 11px;
-  transition: all 0.2s ease;
+  cursor: default;
+  user-select: default;
   box-shadow: none !important;
 }
 
 .about-quadrant-tag:hover {
-  background: #700145;
-  color: #FFFCDE;
-  border-color: #700145;
+  background: #FFFDF0;
+  color: #700145;
+  border-color: rgba(112, 1, 69, 0.22);
+  cursor: default;
 }
 
 /* --------------------------------------------------------------------------
@@ -6258,15 +6260,17 @@ html:has(body.about-page) {
   border: 1px solid rgba(112, 1, 69, 0.2);
   border-radius: 4px;
   background: #FFFDF0;
-  transition: all 0.2s ease;
   cursor: default;
+  user-select: default;
   box-shadow: none !important;
+  transform: none !important;
 }
 
 .about-tool-tile:hover {
-  border-color: #700145;
-  background: #FAF8EB;
-  transform: translateY(-2px);
+  border-color: rgba(112, 1, 69, 0.2);
+  background: #FFFDF0;
+  transform: none !important;
+  cursor: default;
 }
 
 .about-tool-logo-box {
@@ -6446,6 +6450,133 @@ body.about-page,
   }
   .about-page .coverflow-3d-stage {
     height: 380px;
+  }
+}
+
+/* ==========================================================================
+   Floating Sound Toggle Pill (Orano-Inspired Ambient Audio Experience)
+   ========================================================================== */
+.portfolio-sound-pill {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 99999;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 8px 18px;
+  background: rgba(255, 252, 222, 0.92);
+  border: 1px solid rgba(74, 44, 17, 0.16);
+  border-radius: 9999px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  font-family: 'RealistWide', 'GT Walsheim Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: #700145;
+  transition: background-color 0.22s ease, border-color 0.22s ease, opacity 0.22s ease, color 0.22s ease, box-shadow 0.22s ease;
+  transform: none !important;
+  outline: none;
+}
+
+.portfolio-sound-pill:hover {
+  background: #FFFFFF;
+  border-color: rgba(112, 1, 69, 0.35);
+  box-shadow: 0 6px 20px rgba(112, 1, 69, 0.08);
+  transform: none !important;
+}
+
+.portfolio-sound-pill:active {
+  transform: none !important;
+}
+
+/* Equalizer Bars Container */
+.portfolio-sound-pill .sound-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 2.5px;
+  height: 14px;
+  width: 14px;
+}
+
+.portfolio-sound-pill .sound-bars .bar {
+  display: block;
+  width: 2px;
+  background: #700145;
+  border-radius: 2px;
+  height: 3px;
+  transition: height 0.2s ease, opacity 0.2s ease, background-color 0.2s ease;
+}
+
+/* Playing Animation */
+.portfolio-sound-pill.is-playing .sound-bars .bar-1 {
+  animation: soundBarAnim 0.75s ease-in-out infinite alternate;
+}
+.portfolio-sound-pill.is-playing .sound-bars .bar-2 {
+  animation: soundBarAnim 1.05s ease-in-out 0.15s infinite alternate;
+}
+.portfolio-sound-pill.is-playing .sound-bars .bar-3 {
+  animation: soundBarAnim 0.85s ease-in-out 0.3s infinite alternate;
+}
+.portfolio-sound-pill.is-playing .sound-bars .bar-4 {
+  animation: soundBarAnim 0.95s ease-in-out 0.45s infinite alternate;
+}
+
+@keyframes soundBarAnim {
+  0% {
+    height: 3px;
+  }
+  100% {
+    height: 14px;
+  }
+}
+
+/* Muted State */
+.portfolio-sound-pill.is-muted {
+  opacity: 0.75;
+  color: #666666;
+  border-color: rgba(0, 0, 0, 0.12);
+  background: rgba(255, 255, 255, 0.82);
+  transform: none !important;
+}
+
+.portfolio-sound-pill.is-muted:hover {
+  opacity: 1;
+  color: #111111;
+  background: #FFFFFF;
+  transform: none !important;
+}
+
+.portfolio-sound-pill.is-muted .sound-bars .bar {
+  background: #888888;
+  height: 2px;
+  animation: none !important;
+}
+
+.portfolio-sound-pill .sound-label {
+  display: inline-block;
+  line-height: 1;
+}
+
+@media (max-width: 768px) {
+  .portfolio-sound-pill {
+    bottom: 20px;
+    right: 20px;
+    padding: 7px 14px;
+    font-size: 11.5px;
+    gap: 7px;
+  }
+  .portfolio-sound-pill .sound-bars {
+    height: 12px;
+    width: 12px;
+    gap: 2px;
+  }
+  .portfolio-sound-pill .sound-bars .bar {
+    width: 1.8px;
   }
 }
 
