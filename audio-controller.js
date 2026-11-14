@@ -1,12 +1,12 @@
 /**
  * Portfolio Audio Controller
  * Inspired by Orano Innovation Experience (Sound Design by Mooders)
- * - Continuous ambient background music across page navigation (does not restart)
+ * - Automatic background ambient music on page open (with robust autoplay unlock)
+ * - Continuous playback across page navigation (does not restart)
  * - Stops completely on project / case study pages
  * - Interactive button hover sound effect (with specific nav and section exclusions)
  * - Modern Web Audio API + HTML5 Audio fallback for zero-latency polyphony
  * - Floating Sound Controller UI with animated equalizer bars
- * - Browser autoplay policy compliance (unlocks on first user interaction)
  * - Tab visibility detection (auto-pauses when switching tabs)
  * - State and playback timestamp persistence across pages
  */
@@ -18,7 +18,6 @@
   const pathname = window.location.pathname.toLowerCase();
   const isProjectPage = /(transportation|kamo-ai|kamoai|savw|design-research)/i.test(pathname);
   if (isProjectPage) {
-    // Ensure state reflects stopped music on project pages
     try {
       sessionStorage.setItem('portfolio_music_was_playing', 'false');
       localStorage.setItem('portfolio_music_was_playing', 'false');
@@ -38,7 +37,7 @@
   const TARGET_BG_VOLUME = 0.28; // Atmospheric ambient level
   const HOVER_VOLUME = 0.45;     // Crisp, pleasant UI feedback
 
-  // Mute state (persisted across page navigation)
+  // Mute state (persisted across page navigation, default to unmuted)
   let isMuted = false;
   try {
     const saved = localStorage.getItem('portfolio_sound_muted');
@@ -54,6 +53,7 @@
   let hoverGainNode = null;
   let fadeInterval = null;
   let isPlaying = false;
+  let unmuteAttached = false;
 
   // Save current audio playback position and timestamp
   function savePlaybackState() {
@@ -81,7 +81,6 @@
         const savedTime = parseFloat(savedTimeStr);
         const savedTs = parseInt(savedTsStr, 10);
         const elapsedSec = (Date.now() - savedTs) / 1000;
-        // If navigation happened recently (within 45 seconds)
         if (!isNaN(savedTime) && !isNaN(elapsedSec) && elapsedSec >= 0 && elapsedSec < 45) {
           return { shouldResume: true, seekTime: savedTime + elapsedSec };
         }
@@ -193,7 +192,6 @@
     bgAudio.preload = 'auto';
     bgAudio.volume = 0;
 
-    // Continuously keep position synchronized
     let lastSave = 0;
     bgAudio.addEventListener('timeupdate', () => {
       const now = Date.now();
@@ -203,7 +201,6 @@
       }
     });
 
-    // Save state on unload/pagehide
     window.addEventListener('beforeunload', savePlaybackState);
     window.addEventListener('pagehide', savePlaybackState);
   }
@@ -214,7 +211,7 @@
     clearInterval(fadeInterval);
     const startVolume = bgAudio.volume;
     const diff = targetVolume - startVolume;
-    const steps = 30;
+    const steps = 25;
     const stepInterval = durationMs / steps;
     let step = 0;
 
@@ -232,7 +229,7 @@
     }, stepInterval);
   }
 
-  // Start background music (supports continuous resume without restart)
+  // Start background music (with robust automatic unlock)
   function startBgMusic(isContinuation = false, seekTime = 0) {
     if (isMuted) return;
     initBgMusic();
@@ -243,28 +240,101 @@
       applySeekTime(seekTime);
     }
 
-    // If continuing from previous page, use immediate target volume (no slow cold start)
     if (isContinuation) {
       bgAudio.volume = TARGET_BG_VOLUME;
     }
 
+    bgAudio.muted = false;
     const playPromise = bgAudio.play();
     if (playPromise !== undefined) {
       playPromise
         .then(() => {
           isPlaying = true;
           if (!isContinuation) {
-            fadeAudioTo(TARGET_BG_VOLUME, 1500);
+            fadeAudioTo(TARGET_BG_VOLUME, 1200);
           }
           updateUIState(true);
           savePlaybackState();
         })
         .catch(() => {
-          // Autoplay blocked by browser policy; wait for first interaction
+          // Autoplay was blocked by browser policy.
+          // Start playing muted immediately so stream buffers and runs,
+          // then instantly unmute on first gesture (movement, scroll, click, touch, key).
           isPlaying = false;
           updateUIState(false);
+
+          try {
+            bgAudio.muted = true;
+            bgAudio.play().then(() => {
+              setupImmediateUnmute();
+            }).catch(() => {
+              setupImmediateUnmute();
+            });
+          } catch (e) {
+            setupImmediateUnmute();
+          }
         });
     }
+  }
+
+  // Aggressive unlock on ANY initial user movement or gesture
+  function setupImmediateUnmute() {
+    if (unmuteAttached) return;
+    unmuteAttached = true;
+
+    const gestureEvents = [
+      'pointerdown', 'mousedown', 'click', 'pointerup', 'mouseup',
+      'touchstart', 'touchend',
+      'keydown',
+      'wheel', 'scroll',
+      'pointermove', 'mousemove', 'mouseover'
+    ];
+
+    function tryUnmuteAndPlay() {
+      if (isMuted) {
+        removeGestureListeners();
+        return;
+      }
+
+      userInteracted = true;
+      initAudioContext();
+      if (!hoverBuffer) loadHoverSound();
+
+      if (bgAudio) {
+        bgAudio.muted = false;
+        if (bgAudio.paused) {
+          const resume = getContinuousResumePosition();
+          if (resume.seekTime > 0) applySeekTime(resume.seekTime);
+          bgAudio.volume = TARGET_BG_VOLUME;
+          bgAudio.play().then(() => {
+            isPlaying = true;
+            updateUIState(true);
+            savePlaybackState();
+            removeGestureListeners();
+          }).catch(() => {});
+        } else {
+          // Already running muted -> unmute and fade in!
+          isPlaying = true;
+          fadeAudioTo(TARGET_BG_VOLUME, 800);
+          updateUIState(true);
+          savePlaybackState();
+          removeGestureListeners();
+        }
+      }
+    }
+
+    function removeGestureListeners() {
+      gestureEvents.forEach(evt => {
+        window.removeEventListener(evt, tryUnmuteAndPlay, { capture: true });
+        document.removeEventListener(evt, tryUnmuteAndPlay, { capture: true });
+      });
+      unmuteAttached = false;
+    }
+
+    gestureEvents.forEach(evt => {
+      window.addEventListener(evt, tryUnmuteAndPlay, { capture: true, passive: true });
+      document.addEventListener(evt, tryUnmuteAndPlay, { capture: true, passive: true });
+    });
   }
 
   // Stop / pause background music with smooth fade-out
@@ -284,55 +354,6 @@
         updateUIState(false);
       });
     }
-  }
-
-  // Toggle mute / unmute
-  function toggleMute() {
-    isMuted = !isMuted;
-    try {
-      localStorage.setItem('portfolio_sound_muted', isMuted ? 'true' : 'false');
-    } catch (e) {}
-
-    if (hoverGainNode) {
-      hoverGainNode.gain.value = isMuted ? 0 : HOVER_VOLUME;
-    }
-    hoverPool.forEach(a => { a.volume = isMuted ? 0 : HOVER_VOLUME; });
-
-    if (isMuted) {
-      stopBgMusic(false);
-    } else {
-      userInteracted = true;
-      initAudioContext();
-      if (!hoverBuffer) loadHoverSound();
-      
-      const resume = getContinuousResumePosition();
-      startBgMusic(resume.shouldResume, resume.seekTime);
-      playHoverSound();
-    }
-  }
-
-  // Listen for first user interaction to unlock audio context & background music if blocked
-  function setupUserInteractionUnlock() {
-    const unlockEvents = ['pointerdown', 'keydown', 'touchstart'];
-    function unlock() {
-      if (userInteracted) return;
-      userInteracted = true;
-      initAudioContext();
-      if (!hoverBuffer) loadHoverSound();
-
-      if (!isMuted && (!bgAudio || bgAudio.paused)) {
-        const resume = getContinuousResumePosition();
-        startBgMusic(resume.shouldResume, resume.seekTime);
-      }
-
-      unlockEvents.forEach(evt => {
-        window.removeEventListener(evt, unlock, { capture: true });
-      });
-    }
-
-    unlockEvents.forEach(evt => {
-      window.addEventListener(evt, unlock, { capture: true, once: false, passive: true });
-    });
   }
 
   // Tab visibility detection (pause when hidden, resume continuous when visible)
@@ -418,7 +439,6 @@
         return;
       }
 
-      // Prevent triggering repeatedly when moving between child elements of the same button
       const related = e.relatedTarget;
       if (related && btn.contains(related)) return;
 
@@ -445,12 +465,36 @@
         <span class="bar bar-3"></span>
         <span class="bar bar-4"></span>
       </div>
-      <span class="sound-label">Sound</span>
+      <span class="sound-label">Sound On</span>
     `;
 
+    // Smart Click Handler:
+    // If paused/waiting for browser unlock -> Click IMMEDIATELY starts sound!
+    // If muted -> Unmute & start sound!
+    // If playing -> Mute sound!
     toggleBtn.addEventListener('click', e => {
       e.stopPropagation();
-      toggleMute();
+      userInteracted = true;
+      initAudioContext();
+      if (!hoverBuffer) loadHoverSound();
+
+      if (isMuted) {
+        isMuted = false;
+        try { localStorage.setItem('portfolio_sound_muted', 'false'); } catch (err) {}
+        startBgMusic();
+        playHoverSound();
+      } else if (!isPlaying || (bgAudio && bgAudio.paused)) {
+        // Sound is enabled, start it immediately on click!
+        if (bgAudio) bgAudio.muted = false;
+        const resume = getContinuousResumePosition();
+        startBgMusic(resume.shouldResume, resume.seekTime);
+        playHoverSound();
+      } else {
+        // Was playing -> Mute it
+        isMuted = true;
+        try { localStorage.setItem('portfolio_sound_muted', 'true'); } catch (err) {}
+        stopBgMusic(false);
+      }
     });
 
     document.body.appendChild(toggleBtn);
@@ -472,9 +516,10 @@
         const label = toggleBtn.querySelector('.sound-label');
         if (label) label.textContent = 'Sound On';
       } else {
+        // Ready / waiting for first gesture
         toggleBtn.classList.remove('is-playing');
         const label = toggleBtn.querySelector('.sound-label');
-        if (label) label.textContent = 'Sound';
+        if (label) label.textContent = 'Sound On';
       }
     }
   }
@@ -485,14 +530,13 @@
       return;
     }
     if (e.key === 'm' || e.key === 'M') {
-      toggleMute();
+      if (toggleBtn) toggleBtn.click();
     }
   });
 
   // Startup initialization
   function init() {
     setupButtonHoverListeners();
-    setupUserInteractionUnlock();
 
     if (document.body) {
       injectSoundToggleUI();
