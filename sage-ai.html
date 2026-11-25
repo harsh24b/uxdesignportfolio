@@ -6,7 +6,7 @@
   <title>Sage AI - Conversational UI | Harsh Bhawsar</title>
   <link rel="icon" type="image/png" href="faviconnew.webp?v=2">
   <link rel="apple-touch-icon" href="faviconnew.webp?v=2">
-  <link rel="stylesheet" href="style.css?v=163_sage_ai_offwhite">
+  <link rel="stylesheet" href="style.css?v=164_sage_ai_seamless">
   <!-- Google Fonts for Plus Jakarta Sans, Cormorant Garamond & Carattere -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -79,23 +79,38 @@
       outline: none;
     }
 
-    /* Slide Images Styling matching standard case studies */
+    /* Continuous Slide Presentation - zero curved radius, zero gap, seamless stick */
     .sage-ai-page .case-study-slides-flow {
+      width: 100%;
       display: flex;
       flex-direction: column;
-      gap: 28px;
+      gap: 0 !important;
+      margin: 0 !important;
+      padding: 0 !important;
     }
     .sage-ai-page .slide-section {
       width: 100%;
-      scroll-margin-top: 110px;
+      margin: 0 !important;
+      padding: 0 !important;
+      line-height: 0 !important;
+      font-size: 0 !important;
+      border: none !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+      scroll-margin-top: 96px;
+      overflow: hidden;
     }
     .sage-ai-page .topic-image {
       width: 100%;
       height: auto;
       display: block;
-      border-radius: clamp(14px, 1.4vw, 20px);
-      box-shadow: 0 8px 30px rgba(74, 44, 17, 0.08);
-      border: 1px solid rgba(74, 44, 17, 0.08);
+      margin: 0 !important;
+      padding: 0 !important;
+      border: none !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+      user-select: none;
+      -webkit-user-drag: none;
     }
   </style>
 </head>
@@ -133,7 +148,7 @@
               <a href="#video-walkthrough" class="sidebar-nav-link active" data-topic="video-walkthrough">Video Walkthrough</a>
             </li>
             <li class="sidebar-nav-item">
-              <a href="#overview" class="sidebar-nav-link" data-topic="overview">Overview</a>
+              <a href="#sage-ai" class="sidebar-nav-link" data-topic="sage-ai">Sage AI</a>
             </li>
             <li class="sidebar-nav-item">
               <a href="#why-premiere" class="sidebar-nav-link" data-topic="why-premiere">Why Premiere Pro</a>
@@ -210,8 +225,8 @@
 
         <!-- Continuous Slides Presentation Flow -->
         <div class="case-study-slides-flow">
-          <!-- Slide 01: Overview -->
-          <div class="slide-section" id="overview" data-topic="overview">
+          <!-- Slide 01: Sage AI -->
+          <div class="slide-section" id="sage-ai" data-topic="sage-ai">
             <img src="Sage%20ai/1.webp" alt="Sage AI - Conversational User Interface: The Expert Assistant For Adobe Premiere Pro" class="topic-image" loading="eager">
           </div>
 
@@ -471,7 +486,7 @@
 
       // Initial route from URL hash
       const initialHash = window.location.hash.replace('#', '').toLowerCase();
-      const validTopics = ['video-walkthrough', 'overview', 'why-premiere', 'capabilities', 'visual-identity', 'safeguards'];
+      const validTopics = ['video-walkthrough', 'sage-ai', 'why-premiere', 'capabilities', 'visual-identity', 'safeguards'];
       if (validTopics.includes(initialHash)) {
         setTimeout(() => {
           scrollToTopic(initialHash);
