@@ -6,214 +6,65 @@
   <title>Sage AI - Conversational UI | Harsh Bhawsar</title>
   <link rel="icon" type="image/png" href="faviconnew.webp?v=2">
   <link rel="apple-touch-icon" href="faviconnew.webp?v=2">
-  <link rel="stylesheet" href="style.css?v=162_sage_ai">
+  <link rel="stylesheet" href="style.css?v=163_sage_ai_offwhite">
   <!-- Google Fonts for Plus Jakarta Sans, Cormorant Garamond & Carattere -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Carattere&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    /* Dark Theme Core Reset for Sage AI Case Study */
-    html, body.sage-ai-page, .sage-ai-page, .sage-ai-page .case-study-page-wrapper {
-      background-color: #000000 !important;
-      color: #FFFFFF !important;
+    /* Consistent Off-White Page Background matching other case studies */
+    html, body.case-study-page, .case-study-page, .case-study-page-wrapper {
+      background-color: #FFFEF5 !important;
+    }
+    .sage-ai-page .nav-pill-btn.back-pill,
+    .sage-ai-page .navbar {
+      background: rgba(255, 254, 245, 0.88) !important;
+      border-color: rgba(74, 44, 17, 0.12) !important;
     }
     html {
       overflow-x: clip;
       scroll-behavior: smooth;
     }
-    body.case-study-page.sage-ai-page {
-      background-color: #000000 !important;
+    body.case-study-page {
       overflow-x: clip !important;
       overflow-y: visible !important;
       height: auto !important;
     }
-    .sage-ai-page .case-study-page-wrapper {
-      background-color: #000000 !important;
+    .case-study-page, .case-study-page-wrapper {
       overflow: visible !important;
       height: auto !important;
     }
 
-    /* Floating Dual-Pill Navbar Dark Theme */
-    .sage-ai-page .nav-pill-btn.back-pill,
-    .sage-ai-page .navbar {
-      background: rgba(14, 14, 18, 0.82) !important;
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, 0.14) !important;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6) !important;
-    }
-    .sage-ai-page .nav-pill-btn.back-pill {
-      color: #FFFFFF !important;
-    }
-    .sage-ai-page .nav-pill-btn.back-pill svg {
-      stroke: #FFFFFF !important;
-    }
-    .sage-ai-page .nav-pill-btn.back-pill:hover {
-      background: rgba(28, 28, 36, 0.95) !important;
-      border-color: rgba(155, 107, 255, 0.45) !important;
-      color: #FFFFFF !important;
-    }
-    .sage-ai-page .nav-link {
-      color: #B5B5C8 !important;
-    }
-    .sage-ai-page .nav-link:hover {
-      color: #FFFFFF !important;
-    }
-    .sage-ai-page .btn-contact {
-      background: linear-gradient(135deg, #6F49EA 0%, #9B6BFF 100%) !important;
-      color: #FFFFFF !important;
-      border: 1px solid rgba(255, 255, 255, 0.2) !important;
-      box-shadow: 0 4px 16px rgba(111, 73, 234, 0.4) !important;
-    }
-    .sage-ai-page .btn-contact:hover {
-      background: linear-gradient(135deg, #7F5AF0 0%, #AA80FF 100%) !important;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(111, 73, 234, 0.55) !important;
-    }
-
-    /* Left Sidebar Navigation Dark Theme */
-    .sage-ai-page .case-study-sidebar .sidebar-nav-link {
-      color: #7E7E94 !important;
-      transition: color 0.25s cubic-bezier(0.16, 1, 0.3, 1), transform 0.2s ease;
-    }
+    /* Sidebar active highlight for Sage AI */
     .sage-ai-page .case-study-sidebar .sidebar-nav-link:hover {
-      color: #FFFFFF !important;
-      transform: translateX(4px);
+      color: #6F49EA !important;
     }
     .sage-ai-page .case-study-sidebar .sidebar-nav-link.active {
-      color: #9B6BFF !important;
-      font-weight: 600 !important;
-      transform: translateX(4px);
+      color: #6F49EA !important;
+      font-weight: 600;
     }
 
-    /* Hero Article Header */
-    .sage-ai-page .case-study-hero {
-      margin-bottom: 28px;
-    }
-    .sage-ai-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 6px 14px;
-      border-radius: 999px;
-      background: rgba(111, 73, 234, 0.16);
-      border: 1px solid rgba(155, 107, 255, 0.35);
-      color: #C49EFF;
-      font-size: 13px;
-      font-weight: 500;
-      letter-spacing: 0.02em;
-      margin-bottom: 18px;
-    }
-    .sage-ai-badge .badge-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: #9B6BFF;
-      box-shadow: 0 0 8px #9B6BFF;
-    }
-    .sage-ai-page .case-study-title {
-      color: #FFFFFF !important;
-      font-size: clamp(34px, 4.2vw, 58px);
-      line-height: 1.1;
-      letter-spacing: -0.025em;
-      margin-bottom: 18px;
-      font-weight: 700;
-    }
-    .sage-ai-page .case-study-lead {
-      color: #BBBBCF !important;
-      font-size: clamp(16px, 1.25vw, 20px);
-      line-height: 1.65;
-      max-width: 860px;
-      margin-bottom: 0;
-    }
-
-    /* Specifications Table Dark Theme */
-    .sage-ai-page .spec-table-card {
-      background: rgba(14, 14, 20, 0.75) !important;
-      border: 1px solid rgba(255, 255, 255, 0.1) !important;
-      border-radius: 18px;
-      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45);
-      overflow: hidden;
-      margin-bottom: 40px;
-    }
-    .sage-ai-page .spec-table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-    .sage-ai-page .spec-table tr {
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
-    }
-    .sage-ai-page .spec-table tr:last-child {
-      border-bottom: none !important;
-    }
-    .sage-ai-page .spec-key {
-      color: #8C8C9E !important;
-      padding: 14px 20px;
-      font-weight: 500;
-      width: 28%;
-      vertical-align: top;
-      border: none !important;
-    }
-    .sage-ai-page .spec-value {
-      color: #EEEEF5 !important;
-      padding: 14px 20px;
-      font-weight: 400;
-      border: none !important;
-    }
-
-    /* Video Player Presentation */
+    /* Video Presentation Section - Contained Appropriate Width */
     .sage-ai-video-section {
-      margin-bottom: 44px;
+      width: 100%;
+      margin: 20px 0 36px 0;
       scroll-margin-top: 110px;
+      display: flex;
+      justify-content: center;
     }
     .sage-ai-video-card {
-      background: #09090E;
-      border: 1px solid rgba(155, 107, 255, 0.28);
-      border-radius: 20px;
+      width: 100%;
+      max-width: 900px;
+      background: #000000;
+      border-radius: clamp(14px, 1.4vw, 20px);
       overflow: hidden;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.85), 0 0 50px rgba(111, 73, 234, 0.15);
-      position: relative;
-    }
-    .sage-ai-video-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 14px 22px;
-      background: rgba(16, 16, 24, 0.85);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    }
-    .sage-ai-video-title-wrap {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .video-status-dot {
-      width: 9px;
-      height: 9px;
-      border-radius: 50%;
-      background: #9B6BFF;
-      box-shadow: 0 0 10px #9B6BFF;
-      display: inline-block;
-      animation: pulseDot 2s infinite ease-in-out;
-    }
-    @keyframes pulseDot {
-      0%, 100% { opacity: 0.6; transform: scale(0.95); }
-      50% { opacity: 1; transform: scale(1.15); }
-    }
-    .video-header-text {
-      color: #FFFFFF;
-      font-size: 14px;
-      font-weight: 600;
-      letter-spacing: -0.01em;
-    }
-    .video-header-tag {
-      color: #8E8EA8;
-      font-size: 12px;
-      font-weight: 500;
+      box-shadow: 0 16px 44px rgba(74, 44, 17, 0.12);
+      border: 1.5px solid rgba(74, 44, 17, 0.12);
     }
     .sage-ai-video-wrapper {
       position: relative;
       width: 100%;
+      aspect-ratio: 16 / 9;
       background: #000000;
       display: flex;
       align-items: center;
@@ -221,121 +72,30 @@
     }
     .sage-ai-video {
       width: 100%;
-      height: auto;
-      max-height: 82vh;
+      height: 100%;
+      object-fit: contain;
       display: block;
       background: #000000;
       outline: none;
     }
 
-    /* Slides Presentation Flow */
+    /* Slide Images Styling matching standard case studies */
     .sage-ai-page .case-study-slides-flow {
       display: flex;
       flex-direction: column;
-      gap: 36px;
+      gap: 28px;
     }
     .sage-ai-page .slide-section {
-      border-radius: 18px;
-      overflow: hidden;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      background: #08080D;
-      box-shadow: 0 16px 44px rgba(0, 0, 0, 0.7);
+      width: 100%;
       scroll-margin-top: 110px;
-      transition: border-color 0.3s ease;
-    }
-    .sage-ai-page .slide-section:hover {
-      border-color: rgba(155, 107, 255, 0.35);
     }
     .sage-ai-page .topic-image {
       width: 100%;
       height: auto;
       display: block;
-      border-radius: 17px;
-    }
-
-    /* Explore More Projects Section Dark Theme */
-    .sage-ai-page .case-study-explore-section {
-      background: transparent !important;
-      border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
-      padding-top: 72px;
-      margin-top: 80px;
-    }
-    .sage-ai-page .case-study-explore-title {
-      color: #FFFFFF !important;
-    }
-    .sage-ai-page .case-study-explore-grid .project-card {
-      background: rgba(14, 14, 20, 0.75) !important;
-      border: 1px solid rgba(255, 255, 255, 0.1) !important;
-      border-radius: 20px;
-      overflow: hidden;
-      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-    }
-    .sage-ai-page .case-study-explore-grid .project-card:hover {
-      transform: translateY(-5px);
-      border-color: rgba(255, 255, 255, 0.25) !important;
-      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.8) !important;
-    }
-    .sage-ai-page .project-card-title {
-      color: #FFFFFF !important;
-    }
-    .sage-ai-page .project-card-desc {
-      color: #9E9EB2 !important;
-    }
-    .sage-ai-page .project-card-divider {
-      background-color: rgba(255, 255, 255, 0.08) !important;
-    }
-    .sage-ai-page .project-action-btn {
-      background: rgba(255, 255, 255, 0.08) !important;
-      border: 1px solid rgba(255, 255, 255, 0.15) !important;
-      color: #FFFFFF !important;
-    }
-    .sage-ai-page .project-pill {
-      background: rgba(255, 255, 255, 0.08) !important;
-      border: 1px solid rgba(255, 255, 255, 0.12) !important;
-      color: #D2D2E0 !important;
-    }
-    .sage-ai-page .project-meta-tag {
-      color: #8C8CA0 !important;
-    }
-    .sage-ai-page .btn-view-more {
-      background: rgba(18, 18, 24, 0.85) !important;
-      border: 1px solid rgba(255, 255, 255, 0.18) !important;
-      color: #FFFFFF !important;
-    }
-    .sage-ai-page .btn-view-more:hover {
-      background: #FFFFFF !important;
-      color: #000000 !important;
-    }
-
-    /* Footer & Signature Dark Theme */
-    .sage-ai-page .footer-headline {
-      color: #FFFFFF !important;
-    }
-    .sage-ai-page .footer-card {
-      background: #09090D !important;
-      border: 1px solid rgba(255, 255, 255, 0.12) !important;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.9) !important;
-    }
-    .sage-ai-page .footer-col-label {
-      color: #8C8C9E !important;
-    }
-    .sage-ai-page .footer-link {
-      color: #E0E0EC !important;
-    }
-    .sage-ai-page .footer-link:hover {
-      color: #9B6BFF !important;
-    }
-    .sage-ai-page .footer-contact-item {
-      color: #FFFFFF !important;
-      background: rgba(255, 255, 255, 0.06) !important;
-      border: 1px solid rgba(255, 255, 255, 0.12) !important;
-    }
-    .sage-ai-page .footer-contact-item:hover {
-      border-color: rgba(155, 107, 255, 0.5) !important;
-      background: rgba(111, 73, 234, 0.15) !important;
-    }
-    .sage-ai-page .footer-signature-text {
-      color: rgba(255, 255, 255, 0.04) !important;
+      border-radius: clamp(14px, 1.4vw, 20px);
+      box-shadow: 0 8px 30px rgba(74, 44, 17, 0.08);
+      border: 1px solid rgba(74, 44, 17, 0.08);
     }
   </style>
 </head>
@@ -363,8 +123,9 @@
 
   <!-- Main Case Study Content Container -->
   <main class="case-study-page-wrapper">
+    <!-- Main Case Study Layout with Open Sticky Left Sidebar & Single Unified Slide Presentation -->
     <div class="case-study-layout-wrapper" id="caseStudyLayout">
-      <!-- Left Sidebar Navigation -->
+      <!-- Open Sticky Left Sidebar Navigation -->
       <aside class="case-study-sidebar" id="caseStudySidebar" aria-label="Topics Index">
         <nav class="sidebar-nav">
           <ul class="sidebar-nav-list" role="tablist">
@@ -394,15 +155,10 @@
       <div class="case-study-content-area" id="caseStudyContentArea">
         <!-- Hero Article Header -->
         <section class="case-study-hero">
-          <div class="sage-ai-badge">
-            <span class="badge-dot"></span>
-            <span>The Expert Assistant For Adobe Premiere Pro</span>
-          </div>
-
           <h1 class="case-study-title">Sage AI - Conversational UI</h1>
           
           <p class="case-study-lead">
-            Sage AI is an intelligent conversational assistant designed directly inside Adobe Premiere Pro. By answering complex workflow questions and automating multi-track timeline tasks in real time, it eliminates context switching to external tutorials and reduces steep editing learning curves for creators of every skill level.
+            Sage AI is an intelligent conversational assistant designed directly inside Adobe Premiere Pro. By answering workflow questions and automating multi-track timeline tasks in real time, it eliminates context switching to external tutorials and reduces steep editing learning curves for creators of every skill level.
           </p>
         </section>
 
@@ -413,46 +169,39 @@
               <tbody>
                 <tr>
                   <td class="spec-key">Project type</td>
-                  <td class="spec-value">Conversational User Interface (CUI) &amp; Interaction Design</td>
+                  <td class="spec-value">Conversational User Interface</td>
                 </tr>
                 <tr>
                   <td class="spec-key">Domain</td>
-                  <td class="spec-value">Generative AI • Video Editing Tools • Workflow Automation</td>
+                  <td class="spec-value">Interaction Design</td>
                 </tr>
                 <tr>
-                  <td class="spec-key">Host Application</td>
+                  <td class="spec-key">Timeline</td>
+                  <td class="spec-value">1 Week</td>
+                </tr>
+                <tr>
+                  <td class="spec-key">Tools used</td>
+                  <td class="spec-value">Adobe Premiere Pro, Figma</td>
+                </tr>
+                <tr>
+                  <td class="spec-key">Host application</td>
                   <td class="spec-value">Adobe Premiere Pro</td>
                 </tr>
                 <tr>
-                  <td class="spec-key">Tools Used</td>
-                  <td class="spec-value">Premiere Pro, Figma, Illustrator, Conversational UI Systems</td>
-                </tr>
-                <tr>
-                  <td class="spec-key">Core Capabilities</td>
+                  <td class="spec-key">Core capabilities</td>
                   <td class="spec-value">Contextual Recommendation, Seamless Task Execution, Interactive Walkthroughs, Personalized Workspace</td>
-                </tr>
-                <tr>
-                  <td class="spec-key">Design Safeguards</td>
-                  <td class="spec-value">Full Visibility, Instant Undo, Action Preview, Human-in-the-loop Timeline Protection</td>
                 </tr>
               </tbody>
             </table>
           </div>
         </section>
 
-        <!-- Video Walkthrough Section -->
+        <!-- Video Walkthrough Section - Contained Appropriate Width -->
         <section class="slide-section sage-ai-video-section" id="video-walkthrough" data-topic="video-walkthrough">
           <div class="sage-ai-video-card">
-            <div class="sage-ai-video-header">
-              <div class="sage-ai-video-title-wrap">
-                <span class="video-status-dot"></span>
-                <span class="video-header-text">Sage AI Interactive Video Demonstration</span>
-              </div>
-              <span class="video-header-tag">Jury Presentation • Task Automation</span>
-            </div>
             <div class="sage-ai-video-wrapper">
               <video class="sage-ai-video" controls autoplay muted loop playsinline preload="metadata">
-                <source src="Sage%20AI/sageaijury.mp4" type="video/mp4">
+                <source src="Sage%20ai/sageaijury.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
             </div>
@@ -463,27 +212,27 @@
         <div class="case-study-slides-flow">
           <!-- Slide 01: Overview -->
           <div class="slide-section" id="overview" data-topic="overview">
-            <img src="Sage%20AI/1.webp" alt="Sage AI - Conversational User Interface: The Expert Assistant For Adobe Premiere Pro" class="topic-image" loading="eager">
+            <img src="Sage%20ai/1.webp" alt="Sage AI - Conversational User Interface: The Expert Assistant For Adobe Premiere Pro" class="topic-image" loading="eager">
           </div>
 
           <!-- Slide 02: Why Premiere Pro -->
           <div class="slide-section" id="why-premiere" data-topic="why-premiere">
-            <img src="Sage%20AI/2.webp" alt="Why We Chose Adobe Premiere Pro - High Learning Curve, Repetitive Tasks &amp; Complex Workflows" class="topic-image" loading="lazy">
+            <img src="Sage%20ai/2.webp" alt="Why We Chose Adobe Premiere Pro - High Learning Curve, Repetitive Tasks &amp; Complex Workflows" class="topic-image" loading="lazy">
           </div>
 
-          <!-- Slide 03: Introduction & Capabilities -->
+          <!-- Slide 03: System & Capabilities -->
           <div class="slide-section" id="capabilities" data-topic="capabilities">
-            <img src="Sage%20AI/3.webp" alt="Introduction Of Adobe Sage AI - Premiere Pro Wireframe &amp; Core Capabilities" class="topic-image" loading="lazy">
+            <img src="Sage%20ai/3.webp" alt="Introduction Of Adobe Sage AI - Premiere Pro Wireframe &amp; Core Capabilities" class="topic-image" loading="lazy">
           </div>
 
           <!-- Slide 04: Visual Identity & Chatbot Screens -->
           <div class="slide-section" id="visual-identity" data-topic="visual-identity">
-            <img src="Sage%20AI/4.webp" alt="Visual Identity &amp; Complete Chatbot Interaction Screens for Adobe Sage AI" class="topic-image" loading="lazy">
+            <img src="Sage%20ai/4.webp" alt="Visual Identity &amp; Complete Chatbot Interaction Screens for Adobe Sage AI" class="topic-image" loading="lazy">
           </div>
 
           <!-- Slide 05: Safeguards & Conclusion -->
           <div class="slide-section" id="safeguards" data-topic="safeguards">
-            <img src="Sage%20AI/5.webp" alt="Design Constraints, Trust &amp; Control Safeguards, Learning &amp; Conclusion" class="topic-image" loading="lazy">
+            <img src="Sage%20ai/5.webp" alt="Design Constraints, Trust &amp; Control Safeguards, Learning &amp; Conclusion" class="topic-image" loading="lazy">
           </div>
         </div>
       </div>
@@ -671,7 +420,6 @@
       // Left Sidebar Navigation & ScrollSpy Controller
       const sidebarLinks = document.querySelectorAll('.case-study-sidebar .sidebar-nav-link');
       const slideSections = document.querySelectorAll('.slide-section');
-      const heroSection = document.querySelector('.case-study-hero');
 
       function setActiveTopic(topicId, updateHash = false) {
         sidebarLinks.forEach(link => {
