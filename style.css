@@ -2762,13 +2762,17 @@ body.sage-ai-page {
 }
 
 .skoda-page .spec-table-card {
-  background: rgba(255, 255, 255, 0.95);
-  border: 1px solid rgba(74, 44, 17, 0.12);
-  box-shadow: 0 8px 32px rgba(74, 44, 17, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  background: #FFFEF5 !important;
+  border: 1px solid rgba(74, 44, 17, 0.12) !important;
+  box-shadow: 0 8px 32px rgba(74, 44, 17, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.8) !important;
 }
 
 .skoda-page .spec-key {
-  background: rgba(245, 245, 247, 0.7);
+  background: rgba(242, 237, 212, 0.5) !important;
+}
+
+.skoda-page .spec-value {
+  background: #FFFEF5 !important;
 }
 
 /* Floating Dual-Pill Navbar Container */
@@ -6596,9 +6600,11 @@ body.about-page,
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: center; /* Center align filter buttons */
   gap: clamp(8px, 0.9vw, 14px);
   margin-top: clamp(16px, 1.8vw, 26px);
   margin-bottom: clamp(28px, 3.2vw, 42px);
+  width: 100%;
 }
 
 .work-filter-pill {
@@ -6615,7 +6621,8 @@ body.about-page,
   font-weight: 600;
   letter-spacing: -0.01em;
   cursor: pointer;
-  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: none !important; /* Remove drop shadows */
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
   user-select: none;
   outline: none;
 }
@@ -6624,14 +6631,14 @@ body.about-page,
   background-color: #740148;
   color: #FFFCDE;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(116, 1, 72, 0.22);
+  box-shadow: none !important; /* Remove drop shadows */
 }
 
 .work-filter-pill.active {
   background-color: #740148 !important; /* Maroon fill when active */
   color: #FFFCDE !important; /* Off-white text */
   border-color: #740148 !important;
-  box-shadow: 0 4px 14px rgba(116, 1, 72, 0.25);
+  box-shadow: none !important; /* Remove drop shadows */
   transform: none;
 }
 
