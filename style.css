@@ -6745,11 +6745,15 @@ body.about-page,
   box-sizing: border-box;
 }
 
-/* Download Resume button inherits .btn-view-more styles and matches more projects hover interaction */
+/* Download Resume button inherits .btn-view-more styles and matches more projects hover interaction with downward arrow */
 .btn-download-resume {
   border-radius: 0 !important; /* Zero curved radius, same as more projects */
   width: auto !important;
   display: inline-flex !important;
+}
+
+.btn-download-resume:hover .btn-view-more-arrow {
+  transform: translateY(4px) !important;
 }
 
 /* Ensure footer is completely visible and styled on resume page */
@@ -6777,6 +6781,43 @@ body.about-page,
   flex-direction: column !important;
   visibility: visible !important;
   background-color: #FFFCDE !important;
+}
+
+/* Sticker placement in footer card */
+.footer-sticker-sun {
+  left: 11%;
+  top: 65.5%;
+}
+.footer-sticker-lotus {
+  left: 35%;
+  top: 80%;
+}
+.footer-sticker-camera {
+  left: 60%;
+  top: 78%;
+}
+.footer-sticker-eye {
+  left: 88.5%;
+  top: 67.5%;
+}
+
+@media (max-width: 768px) {
+  .footer-sticker-sun {
+    left: 18%;
+    top: 82%;
+  }
+  .footer-sticker-lotus {
+    left: 42%;
+    top: 88%;
+  }
+  .footer-sticker-camera {
+    left: 65%;
+    top: 85%;
+  }
+  .footer-sticker-eye {
+    left: 85%;
+    top: 80%;
+  }
 }
 
 @media (max-width: 640px) {
