@@ -1127,6 +1127,11 @@ body {
   overflow: hidden;
 }
 
+.project-card.work-single-card {
+  max-width: calc(50% - clamp(8px, 0.8vw, 12px));
+  flex: 0 0 calc(50% - clamp(8px, 0.8vw, 12px));
+}
+
 /* Remove any scallop circle perforations */
 .project-card::before,
 .project-image-box::before,

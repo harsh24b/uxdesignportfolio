@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sage AI - Conversational UI | Harsh Bhawsar</title>
+  <link rel="icon" type="image/png" href="faviconnew.webp?v=2">
+  <link rel="apple-touch-icon" href="faviconnew.webp?v=2">
+  <link rel="stylesheet" href="style.css?v=162_sage_ai">
+  <!-- Google Fonts for Plus Jakarta Sans, Cormorant Garamond & Carattere -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Carattere&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* Dark Theme Core Reset for Sage AI Case Study */
+    html, body.sage-ai-page, .sage-ai-page, .sage-ai-page .case-study-page-wrapper {
+      background-color: #000000 !important;
+      color: #FFFFFF !important;
+    }
+    html {
+      overflow-x: clip;
+      scroll-behavior: smooth;
+    }
+    body.case-study-page.sage-ai-page {
+      background-color: #000000 !important;
+      overflow-x: clip !important;
+      overflow-y: visible !important;
+      height: auto !important;
+    }
+    .sage-ai-page .case-study-page-wrapper {
+      background-color: #000000 !important;
+      overflow: visible !important;
+      height: auto !important;
+    }
+
+    /* Floating Dual-Pill Navbar Dark Theme */
+    .sage-ai-page .nav-pill-btn.back-pill,
+    .sage-ai-page .navbar {
+      background: rgba(14, 14, 18, 0.82) !important;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.14) !important;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6) !important;
+    }
+    .sage-ai-page .nav-pill-btn.back-pill {
+      color: #FFFFFF !important;
+    }
+    .sage-ai-page .nav-pill-btn.back-pill svg {
+      stroke: #FFFFFF !important;
+    }
+    .sage-ai-page .nav-pill-btn.back-pill:hover {
+      background: rgba(28, 28, 36, 0.95) !important;
+      border-color: rgba(155, 107, 255, 0.45) !important;
+      color: #FFFFFF !important;
+    }
+    .sage-ai-page .nav-link {
+      color: #B5B5C8 !important;
+    }
+    .sage-ai-page .nav-link:hover {
+      color: #FFFFFF !important;
+    }
+    .sage-ai-page .btn-contact {
+      background: linear-gradient(135deg, #6F49EA 0%, #9B6BFF 100%) !important;
+      color: #FFFFFF !important;
+      border: 1px solid rgba(255, 255, 255, 0.2) !important;
+      box-shadow: 0 4px 16px rgba(111, 73, 234, 0.4) !important;
+    }
+    .sage-ai-page .btn-contact:hover {
+      background: linear-gradient(135deg, #7F5AF0 0%, #AA80FF 100%) !important;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(111, 73, 234, 0.55) !important;
+    }
+
+    /* Left Sidebar Navigation Dark Theme */
+    .sage-ai-page .case-study-sidebar .sidebar-nav-link {
+      color: #7E7E94 !important;
+      transition: color 0.25s cubic-bezier(0.16, 1, 0.3, 1), transform 0.2s ease;
+    }
+    .sage-ai-page .case-study-sidebar .sidebar-nav-link:hover {
+      color: #FFFFFF !important;
+      transform: translateX(4px);
+    }
+    .sage-ai-page .case-study-sidebar .sidebar-nav-link.active {
+      color: #9B6BFF !important;
+      font-weight: 600 !important;
+      transform: translateX(4px);
+    }
+
+    /* Hero Article Header */
+    .sage-ai-page .case-study-hero {
+      margin-bottom: 28px;
+    }
+    .sage-ai-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: rgba(111, 73, 234, 0.16);
+      border: 1px solid rgba(155, 107, 255, 0.35);
+      color: #C49EFF;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      margin-bottom: 18px;
+    }
+    .sage-ai-badge .badge-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #9B6BFF;
+      box-shadow: 0 0 8px #9B6BFF;
+    }
+    .sage-ai-page .case-study-title {
+      color: #FFFFFF !important;
+      font-size: clamp(34px, 4.2vw, 58px);
+      line-height: 1.1;
+      letter-spacing: -0.025em;
+      margin-bottom: 18px;
+      font-weight: 700;
+    }
+    .sage-ai-page .case-study-lead {
+      color: #BBBBCF !important;
+      font-size: clamp(16px, 1.25vw, 20px);
+      line-height: 1.65;
+      max-width: 860px;
+      margin-bottom: 0;
+    }
+
+    /* Specifications Table Dark Theme */
+    .sage-ai-page .spec-table-card {
+      background: rgba(14, 14, 20, 0.75) !important;
+      border: 1px solid rgba(255, 255, 255, 0.1) !important;
+      border-radius: 18px;
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45);
+      overflow: hidden;
+      margin-bottom: 40px;
+    }
+    .sage-ai-page .spec-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .sage-ai-page .spec-table tr {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+    }
+    .sage-ai-page .spec-table tr:last-child {
+      border-bottom: none !important;
+    }
+    .sage-ai-page .spec-key {
+      color: #8C8C9E !important;
+      padding: 14px 20px;
+      font-weight: 500;
+      width: 28%;
+      vertical-align: top;
+      border: none !important;
+    }
+    .sage-ai-page .spec-value {
+      color: #EEEEF5 !important;
+      padding: 14px 20px;
+      font-weight: 400;
+      border: none !important;
+    }
+
+    /* Video Player Presentation */
+    .sage-ai-video-section {
+      margin-bottom: 44px;
+      scroll-margin-top: 110px;
+    }
+    .sage-ai-video-card {
+      background: #09090E;
+      border: 1px solid rgba(155, 107, 255, 0.28);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.85), 0 0 50px rgba(111, 73, 234, 0.15);
+      position: relative;
+    }
+    .sage-ai-video-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 22px;
+      background: rgba(16, 16, 24, 0.85);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .sage-ai-video-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .video-status-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: #9B6BFF;
+      box-shadow: 0 0 10px #9B6BFF;
+      display: inline-block;
+      animation: pulseDot 2s infinite ease-in-out;
+    }
+    @keyframes pulseDot {
+      0%, 100% { opacity: 0.6; transform: scale(0.95); }
+      50% { opacity: 1; transform: scale(1.15); }
+    }
+    .video-header-text {
+      color: #FFFFFF;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+    .video-header-tag {
+      color: #8E8EA8;
+      font-size: 12px;
+      font-weight: 500;
+    }
+    .sage-ai-video-wrapper {
+      position: relative;
+      width: 100%;
+      background: #000000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .sage-ai-video {
+      width: 100%;
+      height: auto;
+      max-height: 82vh;
+      display: block;
+      background: #000000;
+      outline: none;
+    }
+
+    /* Slides Presentation Flow */
+    .sage-ai-page .case-study-slides-flow {
+      display: flex;
+      flex-direction: column;
+      gap: 36px;
+    }
+    .sage-ai-page .slide-section {
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: #08080D;
+      box-shadow: 0 16px 44px rgba(0, 0, 0, 0.7);
+      scroll-margin-top: 110px;
+      transition: border-color 0.3s ease;
+    }
+    .sage-ai-page .slide-section:hover {
+      border-color: rgba(155, 107, 255, 0.35);
+    }
+    .sage-ai-page .topic-image {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 17px;
+    }
+
+    /* Explore More Projects Section Dark Theme */
+    .sage-ai-page .case-study-explore-section {
+      background: transparent !important;
+      border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+      padding-top: 72px;
+      margin-top: 80px;
+    }
+    .sage-ai-page .case-study-explore-title {
+      color: #FFFFFF !important;
+    }
+    .sage-ai-page .case-study-explore-grid .project-card {
+      background: rgba(14, 14, 20, 0.75) !important;
+      border: 1px solid rgba(255, 255, 255, 0.1) !important;
+      border-radius: 20px;
+      overflow: hidden;
+      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    .sage-ai-page .case-study-explore-grid .project-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(255, 255, 255, 0.25) !important;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.8) !important;
+    }
+    .sage-ai-page .project-card-title {
+      color: #FFFFFF !important;
+    }
+    .sage-ai-page .project-card-desc {
+      color: #9E9EB2 !important;
+    }
+    .sage-ai-page .project-card-divider {
+      background-color: rgba(255, 255, 255, 0.08) !important;
+    }
+    .sage-ai-page .project-action-btn {
+      background: rgba(255, 255, 255, 0.08) !important;
+      border: 1px solid rgba(255, 255, 255, 0.15) !important;
+      color: #FFFFFF !important;
+    }
+    .sage-ai-page .project-pill {
+      background: rgba(255, 255, 255, 0.08) !important;
+      border: 1px solid rgba(255, 255, 255, 0.12) !important;
+      color: #D2D2E0 !important;
+    }
+    .sage-ai-page .project-meta-tag {
+      color: #8C8CA0 !important;
+    }
+    .sage-ai-page .btn-view-more {
+      background: rgba(18, 18, 24, 0.85) !important;
+      border: 1px solid rgba(255, 255, 255, 0.18) !important;
+      color: #FFFFFF !important;
+    }
+    .sage-ai-page .btn-view-more:hover {
+      background: #FFFFFF !important;
+      color: #000000 !important;
+    }
+
+    /* Footer & Signature Dark Theme */
+    .sage-ai-page .footer-headline {
+      color: #FFFFFF !important;
+    }
+    .sage-ai-page .footer-card {
+      background: #09090D !important;
+      border: 1px solid rgba(255, 255, 255, 0.12) !important;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.9) !important;
+    }
+    .sage-ai-page .footer-col-label {
+      color: #8C8C9E !important;
+    }
+    .sage-ai-page .footer-link {
+      color: #E0E0EC !important;
+    }
+    .sage-ai-page .footer-link:hover {
+      color: #9B6BFF !important;
+    }
+    .sage-ai-page .footer-contact-item {
+      color: #FFFFFF !important;
+      background: rgba(255, 255, 255, 0.06) !important;
+      border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    }
+    .sage-ai-page .footer-contact-item:hover {
+      border-color: rgba(155, 107, 255, 0.5) !important;
+      background: rgba(111, 73, 234, 0.15) !important;
+    }
+    .sage-ai-page .footer-signature-text {
+      color: rgba(255, 255, 255, 0.04) !important;
+    }
+  </style>
+</head>
+<body class="case-study-page sage-ai-page">
+  <!-- Floating Dual-Pill Navbar Container -->
+  <header class="navbar-container case-study-navbar-container">
+    <a href="index.html#work" class="nav-pill-btn back-pill">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="19" y1="12" x2="5" y2="12"></line>
+        <polyline points="12 19 5 12 12 5"></polyline>
+      </svg>
+      <span>Back to Projects</span>
+    </a>
+
+    <nav class="navbar">
+      <a href="work.html" class="nav-link">Work</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="https://drive.google.com/drive/folders/1MXd7MDGMQqW5t3EXo6YHGRUl8pG_nnD-" target="_blank" rel="noopener noreferrer" class="nav-link">Resume</a>
+      <a href="#contact" class="btn-contact">
+        <img src="Mail.svg" class="mail-icon" alt="Mail Icon">
+        Work with me
+      </a>
+    </nav>
+  </header>
+
+  <!-- Main Case Study Content Container -->
+  <main class="case-study-page-wrapper">
+    <div class="case-study-layout-wrapper" id="caseStudyLayout">
+      <!-- Left Sidebar Navigation -->
+      <aside class="case-study-sidebar" id="caseStudySidebar" aria-label="Topics Index">
+        <nav class="sidebar-nav">
+          <ul class="sidebar-nav-list" role="tablist">
+            <li class="sidebar-nav-item">
+              <a href="#video-walkthrough" class="sidebar-nav-link active" data-topic="video-walkthrough">Video Walkthrough</a>
+            </li>
+            <li class="sidebar-nav-item">
+              <a href="#overview" class="sidebar-nav-link" data-topic="overview">Overview</a>
+            </li>
+            <li class="sidebar-nav-item">
+              <a href="#why-premiere" class="sidebar-nav-link" data-topic="why-premiere">Why Premiere Pro</a>
+            </li>
+            <li class="sidebar-nav-item">
+              <a href="#capabilities" class="sidebar-nav-link" data-topic="capabilities">System & Capabilities</a>
+            </li>
+            <li class="sidebar-nav-item">
+              <a href="#visual-identity" class="sidebar-nav-link" data-topic="visual-identity">Visual Identity & Screens</a>
+            </li>
+            <li class="sidebar-nav-item">
+              <a href="#safeguards" class="sidebar-nav-link" data-topic="safeguards">Safeguards & Conclusion</a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- Right Content Area -->
+      <div class="case-study-content-area" id="caseStudyContentArea">
+        <!-- Hero Article Header -->
+        <section class="case-study-hero">
+          <div class="sage-ai-badge">
+            <span class="badge-dot"></span>
+            <span>The Expert Assistant For Adobe Premiere Pro</span>
+          </div>
+
+          <h1 class="case-study-title">Sage AI - Conversational UI</h1>
+          
+          <p class="case-study-lead">
+            Sage AI is an intelligent conversational assistant designed directly inside Adobe Premiere Pro. By answering complex workflow questions and automating multi-track timeline tasks in real time, it eliminates context switching to external tutorials and reduces steep editing learning curves for creators of every skill level.
+          </p>
+        </section>
+
+        <!-- Project Specifications Table Section -->
+        <section class="case-study-section">
+          <div class="spec-table-card">
+            <table class="spec-table">
+              <tbody>
+                <tr>
+                  <td class="spec-key">Project type</td>
+                  <td class="spec-value">Conversational User Interface (CUI) &amp; Interaction Design</td>
+                </tr>
+                <tr>
+                  <td class="spec-key">Domain</td>
+                  <td class="spec-value">Generative AI • Video Editing Tools • Workflow Automation</td>
+                </tr>
+                <tr>
+                  <td class="spec-key">Host Application</td>
+                  <td class="spec-value">Adobe Premiere Pro</td>
+                </tr>
+                <tr>
+                  <td class="spec-key">Tools Used</td>
+                  <td class="spec-value">Premiere Pro, Figma, Illustrator, Conversational UI Systems</td>
+                </tr>
+                <tr>
+                  <td class="spec-key">Core Capabilities</td>
+                  <td class="spec-value">Contextual Recommendation, Seamless Task Execution, Interactive Walkthroughs, Personalized Workspace</td>
+                </tr>
+                <tr>
+                  <td class="spec-key">Design Safeguards</td>
+                  <td class="spec-value">Full Visibility, Instant Undo, Action Preview, Human-in-the-loop Timeline Protection</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- Video Walkthrough Section -->
+        <section class="slide-section sage-ai-video-section" id="video-walkthrough" data-topic="video-walkthrough">
+          <div class="sage-ai-video-card">
+            <div class="sage-ai-video-header">
+              <div class="sage-ai-video-title-wrap">
+                <span class="video-status-dot"></span>
+                <span class="video-header-text">Sage AI Interactive Video Demonstration</span>
+              </div>
+              <span class="video-header-tag">Jury Presentation • Task Automation</span>
+            </div>
+            <div class="sage-ai-video-wrapper">
+              <video class="sage-ai-video" controls autoplay muted loop playsinline preload="metadata">
+                <source src="Sage%20AI/sageaijury.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </section>
+
+        <!-- Continuous Slides Presentation Flow -->
+        <div class="case-study-slides-flow">
+          <!-- Slide 01: Overview -->
+          <div class="slide-section" id="overview" data-topic="overview">
+            <img src="Sage%20AI/1.webp" alt="Sage AI - Conversational User Interface: The Expert Assistant For Adobe Premiere Pro" class="topic-image" loading="eager">
+          </div>
+
+          <!-- Slide 02: Why Premiere Pro -->
+          <div class="slide-section" id="why-premiere" data-topic="why-premiere">
+            <img src="Sage%20AI/2.webp" alt="Why We Chose Adobe Premiere Pro - High Learning Curve, Repetitive Tasks &amp; Complex Workflows" class="topic-image" loading="lazy">
+          </div>
+
+          <!-- Slide 03: Introduction & Capabilities -->
+          <div class="slide-section" id="capabilities" data-topic="capabilities">
+            <img src="Sage%20AI/3.webp" alt="Introduction Of Adobe Sage AI - Premiere Pro Wireframe &amp; Core Capabilities" class="topic-image" loading="lazy">
+          </div>
+
+          <!-- Slide 04: Visual Identity & Chatbot Screens -->
+          <div class="slide-section" id="visual-identity" data-topic="visual-identity">
+            <img src="Sage%20AI/4.webp" alt="Visual Identity &amp; Complete Chatbot Interaction Screens for Adobe Sage AI" class="topic-image" loading="lazy">
+          </div>
+
+          <!-- Slide 05: Safeguards & Conclusion -->
+          <div class="slide-section" id="safeguards" data-topic="safeguards">
+            <img src="Sage%20AI/5.webp" alt="Design Constraints, Trust &amp; Control Safeguards, Learning &amp; Conclusion" class="topic-image" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Explore More Projects Section -->
+    <section class="case-study-explore-section">
+      <div class="case-study-explore-header">
+        <h2 class="case-study-explore-title"><span class="heading-cap">E</span><span class="heading-rest">xplore more projects</span></h2>
+      </div>
+
+      <div class="projects-row case-study-explore-grid">
+        <!-- Project 1: KAMO AI -->
+        <a href="kamo-ai.html" class="project-card" data-cursor-color="#B757E6" data-cursor-title="Kamo AI :<br>Empathetic AI">
+          <div class="project-card-inner">
+            <div class="project-image-box">
+              <img src="Kamo%20ai%20new.webp" alt="Kamo AI - Empathetic AI Agent" class="project-img" loading="lazy" decoding="async">
+              <div class="project-card-tags-overlay">
+                <div class="project-pills">
+                  <span class="project-pill"><span class="pill-dot" style="background:#B757E6;"></span>AI Agent</span>
+                  <span class="project-pill">Ed-Tech</span>
+                </div>
+                <div class="project-meta-tag">
+                  <span class="meta-year">2026</span>
+                  <span class="meta-separator">•</span>
+                  <span class="meta-type">Case Study</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-card-footer">
+              <div class="project-title-group">
+                <h3 class="project-card-title">Kamo AI : Empathetic Companion</h3>
+                <p class="project-card-desc">Empathetic AI productivity agent helping students overcome procrastination, manage tasks, maintain focus, and build sustainable habits.</p>
+              </div>
+              <div class="project-action-btn" aria-label="Explore Project">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Project 2: Bus Transportation Management -->
+        <a href="transportation.html" class="project-card" data-cursor-color="#FE820A" data-cursor-title="Bus Transportation<br>Management">
+          <div class="project-card-inner">
+            <div class="project-image-box">
+              <img src="bus%20transportation%20new%20card.png" alt="MIT-ADT University Bus Transportation Management" class="project-img" loading="lazy" decoding="async">
+              <div class="project-card-tags-overlay">
+                <div class="project-pills">
+                  <span class="project-pill"><span class="pill-dot" style="background:#FE820A;"></span>Object Oriented UX</span>
+                  <span class="project-pill">System Design</span>
+                </div>
+                <div class="project-meta-tag">
+                  <span class="meta-year">2026</span>
+                  <span class="meta-separator">•</span>
+                  <span class="meta-type">Case Study</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-card-footer">
+              <div class="project-title-group">
+                <h3 class="project-card-title">BUS TRANSPORTATION MANAGEMENT</h3>
+                <p class="project-card-desc">Designed a unified MIT-ADT transportation system that streamlines bus operations and gives students real-time tracking, schedules, and delay updates.</p>
+              </div>
+              <div class="project-action-btn" aria-label="Explore Project">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- View All Projects Button -->
+      <div class="view-more-container" style="margin-top: 36px;">
+        <a href="work.html" class="btn-view-more" aria-label="View all projects">
+          <span class="btn-view-more-text">View all projects</span>
+          <div class="btn-view-more-arrow">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </div>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Signature Footer & Contact Section -->
+  <footer class="footer-section" id="contact">
+    <div class="footer-headline-container">
+      <h2 class="footer-headline"><span class="heading-cap">L</span><span class="heading-rest">et’s build experiences that matter</span></h2>
+    </div>
+    <div class="footer-card">
+      <div class="footer-card-content">
+        <div class="footer-grid">
+          <!-- Column 1: Navigation -->
+          <div class="footer-col footer-col-nav">
+            <span class="footer-col-label">NAVIGATION</span>
+            <ul class="footer-links-list">
+              <li><a href="work.html" class="footer-link">Work</a></li>
+              <li><a href="about.html" class="footer-link">About</a></li>
+              <li><a href="https://drive.google.com/drive/folders/1MXd7MDGMQqW5t3EXo6YHGRUl8pG_nnD-" target="_blank" rel="noopener noreferrer" class="footer-link">Resume</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 2: Social -->
+          <div class="footer-col footer-col-social">
+            <span class="footer-col-label">SOCIAL</span>
+            <ul class="footer-links-list">
+              <li><a href="https://www.behance.net/harshbhawsar" target="_blank" rel="noopener noreferrer" class="footer-link">Behance</a></li>
+              <li><a href="https://www.linkedin.com/in/harsh-bhawsar-ba25581b9/" target="_blank" rel="noopener noreferrer" class="footer-link">LinkedIn</a></li>
+              <li><a href="https://wa.me/917773892631" target="_blank" rel="noopener noreferrer" class="footer-link">WhatsApp</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Contact -->
+          <div class="footer-col footer-col-contact">
+            <span class="footer-col-label">CONTACT</span>
+            <div class="footer-contact-items">
+              <div class="footer-contact-item-wrap">
+                <a href="mailto:harshhbhawsar@gmail.com" class="footer-contact-item" data-copy="harshhbhawsar@gmail.com" title="Click to copy email">harshhbhawsar@gmail.com</a>
+                <span class="copied-badge" aria-hidden="true">Copied</span>
+              </div>
+              <div class="footer-contact-item-wrap">
+                <a href="tel:+917773892631" class="footer-contact-item" data-copy="+91 7773892631" title="Click to copy phone number">+91 7773892631</a>
+                <span class="copied-badge" aria-hidden="true">Copied</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Signature Typography -->
+      <div class="footer-signature-container">
+        <span class="footer-signature-text">harsh</span>
+      </div>
+
+      <!-- Interactive Draggable Stickers Layer -->
+      <div class="footer-stickers-layer" id="footerStickersLayer">
+        <div class="footer-sticker footer-sticker-sun" data-id="sun" title="Drag me!">
+          <img src="suncontacts.webp" alt="Sun sticker" draggable="false" loading="lazy" decoding="async">
+        </div>
+        <div class="footer-sticker footer-sticker-lotus" data-id="lotus" title="Drag me!">
+          <img src="lotuscontacts.webp" alt="Lotus sticker" draggable="false" loading="lazy" decoding="async">
+        </div>
+        <div class="footer-sticker footer-sticker-camera" data-id="camera" title="Drag me!">
+          <img src="cameracontacts.webp" alt="Camera sticker" draggable="false" loading="lazy" decoding="async">
+        </div>
+        <div class="footer-sticker footer-sticker-eye" data-id="eye" title="Drag me!">
+          <img src="eyecontacts.webp" alt="Eye sticker" draggable="false" loading="lazy" decoding="async">
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Audio Controller (Automatically silences on project pages) -->
+  <script src="audio-controller.js"></script>
+
+  <!-- Interactive Logic: Dual-Pill Navbar, Left Sidebar ScrollSpy, Draggable Stickers & Button Interactions -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Dual-Pill Navbar Scroll Reveal Logic
+      const navbarContainer = document.querySelector('.case-study-navbar-container');
+      let lastScrollY = window.pageYOffset || document.documentElement.scrollTop;
+
+      window.addEventListener('scroll', () => {
+        const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+        if (navbarContainer) {
+          if (scrollY > lastScrollY && scrollY > 150) {
+            navbarContainer.classList.add('nav-hidden');
+          } else {
+            navbarContainer.classList.remove('nav-hidden');
+          }
+        }
+        lastScrollY = scrollY;
+      }, { passive: true });
+
+      // Left Sidebar Navigation & ScrollSpy Controller
+      const sidebarLinks = document.querySelectorAll('.case-study-sidebar .sidebar-nav-link');
+      const slideSections = document.querySelectorAll('.slide-section');
+      const heroSection = document.querySelector('.case-study-hero');
+
+      function setActiveTopic(topicId, updateHash = false) {
+        sidebarLinks.forEach(link => {
+          if (link.getAttribute('data-topic') === topicId) {
+            link.classList.add('active');
+          } else {
+            link.classList.remove('active');
+          }
+        });
+        if (updateHash && window.location.hash !== `#${topicId}`) {
+          history.replaceState(null, '', `#${topicId}`);
+        }
+      }
+
+      function scrollToTopic(topicId) {
+        const targetEl = document.getElementById(topicId);
+        if (targetEl) {
+          const yOffset = -96; // accounts for floating navbar
+          const y = targetEl.getBoundingClientRect().top + window.pageYOffset + yOffset;
+          window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+          setActiveTopic(topicId, true);
+        }
+      }
+
+      sidebarLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          const topicId = link.getAttribute('data-topic');
+          scrollToTopic(topicId);
+        });
+      });
+
+      // ScrollSpy Observer
+      const slideObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const topicId = entry.target.getAttribute('data-topic');
+            if (topicId) {
+              setActiveTopic(topicId, false);
+            }
+          }
+        });
+      }, {
+        rootMargin: '-20% 0px -60% 0px',
+        threshold: 0
+      });
+
+      slideSections.forEach(section => slideObserver.observe(section));
+
+      // Initial route from URL hash
+      const initialHash = window.location.hash.replace('#', '').toLowerCase();
+      const validTopics = ['video-walkthrough', 'overview', 'why-premiere', 'capabilities', 'visual-identity', 'safeguards'];
+      if (validTopics.includes(initialHash)) {
+        setTimeout(() => {
+          scrollToTopic(initialHash);
+        }, 150);
+      }
+
+      window.addEventListener('popstate', () => {
+        const hash = window.location.hash.replace('#', '').toLowerCase();
+        if (validTopics.includes(hash)) {
+          scrollToTopic(hash);
+        }
+      });
+
+      // Footer Scroll Reveal Observer
+      const footerHeadline = document.querySelector('.footer-headline');
+      const footerCard = document.querySelector('.footer-card');
+
+      const footerObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
+
+      if (footerHeadline) footerObserver.observe(footerHeadline);
+      if (footerCard) footerObserver.observe(footerCard);
+
+      // Contact Draggable Physics-Based Stickers Engine
+      const initContactStickers = () => {
+        const footerCard = document.querySelector('.footer-card');
+        if (!footerCard) return;
+
+        const isMobile = window.innerWidth <= 768;
+
+        const stickers = [
+          {
+            id: 'sun',
+            el: footerCard.querySelector('.footer-sticker-sun'),
+            defaultLeftPct: isMobile ? 18.0 : 11.0,
+            defaultTopPct: isMobile ? 82.0 : 65.5,
+            defaultRot: -2,
+            animId: null
+          },
+          {
+            id: 'lotus',
+            el: footerCard.querySelector('.footer-sticker-lotus'),
+            defaultLeftPct: isMobile ? 42.0 : 35.0,
+            defaultTopPct: isMobile ? 88.0 : 80.0,
+            defaultRot: 0,
+            animId: null
+          },
+          {
+            id: 'camera',
+            el: footerCard.querySelector('.footer-sticker-camera'),
+            defaultLeftPct: isMobile ? 65.0 : 60.0,
+            defaultTopPct: isMobile ? 85.0 : 78.0,
+            defaultRot: 10,
+            animId: null
+          },
+          {
+            id: 'eye',
+            el: footerCard.querySelector('.footer-sticker-eye'),
+            defaultLeftPct: isMobile ? 85.0 : 88.5,
+            defaultTopPct: isMobile ? 80.0 : 67.5,
+            defaultRot: -6,
+            animId: null
+          }
+        ];
+
+        let highestZ = 20;
+        let isDraggingAny = false;
+        let hasMovedAny = false;
+
+        const setStickerPosition = (item, leftPx, topPx, animate = false) => {
+          if (!item.el) return;
+          if (item.animId) {
+            cancelAnimationFrame(item.animId);
+            item.animId = null;
+          }
+          if (animate) {
+            item.el.style.transition = 'left 0.75s cubic-bezier(0.16, 1, 0.3, 1), top 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1)';
+          } else {
+            item.el.style.transition = '';
+          }
+          item.currentLeft = leftPx;
+          item.currentTop = topPx;
+          item.el.style.left = `${leftPx}px`;
+          item.el.style.top = `${topPx}px`;
+          item.el.style.transform = `translate(-50%, -50%) rotate(${item.currentRot !== undefined ? item.currentRot : item.defaultRot}deg)`;
+        };
+
+        const resetStickersToDefault = (animate = true) => {
+          const cardRect = footerCard.getBoundingClientRect();
+          if (cardRect.width === 0 || cardRect.height === 0) return;
+
+          stickers.forEach(item => {
+            if (!item.el) return;
+            if (item.animId) {
+              cancelAnimationFrame(item.animId);
+              item.animId = null;
+            }
+            const targetLeft = (item.defaultLeftPct / 100) * cardRect.width;
+            const targetTop = (item.defaultTopPct / 100) * cardRect.height;
+            item.currentRot = item.defaultRot;
+            setStickerPosition(item, targetLeft, targetTop, animate);
+          });
+          hasMovedAny = false;
+        };
+
+        setTimeout(() => resetStickersToDefault(false), 150);
+        window.addEventListener('resize', () => {
+          if (!hasMovedAny) resetStickersToDefault(false);
+        });
+
+        stickers.forEach(item => {
+          const el = item.el;
+          if (!el) return;
+
+          let isDragging = false;
+          let startPointerX = 0, startPointerY = 0;
+          let lastPointerX = 0, lastPointerY = 0;
+          let lastMoveTime = 0;
+          let velocityX = 0, velocityY = 0;
+          let startStickerLeft = 0, startStickerTop = 0;
+
+          const onPointerDown = (e) => {
+            e.preventDefault();
+            if (item.animId) {
+              cancelAnimationFrame(item.animId);
+              item.animId = null;
+            }
+            isDragging = true;
+            isDraggingAny = true;
+            hasMovedAny = true;
+            highestZ += 1;
+            el.style.zIndex = highestZ;
+            el.classList.add('is-dragging');
+
+            const clientX = e.clientX !== undefined ? e.clientX : (e.touches && e.touches[0].clientX) || 0;
+            const clientY = e.clientY !== undefined ? e.clientY : (e.touches && e.touches[0].clientY) || 0;
+
+            startPointerX = clientX;
+            startPointerY = clientY;
+            lastPointerX = clientX;
+            lastPointerY = clientY;
+            lastMoveTime = performance.now();
+            velocityX = 0;
+            velocityY = 0;
+
+            startStickerLeft = item.currentLeft || (parseFloat(el.style.left) || 0);
+            startStickerTop = item.currentTop || (parseFloat(el.style.top) || 0);
+
+            el.style.transition = 'none';
+            el.style.transform = `translate(-50%, -50%) rotate(${item.defaultRot}deg) scale(1.08)`;
+          };
+
+          const onPointerMove = (e) => {
+            if (!isDragging) return;
+            e.preventDefault();
+
+            const clientX = e.clientX !== undefined ? e.clientX : (e.touches && e.touches[0].clientX) || 0;
+            const clientY = e.clientY !== undefined ? e.clientY : (e.touches && e.touches[0].clientY) || 0;
+
+            const now = performance.now();
+            const dt = Math.max(now - lastMoveTime, 1);
+            const dx = clientX - lastPointerX;
+            const dy = clientY - lastPointerY;
+
+            lastPointerX = clientX;
+            lastPointerY = clientY;
+            lastMoveTime = now;
+
+            const instVx = (dx / dt) * 16.67;
+            const instVy = (dy / dt) * 16.67;
+            velocityX = velocityX * 0.4 + instVx * 0.6;
+            velocityY = velocityY * 0.4 + instVy * 0.6;
+
+            const totalDx = clientX - startPointerX;
+            const totalDy = clientY - startPointerY;
+
+            const newLeft = startStickerLeft + totalDx;
+            const newTop = startStickerTop + totalDy;
+
+            setStickerPosition(item, newLeft, newTop, false);
+          };
+
+          const onPointerUp = () => {
+            if (!isDragging) return;
+            isDragging = false;
+            isDraggingAny = false;
+            el.classList.remove('is-dragging');
+
+            const friction = 0.92;
+            let vx = Math.max(-25, Math.min(velocityX, 25));
+            let vy = Math.max(-25, Math.min(velocityY, 25));
+
+            let curLeft = item.currentLeft;
+            let curTop = item.currentTop;
+
+            const cardRect = footerCard.getBoundingClientRect();
+            const elRect = el.getBoundingClientRect();
+            const halfW = elRect.width / 2;
+            const halfH = elRect.height / 2;
+            const pad = 8;
+
+            const minX = halfW + pad;
+            const maxX = cardRect.width - halfW - pad;
+            const minY = halfH + pad;
+            const maxY = cardRect.height - halfH - pad;
+
+            let rot = item.defaultRot + Math.max(-12, Math.min(vx * 0.7, 12));
+            item.currentRot = rot;
+
+            const glideStep = () => {
+              if (Math.abs(vx) < 0.2 && Math.abs(vy) < 0.2) {
+                item.animId = null;
+                el.style.transition = 'transform 0.45s cubic-bezier(0.16, 1, 0.3, 1)';
+                item.currentRot = item.defaultRot;
+                el.style.transform = `translate(-50%, -50%) rotate(${item.defaultRot}deg)`;
+                return;
+              }
+
+              curLeft += vx;
+              curTop += vy;
+
+              if (curLeft <= minX) {
+                curLeft = minX;
+                vx = -vx * 0.45;
+              } else if (curLeft >= maxX) {
+                curLeft = maxX;
+                vx = -vx * 0.45;
+              }
+
+              if (curTop <= minY) {
+                curTop = minY;
+                vy = -vy * 0.45;
+              } else if (curTop >= maxY) {
+                curTop = maxY;
+                vy = -vy * 0.45;
+              }
+
+              vx *= friction;
+              vy *= friction;
+
+              setStickerPosition(item, curLeft, curTop, false);
+              item.animId = requestAnimationFrame(glideStep);
+            };
+
+            item.animId = requestAnimationFrame(glideStep);
+          };
+
+          el.addEventListener('mousedown', onPointerDown);
+          window.addEventListener('mousemove', onPointerMove);
+          window.addEventListener('mouseup', onPointerUp);
+
+          el.addEventListener('touchstart', onPointerDown, { passive: false });
+          window.addEventListener('touchmove', onPointerMove, { passive: false });
+          window.addEventListener('touchend', onPointerUp);
+        });
+
+        let lastScrollY = window.pageYOffset || document.documentElement.scrollTop;
+        window.addEventListener('scroll', () => {
+          const currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
+          const scrollingUp = currentScrollY < lastScrollY;
+          lastScrollY = currentScrollY;
+
+          if (scrollingUp && hasMovedAny && !isDraggingAny) {
+            const footerRect = footerCard.getBoundingClientRect();
+            if (footerRect.top > window.innerHeight * 0.4) {
+              resetStickersToDefault(true);
+            }
+          }
+        }, { passive: true });
+      };
+
+      initContactStickers();
+
+      // Click to Copy Phone & Email with "Copied" badge
+      const initFooterContactCopy = () => {
+        document.querySelectorAll('.footer-contact-item-wrap').forEach(wrap => {
+          const link = wrap.querySelector('.footer-contact-item');
+          const badge = wrap.querySelector('.copied-badge');
+          if (!link || !badge) return;
+
+          let timeoutId = null;
+
+          wrap.addEventListener('click', (e) => {
+            e.preventDefault();
+            const textToCopy = link.getAttribute('data-copy') || link.textContent.trim();
+
+            const copyAction = () => {
+              if (navigator.clipboard && navigator.clipboard.writeText) {
+                return navigator.clipboard.writeText(textToCopy);
+              } else {
+                return new Promise((resolve, reject) => {
+                  try {
+                    const ta = document.createElement('textarea');
+                    ta.value = textToCopy;
+                    ta.style.position = 'fixed';
+                    ta.style.opacity = '0';
+                    document.body.appendChild(ta);
+                    ta.focus();
+                    ta.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(ta);
+                    resolve();
+                  } catch (err) {
+                    reject(err);
+                  }
+                });
+              }
+            };
+
+            copyAction().then(() => {
+              badge.classList.add('is-visible');
+              if (timeoutId) clearTimeout(timeoutId);
+              timeoutId = setTimeout(() => {
+                badge.classList.remove('is-visible');
+              }, 1800);
+            }).catch(err => {
+              console.error('Failed to copy: ', err);
+            });
+          });
+        });
+      };
+
+      initFooterContactCopy();
+
+      // Button Rolling Text Initializer
+      const initButtonRollingText = () => {
+        const rollSelectors = ['.btn-view-more'];
+        document.querySelectorAll(rollSelectors.join(', ')).forEach(btn => {
+          if (btn.querySelector('.vv-roll')) return;
+          
+          const textSpan = btn.querySelector('.btn-view-more-text') || btn.querySelector('span:not(.vv-roll)') || btn;
+          const text = (btn.getAttribute('data-roll') || textSpan.textContent).trim();
+          if (!text) return;
+          
+          const rollContainer = document.createElement('span');
+          rollContainer.className = 'vv-roll';
+          rollContainer.setAttribute('aria-label', text);
+          
+          [...text].forEach((char, i) => {
+            const charSpan = document.createElement('span');
+            charSpan.className = 'vv-roll-char';
+            charSpan.style.setProperty('--i', i);
+            const displayChar = char === ' ' ? '&nbsp;' : char;
+            charSpan.innerHTML = `<span>${displayChar}</span><span>${displayChar}</span>`;
+            rollContainer.appendChild(charSpan);
+          });
+          
+          if (textSpan && textSpan !== btn) {
+            textSpan.replaceWith(rollContainer);
+          } else {
+            const arrow = btn.querySelector('svg, .btn-view-more-arrow');
+            if (arrow) {
+              btn.insertBefore(rollContainer, arrow);
+            } else {
+              btn.appendChild(rollContainer);
+            }
+          }
+        });
+      };
+
+      initButtonRollingText();
+    });
+  </script>
+</body>
+</html>

@@ -16,7 +16,7 @@
 
   // 1. Check if current page is an individual project case study page
   const pathname = window.location.pathname.toLowerCase();
-  const isProjectPage = /(transportation|kamo-ai|kamoai|savw|design-research)/i.test(pathname);
+  const isProjectPage = /(transportation|kamo-ai|kamoai|savw|design-research|sage-ai|sageai)/i.test(pathname);
   if (isProjectPage) {
     try {
       sessionStorage.setItem('portfolio_music_was_playing', 'false');
