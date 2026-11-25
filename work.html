@@ -6,7 +6,7 @@
   <title>Selected Work & Case Studies | Harsh Bhawsar</title>
   <link rel="icon" type="image/png" href="faviconnew.webp?v=2">
   <link rel="apple-touch-icon" href="faviconnew.webp?v=2">
-  <link rel="stylesheet" href="style.css?v=152_bottom_pad_12px">
+  <link rel="stylesheet" href="style.css?v=165_filter_pills">
   <!-- Google Fonts for Plus Jakarta Sans & Cormorant Garamond -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -61,10 +61,20 @@
           </div>
         </div>
 
-        <!-- Row 1: Bus Transportation & SAVW Internship -->
-        <div class="projects-row">
+        <!-- Project Category Filter Pills (Zero curved radius, Off-white with Maroon border) -->
+        <div class="work-filter-bar" aria-label="Project Categories">
+          <button type="button" class="work-filter-pill active" data-filter="all">All</button>
+          <button type="button" class="work-filter-pill" data-filter="ux-product">UX &amp; Product Design</button>
+          <button type="button" class="work-filter-pill" data-filter="visual-design">Visual design</button>
+          <button type="button" class="work-filter-pill" data-filter="research">Research</button>
+          <button type="button" class="work-filter-pill" data-filter="ai">AI</button>
+          <button type="button" class="work-filter-pill" data-filter="game">Game</button>
+        </div>
+
+        <!-- All Projects Grid Container (Dynamic Filtering) -->
+        <div class="work-projects-container" id="workProjectsContainer">
             <!-- Project 1: Bus Transportation Management -->
-            <a href="transportation.html" class="project-card" data-cursor-color="#FE820A" data-cursor-title="Bus Transportation<br>Management">
+            <a href="transportation.html" class="project-card" data-categories="all ux-product" data-cursor-color="#FE820A" data-cursor-title="Bus Transportation<br>Management">
               <div class="project-card-inner">
                 <div class="project-image-box">
                   <img src="bus transportation new card.png" alt="MIT-ADT University Bus Transportation Management" class="project-img">
@@ -104,7 +114,7 @@
             </a>
 
             <!-- Project 2: SAVW Internship Report -->
-            <a href="savw.html" class="project-card" data-cursor-color="#00A859" data-cursor-title="SAVW UX Research<br>Internship Report">
+            <a href="savw.html" class="project-card" data-categories="all research" data-cursor-color="#00A859" data-cursor-title="SAVW UX Research<br>Internship Report">
               <div class="project-card-inner">
                 <div class="project-image-box">
                   <img src="skoda new.webp" alt="Škoda Auto Volkswagen India UX Research Internship Report" class="project-img" loading="lazy" decoding="async">
@@ -134,12 +144,9 @@
                 </div>
               </div>
             </a>
-          </div>
 
-          <!-- Row 2: Kamo AI & Samsung PRISM -->
-          <div class="projects-row">
             <!-- Project 3: Kamo AI -->
-            <a href="kamo-ai.html" class="project-card" data-cursor-color="#B757E6" data-cursor-title="Kamo AI :<br>Empathetic AI">
+            <a href="kamo-ai.html" class="project-card" data-categories="all visual-design ai" data-cursor-color="#B757E6" data-cursor-title="Kamo AI :<br>Empathetic AI">
               <div class="project-card-inner">
                 <div class="project-image-box">
                   <img src="Kamo ai new.webp" alt="Kamo AI - Empathetic AI Agent" class="project-img" loading="lazy" decoding="async">
@@ -179,7 +186,7 @@
             </a>
 
             <!-- Project 4: Samsung PRISM Hackathon -->
-            <a href="https://www.behance.net/gallery/235207603/Agentic-Travel-Planning-Samsung-Prism-Hackathon" target="_blank" rel="noopener noreferrer" class="project-card" data-cursor-color="#1DA1FF" data-cursor-title="Samsung PRISM<br>Hackathon">
+            <a href="https://www.behance.net/gallery/235207603/Agentic-Travel-Planning-Samsung-Prism-Hackathon" target="_blank" rel="noopener noreferrer" class="project-card" data-categories="all ux-product ai" data-cursor-color="#1DA1FF" data-cursor-title="Samsung PRISM<br>Hackathon">
               <div class="project-card-inner">
                 <div class="project-image-box">
                   <img src="samsung new.webp" alt="Samsung PRISM Hackathon" class="project-img" loading="lazy" decoding="async">
@@ -207,12 +214,9 @@
                 </div>
               </div>
             </a>
-          </div>
 
-          <!-- Row 3: Weapons of Influence & The Sanctum -->
-          <div class="projects-row">
             <!-- Project 5: Weapon of Influence -->
-            <a href="https://www.behance.net/gallery/228241265/Weapon-of-Influence-Data-Visualization" target="_blank" rel="noopener noreferrer" class="project-card" data-cursor-color="#6DB874" data-cursor-title="Defense Intelligence<br>Dashboard Design">
+            <a href="https://www.behance.net/gallery/228241265/Weapon-of-Influence-Data-Visualization" target="_blank" rel="noopener noreferrer" class="project-card" data-categories="all visual-design" data-cursor-color="#6DB874" data-cursor-title="Defense Intelligence<br>Dashboard Design">
               <div class="project-card-inner">
                 <div class="project-image-box">
                   <img src="data viz new.webp" alt="Weapons of Influence" class="project-img" loading="lazy" decoding="async">
@@ -244,7 +248,7 @@
             </a>
 
             <!-- Project 6: Sanctum -->
-            <a href="https://www.behance.net/gallery/226243887/The-Sanctum-A-Storytelling-Based-Game-Design-Project" target="_blank" rel="noopener noreferrer" class="project-card" data-cursor-color="#E63946" data-cursor-title="Sanctum<br>Interactive Storytelling">
+            <a href="https://www.behance.net/gallery/226243887/The-Sanctum-A-Storytelling-Based-Game-Design-Project" target="_blank" rel="noopener noreferrer" class="project-card" data-categories="all visual-design game" data-cursor-color="#E63946" data-cursor-title="Sanctum<br>Interactive Storytelling">
               <div class="project-card-inner">
                 <div class="project-image-box">
                   <img src="sanctum.webp" alt="Sanctum - Interactive Storytelling App" class="project-img" loading="lazy" decoding="async">
@@ -272,12 +276,9 @@
                 </div>
               </div>
             </a>
-          </div>
 
-          <!-- Row 4: Sage AI & Design Research -->
-          <div class="projects-row">
             <!-- Project 7: Sage AI - Conversational UI -->
-            <a href="sage-ai.html" class="project-card" data-cursor-color="#6F49EA" data-cursor-title="Sage AI :<br>Conversational UI">
+            <a href="sage-ai.html" class="project-card" data-categories="all visual-design ai" data-cursor-color="#6F49EA" data-cursor-title="Sage AI :<br>Conversational UI">
               <div class="project-card-inner">
                 <div class="project-image-box">
                   <img src="Sage%20ai/Sage%20ai%20card.webp" alt="Sage AI - Conversational UI" class="project-img" loading="lazy" decoding="async">
@@ -309,7 +310,7 @@
             </a>
 
             <!-- Project 8: Design Research : Video game elements -->
-            <a href="design-research.html" class="project-card" data-cursor-color="#1DA1FF" data-cursor-title="Design Research<br>Video Game Elements">
+            <a href="design-research.html" class="project-card" data-categories="all research game" data-cursor-color="#1DA1FF" data-cursor-title="Design Research<br>Video Game Elements">
               <div class="project-card-inner">
                 <div class="project-image-box">
                   <img src="Design Research/DesignResearchCard.webp" alt="Design Research : Video game elements" class="project-img" loading="lazy" decoding="async">
@@ -336,7 +337,7 @@
                 </div>
               </div>
             </a>
-          </div>
+        </div>
         </div>
       </div>
     </main>
@@ -909,6 +910,33 @@
 
         headings.forEach(h => revealObserver.observe(h));
       };
+
+      // Category Filter Engine
+      const filterPills = document.querySelectorAll('.work-filter-pill');
+      const projectCards = document.querySelectorAll('.work-projects-container .project-card');
+
+      filterPills.forEach(pill => {
+        pill.addEventListener('click', (e) => {
+          e.preventDefault();
+          const filter = pill.getAttribute('data-filter');
+          
+          filterPills.forEach(p => p.classList.remove('active'));
+          pill.classList.add('active');
+
+          projectCards.forEach(card => {
+            const categories = (card.getAttribute('data-categories') || '').split(' ');
+            if (filter === 'all' || categories.includes(filter)) {
+              card.style.display = '';
+              card.style.opacity = '1';
+              card.style.pointerEvents = 'auto';
+            } else {
+              card.style.display = 'none';
+              card.style.opacity = '0';
+              card.style.pointerEvents = 'none';
+            }
+          });
+        });
+      });
 
       initButtonRollingText();
       initHeadingScrollReveals();

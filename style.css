@@ -2741,13 +2741,17 @@ body.kamo-ai-page {
 }
 
 .skoda-page,
-body.skoda-page {
-  background-color: #FFFFFF !important;
+body.skoda-page,
+.sage-ai-page,
+body.sage-ai-page {
+  background-color: #FFFCDE !important;
 }
 
 .skoda-page .nav-pill-btn.back-pill,
-.skoda-page .navbar {
-  background: rgba(255, 255, 255, 0.88) !important;
+.skoda-page .navbar,
+.sage-ai-page .nav-pill-btn.back-pill,
+.sage-ai-page .navbar {
+  background: rgba(255, 252, 222, 0.88) !important;
   border-color: rgba(74, 44, 17, 0.12) !important;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
 }
@@ -6584,6 +6588,78 @@ body.about-page,
     width: 1.8px;
   }
 }
+
+/* ==========================================================================
+   Work Archive Category Filter Pills & Fluid 2-Column Container
+   ========================================================================== */
+.work-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: clamp(8px, 0.9vw, 14px);
+  margin-top: clamp(16px, 1.8vw, 26px);
+  margin-bottom: clamp(28px, 3.2vw, 42px);
+}
+
+.work-filter-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 18px;
+  background-color: #FFFEF5; /* Off-white */
+  border: 1.5px solid #740148; /* Maroon border */
+  border-radius: 0 !important; /* Zero curved radius */
+  color: #740148; /* Maroon text */
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(13px, 0.9vw, 14.5px);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  user-select: none;
+  outline: none;
+}
+
+.work-filter-pill:hover {
+  background-color: #740148;
+  color: #FFFCDE;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(116, 1, 72, 0.22);
+}
+
+.work-filter-pill.active {
+  background-color: #740148 !important; /* Maroon fill when active */
+  color: #FFFCDE !important; /* Off-white text */
+  border-color: #740148 !important;
+  box-shadow: 0 4px 14px rgba(116, 1, 72, 0.25);
+  transform: none;
+}
+
+.work-projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: clamp(14px, 1.4vw, 22px);
+  width: 100%;
+}
+
+.work-projects-container .project-card {
+  width: calc(50% - clamp(7px, 0.7vw, 11px));
+  max-width: calc(50% - clamp(7px, 0.7vw, 11px));
+  flex: 0 0 calc(50% - clamp(7px, 0.7vw, 11px));
+  margin-bottom: 0;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .work-projects-container .project-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 1 1 100% !important;
+  }
+}
+
 
 
 
