@@ -2855,6 +2855,12 @@ body.sage-ai-page {
   color: #1a140e;
 }
 
+.case-study-page .navbar .nav-link.active,
+.navbar .nav-link.active {
+  color: #700145 !important;
+  font-weight: 700 !important;
+}
+
 .case-study-page .navbar .btn-contact {
   background: #700145;
   color: #FFFCDE;
@@ -6666,6 +6672,169 @@ body.about-page,
     flex: 1 1 100% !important;
   }
 }
+
+/* ==========================================================================
+   Resume Page Styles
+   ========================================================================== */
+.resume-page {
+  background-color: #FFFCDE !important;
+  color: #700145;
+  min-height: 100vh;
+}
+
+.resume-page-wrapper {
+  width: 100%;
+  max-width: 1260px;
+  margin: 0 auto;
+  padding: 0 clamp(16px, 3.2vw, 40px);
+  box-sizing: border-box;
+}
+
+.resume-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.resume-header {
+  width: 100%;
+  max-width: 920px;
+  margin-top: clamp(100px, 11vw, 148px);
+  margin-bottom: clamp(24px, 3vw, 36px);
+  box-sizing: border-box;
+}
+
+.resume-header-top {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 100%;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.resume-header-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.resume-header-group .projects-subtitle {
+  text-align: left;
+  transform: none;
+  margin-bottom: 2px;
+  width: auto;
+}
+
+.resume-header-actions {
+  display: flex;
+  align-items: center;
+}
+
+.resume-download-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: #700145;
+  color: #FFFCDE;
+  border: 1.5px solid #700145;
+  border-radius: 9999px;
+  padding: 10px 24px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(13.5px, 0.95vw, 15px);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: none !important;
+  transition: background-color 0.22s ease, border-color 0.22s ease, color 0.22s ease, transform 0.22s ease;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.resume-download-btn svg {
+  display: block;
+  stroke: currentColor;
+  flex-shrink: 0;
+  transition: transform 0.22s ease;
+}
+
+.resume-download-btn:hover {
+  background-color: #830051;
+  border-color: #830051;
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: none !important;
+}
+
+.resume-download-btn:hover svg {
+  transform: translateY(2px);
+}
+
+.resume-download-btn:active {
+  transform: translateY(0);
+}
+
+.resume-display-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.resume-sheet-card {
+  width: 100%;
+  max-width: 920px;
+  background: #FFFFFF;
+  border: 1px solid rgba(74, 44, 17, 0.12);
+  box-shadow: 0 16px 48px rgba(74, 44, 17, 0.08), 0 2px 8px rgba(74, 44, 17, 0.04);
+  border-radius: 4px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.resume-sheet-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.resume-bottom-action {
+  display: flex;
+  justify-content: center;
+  margin-top: clamp(32px, 4.5vw, 52px);
+  margin-bottom: clamp(48px, 6vw, 84px);
+  width: 100%;
+}
+
+@media (max-width: 640px) {
+  .resume-header-top {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 18px;
+  }
+  .resume-header-group {
+    align-items: center;
+  }
+  .resume-header-group .projects-subtitle {
+    text-align: center;
+    display: block !important;
+  }
+  .resume-download-btn {
+    width: 100%;
+    max-width: 280px;
+  }
+  .resume-sheet-card {
+    border-radius: 2px;
+  }
+}
+
 
 
 
