@@ -7,7 +7,7 @@
   <meta name="description" content="Resume of Harsh Bhawsar, User Experience Designer pursuing B.Des in User Experience Design at MIT Institute of Design, Pune. Experience at Škoda Auto Volkswagen India, CIY Crafts, and more.">
   <link rel="icon" type="image/png" href="faviconnew.webp?v=2">
   <link rel="apple-touch-icon" href="faviconnew.webp?v=2">
-  <link rel="stylesheet" href="style.css?v=168_resume_button_right">
+  <link rel="stylesheet" href="style.css?v=169_resume_footer_buttons">
   <!-- Google Fonts for Plus Jakarta Sans, Cormorant Garamond, and Carattere -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -72,6 +72,20 @@
 
       <!-- Resume Sheet Display Section -->
       <section class="resume-display-section" aria-label="Harsh Bhawsar Resume Preview">
+
+        <!-- Top Download Action (Aligned to the Right, More Projects Style & Interaction) -->
+        <div class="resume-top-action">
+          <a href="Harsh_Bhawsar_Resume.pdf" download="Harsh_Bhawsar_Resume.pdf" class="btn-view-more btn-download-resume" aria-label="Download Harsh Bhawsar Resume PDF">
+            <span class="btn-view-more-text">Download Resume</span>
+            <div class="btn-view-more-arrow">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </div>
+          </a>
+        </div>
+
         <div class="resume-sheet-card">
           <picture>
             <source srcset="resume.webp" type="image/webp">
@@ -83,11 +97,10 @@
         <div class="resume-bottom-action">
           <a href="Harsh_Bhawsar_Resume.pdf" download="Harsh_Bhawsar_Resume.pdf" class="btn-view-more btn-download-resume" aria-label="Download Harsh Bhawsar Resume PDF">
             <span class="btn-view-more-text">Download Resume</span>
-            <div class="btn-view-more-arrow btn-download-arrow">
+            <div class="btn-view-more-arrow">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                <polyline points="7 10 12 15 17 10"></polyline>
-                <line x1="12" y1="15" x2="12" y2="3"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
               </svg>
             </div>
           </a>
@@ -183,7 +196,36 @@
         lastScrollY = Math.max(0, scrollY);
       }, { passive: true });
 
-      // 2. Interactive Draggable Stickers in Footer
+      // 2. Footer headline and card reveal
+      const footerHeadline = document.querySelector('.footer-headline');
+      const footerCard = document.querySelector('.footer-card');
+
+      const footerObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+          }
+        });
+      }, { threshold: 0.05 });
+
+      if (footerHeadline) footerObserver.observe(footerHeadline);
+      if (footerCard) footerObserver.observe(footerCard);
+
+      const checkSectionsInView = () => {
+        const windowH = window.innerHeight || 800;
+        if (footerHeadline) {
+          const rect = footerHeadline.getBoundingClientRect();
+          if (rect.top < windowH * 0.95) footerHeadline.classList.add('in-view');
+        }
+        if (footerCard) {
+          const rect = footerCard.getBoundingClientRect();
+          if (rect.top < windowH * 0.95) footerCard.classList.add('in-view');
+        }
+      };
+      window.addEventListener('scroll', checkSectionsInView, { passive: true });
+      checkSectionsInView();
+
+      // 3. Interactive Draggable Stickers in Footer
       const initContactStickers = () => {
         const footerCard = document.querySelector('.footer-card');
         const stickers = document.querySelectorAll('.footer-sticker');

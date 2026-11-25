@@ -6707,6 +6707,15 @@ body.about-page,
   box-sizing: border-box;
 }
 
+.resume-top-action {
+  display: flex;
+  justify-content: flex-end; /* Aligned to the right */
+  width: 100%;
+  max-width: 920px; /* Aligned with right edge of resume sheet card */
+  margin-bottom: clamp(16px, 1.8vw, 24px);
+  box-sizing: border-box;
+}
+
 .resume-sheet-card {
   width: 100%;
   max-width: 920px;
@@ -6736,19 +6745,45 @@ body.about-page,
   box-sizing: border-box;
 }
 
-/* Download Resume button inherits .btn-view-more styles and adds downward icon interaction */
+/* Download Resume button inherits .btn-view-more styles and matches more projects hover interaction */
 .btn-download-resume {
   border-radius: 0 !important; /* Zero curved radius, same as more projects */
+  width: auto !important;
+  display: inline-flex !important;
 }
 
-.btn-download-resume:hover .btn-download-arrow {
-  transform: translateY(3px);
+/* Ensure footer is completely visible and styled on resume page */
+.resume-page .footer-section {
+  position: relative !important;
+  z-index: 4 !important;
+  width: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  box-sizing: border-box !important;
+  background-color: #700145 !important;
+  margin-top: 0 !important;
+}
+
+.resume-page .footer-headline,
+.resume-page .footer-card {
+  opacity: 1 !important;
+  transform: none !important;
+  filter: none !important;
+}
+
+.resume-page .footer-card {
+  display: flex !important;
+  flex-direction: column !important;
+  visibility: visible !important;
+  background-color: #FFFCDE !important;
 }
 
 @media (max-width: 640px) {
   .resume-display-section {
     padding-top: clamp(85px, 11vw, 105px);
   }
+  .resume-top-action,
   .resume-bottom-action {
     justify-content: flex-end;
   }
