@@ -2874,20 +2874,6 @@ body.sage-ai-page {
   border-color: rgba(74, 44, 17, 0.28) !important;
 }
 
-.skoda-page .spec-table-card {
-  background: #FFFEF5 !important;
-  border: 1px solid rgba(74, 44, 17, 0.12) !important;
-  box-shadow: 0 8px 32px rgba(74, 44, 17, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.8) !important;
-}
-
-.skoda-page .spec-key {
-  background: rgba(242, 237, 212, 0.5) !important;
-}
-
-.skoda-page .spec-value {
-  background: #FFFEF5 !important;
-}
-
 /* Floating Dual-Pill Navbar Container */
 .case-study-navbar-container {
   display: flex;
