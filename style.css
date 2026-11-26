@@ -2742,7 +2742,7 @@ body.transportation-page {
   box-shadow: none !important;
   border: none !important;
   position: relative;
-  transform: translateX(-150px);
+  transform: translateX(-100px);
 }
 
 .transportation-video-wrapper {
