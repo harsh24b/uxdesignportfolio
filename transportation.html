@@ -6,7 +6,7 @@
   <title>Bus Transportation Management - Case Study | Harsh</title>
   <link rel="icon" type="image/png" href="faviconnew.webp?v=2">
   <link rel="apple-touch-icon" href="faviconnew.webp?v=2">
-  <link rel="stylesheet" href="style.css?v=172_transportation_video_prototype">
+  <link rel="stylesheet" href="style.css?v=173_transportation_video_adjustments">
   <!-- Google Fonts for Plus Jakarta Sans, Cormorant Garamond & Carattere -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -49,18 +49,19 @@
     .transportation-video-card {
       width: 100%;
       max-width: 900px;
-      background: #000000;
+      background: transparent !important;
       border-radius: 0 !important; /* Zero curved radius */
       overflow: hidden;
       box-shadow: none !important;
-      border: 1px solid rgba(74, 44, 17, 0.12);
+      border: none !important;
       position: relative;
+      transform: translateX(-150px);
     }
     .transportation-video-wrapper {
       position: relative;
       width: 100%;
-      aspect-ratio: 16 / 9;
-      background: #000000;
+      height: auto;
+      background: transparent !important;
       border-radius: 0 !important;
       display: flex;
       align-items: center;
@@ -69,19 +70,21 @@
     }
     .transportation-video {
       width: 100%;
-      height: 100%;
-      object-fit: contain;
+      height: auto;
       display: block;
-      background: #000000;
+      background: transparent !important;
+      border: none !important;
       border-radius: 0 !important;
       outline: none;
     }
 
-    /* Overlay "View Prototype" Action Button - Brand Orange #FE820A, Zero Corner Radius */
+    /* Overlay "View Prototype" Action Button - Centered, Brand Orange #FE820A, Zero Corner Radius */
     .transportation-video-btn {
       position: absolute;
-      top: clamp(14px, 1.8vw, 22px);
-      right: clamp(14px, 1.8vw, 22px);
+      top: 50%;
+      left: 50%;
+      right: auto;
+      transform: translate(-50%, -50%);
       z-index: 10;
       display: inline-flex;
       align-items: center;
@@ -105,18 +108,25 @@
     }
     .transportation-video-btn:hover {
       background-color: #e57204;
-      transform: translateY(-2px);
+      transform: translate(-50%, -50%) scale(1.03);
       color: #FFFFFF !important;
+    }
+    @media (max-width: 1024px) {
+      .transportation-video-card {
+        transform: none;
+      }
     }
     @media (max-width: 640px) {
       .transportation-video-section {
         margin-bottom: 35px !important;
       }
       .transportation-video-btn {
-        top: 10px;
-        right: 10px;
-        padding: 7px 12px;
-        font-size: 11.5px;
+        top: 50%;
+        left: 50%;
+        right: auto;
+        transform: translate(-50%, -50%);
+        padding: 8px 14px;
+        font-size: 12px;
         gap: 5px;
       }
       .transportation-video-btn svg {
