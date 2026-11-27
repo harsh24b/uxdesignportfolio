@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Samsung Prism Hackathon | Harsh Bhawsar</title>
+  <link rel="icon" type="image/png" href="faviconnew.webp?v=2">
+  <link rel="apple-touch-icon" href="faviconnew.webp?v=2">
+  <link rel="stylesheet" href="style.css?v=200_opacity_02_bus_radius_no_black_fade">
+  <!-- Google Fonts for Plus Jakarta Sans, Cormorant Garamond & Carattere -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Carattere&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <style>
+    /* Consistent Background matching Design Research & Sage AI (#FFFCDE) */
+    html,
+    body.case-study-page,
+    .case-study-page,
+    .case-study-page-wrapper {
+      background-color: #FFFCDE !important;
+    }
+
+    .samsung-prism-page .nav-pill-btn.back-pill,
+    .samsung-prism-page .navbar {
+      background: rgba(255, 252, 222, 0.88) !important;
+      border-color: rgba(74, 44, 17, 0.12) !important;
+    }
+
+    html {
+      overflow-x: clip;
+      scroll-behavior: smooth;
+    }
+
+    body.case-study-page {
+      overflow-x: clip !important;
+      overflow-y: visible !important;
+      height: auto !important;
+    }
+
+    .case-study-page,
+    .case-study-page-wrapper {
+      overflow: visible !important;
+      height: auto !important;
+    }
+
+    /* Sidebar active highlight for Samsung Prism */
+    .samsung-prism-page .case-study-sidebar .sidebar-nav-link:hover {
+      color: #1DA1FF !important;
+    }
+
+    .samsung-prism-page .case-study-sidebar .sidebar-nav-link.active {
+      color: #1DA1FF !important;
+      font-weight: 600;
+    }
+
+    /* Continuous Slide Presentation - zero curved radius, zero gap, seamless stick */
+    .samsung-prism-page .case-study-slides-flow {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 0 !important;
+      margin: 24px 0 0 0 !important;
+      padding: 0 !important;
+    }
+
+    .samsung-prism-page .case-study-slides-flow .slide-section {
+      width: 100%;
+      margin: 0 !important;
+      padding: 0 !important;
+      line-height: 0 !important;
+      font-size: 0 !important;
+      border: none !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+      scroll-margin-top: 96px;
+      overflow: hidden;
+    }
+
+    .samsung-prism-page .topic-image {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 !important;
+      padding: 0 !important;
+      border: none !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+      user-select: none;
+      -webkit-user-drag: none;
+    }
+  </style>
+</head>
+
+<body class="case-study-page samsung-prism-page">
+  <!-- Floating Dual-Pill Navbar Container -->
+  <header class="navbar-container case-study-navbar-container">
+    <a href="index.html#work" class="nav-pill-btn back-pill">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+        stroke-linecap="round" stroke-linejoin="round">
+        <line x1="19" y1="12" x2="5" y2="12"></line>
+        <polyline points="12 19 5 12 12 5"></polyline>
+      </svg>
+      <span>Back to Projects</span>
+    </a>
+
+    <nav class="navbar">
+      <a href="work.html" class="nav-link">Work</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="resume.html" class="nav-link">Resume</a>
+      <a href="#contact" class="btn-contact">
+        <img src="Mail.svg" class="mail-icon" alt="Mail Icon">
+        Work with me
+      </a>
+    </nav>
+  </header>
+
+  <!-- Main Case Study Content Container -->
+  <main class="case-study-page-wrapper">
+    <!-- Top-Aligned Two-Column Layout: Sticky Left Sidebar & Right Content Area -->
+    <div class="case-study-layout-wrapper" id="caseStudyLayout">
+      <!-- Open Sticky Left Sidebar Navigation -->
+      <aside class="case-study-sidebar" id="caseStudySidebar" aria-label="Topics Index">
+        <nav class="sidebar-nav">
+          <ul class="sidebar-nav-list" role="tablist">
+            <li class="sidebar-nav-item">
+              <a href="#overview" class="sidebar-nav-link active" data-topic="overview">Overview</a>
+            </li>
+            <li class="sidebar-nav-item">
+              <a href="#approach" class="sidebar-nav-link" data-topic="approach">Our Approach</a>
+            </li>
+            <li class="sidebar-nav-item">
+              <a href="#booking-flow" class="sidebar-nav-link" data-topic="booking-flow">1. Seamless Booking Flow</a>
+            </li>
+            <li class="sidebar-nav-item">
+              <a href="#multi-stop" class="sidebar-nav-link" data-topic="multi-stop">2. Multi-Stop Solution</a>
+            </li>
+            <li class="sidebar-nav-item">
+              <a href="#proactive-memory" class="sidebar-nav-link" data-topic="proactive-memory">3. Proactive Memory</a>
+            </li>
+            <li class="sidebar-nav-item">
+              <a href="#connected-home" class="sidebar-nav-link" data-topic="connected-home">4. Connected Home</a>
+            </li>
+            <li class="sidebar-nav-item">
+              <a href="#resilience" class="sidebar-nav-link" data-topic="resilience">5. Real-World Resilience</a>
+            </li>
+            <li class="sidebar-nav-item">
+              <a href="#outcome" class="sidebar-nav-link" data-topic="outcome">Outcome &amp; Recognition</a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- Right Content Area -->
+      <div class="case-study-content-area" id="caseStudyContentArea">
+        <!-- Hero Article Header -->
+        <section class="case-study-hero">
+          <h1 class="case-study-title">Samsung Prism Hackathon</h1>
+
+          <p class="case-study-lead">
+            The winning concept for Samsung's 24-hour AI Hackathon. A system-level 'Agentic AI' designed to proactively
+            manage complex daily logistics by prioritizing user trust and radical transparency.
+          </p>
+        </section>
+
+        <!-- Project Specifications Table Section -->
+        <section class="case-study-section">
+          <div class="spec-table-card">
+            <table class="spec-table">
+              <tbody>
+                <tr>
+                  <td class="spec-key">Project type</td>
+                  <td class="spec-value">24-Hour AI Designathon (1st Place Winner)</td>
+                </tr>
+                <tr>
+                  <td class="spec-key">Domain</td>
+                  <td class="spec-value">Agentic AI &amp; Conversational Interface</td>
+                </tr>
+                <tr>
+                  <td class="spec-key">Duration</td>
+                  <td class="spec-value">24-Hour Intensive Sprint</td>
+                </tr>
+                <tr>
+                  <td class="spec-key">Concept</td>
+                  <td class="spec-value">Neo - Proactive AI Assistant</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- Continuous Slides Presentation Flow -->
+        <div class="case-study-slides-flow">
+          <!-- Slide 01: Overview -->
+          <div class="slide-section" id="overview" data-topic="overview">
+            <img src="Samsung%20Prism/1.webp?v=2"
+              alt="Designing a Proactive AI Assistant to Manage Real-Life Complexity - Agentic AI Neo"
+              class="topic-image" loading="eager">
+          </div>
+
+          <!-- Slide 04: Our Approach -->
+          <div class="slide-section" id="approach" data-topic="approach">
+            <img src="Samsung%20Prism/4.webp"
+              alt="Our Approach Towards Decoding Every Chapter &amp; Visualizing the Agent" class="topic-image"
+              loading="lazy">
+          </div>
+
+          <!-- Slide 05: Chapter 1 - Seamless Booking Flow -->
+          <div class="slide-section" id="booking-flow" data-topic="booking-flow">
+            <img src="Samsung%20Prism/5.webp" alt="Chapter 1: From Chat to Checkout - The Seamless Booking Flow"
+              class="topic-image" loading="lazy">
+          </div>
+
+          <!-- Slide 06: Chapter 2 - Multi-Stop Solution -->
+          <div class="slide-section" id="multi-stop" data-topic="multi-stop">
+            <img src="Samsung%20Prism/6.webp" alt="Chapter 2: Coordinating the Real World - The Multi-Stop Solution"
+              class="topic-image" loading="lazy">
+          </div>
+
+          <!-- Slide 07: Chapter 3 - Proactive Memory -->
+          <div class="slide-section" id="proactive-memory" data-topic="proactive-memory">
+            <img src="Samsung%20Prism/7.webp" alt="Chapter 3: Proactive Memory - Remembering the Little Things"
+              class="topic-image" loading="lazy">
+          </div>
+
+          <!-- Slide 08: Chapter 4 - The Connected Home -->
+          <div class="slide-section" id="connected-home" data-topic="connected-home">
+            <img src="Samsung%20Prism/8.webp" alt="Chapter 4: The Connected Home - Preventing Food Waste"
+              class="topic-image" loading="lazy">
+          </div>
+
+          <!-- Slide 09: Chapter 5 - Real-World Resilience -->
+          <div class="slide-section" id="resilience" data-topic="resilience">
+            <img src="Samsung%20Prism/9.webp" alt="Chapter 5: Real-World Resilience - Handling Chaos Gracefully"
+              class="topic-image" loading="lazy">
+          </div>
+
+          <!-- Slide 10 & 11: Outcome & Recognition -->
+          <div class="slide-section" id="outcome" data-topic="outcome">
+            <img src="Samsung%20Prism/10.webp" alt="Winning Vision, Certificate of Achievement &amp; Team Matrix"
+              class="topic-image" loading="lazy">
+            <img src="Samsung%20Prism/11.webp" alt="Thank You" class="topic-image" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Signature Footer & Contact Section -->
+  <footer class="footer-section" id="contact">
+    <div class="footer-headline-container">
+      <h2 class="footer-headline"><span class="heading-cap">L</span><span class="heading-rest">et’s build experiences
+          that matter</span></h2>
+    </div>
+    <div class="footer-card">
+      <div class="footer-card-content">
+        <div class="footer-grid">
+          <!-- Column 1: Navigation -->
+          <div class="footer-col footer-col-nav">
+            <span class="footer-col-label">NAVIGATION</span>
+            <ul class="footer-links-list">
+              <li><a href="work.html" class="footer-link">Work</a></li>
+              <li><a href="about.html" class="footer-link">About</a></li>
+              <li><a href="resume.html" class="footer-link">Resume</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 2: Social -->
+          <div class="footer-col footer-col-social">
+            <span class="footer-col-label">SOCIAL</span>
+            <ul class="footer-links-list">
+              <li><a href="https://www.behance.net/harshbhawsar" target="_blank" rel="noopener noreferrer"
+                  class="footer-link">Behance</a></li>
+              <li><a href="https://www.linkedin.com/in/harsh-bhawsar-ba25581b9/" target="_blank"
+                  rel="noopener noreferrer" class="footer-link">LinkedIn</a></li>
+              <li><a href="https://wa.me/917773892631" target="_blank" rel="noopener noreferrer"
+                  class="footer-link">WhatsApp</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Contact -->
+          <div class="footer-col footer-col-contact">
+            <span class="footer-col-label">CONTACT</span>
+            <div class="footer-contact-items">
+              <div class="footer-contact-item-wrap">
+                <a href="mailto:harshhbhawsar@gmail.com" class="footer-contact-item" data-copy="harshhbhawsar@gmail.com"
+                  title="Click to copy email">harshhbhawsar@gmail.com</a>
+                <span class="copied-badge" aria-hidden="true">Copied</span>
+              </div>
+              <div class="footer-contact-item-wrap">
+                <a href="tel:+917773892631" class="footer-contact-item" data-copy="+91 7773892631"
+                  title="Click to copy phone number">+91 7773892631</a>
+                <span class="copied-badge" aria-hidden="true">Copied</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Signature Typography -->
+      <div class="footer-signature-container">
+        <span class="footer-signature-text">harsh</span>
+      </div>
+
+      <!-- Interactive Draggable Stickers Layer -->
+      <div class="footer-stickers-layer" id="footerStickersLayer">
+        <div class="footer-sticker footer-sticker-sun" data-id="sun" title="Drag me!">
+          <img src="suncontacts.webp" alt="Sun sticker" draggable="false" loading="lazy" decoding="async">
+        </div>
+        <div class="footer-sticker footer-sticker-lotus" data-id="lotus" title="Drag me!">
+          <img src="lotuscontacts.webp" alt="Lotus sticker" draggable="false" loading="lazy" decoding="async">
+        </div>
+        <div class="footer-sticker footer-sticker-camera" data-id="camera" title="Drag me!">
+          <img src="cameracontacts.webp" alt="Camera sticker" draggable="false" loading="lazy" decoding="async">
+        </div>
+        <div class="footer-sticker footer-sticker-eye" data-id="eye" title="Drag me!">
+          <img src="eyecontacts.webp" alt="Eye sticker" draggable="false" loading="lazy" decoding="async">
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Audio Controller (Automatically silences on project pages) -->
+  <script src="audio-controller.js"></script>
+
+  <!-- Interactive Logic: Dual-Pill Navbar, Left Sidebar ScrollSpy, Draggable Stickers & Button Interactions -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Dual-Pill Navbar Scroll Reveal Logic
+      const navbarContainer = document.querySelector('.case-study-navbar-container');
+      let lastScrollY = window.pageYOffset || document.documentElement.scrollTop;
+
+      window.addEventListener('scroll', () => {
+        const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+        if (navbarContainer) {
+          if (scrollY > lastScrollY && scrollY > 150) {
+            navbarContainer.classList.add('nav-hidden');
+          } else {
+            navbarContainer.classList.remove('nav-hidden');
+          }
+        }
+        lastScrollY = scrollY;
+      }, { passive: true });
+
+      // Left Sidebar Navigation & ScrollSpy Controller
+      const sidebarLinks = document.querySelectorAll('.case-study-sidebar .sidebar-nav-link');
+      const slideSections = document.querySelectorAll('.slide-section');
+
+      function setActiveTopic(topicId, updateHash = false) {
+        sidebarLinks.forEach(link => {
+          if (link.getAttribute('data-topic') === topicId) {
+            link.classList.add('active');
+          } else {
+            link.classList.remove('active');
+          }
+        });
+        if (updateHash && window.location.hash !== `#${topicId}`) {
+          history.replaceState(null, '', `#${topicId}`);
+        }
+      }
+
+      function scrollToTopic(topicId) {
+        const targetEl = document.getElementById(topicId);
+        if (targetEl) {
+          const yOffset = -96; // accounts for floating navbar
+          const y = targetEl.getBoundingClientRect().top + window.pageYOffset + yOffset;
+          window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+          setActiveTopic(topicId, true);
+        }
+      }
+
+      sidebarLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          const topicId = link.getAttribute('data-topic');
+          scrollToTopic(topicId);
+        });
+      });
+
+      // ScrollSpy Observer
+      const slideObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const topicId = entry.target.getAttribute('data-topic');
+            if (topicId) {
+              setActiveTopic(topicId, false);
+            }
+          }
+        });
+      }, {
+        rootMargin: '-20% 0px -60% 0px',
+        threshold: 0
+      });
+
+      slideSections.forEach(section => slideObserver.observe(section));
+
+      // Initial route from URL hash
+      const initialHash = window.location.hash.replace('#', '').toLowerCase();
+      const validTopics = ['overview', 'approach', 'booking-flow', 'multi-stop', 'proactive-memory', 'connected-home', 'resilience', 'outcome'];
+      if (validTopics.includes(initialHash)) {
+        setTimeout(() => {
+          scrollToTopic(initialHash);
+        }, 150);
+      }
+
+      window.addEventListener('popstate', () => {
+        const hash = window.location.hash.replace('#', '').toLowerCase();
+        if (validTopics.includes(hash)) {
+          scrollToTopic(hash);
+        }
+      });
+
+      // Footer Scroll Reveal Observer
+      const footerHeadline = document.querySelector('.footer-headline');
+      const footerCard = document.querySelector('.footer-card');
+
+      const footerObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
+
+      if (footerHeadline) footerObserver.observe(footerHeadline);
+      if (footerCard) footerObserver.observe(footerCard);
+
+      // Contact Draggable Physics-Based Stickers Engine
+      const initContactStickers = () => {
+        const footerCard = document.querySelector('.footer-card');
+        if (!footerCard) return;
+
+        const isMobile = window.innerWidth <= 768;
+
+        const stickers = [
+          {
+            id: 'sun',
+            el: footerCard.querySelector('.footer-sticker-sun'),
+            defaultLeftPct: isMobile ? 18.0 : 11.0,
+            defaultTopPct: isMobile ? 82.0 : 65.5,
+            defaultRot: -2,
+            animId: null
+          },
+          {
+            id: 'lotus',
+            el: footerCard.querySelector('.footer-sticker-lotus'),
+            defaultLeftPct: isMobile ? 42.0 : 35.0,
+            defaultTopPct: isMobile ? 88.0 : 80.0,
+            defaultRot: 0,
+            animId: null
+          },
+          {
+            id: 'camera',
+            el: footerCard.querySelector('.footer-sticker-camera'),
+            defaultLeftPct: isMobile ? 65.0 : 60.0,
+            defaultTopPct: isMobile ? 85.0 : 78.0,
+            defaultRot: 10,
+            animId: null
+          },
+          {
+            id: 'eye',
+            el: footerCard.querySelector('.footer-sticker-eye'),
+            defaultLeftPct: isMobile ? 85.0 : 88.5,
+            defaultTopPct: isMobile ? 80.0 : 67.5,
+            defaultRot: -6,
+            animId: null
+          }
+        ];
+
+        let highestZ = 20;
+        let isDraggingAny = false;
+        let hasMovedAny = false;
+
+        const setStickerPosition = (item, leftPx, topPx, animate = false) => {
+          if (!item.el) return;
+          if (item.animId) {
+            cancelAnimationFrame(item.animId);
+            item.animId = null;
+          }
+          if (animate) {
+            item.el.style.transition = 'left 0.75s cubic-bezier(0.16, 1, 0.3, 1), top 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1)';
+          } else {
+            item.el.style.transition = '';
+          }
+          item.currentLeft = leftPx;
+          item.currentTop = topPx;
+          item.el.style.left = `${leftPx}px`;
+          item.el.style.top = `${topPx}px`;
+          item.el.style.transform = `translate(-50%, -50%) rotate(${item.currentRot !== undefined ? item.currentRot : item.defaultRot}deg)`;
+        };
+
+        const resetStickersToDefault = (animate = true) => {
+          const cardRect = footerCard.getBoundingClientRect();
+          if (cardRect.width === 0 || cardRect.height === 0) return;
+
+          stickers.forEach(item => {
+            if (!item.el) return;
+            if (item.animId) {
+              cancelAnimationFrame(item.animId);
+              item.animId = null;
+            }
+            const targetLeft = (item.defaultLeftPct / 100) * cardRect.width;
+            const targetTop = (item.defaultTopPct / 100) * cardRect.height;
+            item.currentRot = item.defaultRot;
+            setStickerPosition(item, targetLeft, targetTop, animate);
+          });
+          hasMovedAny = false;
+        };
+
+        setTimeout(() => resetStickersToDefault(false), 150);
+        window.addEventListener('resize', () => {
+          if (!hasMovedAny) resetStickersToDefault(false);
+        });
+
+        stickers.forEach(item => {
+          const el = item.el;
+          if (!el) return;
+
+          let isDragging = false;
+          let startPointerX = 0, startPointerY = 0;
+          let lastPointerX = 0, lastPointerY = 0;
+          let lastMoveTime = 0;
+          let velocityX = 0, velocityY = 0;
+          let startStickerLeft = 0, startStickerTop = 0;
+
+          const onPointerDown = (e) => {
+            e.preventDefault();
+            if (item.animId) {
+              cancelAnimationFrame(item.animId);
+              item.animId = null;
+            }
+            isDragging = true;
+            isDraggingAny = true;
+            hasMovedAny = true;
+            highestZ += 1;
+            el.style.zIndex = highestZ;
+            el.classList.add('is-dragging');
+
+            const clientX = e.clientX !== undefined ? e.clientX : (e.touches && e.touches[0].clientX) || 0;
+            const clientY = e.clientY !== undefined ? e.clientY : (e.touches && e.touches[0].clientY) || 0;
+
+            startPointerX = clientX;
+            startPointerY = clientY;
+            lastPointerX = clientX;
+            lastPointerY = clientY;
+            lastMoveTime = performance.now();
+            velocityX = 0;
+            velocityY = 0;
+
+            startStickerLeft = item.currentLeft || (parseFloat(el.style.left) || 0);
+            startStickerTop = item.currentTop || (parseFloat(el.style.top) || 0);
+
+            el.style.transition = 'none';
+            el.style.transform = `translate(-50%, -50%) rotate(${item.defaultRot}deg) scale(1.08)`;
+          };
+
+          const onPointerMove = (e) => {
+            if (!isDragging) return;
+            e.preventDefault();
+
+            const clientX = e.clientX !== undefined ? e.clientX : (e.touches && e.touches[0].clientX) || 0;
+            const clientY = e.clientY !== undefined ? e.clientY : (e.touches && e.touches[0].clientY) || 0;
+
+            const now = performance.now();
+            const dt = Math.max(now - lastMoveTime, 1);
+            const dx = clientX - lastPointerX;
+            const dy = clientY - lastPointerY;
+
+            lastPointerX = clientX;
+            lastPointerY = clientY;
+            lastMoveTime = now;
+
+            const instVx = (dx / dt) * 16.67;
+            const instVy = (dy / dt) * 16.67;
+            velocityX = velocityX * 0.4 + instVx * 0.6;
+            velocityY = velocityY * 0.4 + instVy * 0.6;
+
+            const totalDx = clientX - startPointerX;
+            const totalDy = clientY - startPointerY;
+
+            const newLeft = startStickerLeft + totalDx;
+            const newTop = startStickerTop + totalDy;
+
+            setStickerPosition(item, newLeft, newTop, false);
+          };
+
+          const onPointerUp = () => {
+            if (!isDragging) return;
+            isDragging = false;
+            isDraggingAny = false;
+            el.classList.remove('is-dragging');
+
+            const friction = 0.92;
+            let vx = Math.max(-25, Math.min(velocityX, 25));
+            let vy = Math.max(-25, Math.min(velocityY, 25));
+
+            let curLeft = item.currentLeft;
+            let curTop = item.currentTop;
+
+            const cardRect = footerCard.getBoundingClientRect();
+            const elRect = el.getBoundingClientRect();
+            const halfW = elRect.width / 2;
+            const halfH = elRect.height / 2;
+            const pad = 8;
+
+            const minX = halfW + pad;
+            const maxX = cardRect.width - halfW - pad;
+            const minY = halfH + pad;
+            const maxY = cardRect.height - halfH - pad;
+
+            let rot = item.defaultRot + Math.max(-12, Math.min(vx * 0.7, 12));
+            item.currentRot = rot;
+
+            const glideStep = () => {
+              if (Math.abs(vx) < 0.2 && Math.abs(vy) < 0.2) {
+                item.animId = null;
+                el.style.transition = 'transform 0.45s cubic-bezier(0.16, 1, 0.3, 1)';
+                item.currentRot = item.defaultRot;
+                el.style.transform = `translate(-50%, -50%) rotate(${item.defaultRot}deg)`;
+                return;
+              }
+
+              curLeft += vx;
+              curTop += vy;
+
+              if (curLeft <= minX) {
+                curLeft = minX;
+                vx = -vx * 0.45;
+              } else if (curLeft >= maxX) {
+                curLeft = maxX;
+                vx = -vx * 0.45;
+              }
+
+              if (curTop <= minY) {
+                curTop = minY;
+                vy = -vy * 0.45;
+              } else if (curTop >= maxY) {
+                curTop = maxY;
+                vy = -vy * 0.45;
+              }
+
+              vx *= friction;
+              vy *= friction;
+
+              setStickerPosition(item, curLeft, curTop, false);
+              item.animId = requestAnimationFrame(glideStep);
+            };
+
+            item.animId = requestAnimationFrame(glideStep);
+          };
+
+          el.addEventListener('mousedown', onPointerDown);
+          window.addEventListener('mousemove', onPointerMove);
+          window.addEventListener('mouseup', onPointerUp);
+
+          el.addEventListener('touchstart', onPointerDown, { passive: false });
+          window.addEventListener('touchmove', onPointerMove, { passive: false });
+          window.addEventListener('touchend', onPointerUp);
+        });
+
+        let lastScrollY = window.pageYOffset || document.documentElement.scrollTop;
+        window.addEventListener('scroll', () => {
+          const currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
+          const scrollingUp = currentScrollY < lastScrollY;
+          lastScrollY = currentScrollY;
+
+          if (scrollingUp && hasMovedAny && !isDraggingAny) {
+            const footerRect = footerCard.getBoundingClientRect();
+            if (footerRect.top > window.innerHeight * 0.4) {
+              resetStickersToDefault(true);
+            }
+          }
+        }, { passive: true });
+      };
+
+      initContactStickers();
+
+      // Click to Copy Phone & Email with "Copied" badge
+      const initFooterContactCopy = () => {
+        document.querySelectorAll('.footer-contact-item-wrap').forEach(wrap => {
+          const link = wrap.querySelector('.footer-contact-item');
+          const badge = wrap.querySelector('.copied-badge');
+          if (!link || !badge) return;
+
+          let timeoutId = null;
+
+          wrap.addEventListener('click', (e) => {
+            e.preventDefault();
+            const textToCopy = link.getAttribute('data-copy') || link.textContent.trim();
+
+            const copyAction = () => {
+              if (navigator.clipboard && navigator.clipboard.writeText) {
+                return navigator.clipboard.writeText(textToCopy);
+              } else {
+                return new Promise((resolve, reject) => {
+                  try {
+                    const ta = document.createElement('textarea');
+                    ta.value = textToCopy;
+                    ta.style.position = 'fixed';
+                    ta.style.opacity = '0';
+                    document.body.appendChild(ta);
+                    ta.focus();
+                    ta.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(ta);
+                    resolve();
+                  } catch (err) {
+                    reject(err);
+                  }
+                });
+              }
+            };
+
+            copyAction().then(() => {
+              badge.classList.add('is-visible');
+              if (timeoutId) clearTimeout(timeoutId);
+              timeoutId = setTimeout(() => {
+                badge.classList.remove('is-visible');
+              }, 1800);
+            }).catch(err => {
+              console.error('Failed to copy: ', err);
+            });
+          });
+        });
+      };
+
+      initFooterContactCopy();
+
+      // Button Rolling Text Initializer
+      const initButtonRollingText = () => {
+        const rollSelectors = ['.btn-view-more'];
+        document.querySelectorAll(rollSelectors.join(', ')).forEach(btn => {
+          if (btn.querySelector('.vv-roll')) return;
+
+          const textSpan = btn.querySelector('.btn-view-more-text') || btn.querySelector('span:not(.vv-roll)') || btn;
+          const text = (btn.getAttribute('data-roll') || textSpan.textContent).trim();
+          if (!text) return;
+
+          const rollContainer = document.createElement('span');
+          rollContainer.className = 'vv-roll';
+          rollContainer.setAttribute('aria-label', text);
+
+          [...text].forEach((char, i) => {
+            const charSpan = document.createElement('span');
+            charSpan.className = 'vv-roll-char';
+            charSpan.style.setProperty('--i', i);
+            const displayChar = char === ' ' ? '&nbsp;' : char;
+            charSpan.innerHTML = `<span>${displayChar}</span><span>${displayChar}</span>`;
+            rollContainer.appendChild(charSpan);
+          });
+
+          if (textSpan && textSpan !== btn) {
+            textSpan.replaceWith(rollContainer);
+          } else {
+            const arrow = btn.querySelector('svg, .btn-view-more-arrow');
+            if (arrow) {
+              btn.insertBefore(rollContainer, arrow);
+            } else {
+              btn.appendChild(rollContainer);
+            }
+          }
+        });
+      };
+
+      initButtonRollingText();
+    });
+  </script>
+</body>
+
+</html>

@@ -1194,8 +1194,10 @@ body {
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
     box-shadow 0.3s ease,
     background-color 0.3s ease,
-    border-color 0.3s ease;
-  will-change: transform;
+    border-color 0.3s ease,
+    opacity 0.3s ease,
+    filter 0.3s ease;
+  will-change: transform, opacity, filter;
   overflow: hidden;
 }
 
@@ -1230,6 +1232,14 @@ body {
   background: #FFFCD8;
   border-color: #4A2C11;
   box-shadow: 0 8px 30px rgba(74, 44, 17, 0.08);
+}
+
+/* Fade & blur other project cards when hovering one card (Home & More Projects) */
+.projects-content-wrapper:has(.project-card:hover) .project-card:not(:hover),
+.projects-container:has(.project-card:hover) .project-card:not(:hover),
+.work-projects-container:has(.project-card:hover) .project-card:not(:hover) {
+  opacity: 0.2 !important;
+  filter: blur(1px) !important;
 }
 
 .project-card-inner {
@@ -1280,12 +1290,12 @@ body {
   transition: opacity 0.4s ease, filter 0.4s ease;
 }
 
-/* Base Cover Image & box fade black on hover with translucent opacity */
-.project-card:hover .project-image-box {
+/* Bus Transportation: Black fade on hover behind UI preview sequence */
+.project-card[href*="transportation"]:hover .project-image-box {
   background-color: #0b0b0d !important;
 }
 
-.project-card:hover .project-img {
+.project-card[href*="transportation"]:hover .project-img {
   opacity: 0.45;
   filter: brightness(0.75);
   transform: none !important;
@@ -1328,6 +1338,18 @@ body {
   pointer-events: none;
   filter: none;
   image-rendering: auto;
+}
+
+.bus-thumb-slide {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 10px !important;
+  overflow: hidden;
 }
 
 /* Instant, continuous cycling across all 6 slides with zero transition and zero gap */
